@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% set serviceName = 'Apply for Bereavement Support Payment' %}
+
+{% block page_title %}
+  Children details
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% include 'includes/phase_banner_alpha.html' %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">Declaration</h1>
+
+        <form method="post">
+          <p class="text">
+            By sending this application you agree the information in this application
+            is complete and correct as far as you know.
+          </p>
+
+          <div class="declaration">
+            If you knowingly give false information you could be prosecuted.
+          </div>
+
+          <br>
+          <input type="submit" class="button" value="I agree - send application">
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

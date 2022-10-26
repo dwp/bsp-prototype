@@ -1,0 +1,303 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/payment-scheduler/version-11/find-a-payment-schedule" class="link-back">Find a payment schedule</a>
+
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">Claire Brown</span>
+          AB123456C
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          ACTIVE
+        </span>
+
+        {% if data.backdateAll %}
+          <h2 class="heading-large">Log</h2>
+          <p>
+            <span class="bold">Switched to higher rate on 12 June 2017</span><br />
+            Arrears paid for initial payment and 5 monthly payments.
+          </p>
+        {% endif %}
+
+        <h2 class="heading-small th">
+          Payment details
+          <p class="payment-link">
+            <a href="/{{feature}}/{{sprint}}/change-payment-details">
+              Change
+            </a>
+          </p>
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            C Brown
+          </dd>
+
+          <dt class="data-summary-key">
+            Account number
+          </dt>
+          <dd class="data-summary-value">
+            12341234
+          </dd>
+
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            11-22-33
+          </dd>
+
+          <dt class="data-summary-key">
+            Country
+          </dt>
+          <dd class="data-summary-value">
+            United Kingdom
+          </dd>
+
+          <dt class="data-summary-key">
+            Rate
+          </dt>
+          <dd class="data-summary-value">
+              {{ 'Higher' if data.backdateAll else 'Standard' }}
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Payments
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              10 June 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              10 May 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              10 April 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              10 March 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              10 February 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              16 January 2017
+            </time>
+            <strong class="amount">
+              £2500
+            </strong>
+            <span class="type">
+              Initial payment
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Planned payments
+          <p class="payment-link">
+            <a href="#">
+              Prevent payments
+            </a>
+          </p>
+        </h2>
+
+        <ul class="schedule">
+          {% if data.backdateAll %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+                Due 13 June 2017
+              </time>
+              <strong class="amount">
+                £1000
+              </strong>
+              <span class="type">
+                Initial payment arrears
+              </span>
+            </li>
+
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+                Due 13 June 2017
+              </time>
+              <strong class="amount">
+                £1250
+              </strong>
+              <span class="type">
+                Monthly payment arrears
+              </span>
+            </li>
+          {% endif %}
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE6">
+              Due 10 July 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE7">
+              Due 10 August 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE8">
+              Due 10 September 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE9">
+              Due 10 October 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 10 November 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
+              Due 10 December 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE12">
+              Due 10 January 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE13">
+              Due 10 February 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE14">
+              Due 10 March 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE15">
+              Due 10 April 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE16">
+              Due 10 May 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE17">
+              Due 10 June 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE18">
+              Due 10 July 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% if 
+  data.children
+  and (data.death.form === 'Yes' or scenario === '1') 
+  and data['communication'].text2[0] === 'CIS'
+%}
+  <li>
+    <h2 class="task-list-section">
+      Submit claim
+    </h2>
+    <ul class="task-list-items">
+      <li class="task-list-item">
+        <a class="task-name" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}">
+          Check and confirm
+        </a>
+      </li>
+    </ul>
+  </li>
+{% endif %}

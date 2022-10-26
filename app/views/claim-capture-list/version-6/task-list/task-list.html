@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% set t = '_test' | loadDummyData(feature) %}
+{% set d = scenario | loadDummyData(feature) %}
+{% set bf = (scenario === '3' or scenario === '4' or scenario === '6') %}
+
+{% block page_title %}
+  Unfinished claim for {{d.claimant.fullName}}
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">{{d.claimant.fullName}}</span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="claim-status">
+          Unfinished
+        </span>
+
+        {% include './../common/_date-counter.html' %}
+
+        <ul id="tabs" class="p-tabs">
+          <li id="tasks" class="current" data-target='tasks-hidden'>Tasks to complete</li>
+          <li id="details" >Claim details</li>
+        </ul>
+
+        {% include './_tasks-to-complete.html' %}
+
+        <div id="details-content" class="hidden">
+          {% include '../common/_details-claimant.html' %}
+          {% include '../common/_details-contact.html' %}
+          {% include '../common/_details-partner.html' %}
+          {% if data.children %}
+            {% include '../common/_details-children.html' %}
+          {% endif %}
+          {% include '../common/_details-date-of-claim.html' %}
+          {% if data['payment-details-provided'] === 'Yes' %}
+            {% include '../common/_details-payment.html' %}
+          {% endif %}
+          {% include '../common/_details-verification.html' %}
+        </div>
+      </div>
+
+      <div class="column-one-third">
+        {% include './../history/_history.html' %}
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <style>
+    .secret-link {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 50px;
+    }
+  </style>
+  <a class="secret-link" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}"></a>
+{% endblock %}

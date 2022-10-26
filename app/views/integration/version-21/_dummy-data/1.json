@@ -1,0 +1,50 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",
+    "fullName": "Marie Greenwell",
+    "nino": "QX548346",
+    "dateOfClaim": "20 December 2018",
+    "dateOfBirth": "17 June 1971",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "78",
+      "street": "Bakewell Avenue",
+      "town": "Rothwell",
+      "county": "United Kingdom",
+      "postcode": "LS4 7PB"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Andrew Paul Greenwell",
+    "nino": "XQ327961X",
+    "dateOfDeath": "11 December 2018"  
+  },
+  "children": {
+    "dependant": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No",
+    "number": "472391BX"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs M Greenwell",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "23 October 2002"
+  },
+  "conts": {
+    "year": "2015"
+  }
+}

@@ -1,0 +1,445 @@
+{% extends "layout.html" %}
+{% set startActive = 'active' %}
+
+{% block page_title %}
+  {% if start %}
+    Start a new claim
+  {% else %}
+    Claim details
+  {% endif %}
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if not start %}
+      {% if scenario !== '1' and scenario !== '2' %}
+        {% include '../common/_notification-banner.html' %}
+      {% endif %}
+    {% endif %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          {% if start %}
+            Start a new claim
+          {% else %}
+            Claim details
+          {% endif %}
+        </h1>
+
+        <form method="post" autocomplete="off">
+          <fieldset>
+            <legend class="heading-medium">Claimant details</legend>
+
+
+            <div class="form-group">
+              <label for="claimant-full-name">
+                <span class="form-label">Full name (excluding title)</span>
+              </label>
+              <input class="form-control" type="text" name="claimant[fullName]" id="claimant-full-name" value="{{data.claimant['fullName']}}">
+            </div>
+
+            <div class="form-group">
+              <label for="claimant-nino">
+                <span class="form-label">
+                  National Insurance number
+                </span>
+              </label>
+              <input class="form-control" type="text" name="claimant[nino]" id="claimant-nino" value="{{data.claimant.nino}}">
+            </div>
+            
+            <div class="form-group">
+              <fieldset aria-label="Claimant date of birth">
+                <legend class="heading-small">Date of birth</legend>
+
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="claimant-dateOfBirth-day">
+                      Day
+                    </label>
+                    <input class="form-control" id="claimant-dateOfBirth-day" type="number"  min="0" name="claimant[dateOfBirth][day]" value="{{data.claimant.dateOfBirth.day}}"/>
+                  </div>
+
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="claimant-dateOfBirth-month">
+                      Month
+                    </label>
+                    <input class="form-control" id="claimant-dateOfBirth-month" type="number"  min="0" name="claimant[dateOfBirth][month]" value="{{data.claimant.dateOfBirth.month}}"/>
+                  </div>
+
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="claimant-dateOfBirth-year">
+                      Year
+                    </label>
+                    <input class="form-control" type="number" id="claimant-dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]" value="{{data.claimant.dateOfBirth.year}}"/>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+
+           
+              <div class="form-group" id="can-you-verify-marriage">
+                <div class="form-group">
+                  <fieldset class="inline">
+                    <legend class="heading-small">How were they related to the deceased?</legend>                              
+                  </fieldset>
+                </div>
+            
+                <div class="multiple-choice">
+                  <input
+                    id="marriage-verified-yes"
+                    type="radio"
+                    name="deceased[form]"
+                    value="Yes"
+                  />
+                  <label for="marriage-verified-yes">Married</label>
+                </div>
+      
+              <div class="multiple-choice">
+                <input
+                  id="marriage-verified-yes1"
+                  type="radio"
+                  name="deceased[form]"
+                  value="Yes1"
+                />
+                <label for="marriage-verified-yes1">In a civil partnership</label>
+              </div>
+              
+              <div class="multiple-choice">
+                <input
+                  id="marriage-verified-yes2"
+                  type="radio"
+                  name="deceased[form]"
+                  value="Yes2"
+                />
+                <label for="marriage-verified-yes2">Living together</label>
+              </div>
+      
+              <div class="multiple-choice" style="padding: 0;">
+                
+                <label>or</label>
+              </div>
+      
+              <div class="multiple-choice">
+                <input
+                  id="marriage-verified-yes3"
+                  type="radio"
+                  name="deceased[form]"
+                  value="Yes3"
+                />
+                <label for="marriage-verified-yes3">None of these</label>
+              </div>
+            </div>
+            
+            
+
+            <div class="form-group">
+              <legend class="heading-small">Address</legend>
+
+              <label for="claimant-postcode">
+              <span class="form-label">Postcode</span>
+              </label>
+              <input class="form-control short-input" type="text" name="" id="claimant-postcode" value="">
+            </div>
+            <div class="form-group">
+              <button class="button find-address-btn" type="button">Find Address</button>
+            </div>
+            <div class="form-group">
+              <details role="group">
+                <summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">Enter address manually</span></summary>
+                <div class="panel" id="details-content-1" aria-hidden="true">
+                  
+                  <div class="form-group-compound">
+                  <fieldset class="inline">
+                    <legend class="heading-small">Address</legend>
+                    
+                    <div class="form-group-compound">
+                    <label for="line1" class="form-label">Building and street</label>
+                    <input class="form-control" type="text" name="address[building]" value="{{data.address.building}}">
+                    </div>
+        
+                    <div class="form-group-compound">
+                    <label for="line1" class="visually-hidden">Line 2</label>
+                    <input class="form-control" type="text" name="address[street]" value="{{data.address.street}}">
+                    </div>
+                     <div class="form-group">
+                    <label for="line1" class="form-label">Town or city</label>
+                    <input class="form-control" type="text" name="address[town]" value="{{data.address.town}}">
+                    </div>
+                      <div class="form-group">
+                    <label for="line1" class="form-label">Country (optional)</label>
+                    <input class="form-control" type="text" name="address[country]" value="{{data.address.country}}">
+                    </div>
+                    <div class="form-group">
+                    <label for="line1" class="form-label">Postcode</label>
+                    <input class="form-control" type="text" name="address[postcode]" value="{{data.address.postcode}}">
+                    </div>
+                  </fieldset>
+                  </div>
+                
+                </div>
+              </details>
+            </div>
+
+
+
+
+            <div class="form-group inline">
+              <fieldset>
+                <legend>
+                  <span class="form-label-bold">Do they have any communication needs?</span>
+                  <span class="visually-hidden">. </span>
+                  <span class="form-hint">
+                    For example, large print, Welsh or textphone
+                  </span>
+                </legend>
+
+              
+                <div class="multiple-choice" data-target="payment-details">
+                  <input id="payment-details-yes" type="radio" name="CommunicationNeeds" value="Yes">
+                  <label for="payment-details-yes">Yes</label>
+                </div>
+            
+                <div class="multiple-choice">
+                  <input id="payment-details-no" type="radio" name="CommunicationNeeds" value="No">
+                  <label for="payment-details-no">No</label>
+                </div>
+              </fieldset>
+            </div>
+  
+            <div class="panel panel-border-narrow js-hidden" id="payment-details">
+              
+
+              <div class="form-group">
+                <fieldset>
+                  <legend>
+                    <span class="form-hint">
+                      Select all that apply
+                    </span>
+                  </legend>
+                  <div class="multiple-choice">
+                    <input
+                      id="cert"
+                      name="communication[text1][]"
+                      type="checkbox"
+                      value="Braille"
+                    />
+                    <label for="cert">
+                      Braille
+                    </label>
+                  </div>
+                
+                  <div class="multiple-choice">
+                    <input
+                      id="cis"
+                      name="communication[text2][]"
+                      type="checkbox"
+                      value="Large print"
+                    />
+                    <label for="cis">
+                      Large print
+                    </label>
+                  </div>
+                
+                  <div class="multiple-choice">
+                    <input
+                      id="audio"
+                      name=""
+                      type="checkbox"
+                      value="Audio"
+                    />
+                    <label for="audio">
+                      Audio
+                    </label>
+                  </div>
+           <div class="multiple-choice">
+                    <input
+                      id="signlanguage"
+                      name="communication[text3][]"
+                      type="checkbox"
+                      value="Sign language"
+                    />
+                    <label for="signlanguage">
+                      Sign language
+                    </label>
+                  </div>
+           <div class="multiple-choice">
+                    <input
+                      id="inductionloop"
+                      name="communication[text4][]"
+                      type="checkbox"
+                      value="Induction Loop"
+                    />
+                    <label for="inductionloop">
+                      Induction Loop
+                    </label>
+                  </div>
+           <div class="multiple-choice">
+                    <input
+                      id="textphone"
+                      name="communication[text5][]"
+                      type="checkbox"
+                      value="Textphone"
+                    />
+                    <label for="textphone">
+                      Textphone
+                    </label>
+                  </div>
+           <div class="multiple-choice">
+                    <input
+                      id="typetalk"
+                      name="communication[text6][]"
+                      type="checkbox"
+                      value="Typetalk"
+                    />
+                    <label for="typetalk">
+                      Typetalk
+                    </label>
+                  </div>
+           <div class="multiple-choice">
+                    <input
+                      id="welsh"
+                      name="communication[text7][]"
+                      type="checkbox"
+                      value="Welsh"
+                    />
+                    <label for="welsh">
+                      Welsh
+                    </label>
+                  </div>
+                </fieldset>
+  
+  
+              <fieldset>
+
+
+              </fieldset>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="heading-medium">Deceased details</legend>
+
+
+            <div class="form-group">
+              <div class="form-group">
+                <label for="partner-full-name">
+                  <span class="form-label">Full name (excluding title)</span>
+                </label>
+                <input class="form-control" type="text" name="partner[full-name]" id="partner-full-name" value="{{data.partner['full-name']}}">
+              </div>
+            
+              <div class="form-group">
+                <label for="partner-nino">
+                  <span class="form-label">National Insurance number</span>
+                </label>
+                <input class="form-control" type="text" name="partner[nino]" id="partner-nino" value="{{data.partner.nino}}">
+              </div>
+            </div>
+
+            <div class="form-group form-group-compound">
+              <fieldset aria-label="Partner date of death">
+                <legend class="heading-small">Date of birth?</legend>
+
+                <div class="form-group form-group-compound">
+                  <div class="form-date">
+                    <div class="form-group form-group-day">
+                      <label class="form-label" for="partner-dateOfBirth-day">
+                        Day
+                      </label>
+                      <input class="form-control" id="partner-dateOfBirth-day" type="number" name="partner[dateOfBirth][day]" value="{{data.partner.dateOfBirth.day}}">
+                    </div>
+
+                    <div class="form-group form-group-month">
+                      <label class="form-label" for="partner-dateOfBirth-month">
+                        Month
+                      </label>
+                      <input class="form-control" id="partner-dateOfBirth-month" type="number" name="partner[dateOfBirth][month]" value="{{data.partner.dateOfBirth.month}}">
+                    </div>
+
+                    <div class="form-group form-group-year">
+                      <label class="form-label" for="partner-dateOfBirth-year">
+                        Year
+                      </label>
+                      <input class="form-control" type="number" id="partner-dateOfBirth-year" min="0" name="partner[dateOfBirth][year]" value="{{data.partner.dateOfBirth.year}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-group form-group-compound">
+              <fieldset aria-label="Partner date of death">
+                <legend class="heading-small">What date did they die?</legend>
+
+                <div class="form-group form-group-compound">
+                  <div class="form-date">
+                    <div class="form-group form-group-day">
+                      <label class="form-label" for="partner-dateOfDeath-day">
+                        Day
+                      </label>
+                      <input class="form-control" id="partner-dateOfDeath-day" type="number" name="partner[dateOfDeath][day]" value="{{data.partner.dateOfDeath.day}}">
+                    </div>
+
+                    <div class="form-group form-group-month">
+                      <label class="form-label" for="partner-dateOfDeath-month">
+                        Month
+                      </label>
+                      <input class="form-control" id="partner-dateOfDeath-month" type="number" name="partner[dateOfDeath][month]" value="{{data.partner.dateOfDeath.month}}">
+                    </div>
+
+                    <div class="form-group form-group-year">
+                      <label class="form-label" for="partner-dateOfDeath-year">
+                        Year
+                      </label>
+                      <input class="form-control" type="number" id="partner-dateOfDeath-year" min="0" name="partner[dateOfDeath][year]" value="{{data.partner.dateOfDeath.year}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <fieldset>
+              <legend><h2 class="heading-medium">Date of claim</h2></legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="dateOfClaim-day">
+                    Day
+                  </label>
+                  <input class="form-control" id="dateOfClaim-day" type="number" name="claim[dateOfClaim][day]" value="{{data.claim.dateOfClaim.day}}">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dateOfClaim-month">
+                    Month
+                  </label>
+                  <input class="form-control" id="dateOfClaim-month" type="number" name="claim[dateOfClaim][month]" value="{{data.claim.dateOfClaim.month}}">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dateOfClaim-year">
+                    Year
+                  </label>
+                  <input class="form-control" type="number" id="dateOfClaim-year" min="0" name="claim[dateOfClaim][year]" value="{{data.claim.dateOfClaim.year}}">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

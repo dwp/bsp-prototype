@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Ricci Prakesh",
+    "nino": "WA123456X",
+    "dateOfClaim": "10 November 2018",
+    "dateOfBirth": "13 June 1974",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "6",
+      "street": "Banos Pequeno",
+      "town": "",
+      "county": "Spain",
+      "postcode": ""
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Priya Prakesh",
+    "nino": "BN123456A",
+    "dateOfDeath": "2 October 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr R Prakesh",
+    "sortCode": "112233",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "9 August 2010"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

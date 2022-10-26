@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim disallowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+          Claim disallowed
+        </h1>
+
+        <h2 class="heading-medium">
+          Reasons
+        </h2>
+        <ul class="list list-bullet">
+          {% if id == '2' %}
+            <li>Claimant over State Pension age at the time of death.</li>
+          {% else %}
+            <li>Claimant and partner were not married at time of death.</li>
+          {% endif %}
+        </ul>
+
+        <a href="/{{feature}}/{{sprint}}/claim/{{id}}/disallowed">View claim</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

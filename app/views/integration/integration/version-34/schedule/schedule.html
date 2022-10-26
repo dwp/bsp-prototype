@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">
+          {{d.claimant.fullName}}
+        </span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          Active
+        </span>
+
+        {% include './_subnav-schedule.html' %}
+
+        {% include '../common/_details-payment.html' %}
+
+      </div>
+    </div>
+
+    {% include "./_payment-summary-" + scenario + ".html" %}
+  
+    {% if scenario === '2' %}
+      {% include './_warning-banner-2.html' %}
+    {% elif scenario === '3' %}
+      {% include './_warning-banner-3.html' %}
+    {% else %}
+      {% include './_warning-banner-1.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h2 class="heading-medium" style="margin-bottom: 0;">
+          Payment schedule
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Payments issued
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">No payments issued.</li>
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Planned payments
+          <p class="payment-link">
+            <a href="#">
+              Stop payments
+            </a>
+          </p>
+        </h2>
+
+        {% include "./_payments-due-" + scenario + ".html" %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

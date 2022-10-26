@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% set d = scenario | loadDummyData('claim-capture-list') %}
+{% set showDetails = true %}
+{% block page_title %}
+  Confirm details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Confirm claim details
+      </h1>
+
+      {% include '../common/_details-claim.html' %}
+      {% include '../common/_details-claimant.html' %}
+      {% include '../common/_details-partner.html' %}
+      {% include '../common/_details-payment.html' %}
+
+      <br />
+
+      <form method="post" autocomplete="off">
+      <div class="form-group">
+        <button type="submit" class="button">Confirm and submit claim</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

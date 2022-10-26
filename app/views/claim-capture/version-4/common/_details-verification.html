@@ -1,0 +1,45 @@
+<h2 class="heading-small th">
+  Verification
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Marriage
+  </dt>
+  <dd class="data-summary-value">
+    {% if d.verification.marriage === 'Yes' %}
+      Verified on {{t.date}}
+    {% elif data.verification['marriage-verified'] === 'Yes' %}
+      Verified on {{t.date}}
+    {% else %}
+      Not verified
+    {% endif %}
+  </dd>
+
+  <dt class="data-summary-key">
+    Death
+  </dt>
+  <dd class="data-summary-value">
+    {% if d.verification.death === 'Yes' %}
+      Verified on {{t.date}}
+    {% endif %}
+  </dd>
+
+  <dt class="data-summary-key">
+    National Insurance contributions
+  </dt>
+  <dd class="data-summary-value">
+    {% if d.verification.conts === 'Yes' %}
+      Verified on {{t.date}}
+    {% endif %}
+  </dd>
+
+  {% if d.verification.chb === 'Yes' %}
+    <dt class="data-summary-key">
+      Child Benefit
+    </dt>
+    <dd class="data-summary-value">
+      Verified on {{t.date}}
+    </dd>
+  {% endif %}
+</dl>

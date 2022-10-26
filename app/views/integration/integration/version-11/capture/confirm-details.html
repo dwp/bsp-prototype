@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prevent payments
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}" class="link-back">Back</a>
+
+        <h1 class="heading-large">You need to make some payments manually</h1>
+        <p>
+          Some payments the claimant was entitled to have been prevented. These 
+          will need to be paid manually.
+        </p>
+
+        <form method ="post">
+          <input type="hidden" name="resumed" value="true"/>
+          <button class="button" type="submitr">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

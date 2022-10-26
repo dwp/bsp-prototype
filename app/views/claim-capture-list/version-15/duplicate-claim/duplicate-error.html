@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">    
+        <a href="/{{feature}}/{{sprint}}/duplicate-claim/{{scenario}}" class="link-back">Back</a>
+      
+        <h1 class="heading-large">
+          You can't continue with this claim
+        </h1>
+
+        {% if scenario === '2' %}
+          <p class="lede">
+            Somebody else is already getting Bereavement Support Payment. 
+            We can't pay two people for the same deceased person. 
+          </p>
+          <p>
+            <a href="#">View the existing claim</a>
+          </p>
+        {% endif %}
+
+        {% if scenario === '3' %}
+          <p class="lede">
+            Somebody else already has a claim in progress. 
+            We can't pay two people for the same deceased person. 
+          </p>
+          <p>
+            <a href="#">View the existing claim</a>
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

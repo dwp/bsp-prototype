@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Cassandra Billingham",
+    "nino": "TX123456X",
+    "dateOfClaim": "12 August 2018",
+    "dateOfBirth": "19 October 1971",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "115",
+      "street": "Rue Laurant",
+      "town": "Marnee Vallee",
+      "county": "France",
+      "postcode": "75116"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": " Ian Billingham",
+    "nino": "SQ123456X",
+    "dateOfDeath": "2 August 2018"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs C Billingham",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "12 April 2000"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

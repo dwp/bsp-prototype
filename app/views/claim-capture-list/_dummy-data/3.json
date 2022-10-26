@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Kathryn Williams",
+    "nino": "CA123456X",
+    "dateOfClaim": "7 Januaury 2018",
+    "dateOfBirth": "5 August 1974",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "37",
+      "street": "Golding Street",
+      "town": "Byker",
+      "county": "Newcastle",
+      "postcode": "NE4 9BV"
+    },
+    "contact": {
+      "home": "01915667174"
+    }
+  },
+  "partner": {
+    "fullName": "Peter Williams",
+    "nino": "CB123456X",
+    "dateOfDeath": "5 January 2018"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs K Williams",
+    "sortCode": "121212",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "29 April 2013"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

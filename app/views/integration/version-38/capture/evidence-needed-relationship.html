@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Evidence needed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">
+          Evidence needed
+        </h1>
+
+        <p class="text">
+          You cannot process this claim untill you have seen evidence of the claimant's relationship.
+        </p>
+        
+        <form method="post" autocomplete="off">
+          <input type="hidden" name="m1" value="{{ data.relationshipmarriage.verified }}"/>
+          <input type="hidden" name="m2" value="{{ data.relationshipmarriage.verified1 }}"/>
+          <div class="form-group" id="can-you-verify-marriage">
+          <div class="form-group">
+            <fieldset>
+              <legend class="heading-small">
+                What do you want to do text? 
+              </legend>
+              <div class="multiple-choice">
+                <input
+                  id="wait-yes"
+                  type="radio"
+                  name="disallowthecliam"
+                  value="Yes1"
+                />
+                <label for="wait-yes">
+                  Disallow the claim
+                </label>
+              </div>
+
+              <div class="multiple-choice">
+                <input
+                  id="wait-no"
+                  type="radio"
+                  name="disallowthecliam"
+                  value="Yes2"
+                />
+                <label for="wait-no">
+                  Refer claim to the Relationship Validation unit(RVU)
+                </label>
+              </div>
+              <div class="multiple-choice" data-target="evidence1">
+                <input
+                  id="wait-no1"
+                  type="radio"
+                  name="disallowthecliam"
+                  value="Yes3"
+                />
+                <label for="wait-no1">
+                  Ask the claimant for evidence
+                </label>
+              </div>
+              
+                <div class="panel panel-border-narrow js-hidden" id="evidence1">
+                  <div class="form-group">
+                    <fieldset>
+                      <legend class="heading-small">
+                        What do you need?
+                      </legend>
+                      
+                      <div class="multiple-choice">
+                        <input
+                          id="cert"
+                          name="marriage[what-evidence][]"
+                          type="checkbox"
+                          value="Certificate"
+                        />
+                        <label for="cert">
+                          Certificate
+                        </label>
+                      </div>
+                    
+                      <div class="multiple-choice">
+                        <input
+                          id="cis"
+                          name="marriage[what-evidence][]"
+                          type="checkbox"
+                          value="CIS"
+                        />
+                        <label for="cis">
+                          More information from the claimant(194/195 form)
+                        </label>
+                      </div>
+                    
+                    </fieldset>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+<style>li .schedule-status {margin-bottom: 0;}</style>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class=heading-xlarge>
+        Try again at 6.00pm
+      </h1>
+
+      <p>
+        Bereavement Support Payment Manager is sending the next batch of
+        payments to the Central Payment System.
+      </p>
+
+      <p>
+        You'll be able to use this service later.
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

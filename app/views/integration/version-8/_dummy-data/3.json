@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Andrew Parker",
+    "nino": "AA123456X",
+    "dateOfClaim": "15 May 2018",
+    "dateOfBirth": "18 September 1976",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "17",
+      "street": "Seaworth Grove",
+      "town": "Blackpool",
+      "county": "Lancashire",
+      "postcode": "BT9 7PM"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Tanya Parker",
+    "nino": "BB123456X",
+    "dateOfDeath": "25 June 2018"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr A Parker",
+    "sortCode": "097616",
+    "accountNumber": "56782049",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "4 May 2009"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

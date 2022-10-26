@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Atquia Patel",
+    "nino": "KT123456X",
+    "dateOfClaim": "8 October 2018",
+    "dateOfBirth": "14 June 1985",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "882",
+      "street": "Allemand",
+      "town": "",
+      "county": "Germany",
+      "postcode": ""
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": " Kiran Patel",
+    "nino": "TC123456X",
+    "dateOfDeath": "2 October 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs C Billingham",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "15 September 2016"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

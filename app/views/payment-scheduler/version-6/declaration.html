@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="/{{feature}}/{{sprint}}/have-any-payments-been-made-manually" class="link-back">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          Have all payments up to and including April 2017 been made?
+        </h1>
+
+        <form method="post">
+          <div class="form-group">
+            <button type="submit" class="button">Yes - payments are up to date</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

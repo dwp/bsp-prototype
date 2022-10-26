@@ -1,0 +1,8 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
+    Dependent children
+  </a>
+  {% if data.children['dependant-children'] == 'Yes' or data.children['pregnant'] == 'Yes' or data.children['dependant-children'] == 'No' or data.children['pregnant'] == 'No' or bf %}
+    <strong class="task-completed" >Completed</strong>
+  {% endif %}
+</li>

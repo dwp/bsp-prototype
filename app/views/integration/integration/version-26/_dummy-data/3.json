@@ -1,0 +1,60 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",
+    "fullName": "Miranda Bowman",
+    "nino": "MM123456X",
+    "dateOfClaim": "3 July 2019",
+    "dateOfBirth": "10 April 1954",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "17",
+      "street": "Grey Park",
+      "town": "Newcastle",
+      "county": "",
+      "postcode": "NE2 4PY"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Alexander Bowman",
+    "nino": "KM123456X",
+    "dateOfBirth": "25 September 1951",
+    "dateOfDeath": "25 June 2018"  
+  },
+  "children": {
+    "dependant": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "",
+    "number": ""
+  },
+  "payment": {
+    "nameOnAccount": "Mrs M Bowman",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "19 March 1980"
+  },
+  "conts": {
+    "year": "2014"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "21 August 2018",
+      "backdated": "21 August 2018",
+      "firstMonthly": "2 September 2018"
+    }
+  }
+}

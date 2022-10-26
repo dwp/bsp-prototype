@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Children details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+      <form method="post" autocomplete="off">
+        <fieldset>
+          <legend><h1 class="heading-large">What date did they die?</h1></legend>
+
+          <div class="form-group">
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dateOfDeath-day">
+                  Day
+                </label>
+                <input class="form-control" id="dateOfDeath-day" type="number" name="dateOfdeath[day]" aria-describedby="dateOfDeath-hint" value="{{data.dateOfDeath.day}}">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dateOfDeath-month">
+                  Month
+                </label>
+                <input class="form-control" id="dateOfDeath-month" type="number" name="dateOfdeath[month]" value="{{data.dateOfdeath.month}}">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dateOfDeath-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="dateOfDeath-year" min="0" name="dateOfdeath[year]" value="{{data.dateOfDeath.year}}">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <button class="button" type="submit">Continue</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

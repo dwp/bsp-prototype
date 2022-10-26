@@ -1,0 +1,67 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": "",
+	"settings": 1
+  },
+  "claimant": {
+    "title": "Mr",
+    "fullName": "Alexander Smith",
+    "nino": "TX613933C",
+    "dateOfClaim": "02 September 2020",
+    "dateOfBirth": "15 June 1959",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "81",
+      "street": "Ross Road",
+      "town": "Marshbrook",
+      "county": "UK",
+      "postcode": "SY6 3EN"
+    },
+    "contact": {
+    }
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Smith Jane",
+    "nino": "AB123456C",
+    "dateOfBirth": "19 February 1960",
+    "dateOfDeath": "20 August 2020"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Alex Smith",
+    "sortCode": "090807",
+    "accountNumber": "23146598",
+    "country": "United Kingdom"
+  },
+  "address": {
+	 "building": "81",
+     "street": "Ross Road",
+     "town": "Marshbrook",
+     "country": "UK",
+     "postcode": "SY6 3EN"
+  },
+  "communication": {
+	 "text8": "None"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "02 August 1979"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

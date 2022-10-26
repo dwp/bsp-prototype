@@ -1,0 +1,92 @@
+<div id="tasks-content">
+  <ol class="task-list">
+    <li>
+      <h2 class="task-list-section">
+        <span class="task-list-section-number">1. </span> Enter claim information
+      </h2>
+      <ul class="task-list-items">
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/capture/claimant-details">
+            Claimant details
+          </a>
+          {% if data.claimant.address %}
+            <strong class="task-completed" >Completed</strong>
+          {% endif %}
+        </li>
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/capture/partner-details">
+            Partner details
+          </a>
+          {% if data.partner %}
+            <strong class="task-completed" >Completed</strong>
+          {% endif %}
+        </li>
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/capture/payment-details">
+            Payment details
+          </a>
+          {% if data['payment-details-provided'] === 'Yes' %}
+            <strong class="task-completed" >Completed</strong>
+          {% elif data['payment-details-provided'] === 'No' %}
+            <strong class="task-incomplete" >Not complete</strong>
+          {% endif %}
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h2 class="task-list-section">
+        <span class="task-list-section-number">2. </span> Verify evidence
+      </h2>
+      <ul class="task-list-items">
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/verify/marriage">
+            Marriage
+          </a>
+          {% if data.marriage %}
+            <strong class="task-completed" >Completed</strong>
+          {% endif %}
+        </li>
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/verify/death">
+            Death
+          </a>
+          {% if data.dateOfdeath %}
+            <strong class="task-completed" >Completed</strong>
+          {% endif %}
+        </li>
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/verify/child-benefit">
+            Dependent children
+          </a>
+          {% if data.children %}
+            <strong class="task-completed" >Completed</strong>
+          {% endif %}
+        </li>
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/verify/contributions">
+            National Insurance contributions
+          </a>
+          {% if data.conts %}
+            <strong class="task-completed" >Completed</strong>
+          {% endif %}
+        </li>
+      </ul>
+    </li>
+    {% if data.conts and data.children and data.dateOfdeath and data.marriage and 
+          data['payment-details-provided'] === 'Yes' and data.partner and data.claimant
+    %}
+      <li>
+        <h2 class="task-list-section">
+          <span class="task-list-section-number">3. </span> Submit claim
+        </h2>
+        <ul class="task-list-items">
+          <li class="task-list-item">
+            <a class="task-name" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}">
+              Check and confirm
+            </a>
+          </li>
+        </ul>
+      </li>
+    {% endif %}
+  </ol>
+</div>

@@ -1,0 +1,85 @@
+<h2 class="heading-small th">
+  Verification
+</h2>
+
+<dl class="data-summary govuk-check-your-answers cya-questions-short">
+  {% if data.marriage.verified %}
+    <div>
+      <dt>
+        Marriage
+      </dt>
+      {% if data.marriage.verified === 'Yes' %}
+        <dd class="cya-answer">
+          {{d.marriage.where}}<br />
+          {{d.marriage.dateOfMarriage}}
+        </dd>
+      {% else %}
+        <dd class="cya-answer">
+          Proof of marriage or civil partnership needed
+        </dd>
+      {% endif%}
+      {% if not decision %}
+        <dd class="cya-change">
+          <a class="bold" href="#">
+            Change<span class="visually-hidden"> marriage verification</span>
+          </a>
+        </dd>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if data.dateOfdeath %}
+    <div>
+      <dt>
+        Death
+      </dt>
+      <dd class="cya-answer">
+        Customer Information System<br />
+        {{d.partner.dateOfDeath}}
+      </dd>
+      {% if not decision %}
+        <dd class="cya-change">
+          <a class="bold" href="#">
+            Change<span class="visually-hidden"> death verification</span>
+          </a>
+        </dd>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if data.conts %}
+    <div>
+      <dt>
+        National Insurance contributions
+      </dt>
+      <dd class="cya-answer">
+        {{d.conts.year}}
+      </dd>
+      {% if not decision %}
+        <dd class="cya-change">
+          <a class="bold" href="#">
+            Change<span class="visually-hidden"> National Insurance verification</span>
+          </a>
+        </dd>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if data.children['dependant-children'] === 'Yes' %}
+    <div>
+      <dt>
+        Child benefit number
+      </dt>
+      <dd class="cya-answer">
+        {{d.children['chb-number']}}
+      </dd>
+      {% if not decision %}
+        <dd class="cya-change">
+          <a class="bold" href="#">
+            Change<span class="visually-hidden"> children verification</span>
+          </a>
+        </dd>
+      {% endif %}
+    </div>
+  {% endif %}
+</dl>

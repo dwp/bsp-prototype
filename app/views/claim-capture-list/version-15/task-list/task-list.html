@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Unfinished claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">
+            {{d2[scenario].claimant.fullName or d.claimant.fullName}}
+          </span>
+          {{d2[scenario].claimant.nino or d.claimant.nino}}
+        </h1>
+        <span class="claim-status">
+          Unfinished
+        </span>
+
+        <div class="tabs">
+          <div class="tabs-nav">
+            <ul class="tabs-list">
+              <li>
+                <a href="#tasks-to-complete">
+                  Task to complete
+                </a>
+              </li>
+              <li>
+                <a href="#claim-details">
+                  Claim details
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tabs-content">
+            <div class="tabs-panel" id="tasks-to-complete">
+              <div class="tabs-panel-inner">
+                <h2 class="js-hidden heading-medium">
+                  Tasks to complete
+                </h2>
+
+                {% include './_tasks-to-complete.html' %}
+              </div>
+            </div>
+
+            <div class="tabs-panel" id="claim-details">
+              <div class="tabs-panel-inner">
+                <h2 class="js-hidden heading-medium">
+                  Claim details
+                </h2>
+
+                {% include '../common/_details-claim.html' %}
+                {% include '../common/_details-contact.html' %}
+                {% if d.children %}
+                  {% include '../common/_details-children.html' %}
+                {% endif %}
+                {% include '../common/_details-payment.html' %}
+                {% include '../common/_details-verification.html' %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column-one-third">
+        {% include './../history/_history.html' %}
+      </div>
+    </div>
+    <a class="secret-link" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}" aria-hidden="true" tabindex="-1">Skip to next page</a>
+  </main>
+
+{% endblock %}

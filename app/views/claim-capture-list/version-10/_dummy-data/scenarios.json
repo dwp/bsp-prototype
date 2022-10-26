@@ -1,0 +1,34 @@
+{
+  "1": {
+    "claimant": {
+      "fullName": "David Jones",
+      "nino": "AA123456X"
+    },
+    "partner": {
+      "fullName": "Claire Jones",
+      "nino": "AB123456X"
+    }
+  },
+
+  "2": {
+    "claimant": {
+      "fullName": "Suzanne Evans",
+      "nino": "BB123456X"
+    },
+    "partner": {
+      "fullName": "Jonathan Evans",
+      "nino": "BA123456X"
+    }
+  },
+
+  "3": {
+    "claimant": {
+      "fullName": "Sophie Barker",
+      "nino": "CC123456X"
+    },
+    "partner": {
+      "fullName": "Joseph Barker",
+      "nino": "BA123456X"
+    }
+  }
+}

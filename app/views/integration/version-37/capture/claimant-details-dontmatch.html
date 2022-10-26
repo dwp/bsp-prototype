@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claimant name
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/capture/editname/claimant-names/{{scenario}}" class="link-back">Back</a>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group" id="claimant-name">
+            
+            <div id="claimant-name-fullname">
+              <h1 class="heading-large"> Claimant details don't match </h1>
+				<h2>The information you entered does not match the data in the Customer Information System (CIS).</h2>
+				<br/>
+				<p>You may need to contact the claimant to check their details.</p>
+				
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Michelle Barker",
+    "nino": "CC123456X",
+    "dateOfClaim": "15 February 2018",
+    "dateOfBirth": "29 June 1980",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "118",
+      "street": "Barber Close",
+      "town": "Eastwood",
+      "county": "Nottingham",
+      "postcode": "NT5 2RT"
+    },
+    "contact": {
+      "home": "0131481367"
+    }
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": " Joseph Barker",
+    "nino": "CB123456X",
+    "dateOfDeath": "5 February 2018"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "Yes",
+    "number": "CHB123456AB"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs M Barker",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "16 July 2008"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

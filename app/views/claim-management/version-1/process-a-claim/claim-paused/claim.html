@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Task list
+{% endblock %}
+
+{% if data.firstClaimFinished == "Yes" %}
+  {% set name = "Jane Doe" %}
+  {% set nino = "BB123456B" %}
+{% else %}
+  {% set name = "John Smith" %}
+  {% set nino = "AA123456A" %}
+{% endif %}
+
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">{{name}}</span>
+          {{nino}}
+        </h1>
+        <span class="claim-status claim-status-paused">
+          PAUSED CLAIM
+        </span>
+
+        <p>
+          <span class="bold">
+            Assigned to<br />
+          </span>
+          {{data.currentUser}}
+        </p>
+
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+              <span class="task-list-section-number">Verification</span> 
+            </h2>
+            
+            <ul class="task-list-items">              
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-marriage">
+                  Marriage
+                </a>
+                {% if data.marriageVerified == 'Yes' %}
+                  <strong class="task-completed">Completed</strong>
+                {% elif data.marriageVerified == 'No' %}
+                  <strong class="unable-to-verify">Verification needed</strong>
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        {% if data.marriageVerified %}
+          {% if data.marriageVerified == "Yes" %}
+            <h2 class="heading-medium">Pay claim</h2>
+            <p>
+              Everything has been verified. This claim can now be put into 
+              payment.
+            </p>
+
+            <a href="/{{feature}}/{{sprint}}/process-a-claim/schedule-created" class="button">Create payment schedule</a>      
+          {% endif %}
+
+          {% if 
+            data.deathVerified == "No" or data.marriageVerified == "No" 
+            or data.chbVerified == "No" or data.contsVerified == "No" 
+          %}
+            <h2 class="heading-medium">Claim can't be processed</h2>
+
+            <p>
+              This claim will need to be paused until everything can be verified.
+            </p>
+            
+            <a href="/{{feature}}/{{sprint}}/to-do-list" class="button">Continue</a>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <div class="column-one-third">
+        <h2 class="heading-medium">Log</h2>
+        
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">Death verified</h3>
+          <p>By Jack Jones <br />17 April 2017</p>
+        </div>
+
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">National Insurance contributions verified</h3>
+          <p>By Jack Jones <br />17 April 2017</p>
+        </div>
+
+        {% if data.marriageVerified == 'Yes' %}
+          <div class="panel panel-border-narrow">
+            <h3 class="heading-small">Marriage verified</h3>
+            <p>By {{data.currentUser}} <br />24 April 2017</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,10 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+    National Insurance contributions
+  </a>
+  {% if data.conts.enough === 'Yes' or data.conts.verified === 'Yes' or bf %}
+    <strong class="task-completed" >Completed</strong>
+  {% elif data.conts.verified === 'No' %}
+    <strong class="task-incomplete" >Not complete</strong>
+  {% endif %}
+</li>

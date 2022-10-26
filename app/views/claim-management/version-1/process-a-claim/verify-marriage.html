@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/{{feature}}/{{sprint}}/claim-1">Back to claim</a>
+
+        <h1 class="heading-xlarge">Can you verify the marriage?</h1>
+
+        <p>
+          If the marriage is not verified in CIS, you will need to see the 
+          marriage certificate.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">
+              <div class="multiple-choice">
+                <input id="radio-inline-1" type="radio" name="marriageVerified" value="Yes">
+                <label for="radio-inline-1">Yes</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input id="radio-inline-2" type="radio" name="marriageVerified" value="No">
+                <label for="radio-inline-2">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="button" type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

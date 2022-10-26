@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+  #global-header .header-proposition a#proposition-name:hover {
+   text-decoration: none;
+   cursor: text;
+  }
+
+  #global-header a:focus {
+    outline: 0;
+    background: none;
+  }
+
+  #global-header #logo {
+    text-decoration: none;
+    border-bottom: 0;
+    cursor: text;
+  }
+</style>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class=heading-xlarge>
+        We're busy sending payments
+      </h1>
+
+      <p>
+        The service will be available again tomorrow.
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block page_scripts %}
+  <script>
+    $(document).on('click', 'a', function (e) {
+      e.preventDefault();
+    });
+  </script>
+{% endblock %}

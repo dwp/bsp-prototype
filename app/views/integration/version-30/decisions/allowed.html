@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim allowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+
+        {% if scenario == '1' %}
+        <div class="govuk-box-highlight">
+          <h1 class="heading-large">
+            Claim allowed: decision sent
+          </h1>
+          <p>
+            Payment schedule created
+          </p>
+        </div>
+		    {% endif %}
+
+
+        {% if scenario == '2' %}
+        <div class="govuk-box-highlight">
+          <h1 class="heading-large">
+            Claim allowed
+          </h1>
+          <p>
+            Payment schedule created
+          </p>
+        </div>
+			<h2 class="heading-large">
+				What you need to do next
+			</h2>
+			<!--<p>The claimant has asked for the decision in:</p>
+			<ul class="largeprint-text">
+				<li>Large print</li>
+			</ul>-->
+			<p>You need to send the higher rate decision manaually</p>
+		{% endif %}
+        <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed">View this claim</a><br />
+        <!--<a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}">View this payment schedule</a>-->
+      </div>
+    </div>
+  </main>
+{% endblock %}

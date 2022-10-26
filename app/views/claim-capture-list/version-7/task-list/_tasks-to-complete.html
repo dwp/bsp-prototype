@@ -1,0 +1,26 @@
+<div id="tasks-content">
+  <ol class="task-list">
+    <li>
+      <h2 class="task-list-section">
+        <span class="task-list-section-number">1. </span> Enter claim information
+      </h2>
+      <ul class="task-list-items">
+        {% include './tasks/_task-claim-details.html' %}
+        {% include './tasks/_task-contact-details.html' %}
+        {% include './tasks/_task-payment-details.html' %}
+      </ul>
+    </li>
+    <li>
+      <h2 class="task-list-section">
+        <span class="task-list-section-number">2. </span> Verify evidence
+      </h2>
+      <ul class="task-list-items">
+        {% include './tasks/_task-verify-marriage.html' %}
+        {% include './tasks/_task-verify-death.html' %}
+        {% include './tasks/_task-verify-chb.html' %}
+        {% include './tasks/_task-verify-conts.html' %}
+      </ul>
+    </li>
+    {% include './tasks/_task-check-and-process.html' %}
+  </ol>
+</div>

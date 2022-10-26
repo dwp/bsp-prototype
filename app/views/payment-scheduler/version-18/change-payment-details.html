@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block page_scripts %}
+  <script>
+    {% include './frontend-js/typeahead.bundle.js' %}
+    {% include './frontend-js/bank-details.js' %}
+    {% include './frontend-js/bank-validation-test.js' %}    
+  </script>
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <a href="/{{feature}}/{{sprint}}/schedule" class="link-back">Back to schedule</a>
+
+    <div class="grid-row">
+
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">Change payment details</h1>
+
+        <form method="post">
+          <div class="form-section">
+            <div class="form-group">
+              <label class="form-label" for="input-accountCountry">Country</label>
+              <input class="form-control" id="input-accountCountry" type="text" name="temp-bankDetails[country]" autocomplete="off">
+            </div>
+            
+            <span id="validate"></span>
+            
+            <div id="countryFields">
+              {% include './bank-fields/uk.html'%}
+              {% include './bank-fields/five-iban.html'%}
+            </div>
+          </div>
+          
+          <button type="submit" class="button">
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

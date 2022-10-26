@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Dependent children
+{% endblock %}
+
+{% block customNav %}
+  {% include '../../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="heading-small">
+                <h1 class="heading-large">
+                  Does the claimant have Child Benefit number?
+                </h1>
+              </legend>
+
+              <div class="multiple-choice" data-target="chb-hidden">
+                <input id="dependant-children-yes" type="radio" name="children[dependant-children]" value="Yes">
+                <label for="dependant-children-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice" data-target="pregnant-hidden">
+                <input id="dependant-children-no" type="radio" name="children[dependant-children]" value="No">
+                <label for="dependant-children-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="chb-hidden">
+            <label class="form-label" for="chb-number">Child Benefit number</label>
+            <input class="form-control" type="text" name="chb[number]">
+          </div>
+
+          <button class="button" type="submit">Continue</button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+{% endblock %}

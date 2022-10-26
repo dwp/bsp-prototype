@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Tracy Anderson",
+    "nino": "QS123456X",
+    "dateOfClaim": "18 March 2018",
+    "dateOfBirth": "1 April 1975",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "61",
+      "street": "Talbot Drive",
+      "town": "Sunderland",
+      "county": "Tyne and Wear",
+      "postcode": "SR6 1RD"
+    },
+    "contact": {
+      "home": "01915618821"
+    }
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Ian Anderson",
+    "nino": "QQ123456X",
+    "dateOfDeath": "11 March 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs T Anderson",
+    "sortCode": "112211",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "18 September 2000"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

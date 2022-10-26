@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="/{{feature}}/{{sprint}}/change-payment-details" class="link-back">Change bank details</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">Confirm payment details</h1>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">Country</dt>
+          <dd class="data-summary-value">{{data['temp-bankDetails'].country}}</dd>
+
+          <dt class="data-summary-key">Name on account</dt>
+          <dd class="data-summary-value">{{data['temp-bankDetails'].nameOnAccount}}</dd>
+
+          <dt class="data-summary-key">{{'Sort code' if data['temp-bankDetails'].country == 'United Kingdom' else 'Bic code'}}</dt>
+          <dd class="data-summary-value">{{data['temp-bankDetails'].bankCode}}</dd>
+
+          <dt class="data-summary-key">{{'Account number' if data['temp-bankDetails'].country == 'United Kingdom' else 'Iban number'}}</dt>
+          <dd class="data-summary-value">{{data['temp-bankDetails'].bankNumber}}</dd>
+        </dl>
+
+        <br />
+        
+        <form method="post">
+          <div class="form-group">
+            <input type="hidden" name="bankDetailsChanged" value="true" />
+            <button class="button" type="submit">Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

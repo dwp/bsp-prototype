@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% set serviceName = 'Apply for Bereavement Support Payment' %}
+
+{% block page_title %}
+  Children details
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          {{serviceName}}
+        </h1>
+
+        <h2 class="heading-medium">
+          Before you start
+        </h2>
+
+        <p>
+          <a href="https://www.gov.uk/bereavement-support-payment">Check you’re eligible</a> for Bereavement Support Payment.
+        </p>
+
+        <h2 class="heading-medium">
+          To apply you’ll need:
+        </h2>
+        <ul class="list list-bullet">
+          <li>the date your husband, wife or civil partner died</li>
+          <li>your husband, wife or civil partner’s National Insurance number</li>
+          <li>your National Insurance number</li>
+          <li>your bank details</li>
+          <li>
+            to send your marriage or civil partnership certificate, if you have it
+          </li>
+        </ul>
+
+        <p>
+          <a class="button button-start" href="/{{feature}}/{{sprint}}/were-you-married" role="button">Start now</a>
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 6,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",
+    "fullName": "Jack Peters",
+    "nino": "JQ123456X",
+    "dateOfClaim": "30 January 2018",
+    "dateOfBirth": "29 April 1960",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "94",
+      "street": "Coral Drive",
+      "town": "Oldham",
+      "county": "Manchester",
+      "postcode": "M TB9"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Claire Peters",
+    "nino": "AB123456X",
+    "dateOfDeath": "29 January 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr J Peters",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "11 March 1992"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

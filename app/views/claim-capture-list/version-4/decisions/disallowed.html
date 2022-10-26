@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim disallowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+          Claim disallowed
+        </h1>
+
+        <h2 class="heading-medium">
+          Reason
+        </h2>
+         <p>
+          The claimant was over State Pension age when their partner died.
+         </p>
+
+        <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/disallowed">View claim</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

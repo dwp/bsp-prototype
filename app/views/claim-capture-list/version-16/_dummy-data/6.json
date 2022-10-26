@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 5,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Daniel James Owen",
+    "nino": "MQ123456Q",
+    "dateOfClaim": "9 May 2018",
+    "dateOfBirth": "23 September 1978",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "12",
+      "street": "Roundpark Lane",
+      "town": "Manchester",
+      "county": "Greater Manchester",
+      "postcode": "M9 4QR"
+    },
+    "contact": {
+      "home": "04612934173"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Kelly Owen",
+    "nino": "QA123456Q",
+    "dateOfDeath": "17 May 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr D Owen",
+    "sortCode": "112233",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "5 March 2001"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}
+

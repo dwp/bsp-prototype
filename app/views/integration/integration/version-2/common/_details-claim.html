@@ -1,0 +1,179 @@
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Claimant details
+    {% if scenario === '1' or scenario === '2' %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% elif not decision %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Title
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.title}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's title</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      Full name
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.fullName}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's full name</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.nino}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's National Insurance number</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      Date of birth
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.dateOfBirth}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's date of birth</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      Sex
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.sex}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's sex</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Deceased details
+    {% if scenario === '1' or scenario === '2' %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% elif not decision %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Title
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.title or showDetails}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's title</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      Full name
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.fullName or showDetails}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's full name</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.nino or showDetails}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's National Insurance number</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      Date of death
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.dateOfDeath or showDetails}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's date of death</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Date of claim
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Date of claim
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.dateOfClaim}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+          Change <span class="visually-hidden"> date of claim</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+</div>

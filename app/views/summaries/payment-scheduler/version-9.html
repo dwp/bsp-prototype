@@ -1,0 +1,59 @@
+<div class="grid-row">
+  <div class="column-one-third">
+    <dl>
+      <dt class="heading-small">Date of release</dt>
+      <dd>1 June 2017</dd>
+    </dl>
+  </div>
+
+  <div class="column-one-third">
+    <dl>
+      <dt class="heading-small">Feature</dt>
+      <dd>Payment Scheduler</dd>
+    </dl>
+  </div>
+
+  <div class="column-one-third">
+    <dl>
+      <dt class="heading-small">Related stories</dt>
+      <dd>BPS-707</dd>
+    </dl>
+  </div>
+</div>
+
+<h2 class="heading-medium">Duplicate claim</h2>
+<p>
+  Navigates to duplicate screen on AA111999A.
+</p>
+
+<h3 class="heading-small">Changes made</h3>
+
+<p>
+  Exploring what happens if an agent tries to create a schedule when there is 
+  already an active schedule currently assigned to a particular NINO.
+</p>
+
+<p>
+  Use <strong class="bold">AA111999A</strong> to get this behavour to show in the prototype.
+</p>
+
+<h3 class="heading-small">Research notes</h3>
+<p>
+  Agents were aware from the error message that this claim must already have a 
+  payment schedule created, however there was some confusion surrounding whether 
+  this was due to the validation issue created for BPS-181.
+</p>
+<p>
+  Agents presumed that the claim must be a duplicate so should therefore be 
+  disallowed even in cases where a genuine second claim was provided. This may 
+  be because agents have been primarily processing Bereavement Benefit cases so 
+  the knowledge surrounding BSP legislation is not fully ingrained. The guidance 
+  sheet provided detailing what should be done if a duplicate is suspected caused 
+  some confusion as this lead agents to believe 'BSP Manager' to be a button to 
+  use under these circumstances rather than the name of the system in which the 
+  search should be performed. 
+</p>
+
+<br />
+
+<a href="/payment-scheduler/version-9" class="button button-start">Start now</a>

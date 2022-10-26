@@ -1,0 +1,17 @@
+<h2 class="heading-medium">Claim history</h2>
+<ul class="log">
+  {% if data.payment['account-number'] %}
+    <li>
+      <span class="line"></span>
+      <h3 class="bold">Payment details changed</h3>
+      <span class="paused-until-date">by John Doe</span><br />
+      <span class="paused-until-date">13 June 2018</span>
+    </li>
+  {% endif %}
+  {% include './scenarios/' + scenario + '.html' %}
+</ul>
+{% if page === 'schedule' %}
+  <div class="panel panel-colour-timeline">
+    <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed/">View full claim history</a>
+  </div>
+{% endif %}

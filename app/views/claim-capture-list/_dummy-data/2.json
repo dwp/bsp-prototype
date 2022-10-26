@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Helen Wilson",
+    "nino": "BB123456X",
+    "dateOfClaim": "10 January 2018",
+    "dateOfBirth": "2 November 1965",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "29",
+      "street": "The Grove",
+      "town": "Bolton",
+      "county": "Manchester",
+      "postcode": "BL3 2RW"
+    },
+    "contact": {
+      "home": "0208827631"
+    }
+  },
+  "partner": {
+    "fullName": "Terry Wilson",
+    "nino": "BA123456X",
+    "dateOfDeath": "3 January 2018"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs H Wilson",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "20 December 1993"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

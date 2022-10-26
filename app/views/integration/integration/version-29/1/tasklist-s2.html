@@ -1,0 +1,564 @@
+{% extends "layout.html" %}
+{% set findActive = '' %}
+
+
+
+{% block customNav %}
+  {% include '../custom-nav1.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">Alison Green</span>
+          ZZ 12 34 56 A
+        </h1>
+        <span class="claim-status">
+          Unfinished
+        </span>
+
+        <div class="tabs">
+          <div class="tabs-nav">
+            <ul class="tabs-list" role="tablist">
+              <li role="presentation">
+                <a href="#tasks-to-complete" aria-selected="true" role="tab" tabindex="0" aria-controls="tasks-to-complete">
+                  Tasks to complete
+                </a>
+              </li>
+              <li role="presentation">
+                <a href="#claim-details" aria-selected="false" role="tab" tabindex="-1" aria-controls="claim-details">
+                  Claim details
+                </a>
+              </li>
+             <!-- <li role="presentation">
+                <a href="#evidence" aria-selected="false" role="tab" tabindex="-1" aria-controls="evidence">
+                  Evidence
+                </a>
+              </li> -->
+            </ul>
+          </div>
+
+          <div class="tabs-content">
+            <div class="tabs-panel" id="tasks-to-complete" role="tabpanel">
+              <div class="tabs-panel-inner" tabindex="0">
+                <h2 class="js-hidden heading-medium">
+                  Tasks to complete
+                </h2>
+
+                <style>.task-list-items { padding-left: 0; }</style>
+<div id="tasks-content">
+  <ol class="task-list">
+    <li>
+      <h2 class="task-list-section">
+        Enter claim information
+      </h2>
+      <ul class="task-list-items">
+        <li class="task-list-item">
+  <a class="task-name">
+    Claim details
+  </a>
+  <strong class="task-completed">Completed</strong>
+</li>
+        
+       
+        <li class="task-list-item">
+  <a class="task-name" href="/integration/version-28/capture/payment-details/2">
+    Payment details
+  </a>
+ <!-- <strong class="task-completed">Completed</strong> -->
+</li>
+  
+<li class="task-list-item">
+  <a class="task-name" href="/integration/version-28/capture/children-details/2">
+    Dependent children
+  </a>
+  
+  
+</li>
+
+</ul>
+    </li>
+    <li>
+      <h2 class="task-list-section">
+        Verify evidence
+      </h2>
+      <ul class="task-list-items">
+        <li class="task-list-item">
+  <a class="task-name" href="/integration/version-28/verify/death/2">
+    Death
+  </a>
+  
+    <strong class="task-completed">Completed</strong>
+  
+</li>
+        <li class="task-list-item">
+  <a class="task-name" href="/integration/version-28/verify/relationship/2">
+    Marriage or civil partnership
+  </a>
+  
+</li>
+
+<!--
+<li class="task-list-item">
+  <a class="task-name" href="/integration/version-28/verify/relationship/2">
+    Child Benefit
+  </a>
+  
+</li>
+-->
+
+        <li class="task-list-item">
+  <a class="task-name" href="/integration/version-28/verify/contributions/2">
+    National Insurance contributions
+  </a>
+  
+  <!--  <strong class="task-completed">Completed</strong> -->
+  
+</li>
+        
+      </ul>
+    </li>
+    
+
+  </ol>
+</div>
+
+<button class=" button button-red">
+  Delete claim
+</button>
+              </div>
+            </div>
+ 
+           
+
+
+
+
+            <div class="tabs-panel" id="claim-details" role="tabpanel" aria-hidden="true">
+              <div class="tabs-panel-inner" tabindex="0">
+                <h2 class="js-hidden heading-medium">
+                  Claim details
+                </h2>
+
+                <div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Claimant details
+    
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    
+  </h2>
+
+  <dl class="data-summary">
+    
+
+    <dt class="data-summary-key">
+      Full name
+    </dt>
+    <dd class="data-summary-value">
+      Alison Green
+      
+    </dd>
+
+    <dt class="data-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="data-summary-value">
+      ZZ 12 34 56 A
+      
+    </dd>
+
+    <dt class="data-summary-key">
+      Date of birth
+    </dt>
+    <dd class="data-summary-value">
+      14 September 1975
+      
+    </dd>
+
+    <dt class="data-summary-key">
+      Sex
+    </dt>
+    <dd class="data-summary-value">
+      Female
+      
+    </dd>
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Deceased details
+    
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    
+  </h2>
+
+  <dl class="data-summary">
+    
+
+    <dt class="data-summary-key">
+      Full name
+    </dt>
+    <dd class="data-summary-value">
+      Alexander Green
+      
+    </dd>
+
+    <dt class="data-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="data-summary-value">
+      ZZ 12 34 56 B
+      
+    </dd>
+
+   <!-- <dt class="data-summary-key">
+      Date of birth
+    </dt>
+    <dd class="data-summary-value">
+      20 June 1982
+      
+    </dd>
+-->
+    <dt class="data-summary-key">
+      Date of death
+    </dt>
+    <dd class="data-summary-value">
+      20 February 2020
+      
+    </dd>
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Date of claim
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Date of claim
+    </dt>
+    <dd class="data-summary-value">
+      25 February 2020
+      
+    </dd>
+  </dl>
+</div>
+                
+ 
+
+
+<!--
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Payment details
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Name on account
+    </dt>
+    <dd class="data-summary-value">
+      Rita Wilson
+      <span class="change-link">
+        <a href="/integration/version-28/capture/payment-details/2">
+          Change <span class="visually-hidden"> name on account</span>
+        </a>
+      </span>
+    </dd>
+
+    <dt class="data-summary-key">
+      Sort code
+    </dt>
+    <dd class="data-summary-value">
+      202020
+      <span class="change-link">
+        <a href="/integration/version-28/capture/payment-details/2">
+          Change <span class="visually-hidden"> sort code</span>
+        </a>
+      </span>
+    </dd>
+
+    <dt class="data-summary-key">
+      Account number
+    </dt>
+    <dd class="data-summary-value">
+      12344321
+      <span class="change-link">
+        <a href="/integration/version-28/capture/payment-details/2">
+          Change <span class="visually-hidden"> account number</span>
+        </a>
+      </span>
+    </dd>
+
+  </dl>
+</div>
+
+
+
+
+
+               <div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Children details
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Dependent children
+    </dt>
+    <dd class="data-summary-value">
+      Yes
+      <span class="change-link">
+        <a href="/integration/version-28/capture/children-details/2">
+          Change <span class="visually-hidden"> dependent children details</span>
+        </a>
+      </span>
+    </dd>
+
+    <dt class="data-summary-key">
+      Pregnant
+    </dt>
+    <dd class="data-summary-value">
+      No
+      <span class="change-link">
+        <a href="/integration/version-28/capture/children-details/2">
+          Change <span class="visually-hidden"> whether the claimant was pregnant</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+</div>
+                
+                
+         
+-->
+ 
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Death
+    
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    
+  </h2>
+
+  <dl class="data-summary">
+    
+
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    <dd class="data-summary-value">
+      CIS
+      
+    </dd>
+
+    <dt class="data-summary-key">
+      Date
+    </dt>
+    <dd class="data-summary-value">
+      20 February 2020
+      
+    </dd>
+
+
+  </dl>
+</div>
+
+<!--
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    National Insurance contributions
+    
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    
+  </h2>
+
+  <dl class="data-summary">
+    
+
+    <dt class="data-summary-key">
+      Year
+    </dt>
+    <dd class="data-summary-value">
+      2019
+      
+    </dd>
+
+    
+  </dl>
+</div>
+
+     
+-->
+
+  <button class=" button button-red">
+    Delete claim
+  </button>
+              </div>
+            </div>
+
+            <div class="tabs-panel" id="evidence" role="tabpanel" aria-hidden="true">
+              <div class="tabs-panel-inner" tabindex="0">
+                <h2 class="js-hidden heading-medium">
+                  Evidence
+                </h2>
+
+                <div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Marriage or civil partnership
+    
+      <p class="verified-badge">
+        Not verified
+      </p>
+    
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    
+      <dd class="data-summary-value">
+        Evidence of marriage or civil partnership needed
+        <span class="change-link">
+          <a href="/integration/version-28/verify/relationship/2">
+            Change <span class="visually-hidden"> evidence of marriage or civil partnership</span>
+          </a>
+        </span>
+      </dd>
+    
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Death
+    
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    
+      <dd class="data-summary-value">
+        
+          CIS<br>
+        
+        <span class="change-link">
+          <a href="/integration/version-28/verify/death/2">
+            Change <span class="visually-hidden"> evidence of death</span>
+          </a>
+        </span>
+      </dd>
+      <dt class="data-summary-key">
+        Date
+      </dt>
+      <dd class="data-summary-value">
+        12 May 2018
+        <span class="change-link">
+          <a href="/integration/version-28/verify/death/2">
+            Change <span class="visually-hidden"> verified date of death</span>
+          </a>
+        </span>
+      </dd>
+    
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    National Insurance contributions
+    
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    
+  </h2>
+
+  <dl class="data-summary">
+    
+      <dt class="data-summary-key">
+        Year
+      </dt>
+      <dd class="data-summary-value">
+        2016
+        <span class="change-link">
+          <a href="/integration/version-28/verify/contributions/2">
+            Change <span class="visually-hidden"> year used for National Insurance contributions</span>
+          </a>
+        </span>
+      </dd>
+
+      
+    
+  </dl>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column-one-third">
+        <h2 class="heading-medium">Claim history</h2>
+<ul class="log">
+
+  
+
+  <!--
+
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Contributions verified</h3>
+    <span class="paused-until-date">21 February 2020</span>
+  </li>
+-->
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Death verified</h3>
+    <span class="paused-until-date">25 February 2020</span>
+  </li>
+  
+  <!--
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Dependent children recorded</h3>
+    <span class="paused-until-date">21 February 2020</span>
+  </li>
+
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Payment details recorded</h3>
+    <span class="paused-until-date">21 February 2020</span>
+  </li>
+-->
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Claim details recorded</h3>
+    <span class="paused-until-date">25 February 2020</span>
+  </li>
+</ul>
+
+      </div>
+    </div>
+  </main>
+{% endblock %}

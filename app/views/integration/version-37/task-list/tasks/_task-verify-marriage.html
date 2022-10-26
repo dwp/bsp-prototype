@@ -1,0 +1,13 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/verify/relationship/{{scenario}}">
+    Relationship
+  </a>
+  <!-- <strong class="task-completed">Completed</strong> -->
+ {% if data.marriage.verified === 'Yes' or data.marriage.verified1 === 'Yes' %}
+    <strong class="task-completed">Completed</strong>
+  {% endif %}
+
+  {% if data.disallowthecliam === 'Yes3' %}
+  <strong class="task-incomplete" >Pending</strong>
+  {% endif %}
+</li>

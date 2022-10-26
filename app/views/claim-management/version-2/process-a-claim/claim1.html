@@ -1,0 +1,102 @@
+{% extends "layout-dwp-admin.html" %}
+
+{% block page_title %}
+  Task list
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">Jane Seymore</span>
+          AA111999A
+        </h1>
+        <span class="claim-status claim-status-paused">
+          PAUSED CLAIM
+        </span>
+
+        <p>
+          <span class="bold">
+            Assigned to<br />
+          </span>
+          {{data.currentUser}}
+        </p>
+
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+              <span class="task-list-section-number">Verification</span> 
+            </h2>
+            
+            <ul class="task-list-items">              
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-marriage/1">
+                  Marriage
+                </a>
+                {% if data.marriageVerified == 'married' or data.marriageVerified == 'notMarried' %}
+                  <strong class="task-completed">Completed</strong>
+                {% elif data.marriageVerified == 'noEvidence' %}
+                  <strong class="evidence-needed">Evidence needed</strong>
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        {% if data.marriageVerified %}
+          {% if data.marriageVerified === 'notMarried' %}
+            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-1/reject">
+              <h2 class="heading-medium">Reject claim</h2>
+              <p>
+                The evidence provided makes the claimant ineligible for BSP.
+              </p>
+
+              <button type="submit" class="button">Reject claim</button>
+            </form>
+          {% elif data.marriageVerified == "married" %}
+            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-2/verified">
+              <h2 class="heading-medium">Pay claim</h2>
+              <p>
+                Everything has been verified. This claim can now be put into 
+                payment.
+              </p>
+
+              <button type="submit" class="button">Create payment schedule</button>
+            </form>
+          {% elif data.marriageVerified === 'noEvidence' %}
+            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-2/not-verified">
+              <h2 class="heading-medium">Claim can't be processed</h2>
+
+              <p>
+                This claim will need to be paused until everything can be verified.
+              </p>
+              
+              <button type="submit" class="button">Continue</button>
+            </form>     
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <div class="column-one-third">
+        <h2 class="heading-medium">Log</h2>
+        
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">Death verified</h3>
+          <p>By Jack Jones <br />17 April 2017</p>
+        </div>
+
+        {% if data.marriageVerified == 'married' or data.marriageVerified === 'notMarried' %}
+          <div class="panel panel-border-narrow">
+            <h3 class="heading-small">Marriage verified</h3>
+            <p>By {{data.currentUser}} <br />24 April 2017</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

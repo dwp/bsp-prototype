@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+    <h1 class="heading-xlarge">Settings</h1>
+    <form method="post">
+      <div class="form-group">
+        <fieldset>      
+          <div class="multiple-choice">
+            <input id="claimType-unblocked" type="radio" name="claimType" value="new">
+            <label for="claimType-unblocked">New claim</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="claimType-bf" type="radio" name="claimType" value="paused">
+            <label for="claimType-bf">Paused claim</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="currentUser">Agent name</label>
+        <input class="form-control" id="currentUser" name="currentUser" type="text">
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="button">Continue</button>
+      </div>
+    </form>
+  </main>
+{% endblock %}

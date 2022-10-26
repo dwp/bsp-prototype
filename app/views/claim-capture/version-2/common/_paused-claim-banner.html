@@ -1,0 +1,11 @@
+{% if data.pausedClaims == 'Yes' %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="notification-banner panel panel-border-narrow">
+        <h2 class="heading-small">1 paused claim need attention</h2>
+        <a href="/{{feature}}/{{sprint}}/claim/4/paused">Check this claim</a>
+        <!-- Check the highest priority claim if over 2 -->
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Sophie Carter",
+    "nino": "TZ123456X",
+    "dateOfClaim": "10 July 2018",
+    "dateOfBirth": "17 September 1975",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "41",
+      "street": "Blackberry Drive",
+      "town": "Doncaster",
+      "county": "Yorkshire",
+      "postcode": "DB3 4NT"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "David Carter",
+    "nino": "KZ123456X",
+    "dateOfDeath": "6 July 2016"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs A Meadows",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "15 September 2000"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

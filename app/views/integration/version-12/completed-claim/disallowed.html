@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  View claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">{{d.claimant.fullName}}</span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="claim-status claim-status-rejected">
+          Disallowed
+        </span>
+        
+        <div class="panel panel-border-narrow">
+          <h2 class="heading-small">This claim was disallowed because:</h2>
+          <ul class="list list-bullet">
+            <li>
+              the claim was more than 21 months late
+            </li>
+          </ul>
+        </div>
+
+        {% include '../common/_details-claim.html' %}
+        {# {% include '../common/_details-contact.html' %} #}
+        {# {% include '../common/_details-children.html' %} #}
+        {# {% include '../common/_details-payment.html' %} #}
+      </div>
+
+      <div class="column-one-third">
+        {% include './../history/_history.html' %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

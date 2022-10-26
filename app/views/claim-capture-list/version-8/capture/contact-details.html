@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Contact details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+      
+      <h1 class="heading-large">
+        Contact details
+      </h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group-compound">
+          <fieldset class="inline">
+            <legend class="heading-small">Address</legend>
+            
+            <div class="form-group-compound">
+              <label for="line1" class="visually-hidden">Line 1</label>
+              <input class="form-control" type="text" name="claimant[address][line1]" value="{{data.claimant.addess.line1}}">
+            </div>
+
+            <div class="form-group-compound">
+              <label for="line1" class="visually-hidden">Line 2</label>
+              <input class="form-control" type="text" name="claimant[address][line2]" value="{{data.claimant.addess.line1}}">
+            </div>
+            
+            <div class="form-group-compound">
+              <label for="line1" class="visually-hidden">Line 3</label>
+              <input class="form-control" type="text" name="claimant[address][line3]" value="{{data.claimant.addess.line1}}">
+            </div>
+
+            <div class="form-group-compound">
+              <label for="line1" class="visually-hidden">Line 4</label>
+              <input class="form-control" type="text" name="claimant[address][line3]" value="{{data.claimant.addess.line1}}">
+            </div>
+
+            <div class="form-group">
+              <label for="line1" class="form-label">Postcode</label>
+              <input class="form-control" type="text" name="claimant[address][postcode]" value="{{data.claimant.addess.postcode}}">
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="heading-small">Other contact details</legend>
+
+            <div class="multiple-choice" data-target="home-phone-hidden">
+              <input id="checkbox-home-phone" name="notUsed[checkbox-home-phone]" type="checkbox" value=true {{'checked' if data.notUsed['checkbox-home-phone'] === 'true'}}>
+              <label for="checkbox-home-phone">Home phone</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="home-phone-hidden">
+              <label class="form-label" for="home-phone">Home phone number</label>
+              <input class="form-control" type="text" id="home-phone" name="claimant[home-phone]" value="{{data.claimant['home-phone']}}">
+            </div>
+
+            <div class="multiple-choice" data-target="mobile-phone-hidden">
+              <input id="checkbox-mobile-phone" name="notUsed[checkbox-mobile]" type="checkbox" value=true {{'checked' if data.notUsed['checkbox-mobile'] === 'true'}}>
+              <label for="checkbox-mobile-phone">Mobile phone</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="mobile-phone-hidden">
+              <label class="form-label" for="mobile-phone">Mobile phone number</label>
+              <input class="form-control" type="text" id="mobile-phone" name="claimant[mobile-phone]" value="{{data.claimant['mobile-phone']}}">
+            </div>
+
+            <div class="multiple-choice" data-target="email-hidden">
+              <input id="checkbox-email" name="notUsed[checkbox-email]" type="checkbox" value=true {{'checked' if data.notUsed['checkbox-email'] === 'true'}}>
+              <label for="checkbox-email">Email</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="email-hidden">
+              <label class="form-label" for="email">Email address</label>
+              <input class="form-control" type="text" id="email" name="claimant[email]" value="{{data.claimant.email}}">
+            </div>
+          </fieldset>
+        </div>
+        
+        <button type="submit" class="button">
+          Continue
+        </button>
+      </div>
+    </form>
+  </main>
+{% endblock %}

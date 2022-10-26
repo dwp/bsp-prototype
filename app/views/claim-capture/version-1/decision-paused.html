@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim paused
+{% endblock %}
+
+{% block customNav %}
+  {% include './_custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+
+        <h1 class="heading-xlarge">
+          Claim paused for 1 week
+        </h1>
+
+        <h2 class="heading-medium">Reasons</h2>
+        <ul class="list list-bullet">
+          <li>Marriage could not be verified</li>
+        </ul>
+
+        <a href="/{{feature}}/{{sprint}}/claim-{{id}}-paused">View claim</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Partner details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/claimant-details" class="link-back">Back</a>
+
+      <h1 class="heading-xlarge">
+        Partner details
+      </h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <div class="form-group">
+            <label for="full-name">
+              <span class="form-label">Full name</span>
+            </label>
+            <input class="form-control" type="text" name="partner[full-name]" id="full-name" value="{{data.partner['full-name']}}">
+          </div>
+        
+          <div class="form-group">
+            <label for="nino">
+              <span class="form-label">
+                National Insurance number
+              </span>
+            </label>
+            <input class="form-control" type="text" name="partner[nino]" id="nino" value="{{data.partner.nino}}">
+          </div>
+
+          <fieldset>
+            <legend class="form-label-bold">What date did they die?</legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dateOfDeath-day">
+                  Day
+                </label>
+                <input class="form-control" id="dateOfDeath-day" type="number" name="partner[dateOfDeath][day]" aria-describedby="dateOfDeath-hint" value="{{data.partner.dateOfDeath.day}}">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dateOfDeath-month">
+                  Month
+                </label>
+                <input class="form-control" id="dateOfDeath-month" type="number" name="partner[dateOfDeath][month]" value="{{data.partner.dateOfDeath.month}}">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dateOfDeath-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="dateOfDeath-year" min="0" name="partner[dateOfDeath][year]" value="{{data.partner.dateOfDeath.year}}">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend class="heading-small">
+              Did they pay enough National Insurance contributions before they died?
+            </legend>
+        
+            <div class="multiple-choice" data-target="conts-year">
+              <input id="enough-conts-yes" type="radio" name="eligibility[enoughConts]" id="enough-conts-yes" value="Yes" {{'checked' if data.eligibility['enoughConts'] === 'Yes'}}>
+              <label for="enough-conts-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="industrial-injury">
+              <input id="enough-conts-no" type="radio" name="eligibility[enoughConts]" id="enough-conts-no" value="No" {{'checked' if data.eligibility['enoughConts'] === 'No'}}>
+              <label for="enough-conts-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="conts-year">
+          <label class="form-label" for="conts-year">Which year did you use as verification?</label>
+          <input class="form-control" id="conts-year" name="eligibility[contsYear]" type="number" value="{{data.eligibility.contsYear}}">
+        </div>
+
+        <button type="submit" class="button">
+          Continue
+        </button>
+      </div>
+    </form>
+  </main>
+{% endblock %}

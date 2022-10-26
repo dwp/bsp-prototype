@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/{{feature}}/{{sprint}}/claim-1">Back to claim</a>
+
+        <h1 class="heading-xlarge">Do you have proof of the marriage or civil partnership?</h1>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">
+              <div class="multiple-choice" data-target="evidence">
+                <input id="radio-inline-1" type="radio" name="marriageVerified" value="married">
+                <label for="radio-inline-1">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="radio-inline-3" type="radio" name="marriageVerified" value="noEvidence">
+                <label for="radio-inline-3">Not yet</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="evidence">
+            <label for="evidence">What evidence have you seen?</label>
+            <textarea id="marriageEvidence" class="form-control"></textarea>
+          </div>
+
+          <button class="button" type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

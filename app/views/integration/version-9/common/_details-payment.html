@@ -1,0 +1,43 @@
+<section class="details-wrapper">
+  <h2 class="heading-medium th">
+    Payment details
+  </h2>
+
+  <dl class="details-summary">
+    <dt class="details-summary-key">
+      Name on account
+    </dt>
+    <dd class="details-summary-value">
+      {{data.payment['name-on-account'] or d.payment.nameOnAccount}}
+    </dd>
+
+    <dt class="details-summary-key">
+      Sort code
+    </dt>
+    <dd class="details-summary-value">
+      {{data.payment['sort-code'] or d.payment.sortCode}}
+    </dd>
+
+    <dt class="details-summary-key">
+      Account number
+    </dt>
+    <dd class="details-summary-value">
+      {{data.payment['account-number'] or d.payment.accountNumber}}
+    </dd>
+
+    {% if d.payment.rollNumber %}
+      <dt class="details-summary-key">
+        Roll number
+      </dt>
+      <dd class="details-summary-value">
+        {{data.payment['roll-number'] or d.payment.rollNumber}}
+      </dd>
+    {% endif %}
+  </dl>
+
+  {% if not data.stopReason %}
+    <a class="change-link" href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}{{'?schedule=true' if page === 'schedule'}}">
+      Change <span class="visually-hidden"> name on account</span>
+    </a>
+  {% endif %}
+</section>

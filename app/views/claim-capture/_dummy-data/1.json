@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Paused",
+    "pausedDate": "2 November 2017",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "fullName": "Tony Smith",
+    "nino": "AA123456A",
+    "dateOfClaim": "1 October 2017",
+    "dateOfBirth": "24 January 1980",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "4",
+      "street": "Treetop Mews",
+      "town": "Wallsend",
+      "county": "Tyne and Wear",
+      "postcode": "NE28 9AA"
+    },
+    "contact": {
+      "home": "01911234567",
+      "mobile": "07712345678",
+      "email": "tony.smith@gmail.com"
+    }
+  },
+  "partner": {
+    "fullName": "Mary Smith",
+    "nino": "GG123456G",
+    "dateOfDeath": "01 October 2017"  
+  },
+  "children": {
+    "dependant": "Yes"
+  },
+  "payment": {
+    "nameOnAccount": "Mr T Smith",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "verification": {
+    "marriage": "Yes",
+    "death": "Yes",
+    "conts": "Yes",
+    "chb": "Yes"
+  },
+  "schedule": {
+    "rate": "Higher",   
+    "payments": {
+      "number": 18,
+      "initial": "8 November 2017",
+      "backdated": "8 November 2017",
+      "firstMonthly": "1 December 2017"
+    }
+  }
+}

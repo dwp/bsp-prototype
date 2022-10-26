@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "pausedDate": "",
+    "weeksSinceClaim": 2,
+    "class": ""
+  },
+  "claimant": {
+    "fullName": "Peter Blacklock",
+    "nino": "EE123456E",
+    "dateOfClaim": "1 November 2017",
+    "dateOfBirth": "10 July 1977",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "3",
+      "street": "Berwick Road",
+      "town": "Morpeth",
+      "county": "Northumberland",
+      "postcode": "NE61 3BH"
+    },
+    "contact": {
+      "mobile": "07712345788"
+    }
+  },
+  "partner": {
+    "fullName": "Kelly Blacklock",
+    "nino": "FF123456F",
+    "dateOfDeath": "15 August 2017"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Not provided",
+    "sortCode": "Not provided",
+    "accountNumber": "Not provided",
+    "country": "Not provided"
+  },
+  "verification": {
+    "marriage": "Yes",
+    "death": "Yes",
+    "conts": "Yes"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "20 November 2017",
+      "backdated": "20 November 2017",
+      "firstMonthly": "15 December 2017"
+    }
+  }
+}

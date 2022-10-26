@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/{{feature}}/{{sprint}}/claim-1">Back to claim</a>
+
+        <h1 class="heading-xlarge">
+          Did the deceased pay enough National Insurance contributions?
+        </h1>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset>
+              <div class="multiple-choice" data-target="evidence">
+                <input id="radio-inline-1" type="radio" name="contsVerified" value="enough">
+                <label for="radio-inline-1">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="radio-inline-2" type="radio" name="contsVerified" value="notEnough">
+                <label for="radio-inline-2">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="evidence">
+            <label for="evidence">What evidence have you seen?</label>
+            <textarea id="contsVerified" class="form-control"></textarea>
+          </div>
+
+          <button class="button" type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

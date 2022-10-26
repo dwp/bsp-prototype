@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+{% set d = '3' | loadDummyData %}
+
+{% block page_title %}
+  Claim
+{% endblock %}
+
+{% block customNav %}
+  {% include './_custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">        
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">
+            {{d.claimant.fullName}}
+          </span>
+          {{d.claimant.nino}}
+        </h1>
+        <div>
+          <span class="claim-status">Paused</span>
+          {% if d.claim.pausedDate %}
+            <span class="paused-until-date"> until {{d.claim.pausedDate}}</span>
+          {% endif %}
+        </div>
+
+        <div class="time-since-claim">
+          <div class="data">
+            <span class="data-item bold-xlarge">{{d.claim.weeksSinceClaim}} weeks</span>
+            <span class="data-item bold-xsmall">since date of claim</span>
+          </div>
+        </div>
+
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+              Tasks to complete
+            </h2>
+            <ul>
+              <li class="task-list-item">
+                <a class="task-name" href="verify-marriage/3" aria-describedby="eligibility-completed">
+                  Verify marriage
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ol> 
+      
+        <h2 class="heading-small th">
+          Claimant details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Date of claim
+          </dt>
+          <dd class="data-summary-value">
+            {{d.claimant.dateOfClaim}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Full name
+          </dt>
+          <dd class="data-summary-value">
+            {{d.claimant.fullName}}
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance number
+          </dt>
+          <dd class="data-summary-value">
+            {{d.claimant.nino}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Date of birth
+          </dt>
+          <dd class="data-summary-value">
+            {{d.claimant.dateOfBirth}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Address
+          </dt>
+          <dd class="data-summary-value">
+            {{d.claimant.currentAddress.number}} {{d.claimant.currentAddress.street}}<br />
+            {{d.claimant.currentAddress.town}}<br/>
+            {{d.claimant.currentAddress.county}}<br />
+            {{d.claimant.currentAddress.postcode}}
+          </dd>
+
+          {% if d.claimant.contact.home %}
+            <dt class="data-summary-key">
+              Home phone
+            </dt>
+            <dd class="data-summary-value">
+              {{d.claimant.contact.home}}
+            </dd>
+          {% endif %}
+
+          {% if d.claimant.contact.mobile %}
+            <dt class="data-summary-key">
+              Mobile phone
+            </dt>
+            <dd class="data-summary-value">
+              {{d.claimant.contact.mobile}}
+            </dd>
+          {% endif %}
+
+          {% if d.claimant.contact.email %}
+            <dt class="data-summary-key">
+              Email address
+            </dt>
+            <dd class="data-summary-value">
+              {{d.claimant.contact.email}}
+            </dd>
+          {% endif %}
+        </dl>
+
+        <h2 class="heading-small th">
+          Partner details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Full name
+          </dt>
+          <dd class="data-summary-value">
+            {{d.partner.fullName}}
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance number
+          </dt>
+          <dd class="data-summary-value">
+            {{d.partner.nino}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Date of death
+          </dt>
+          <dd class="data-summary-value">
+            {{d.partner.dateOfDeath}}
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Children details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Dependent children
+          </dt>
+          <dd class="data-summary-value">
+            {{d.children.dependant}}
+          </dd>
+
+          {% if d.children.pregnant %}
+            <dt class="data-summary-key">
+              Pregnant
+            </dt>
+            <dd class="data-summary-value">
+              {{d.children.pregnant}}
+            </dd>
+          {% endif %}
+        </dl>
+
+        <h2 class="heading-small th">
+          Payment details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            {{d.payment.nameOnAccount}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            {{d.payment.sortCode}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Account number
+          </dt>
+          <dd class="data-summary-value">
+            {{d.payment.accountNumber}}
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Verification
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Marriage
+          </dt>
+          <dd class="data-summary-value">
+            Not verified
+          </dd>
+
+          <dt class="data-summary-key">
+            Death
+          </dt>
+          <dd class="data-summary-value">
+            Verified on 19 October 2017
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance contributions
+          </dt>
+          <dd class="data-summary-value">
+            Verified on 19 October 2017
+          </dd>
+        </dl>
+      </div>
+
+      <div class="column-one-third">
+        <h2 class="heading-medium">Claim history</h2>
+        <ul class="log">
+
+          {% include feature + '/' + sprint + '/claim-3_log.html' %}
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

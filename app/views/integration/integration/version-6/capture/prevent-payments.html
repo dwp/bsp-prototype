@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% set startActive = 'active' %}
+
+{% block page_title %}
+  Prevent payments
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}" class="link-back">Back</a>
+
+        <form method="post">
+          <div class="form-group" id="chb-no-no">
+            <div class="form-group">
+              <fieldset>
+                <legend class="heading-small">
+                  <h1 class="heading-large">
+                    Why do you need to prevent payments?
+                  </h1>
+                </legend>
+
+                <div class="multiple-choice">
+                  <input id="scenario-1" type="radio" name="stopReason" value="1">
+                  <label for="scenario-1">The claimant died</label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input id="scenario-2" type="radio" name="stopReason" value="2">
+                  <label for="scenario-2">The claimant has been imprisoned</label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input id="scenario-3" type="radio" name="stopReason" value="3">
+                  <label for="scenario-3">The claim was set up in error</label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input id="scenario-4" type="radio" name="stopReason" value="4">
+                  <label for="scenario-4">The claim is fraudulent</label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input id="scenario-5" type="radio" name="stopReason" value="5">
+                  <label for="scenario-5">The claim needs to be paid manually</label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <button class="button" type="submitr">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

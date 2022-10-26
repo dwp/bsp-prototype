@@ -1,0 +1,74 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": "",
+	"settings": 2
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Gracie Leach",
+    "nino": "XH797769",
+    "dateOfClaim": "02 December 2020",
+    "dateOfBirth": "15 April 1978",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "84",
+      "street": "Bootham Crescent",
+      "town": "Rileyhill",
+      "county": "United Kingdom",
+      "postcode": "WS13 4JQ"
+    },
+    "contact": {
+      "home": "079 023 3333"
+    }
+  },
+  "partner": {
+    "title": "Dr",
+    "fullName": "Henry Leach",
+    "nino": "XL807494C",
+    "dateOfBirth": "19 Feburary 1981",
+    "dateOfDeath": "14 September 2020"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No",
+    "chb-number": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr Gracie Leach",
+    "sortCode": "200000",
+    "accountNumber": "44779911",
+    "country": "United Kingdom"
+  },
+   "address": {
+	 "building": "84",
+     "street": "Bootham Crescent",
+     "town": "Rileyhill",
+     "country": "England",
+     "postcode": "WS13 4JQ"
+  },
+  "communication": {
+	 "text8": "Large print, Welsh"
+  },
+  "marriage": {
+    "where": "No",
+    "dateOfMarriage": "02 June 2007",
+	"verified": "Yes",
+	"dateOfMarriage": {
+		"day": "",
+		"month": "",
+		"year": ""
+	}
+  },
+  "conts": {
+    "year": "No"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

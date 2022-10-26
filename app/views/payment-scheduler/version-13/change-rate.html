@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="/{{feature}}/{{sprint}}/schedule" class="link-back">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">Change claim to higher rate?</h1>
+
+        <h2 class="heading-medium">Higher rate payments due</h2>
+        <dl class="data-summary">
+          <dt class="data-summary-key">New monthly payments</dt>
+          <dd class="data-summary-value">£350</dd>
+
+          <dt class="data-summary-key">Backdated initial payment</dt>
+          <dd class="data-summary-value">£1000</dd>
+
+          <dt class="data-summary-key">Backdated monthly payments</dt>
+          <dd class="data-summary-value">£1250</dd>
+        </dl>
+
+        <br />
+        
+        <form method="post">
+          <div class="form-group">
+            <input type="hidden" name="backdateAll" value="Yes"/>
+            <button class="button" type="submit">Yes - Update payments</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

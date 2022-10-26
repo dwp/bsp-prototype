@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 2,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Julie Campbell",
+    "nino": "FF123456X",
+    "dateOfClaim": "17 January 2018",
+    "dateOfBirth": "19 April 1968",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "64",
+      "street": "Zooland",
+      "town": "Leith",
+      "county": "Edinburgh",
+      "postcode": "EH1 9XM"
+    },
+    "contact": {
+      "home": "01206627481"
+    }
+  },
+  "partner": {
+    "fullName": "Raymond Campbell",
+    "nino": "GG123456X",
+    "dateOfDeath": "2 January 2018"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs J Campbell",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "29 August 2001"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

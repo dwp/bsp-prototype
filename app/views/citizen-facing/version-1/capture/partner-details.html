@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% set serviceName = 'Apply for Bereavement Support Payment' %}
+
+{% block page_title %}
+  About your late spouse or civil partner
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% include 'includes/phase_banner_alpha.html' %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">
+          About your husband, wife or civil partner
+        </h1>
+
+        <form method="post">
+          <div class="form-group">
+            <label class="form-label" for="full-name">Full name</label>
+            <input class="form-control" id="full-name" type="text" name="partner[fullName]">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="ni-number">
+              National Insurance number
+              <span class="form-hint">
+                It's on their National Insurance card, benefit letter, payslip or P60.
+                <br>
+                For example, ‘QQ 12 34 56 C’.
+              </span>
+            </label>
+            <input class="form-control" id="ni-number" type="text" name="partner[nino]">
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">
+                  What date did they die?
+                </span>
+                <span class="form-hint" id="dod-hint">For example, 6 4 2017</span>
+              </legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="dod-day">Day</label>
+                  <input class="form-control" id="dod-day" name="parner[dod-day]" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dod-hint">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dod-month">Month</label>
+                  <input class="form-control" id="dod-month" name="partner[dod-month]" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dod-year">Year</label>
+                  <input class="form-control" id="dod-year" name="partner[dod-year]" type="number" pattern="[0-9]*" min="0" max="2016">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <button class="button" type="submit">Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

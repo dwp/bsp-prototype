@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/duplicate-claim/{{scenario}}" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+          You cannot continue with this claim
+        </h1>
+
+          <p>
+            {% if scenario === '1' %}
+              <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}">View existing claim</a>
+            {% elif scenario === '3' %}
+              <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}">View existing claim</a>
+            {% else %}
+              <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed">View existing claim</a>
+            {% endif %}
+          </p>
+
+      </div>
+    </div>
+  </main>
+{% endblock %}

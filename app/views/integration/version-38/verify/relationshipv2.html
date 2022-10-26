@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify relationship
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+
+      <form method="post" autocomplete="off">
+        <div class="form-group" id="can-you-verify-marriage">
+          <input type="hidden" name="dc1" value="{{data.children['dependant-children']}}" />
+          <input type="hidden" name="dc2" value="{{data.children['pregnant']}}" />
+          <div class="form-group">
+            <div class="form-group">
+              <fieldset class="inline">
+                <h1 class="heading-large">How were they related to the deceased?</h1>                              
+              </fieldset>
+            </div>
+        
+            <div class="multiple-choice">
+              <input
+                id="marriage-verified-yes"
+                type="radio"
+                name="deceased[form]"
+                value="Yes" {{'checked' if data.deceased['form'] === 'Yes'}}
+              />
+              <label for="marriage-verified-yes">Married</label>
+            </div>
+  
+          <div class="multiple-choice">
+            <input
+              id="marriage-verified-yes1"
+              type="radio"
+              name="deceased[form]"
+              value="Yes1" {{'checked' if data.deceased['form'] === 'Yes1'}}
+            />
+            <label for="marriage-verified-yes1">In a civil partnership</label>
+          </div>
+          
+          <div class="multiple-choice">
+            <input
+              id="marriage-verified-yes2"
+              type="radio"
+              name="deceased[form]"
+              value="Yes2" {{'checked' if data.deceased['form'] === 'Yes2'}}
+            />
+            <label for="marriage-verified-yes2">Living together</label>
+          </div>
+  
+          <div class="multiple-choice" style="padding: 0;">
+            
+            <label>or</label>
+          </div>
+  
+          <div class="multiple-choice">
+            <input
+              id="marriage-verified-yes3"
+              type="radio"
+              name="deceased[form]"
+              value="Yes3" {{'checked' if data.deceased['form'] === 'Yes3'}}
+            />
+            <label for="marriage-verified-yes3">Neither of these</label>
+          </div>
+        </div>
+        
+      </div>
+        <button class="button" type="submit">Continue</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

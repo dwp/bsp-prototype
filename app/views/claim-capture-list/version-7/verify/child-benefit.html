@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify children details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Does the claimant say they have dependent children?
+      </h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Does the claimant say they have dependent children?
+            </legend>
+
+            <div class="multiple-choice" data-target="child-benefit">
+              <input id="dependant-children-yes" type="radio" name="children[dependant-children]" value="Yes" {{'checked' if data.children['dependant-children'] === 'Yes'}}>
+              <label for="dependant-children-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="pregnant-hidden">
+              <input id="dependant-children-no" type="radio" name="children[dependant-children]" value="No" {{'checked' if data.children['dependant-children'] === 'No'}}>
+              <label for="dependant-children-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="child-benefit">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="heading-small">Does the claimant have a Child Benefit
+                number in Child Benefit online (CBOL)?</legend>
+
+              <div class="multiple-choice" data-target="child-benefit-number">
+                <input id="child-benefit-yes" type="radio" name="children[child-benefit]" value="Yes" {{'checked' if data.children['child-benefit'] === 'Yes'}}>
+                <label for="child-benefit-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice" data-target="pregnant-hidden">
+                <input id="child-benefit-no" type="radio" name="children[child-benefit]" value="No" {{'checked' if data.children['child-benefit'] === 'No'}}>
+                <label for="child-benefit-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="child-benefit-number">
+            <label class="form-label" for="chb-number">Child Benefit number</label>
+            <input class="form-control" id="chb-number" name="children[chb-number]" type="text" value="{{data.children['chb-number']}}">
+          </div>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="pregnant-hidden">
+          <fieldset class="inline">
+            <legend class="heading-small">Was the claimant pregnant when their
+              partner died?</legend>
+
+            <div class="multiple-choice">
+              <input id="pregnant-yes" type="radio" name="children[pregnant]" value="Yes" {{'checked' if data.children['pregnant'] === 'Yes'}}>
+              <label for="pregnant-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="pregnant-no" type="radio" name="children[pregnant]" value="No" {{'checked' if data.children['pregnant'] === 'No'}}>
+              <label for="pregnant-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="button" type="submit">Continue</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

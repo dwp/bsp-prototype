@@ -1,0 +1,24 @@
+<a href="/{{feature}}/{{sprint}}/claim-details" class="link-back">Back</a>
+
+<h1 class="heading-large">
+  There's an unfinished claim using the same details
+</h1>
+
+<p>
+  You can continue with the existing claim, but you can't start a new one.
+</p>
+
+<h2 class="heading-medium">Previous claims</h2>
+<ul class="panel panel-border-narrow search-results">
+  <li class="result">
+    <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="result-link">
+      Unfinished claim
+    </a>
+    <span class="result-meta">
+      {{d.claimant.fullName}}
+    </span>
+    <span class="result-meta">
+      {{d.claimant.dateOfClaim}}
+    </span>
+  </li>
+</ul>

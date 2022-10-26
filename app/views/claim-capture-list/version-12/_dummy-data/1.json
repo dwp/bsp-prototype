@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 6,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",
+    "fullName": "Helen Carter",
+    "nino": "TQ123456X",
+    "dateOfClaim": "15 March 2018",
+    "dateOfBirth": "19 March 1969",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "29",
+      "street": "Church Crescent",
+      "town": "Seaburn",
+      "county": "Sunderland",
+      "postcode": "SR6 7BR"
+    },
+    "contact": {
+      "home": "01915655555"
+    }
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Mark Carter",
+    "nino": "QQ123456X",
+    "dateOfDeath": "02 March 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs H Carter",
+    "sortCode": "112345",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "24 August 2000"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

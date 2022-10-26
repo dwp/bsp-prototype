@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Bernard Thompson",
+    "nino": "TN123456X",
+    "dateOfClaim": "4 July 2019",
+    "dateOfBirth": "16 August 1975",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "74",
+      "street": "Bay Grove",
+      "town": "Worthing",
+      "county": "West Sussex",
+      "postcode": "WH9 2PR"
+    },
+    "contact": {
+      "home": "09217233126"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Stephanie Thompson",
+    "nino": "KT123456X",
+    "dateOfBirth": "25 November 1978",
+    "dateOfDeath": "12 May 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "",
+    "chb-number": ""
+  },
+  "payment": {
+    "nameOnAccount": "Mr B Thompson",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "14 August 2014"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

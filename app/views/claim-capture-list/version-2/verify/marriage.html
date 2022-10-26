@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Children details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+
+      <form method="post" autocomplete="off">
+        <div class="form-group" id="can-you-verify-marriage">
+          <div class="form-group">
+            <fieldset>
+              <h1 class="heading-large">
+                Were they married or in a civil partnership at the time of death?
+              </h1>
+
+              <div class="multiple-choice" data-target="date-of-marriage">
+                <input id="marriage-verified-yes" type="radio" name="marriage[verified]" value="Yes" {{'checked' if data.verification['marriage-verified'] === 'Yes'}}>
+                <label for="marriage-verified-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="marriage-verified-no" type="radio" name="marriage[verified]" value="No" {{'checked' if data.verification['marriage-verified'] === 'No'}}>
+                <label for="marriage-verified-no">No</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="marriage-verified-evidence" type="radio" name="marriage[verified]" value="Awaiting" {{'checked' if data.verification['marriage-verified'] === 'No'}}>
+                <label for="marriage-verified-evidence">Still awaiting evidence</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="date-of-marriage">
+          <div class="form-group">
+            <label class="form-label" for="verify-death">Where did you verify the marriage or civil partnership?</label>
+            <input class="form-control" id="verify-death" name="marriage[where]" type="text">  
+          </div>
+          
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">
+                  Date of marriage or civil partnership
+                </span>
+              </legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="dateOfMarriage-day">
+                    Day
+                  </label>
+                  <input class="form-control" id="dateOfMarriage-day" type="number" name="marriage[dateOfMarriage][day]" aria-describedby="dateOfMarriage-hint" value="{{data.verification.dateOfMarriage.day}}">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dateOfMarriage-month">
+                    Month
+                  </label>
+                  <input class="form-control" id="dateOfMarriage-month" type="number" name="marriage[dateOfMarriage][month]" value="{{data.verification.dateOfMarriage.month}}">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dateOfMarriage-year">
+                    Year
+                  </label>
+                  <input class="form-control" type="number" id="dateOfMarriage-year" min="0" name="marriage[dateOfMarriage][year]" value="{{data.verification.dateOfMarriage.year}}">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <button class="button" type="submit">Continue</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

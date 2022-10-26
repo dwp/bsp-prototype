@@ -1,0 +1,54 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 6,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",
+    "fullName": "Louise Hawthorne",
+    "nino": "IX123456X",
+    "dateOfClaim": "20 May 2018",
+    "dateOfBirth": "4 October 1980",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "12",
+      "street": "Beacon Terrace",
+      "town": "Penrith",
+      "county": "Yorkshire",
+      "postcode": "CT9 8PK"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Kevin Hawthorne",
+    "nino": "SQ123456X",
+    "dateOfDeath": "8 May 2018"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "Yes",
+    "chb-number": ""
+  },
+  "payment": {
+    "nameOnAccount": "Mrs L Hawthorne",
+    "sortCode": "123456",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "11 June 1999"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

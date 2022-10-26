@@ -1,0 +1,502 @@
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Claimant details
+    {% if scenario === '1' or scenario === '2' %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% elif not decision %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <!-- <dt class="data-summary-key">
+      Title
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.title}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's title</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+ -->
+    <dt class="data-summary-key">
+      Full name
+    </dt>
+    <dd class="data-summary-value">
+	
+	{% if data.claimant.fullName %}
+		{{data.claimant.fullName}}
+    {% else %}
+		{{d.claimant.fullName}}
+	{% endif %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/edit/claimant-name/{{scenario}}">
+            <!--Change--> <span class="visually-hidden"> claimant's full name</span>
+          </a>
+        </span>
+      
+    </dd>
+
+    <dt class="data-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.nino}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            <!--Change--> <span class="visually-hidden"> claimant's National Insurance number</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      Date of birth
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.dateOfBirth}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            <!--Change--> <span class="visually-hidden"> claimant's date of birth</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <!--
+    <dt class="data-summary-key">
+      Sex
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.sex}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's sex</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd> -->
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Deceased details
+    {% if scenario === '1' or scenario === '2' %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% elif not decision %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+   <!--  <dt class="data-summary-key">
+      Title
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.title or showDetails}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's title</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd> -->
+
+    <dt class="data-summary-key">
+      Full name
+    </dt>
+    <dd class="data-summary-value">
+	{% if data.partner.fullName %}
+		{{data.partner.fullName}}
+    {% else %}
+		{{d.partner.fullName}}
+	{% endif %}
+	<span class="change-link">
+		<a href="/{{feature}}/{{sprint}}/capture/deceased-name/{{scenario}}">
+           <!-- Change--> <span class="visually-hidden"> deceased's full name</span>
+		</a>
+	</span>
+     <!--  {{d.partner.fullName or showDetails}} -->
+     <!--  {% if scenario !== '1' and scenario !== '2' %} -->
+        <!-- <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/deceased-name/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's full name</span>
+          </a>
+        </span> -->
+      <!-- {% endif %} -->
+    </dd>
+
+    <dt class="data-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.nino or showDetails}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+           <!-- Change--> <span class="visually-hidden"> deceased's National Insurance number</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      Date of birth
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.dateOfBirth or showDetails}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            <!--Change--> <span class="visually-hidden"> deceased's date of birth</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+
+    <dt class="data-summary-key">
+      Date of death
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.dateOfDeath or showDetails}}
+      {% if scenario !== '1' and scenario !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            <!--Change--> <span class="visually-hidden"> deceased's date of death</span>
+          </a>
+        </span>
+      {% endif %}
+    </dd>
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Date of claim
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Date of claim
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.dateOfClaim}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+          <!--Change--> <span class="visually-hidden"> date of claim</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Contact details
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Address
+    </dt>
+    <dd class="data-summary-value">
+
+      <p> 84,Bootham Crescent,Rileyhill,United Kingdom,WS13 4JQ</p>
+
+      {% if data.address or showDetails %}
+        {{d.address.building}} {{d.address.street}}<br />
+        {{d.address.town}}<br/>
+        {{d.address.country}}<br />
+        {{d.address.postcode}}
+      {% endif %}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/contact/address/{{scenario}}">
+          <!--Change--> <span class="visually-hidden"> address</span>
+        </a>
+      </span>
+    </dd>
+	<dt class="data-summary-key">
+      Communication needs
+    </dt>
+	<dd class="data-summary-value">
+    <p>No</p>
+    <!--
+    {% if data.communication or showDetails %}
+        {{d.communication.text8}}
+      {% endif %}
+      -->
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/contact/communication/{{scenario}}">
+          <!--Change--> <span class="visually-hidden"> address</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Children details
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Dependent children
+    </dt>
+    <dd class="data-summary-value">
+      {{data.children['dependant-children'] or d.children['dependant-children']}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
+         <!--Change--> <span class="visually-hidden"> dependent children details</span>
+        </a>
+      </span>
+    </dd>
+
+    <dt class="data-summary-key">
+      Pregnant
+    </dt>
+    <dd class="data-summary-value">
+      {{data.children.pregnant or d.children.pregnant}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
+          <!--Change--> <span class="visually-hidden"> whether the claimant was pregnant</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+</div>
+
+
+<!--
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Marriage or civil partnership
+    {% if data.marriage.verified === 'Yes' %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% else %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    {% if data.marriage.verified === 'Yes' %}
+      <dd class="data-summary-value">
+        {% for ev in data.marriage['what-evidence'] %}
+          {{ev}}<br />
+        {% endfor %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/relationship/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of marriage or civil partnership</span>
+          </a>
+        </span>
+      </dd>
+      <dt class="data-summary-key">
+        Date
+      </dt>
+      <dd class="data-summary-value">
+        {{d.marriage.dateOfMarriage}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/relationship/{{scenario}}">
+            Change <span class="visually-hidden"> date of marriage or civil partnership</span>
+          </a>
+        </span>
+      </dd>
+    {% else %}
+
+      <dd class="data-summary-value">
+        Evidence of marriage or civil partnership needed
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/relationship/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of marriage or civil partnership</span>
+          </a>
+        </span>
+      </dd>
+    {% endif%}
+  </dl>
+</div>
+-->
+
+<!--
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Death
+    {% if scenario === '1' or data.dateOfdeath%}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% else %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    {% if scenario === '1' %}
+      <dd class="data-summary-value">
+        CIS<br />
+      </dd>
+      <dt class="data-summary-key">
+        Date
+      </dt>
+      <dd class="data-summary-value">
+        {{d.partner.dateOfDeath}}
+      </dd>
+    {% elif data.dateOfdeath %}
+      <dd class="data-summary-value">
+        {% for ev in data.death['what-evidence'] %}
+          {{ev}}<br />
+        {% endfor %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of death</span>
+          </a>
+        </span>
+      </dd>
+      <dt class="data-summary-key">
+        Date
+      </dt>
+      <dd class="data-summary-value">
+        {{d.partner.dateOfDeath}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+            Change <span class="visually-hidden"> verified date of death</span>
+          </a>
+        </span>
+      </dd>
+    {% else %}
+      <dd class="data-summary-value">
+        Evidence of death needed
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of death</span>
+          </a>
+        </span>
+      </dd>
+    {% endif%}
+  </dl>
+</div>
+-->
+
+<!--
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    National Insurance contributions
+    {% if data.conts %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% else %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    {% if data.conts.enough %}
+      <dt class="data-summary-key">
+        Year
+      </dt>
+      <dd class="data-summary-value">
+        {{data.conts.year or '2015'}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+            Change <span class="visually-hidden"> year used for National Insurance contributions</span>
+          </a>
+        </span>
+      </dd>
+
+      {% if data.conts.industrialInjury %}
+        <dt class="data-summary-key">
+          Industrial injury or illness
+        </dt>
+        <dd class="data-summary-value">
+          {% if data.conts.industrialInjury === 'Yes' %}
+            Yes
+          {% else %}
+            No
+          {% endif %}
+          <span class="change-link">
+            <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+              Change <span class="visually-hidden"> answer for industrial injury or illness</span>
+            </a>
+          </span>
+        </dd>
+      {% endif %}
+    {% else %}
+      <dt class="data-summary-key">
+        Evidence
+      </dt>
+      <dd class="data-summary-value">
+        Evidence of National Insurance contributions needed
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of National Insurance contributions</span>
+          </a>
+        </span>
+      </dd>
+    {% endif%}
+  </dl>
+</div>
+
+
+
+{% if data.children['dependant-children'] === 'Yes' %}
+  <div class="details-wrapper">
+    <h2 class="heading-medium th">
+      Child Benefit
+      {% if data.chb.number %}
+        <p class="verified-badge verified">
+          Verified
+        </p>
+      {% else %}
+        <p class="verified-badge">
+          Not verified
+        </p>
+      {% endif %}
+    </h2>
+
+    <dl class="data-summary">
+      <dt class="data-summary-key">
+        Child Benefit number
+      </dt>
+      <dd class="data-summary-value">
+        {{data.chb['number'] or d.chb['number'] or 'No Child Benefit number'}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+            Change <span class="visually-hidden"> Child Benefit number</span>
+          </a>
+        </span>
+      </dd>
+    </dl>
+  </div>
+{% endif %}
+  -->

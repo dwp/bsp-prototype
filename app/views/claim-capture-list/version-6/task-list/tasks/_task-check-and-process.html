@@ -1,0 +1,18 @@
+{% if (data.conts and data.children and data.dateOfdeath and 
+      data.marriage.verified === 'Yes' and data['payment-details-provided'] === 'Yes')
+  or
+      (scenario === '6' and data.marriage.verified === 'Yes')
+%}
+  <li>
+    <h2 class="task-list-section">
+      <span class="task-list-section-number">3. </span> Submit claim
+    </h2>
+    <ul class="task-list-items">
+      <li class="task-list-item">
+        <a class="task-name" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}">
+          Check and confirm
+        </a>
+      </li>
+    </ul>
+  </li>
+{% endif %}

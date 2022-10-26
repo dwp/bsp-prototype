@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% set serviceName = 'Apply for Bereavement Support Payment' %}
+
+{% block page_title %}
+  Did your spouse or civil partner die after 6 April 2017?
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% include 'includes/phase_banner_alpha.html' %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend>
+                <h1 class="heading-large">
+                  Did your husband, wife or civil partner die after 6 April 2017?
+                </h1>
+              </legend>
+
+              <div class="multiple-choice">
+                <input id="eligibility-after-april-yes" type="radio" name="eligibility[afterApril]" value="Yes">
+                <label for="eligibility-after-april-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="eligibility-after-april-no" type="radio" name="eligibility[afterApril]" value="No">
+                <label for="eligibility-after-april-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <button class="button" type="submit">Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

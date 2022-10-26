@@ -1,0 +1,259 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">
+          {{d.claimant.fullName}}
+        </span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          Active
+        </span>
+
+        {% include './_subnav-schedule.html' %}
+
+        {% include '../common/_details-payment.html' %}
+
+        <h2 class="heading-small th">
+          Rate
+        </h2>
+
+        <dl class="data-summary">
+          {% if data.chb %}
+            <dt class="data-summary-key">
+              Higher
+            </dt>
+            <dd class="data-summary-value">
+            </dd>
+          {% else %}
+            <dt class="data-summary-key">
+              Standard
+            </dt>
+            <dd class="data-summary-value">
+              <span class="change-link">
+                <a href="/{{feature}}/{{sprint}}/verify/child-benefit/1">
+                  Change <span class="visually-hidden"> rate</span>
+                </a>
+              </span>
+            </dd>
+          {% endif %}
+        </dl>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Payments
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              16 October 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              16 September 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              16 August 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              16 July 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              16 June 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
+              4 June 2018
+            </time>
+            <strong class="amount">
+              £2,500
+            </strong>
+            <span class="type">
+              Initial payment
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Planned payments
+          <p class="payment-link">
+            <a href="#">
+              Prevent payments
+            </a>
+          </p>
+        </h2>
+
+        <ul class="schedule">
+          {% if data.chb %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+                Due 2 November 2018
+              </time>
+              <strong class="amount">
+                £750
+              </strong>
+              <span class="type">
+                Backdated monthly payments
+              </span>
+            </li>
+          {% endif %}
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 November 2018
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 December 2018
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 January 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 February 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 February 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 March 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 April 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 May 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 June 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 July 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 August 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 September 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 October 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 16 November 2019
+            </time>
+            <strong class="amount">
+              {{'£350' if data.chb else '£100'}}
+            </strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

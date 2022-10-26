@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claimant name
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group" id="claimant-name">
+            
+            <div id="claimant-name-fullname">
+              <label class="form-label" for="claimant-full-name">Full name</label>
+              <!-- <input class="form-control" id="claimant-full-name" name="claimants[fullname]" type="text" value="{{data.claimants['fullname']}}"> -->
+				<input class="form-control" type="text" name="claimant[fullName]" id="claimant-full-name" value="{{data.claimant['fullName']}}">
+            </div>
+          </div>
+
+          <button class="button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

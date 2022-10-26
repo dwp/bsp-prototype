@@ -1,0 +1,57 @@
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Payment details
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Name on account
+    </dt>
+    <dd class="data-summary-value">
+      {{d.payment.nameOnAccount}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
+          Change <span class="visually-hidden"> name on account</span>
+        </a>
+      </span>
+    </dd>
+
+    <dt class="data-summary-key">
+      Sort code
+    </dt>
+    <dd class="data-summary-value">
+      {{d.payment.sortCode}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
+          Change <span class="visually-hidden"> sort code</span>
+        </a>
+      </span>
+    </dd>
+
+    <dt class="data-summary-key">
+      Account number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.payment.accountNumber}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
+          Change <span class="visually-hidden"> account number</span>
+        </a>
+      </span>
+    </dd>
+
+    {% if d.payment.rollNumber %}
+      <dt class="data-summary-key">
+        Roll number
+      </dt>
+      <dd class="data-summary-value">
+        {{d.payment.rollNumber}}
+        <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
+          Change <span class="visually-hidden"> roll number</span>
+        </a>
+      </span>
+      </dd>
+    {% endif %}
+  </dl>
+</div>

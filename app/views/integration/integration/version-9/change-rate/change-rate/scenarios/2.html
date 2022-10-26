@@ -1,0 +1,23 @@
+<div class="form-group">
+  <fieldset class="inline">
+    <legend class="heading-small">
+      <h1 class="heading-large">
+        Was the claimant pregnant when their partner died?
+      </h1>
+    </legend>
+
+    <div class="multiple-choice">
+      <input id="dependant-children-yes" type="radio" name="children[dependant-children]" value="Yes" {{'checked' if data.children['dependant-children'] === 'Yes'}}>
+      <label for="dependant-children-yes">Yes</label>
+    </div>
+
+    <div class="multiple-choice" data-target="pregnant-hidden">
+      <input id="dependant-children-no" type="radio" name="children[dependant-children]" value="No" {{'checked' if data.children['dependant-children'] === 'No'}}>
+      <label for="dependant-children-no">No</label>
+    </div>
+  </fieldset>
+</div>
+
+<form method="post" autocomplete="off">
+  <button class="button" type="submit">Continue</button>
+</form>

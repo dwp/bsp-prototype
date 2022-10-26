@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="/{{feature}}/{{sprint}}/have-all-payments-been-made" class="link-back">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          Make sure all manual payments have been made
+        </h1>
+
+        <p>
+          Before using this service to create a payment schedule, you must make
+          sure there are no outstanding manual payments.
+        </p>
+
+        <div class="form-group">
+          <div class="notice">
+            <i class="icon icon-important">
+              <span class="visually-hidden">Warning</span>
+            </i>
+            <strong class="bold-small">
+              If manual payments are not up to date, the payment schedule you
+              create could overpay or underpay someone.
+            </strong>
+          </div>
+        </div>
+
+        <a href="/{{feature}}/{{sprint}}/set-up-a-payment-schedule" class="button">Continue</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

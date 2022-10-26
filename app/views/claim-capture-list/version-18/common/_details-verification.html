@@ -1,0 +1,35 @@
+<h2 class="heading-small th">
+  Verification
+</h2>
+
+<dl class="data-summary govuk-check-your-answers cya-questions-short">
+  <div>
+    <dt>
+      Death
+    </dt>
+    <dd class="cya-answer">
+      Customer Information System<br />
+      {{d.partner.dateOfDeath}}
+    </dd>
+  </div>
+
+  <div>
+    <dt>
+      National Insurance contributions
+    </dt>
+    <dd class="cya-answer">
+      {{d.conts.year}}
+    </dd>
+  </div>
+
+  {% if data.chb %}
+    <div>
+      <dt>
+        Child benefit number
+      </dt>
+      <dd class="cya-answer">
+        {{data.chb['number'] or d.chb['number'] or '<span class="red">Missing</span>'|safe}}
+      </dd>
+    </div>
+  {% endif %}
+</dl>

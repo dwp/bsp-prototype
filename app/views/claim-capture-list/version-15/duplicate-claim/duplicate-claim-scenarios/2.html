@@ -1,0 +1,56 @@
+<div class="column-two-thirds">
+  <h1 class="heading-large">
+    Someone gets Bereavement Support Payment using this
+    deceased person's details
+  </h1>
+
+  <p class="lede">
+    Make sure this is a genuine claim, and that you have entered the deceased's
+    National Insurance number correctly.
+  </p>
+
+  <p>
+    You entered: <span class="bold">{{d2[scenario].partner.nino}}</span>.
+  </p>
+
+  <form method="post">
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="heading-small">Is this number correct?</legend>
+        <div class="multiple-choice" data-target="yes-instructions">
+          <input id="nino-correct-yes" type="radio" name="duplicate[ninoCorrect]" value="Yes">
+          <label for="nino-correct-yes">Yes</label>
+        </div>
+
+        <div class="multiple-choice">
+          <input id="nino-correct-no" type="radio" name="duplicate[ninoCorrect]" value="No">
+          <label for="nino-correct-no">No</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <button class="button" type="submit">Continue</button>
+  </form>
+</div>
+
+<div class="column-one-third">
+  <h2 class="heading-medium">Previous claims</h2>
+  <ul class="search-results">
+    <li class="result">
+      <h3 class="heading-small">Allowed claim</h3>
+      <div class="panel panel-border-narrow">
+        <h3 class="heading-small">Claimant</h3>
+        <p>
+          {{d2[scenario].claimant.fullName}}<br/>
+          {{d2[scenario].claimant.nino}}
+        </p>
+
+        <h3 class="heading-small">Deceased</h3>
+        <p>
+          {{d2[scenario].partner.fullName}}<br />
+          {{d2[scenario].partner.nino}}
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

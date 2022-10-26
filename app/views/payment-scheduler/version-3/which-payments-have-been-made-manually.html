@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="{{backlink}}" class="link-back">Edit</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          Which payments have been made manually?
+        </h1>
+      </div>
+    </div>
+
+    <p>Select all that apply</p>
+
+    <form method="post">
+      <fieldset>
+        <legend class="visually-hidden">Which types of waste do you transport regularly?</legend>
+
+        <div class="form-group">
+          <div class="multiple-choice">
+            <input id="payment-1" name="payments" type="checkbox" value="payment-1">
+            <label for="payment-1">£3500 - 30 December 2016</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="payment-2" name="payments" type="checkbox" value="payment-2">
+            <label for="payment-2">£350 - 30 December 2016</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="payment-3" name="payments" type="checkbox" value="payment-3">
+            <label for="payment-3">£350 - 6 January 2017</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="payment-4" name="payments" type="checkbox" value="payment-4">
+            <label for="payment-4">£350 - 6 February 2017</label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="payment-5" name="payments" type="checkbox" value="payment-5">
+            <label for="payment-5">£350 - 6 March 2017</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <button class="button" type="submit">Continue</button>
+      </div>
+    </form>
+
+    <a href="{{backlink}}" class="link-back">Edit</a>
+  </main>
+{% endblock %}

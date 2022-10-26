@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Report
+{% endblock %}
+
+{% block customNav %}
+  {% include './../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">December 2018</h1>
+      
+      <div class="column-one-half">
+        <div class="data">
+          <span class="data-item bold-xsmall">Claims received</span>
+          <span class="data-item bold-xxlarge">2,721</span>
+        </div>
+      </div>
+
+      <div class="column-one-half">
+        <div class="data">
+          <span class="data-item bold-xsmall">Claims outstanding</span>
+          <span class="data-item bold-xxlarge">431</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h2 class="heading-medium">Oldest outstanding claims</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">National Insurance number</th>
+              <th class="numeric" scope="col">Days outstanding</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/{{feature}}/{{sprint}}/task-list/1/">QX123456X</a></td>
+              <td class="numeric">134</td>
+            </tr>
+            <tr>
+              <td><a href="/{{feature}}/{{sprint}}/task-list/2">XX554433T</a></td>
+              <td class="numeric">112</td>
+            </tr>
+            <tr>
+              <td><a href="/{{feature}}/{{sprint}}/task-list/3">QL563763X</a></td>
+              <td class="numeric">96</td>
+            </tr>
+            <tr>
+              <td><a href="/{{feature}}/{{sprint}}/task-list/4">VX665773S</a></td>
+              <td class="numeric">88</td>
+            </tr>
+            <tr>
+              <td><a href="/{{feature}}/{{sprint}}/task-list/5">ZX387267D</a></td>
+              <td class="numeric">76</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <br />
+        <br />
+
+        <a href="/{{feature}}/{{sprint}}/report/nov">
+          <span aria-hidden="true">&larr;</span> November
+        </a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

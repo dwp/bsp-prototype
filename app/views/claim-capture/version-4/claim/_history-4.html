@@ -1,0 +1,45 @@
+{% if status == 'allowed' %}
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Claim allowed</h3>
+    <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+    <span class="paused-until-date">{{t.date}}</span>
+    <p>Payment schedule created at higher rate.</p>
+  </li>
+
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Marriage verified</h3>
+    <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+    <span class="paused-until-date">{{t.date}}</span>
+  </li>
+{% endif %}
+
+<li>
+  <span class="line"></span>
+  <h3 class="bold">Claim paused for 1 week</h3>
+  <span class="paused-until-date">by Carol Jenkins</span><br />
+  <span class="paused-until-date">19 October 2017</span>
+  <p>Need to see evidence of marriage.</p>
+</li>
+
+<li>
+  <span class="line"></span>
+  <span class="paused-until-date">by Carol Jenkins</span><br />
+  <h3 class="bold">Child Benefit verified</h3>
+  <span class="paused-until-date">19 October 2017</span>
+</li>
+
+<li>
+  <span class="line"></span>
+  <span class="paused-until-date">by Carol Jenkins</span><br />
+  <h3 class="bold">Death verified</h3>
+  <span class="paused-until-date">19 October 2017</span>
+</li>
+
+<li>
+  <span class="line"></span>
+  <span class="paused-until-date">by Carol Jenkins</span><br />
+  <h3 class="bold">National insurance contributions verified</h3>
+  <span class="paused-until-date">19 October 2017</span>
+</li>

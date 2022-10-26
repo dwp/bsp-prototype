@@ -1,0 +1,66 @@
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Contact details
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Address
+    </dt>
+    <dd class="data-summary-value">
+      {% if data.claimant.address or showDetails %}
+        {{d.claimant.currentAddress.number}} {{d.claimant.currentAddress.street}}<br />
+        {{d.claimant.currentAddress.town}}<br/>
+        {{d.claimant.currentAddress.county}}<br />
+        {{d.claimant.currentAddress.postcode}}
+      {% endif %}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+          Change <span class="visually-hidden"> address</span>
+        </a>
+      </span>
+    </dd>
+    
+    {% if d.claimant.contact.home %}
+      <dt class="data-summary-key">
+        Home phone
+      </dt>
+      <dd class="data-summary-value">
+        {{d.claimant.contact.home}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+            Change <span class="visually-hidden"> home phone number</span>
+          </a>
+        </span>
+      </dd>
+    {% endif %}
+
+    {% if d.claimant.contact.mobile %}
+      <dt class="data-summary-key">
+        Mobile phone
+      </dt>
+      <dd class="data-summary-value">
+        {{d.claimant.contact.mobile}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+            Change <span class="visually-hidden"> mobile phone number</span>
+          </a>
+        </span>
+      </dd>
+    {% endif %}
+
+    {% if d.claimant.contact.email %}
+      <dt class="data-summary-key">
+        Email address
+      </dt>
+      <dd class="data-summary-value">
+        {{d.claimant.contact.email}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+            Change <span class="visually-hidden"> email address</span>
+          </a>
+        </span>
+      </dd>
+    {% endif %}
+  </dl>
+</div>

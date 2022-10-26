@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% set d = id | loadDummyData %}
+{% set t = '_test' | loadDummyData %}
+
+{% block page_title %}
+  Confirm details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">      
+      <a href="/{{feature}}/{{sprint}}/payment-details" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Confirm claim details
+      </h1>
+
+        {% include '../common/_details-claimant.html' %}
+        {% include '../common/_details-partner.html' %}
+        {% include '../common/_details-children.html' %}
+        {% if data.scenario !== '2' %}
+          {% include '../common/_details-payment.html' %}
+        {% endif %}
+        {% include '../common/_details-date-of-claim.html' %}
+        {% include '../common/_details-verification.html' %}
+
+      <br />
+
+      <form method="post" autocomplete="off">
+      <div class="form-group">
+        <button type="submit" class="button">Confirm and process application</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

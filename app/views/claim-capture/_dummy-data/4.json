@@ -1,0 +1,54 @@
+{
+  "claim": {
+    "status": "Paused",
+    "pausedDate": "",
+    "weeksSinceClaim": 8,
+    "class": ""
+  },
+  "claimant": {
+    "fullName": "Christine Jackson",
+    "nino": "DD123456D",
+    "dateOfClaim": "25 September 2017",
+    "dateOfBirth": "5 July 1973",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "8",
+      "street": "Station Road",
+      "town": "Manchester",
+      "county": "Greater Manchester",
+      "postcode": "MA1 4GG"
+    },
+    "contact": {
+      "mobile": "07712345788"
+    }
+  },
+  "partner": {
+    "fullName": "Joe Jackson",
+    "nino": "EE123456E",
+    "dateOfDeath": "01 August 2017"  
+  },
+  "children": {
+    "dependant": "Yes"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs C Jackson",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "verification": {
+    "marriage": "No",
+    "death": "Yes",
+    "conts": "Yes",
+    "chb": "No"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "8 November 2017",
+      "backdated": "8 November 2017",
+      "firstMonthly": "29 November 2017"
+    }
+  }
+}

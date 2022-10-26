@@ -1,0 +1,47 @@
+<h2 class="heading-small th">
+  Claimant details
+  <p class="payment-link">
+    {% if not decision %}
+      <a href="/{{feature}}/{{sprint}}/capture/claimant-details">
+        Change
+      </a>
+    {% endif %}
+  </p>
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Title
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.title}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Full name
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.fullName}}
+  </dd>
+
+  <dt class="data-summary-key">
+    National Insurance number
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.nino}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Date of birth
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.dateOfBirth}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Sex
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.sex}}
+  </dd>
+</dl>

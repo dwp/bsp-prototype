@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/{{feature}}/{{sprint}}/claim-{{id}}">Back to claim</a>
+
+        <h1 class="heading-xlarge">Can you verify the death?</h1>
+
+        <p>
+          If the death is not listed in the Customer Information System (CIS),
+          you will need to see the death certificate.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">
+              <div class="multiple-choice" data-target="evidence">
+                <input id="radio-inline-1" type="radio" name="deathVerified" value="Yes">
+                <label for="radio-inline-1">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="radio-inline-2" type="radio" name="deathVerified" value="No">
+                <label for="radio-inline-2">Not yet</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="evidence">
+            <label for="evidence">What evidence have you seen?</label>
+            <textarea id="deathVerified" class="form-control"></textarea>
+          </div>
+
+          <button class="button" type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

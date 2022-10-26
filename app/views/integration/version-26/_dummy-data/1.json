@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",
+    "fullName": "Susanne Shaw",
+    "nino": "TT123456X",
+    "dateOfClaim": "27 June 2019",
+    "dateOfBirth": "10 September 1954",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "203",
+      "street": "Strawberry Hill",
+      "town": "Kent",
+      "county": "London",
+      "postcode": "CT1 3PD"
+    },
+    "contact": {
+    }
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Robert Shaw",
+    "nino": "NT123456X",
+    "dateOfBirth": "16 April 1952",
+    "dateOfDeath": "25 June 2019"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs S Shaw",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "22 August 1978"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

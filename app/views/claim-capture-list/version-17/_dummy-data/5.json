@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 5,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Ben Cavanagh",
+    "nino": "UQ654321X",
+    "dateOfClaim": "6 February 2018",
+    "dateOfBirth": "30 August 1976",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "18",
+      "street": "Ministry Close",
+      "town": "Longbenton",
+      "county": "Newcastle",
+      "postcode": "NE98 1YX"
+    },
+    "contact": {
+      "home": "01915655819"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Janice Cavanagh",
+    "nino": "LQ123456X",
+    "dateOfDeath": "16 December 2017"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr B Cavanagh",
+    "sortCode": "123456",
+    "accountNumber": "87654321",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "14 October 2011"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}
+

@@ -1,0 +1,39 @@
+<!--
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Contact details
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Address
+    </dt>
+    <dd class="data-summary-value">
+      {% if data.address or showDetails %}
+        {{d.address.building}} {{d.address.street}}<br />
+        {{d.address.town}}<br/>
+        {{d.address.country}}<br />
+        {{d.address.postcode}}
+      {% endif %}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/contact/address/{{scenario}}">
+          Change <span class="visually-hidden"> address</span>
+        </a>
+      </span>
+    </dd>
+	<dt class="data-summary-key">
+      Communication needs
+    </dt>
+	<dd class="data-summary-value">
+      {% if data.communication or showDetails %}
+        {{d.communication.text8}}
+      {% endif %}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/contact/communication/{{scenario}}">
+          Change <span class="visually-hidden"> address</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+</div>
+-->

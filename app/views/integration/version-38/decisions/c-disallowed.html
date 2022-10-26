@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim disallowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+		<div class="govuk-box-highlight govuk-box-highlight-sone govuk-box-highlight-bgred">
+        <h1 class="heading-xlarge">
+          Claim disallowed
+        </h1>
+		{% if data.conts.enough !== 'No' and data.conts.industrialInjury !== 'No' and scenario === '1' %}
+        <p>
+			There is no proof that the claimant and the deceased were living together at the time of death.
+		        </p>
+		{% elseif scenario === '3' %}
+		<p>The death was before 6 April 2017</p>
+		{% else %}
+		<p>
+          The deceased did not pay enough National Insurance
+        </p>
+		{% endif %}
+        </div>
+		{% if data.conts.enough !== 'No' and data.conts.industrialInjury !== 'No' %}
+		<h2 class="heading-medium">
+			What you need to do next
+        </h2>
+		<p>You need to send the decision letter to the claimant manually. it could not be sent automatically.</p>
+		{% else %}
+			<h2 class="heading-medium">
+			  What you need to do next
+			</h2>
+			<p>You need to send the decision manually.</p>
+			<p>The claimant has asked for the decision in:</p>
+			<ul class="communication-list">
+				{% if data.communication.text1[0] %}
+				<li>{{data.communication.text1[0]}}</li>
+				{% endif %}
+				{% if data.communication.text2[0] %}
+				<li>{{data.communication.text2[0]}}</li>
+				{% endif %}
+				{% if data.communication.text3[0] %}
+				<li>{{data.communication.text3[0]}}</li>
+				{% endif %}
+				{% if data.communication.text4[0] %}
+				<li>{{data.communication.text4[0]}}</li>
+				{% endif %}
+				{% if data.communication.text5[0] %}
+				<li>{{data.communication.text5[0]}}</li>
+				{% endif %}
+				{% if data.communication.text6[0] %}
+				<li>{{data.communication.text6[0]}}</li>
+				{% endif %}
+				{% if data.communication.text7[0] %}
+				<li>{{data.communication.text7[0]}}</li>
+				{% endif %}
+			</ul>
+			<p></p>
+			<a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/disallowed">View the claim</a>
+
+		{% endif %}
+        <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/disallowed">View the claim</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

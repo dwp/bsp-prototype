@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% set d = scenario | loadDummyData(feature) %}
+
+{% block page_title %}
+  Claim allowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+    
+      <div class="column-two-thirds">
+        <h1 class="heading-large">
+          Are you sure you want to disallow this claim?
+        </h1>
+
+        {% if scenario === '5' %}
+          <p>
+            This claim is about to be disallowed because {{d.claimant.fullName}} 
+            was not married to {{d.partner.fullName}} at the time of death.
+         </p>
+        {% else %}
+          <p>
+            This claim is about to be disallowed because {{d.claimant.fullName}} 
+            has not sent in evidence of their marriage or civil partnership. 
+          </p>
+        {% endif %}
+        
+
+        <p>
+          This action cannot be undone.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <button class="button button-red">Disallow claim</button>
+          </div>
+        </form>
+
+        <a href="/{{feature}}/{{sprint}}/evidence-needed">Cancel</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

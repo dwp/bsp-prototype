@@ -1,0 +1,49 @@
+{% extends "layout-dwp-admin.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          To do
+        </h1>
+
+        <p>
+          Before pausing this claim make sure you have completed the following:
+        </p>
+
+        <ul class="list list-bullet">
+          {% if data.deathVerified == "noEvidence" %}
+            <li>
+              Contacted claimant for death certificate
+            </li>
+          {% endif %}
+
+          {% if data.marriageVerified == "noEvidence" %}
+            <li>
+              Contacted claimant for marriage certificate
+            </li>
+          {% endif %}
+
+          {% if data.chbVerified == "noEvidence" %}
+            <li>
+              Contacted claimant for Child Benefit information
+            </li>
+          {% endif %}
+        </ul>
+
+        <a href="/{{feature}}/{{sprint}}/process-a-claim/set-reminder" class="button">Continue</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+

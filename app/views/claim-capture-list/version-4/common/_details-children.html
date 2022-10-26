@@ -1,0 +1,35 @@
+<h2 class="heading-small th">
+  Children details
+  <p class="payment-link">
+    <a href="/{{feature}}/{{sprint}}/children-details">
+      Change
+    </a>
+  </p>
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Dependent children
+  </dt>
+  <dd class="data-summary-value">
+    {{d.children.dependant}}
+  </dd>
+
+  {% if d.children.dependant === 'Yes' %}
+    <dt class="data-summary-key">
+      Child Benefit number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.children['chb-number']}}
+    </dd>
+  {% endif %}
+
+  {% if d.children.pregnant %}
+    <dt class="data-summary-key">
+      Pregnant
+    </dt>
+    <dd class="data-summary-value">
+      {{d.children.pregnant}}
+    </dd>
+  {% endif %}
+</dl>

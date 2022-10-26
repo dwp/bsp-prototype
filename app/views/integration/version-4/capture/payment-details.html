@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% set nameOnAccount = data.payment['name-on-account'] or d.payment.nameOnAccount %}
+{% set sortCode = data.payment['sort-code'] or d.payment.sortCode %}
+{% set accountNumber = data.payment['account-number'] or d.payment.accountNumber %}
+{% set rollNumber = data.payment['roll-number'] or d.payment.rollNumber %}
+
+
+{% block pageTitle %}
+  Payment details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed" class="link-back">Back</a>
+
+        <h1 class="heading-large">Payment details</h1>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label-bold">Type of account</legend>
+              
+              <div class="multiple-choice">
+                <input id="bank-type-bank" type="radio" name="bank-type" value="bank" checked>
+                <label for="bank-type-bank">Bank account</label>
+              </div>
+          
+              <div class="multiple-choice" data-target="roll-number-hidden">
+                <input id="bank-type-building-society" type="radio" name="bank-type" value="building-society">
+                <label for="bank-type-building-society">Building society account</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="name-on-account">Name on account</label>
+            <input class="form-control" id="name-on-account" name="payment[name-on-account]" type="text" value="{{nameOnAccount}}">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sort-code">Sort code</label>
+            <input class="form-control" id="sort-code" name="payment[sort-code]" type="text" value="{{sortCode}}">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="account-number">Account number</label>
+            <input class="form-control" id="account-number" name="payment[account-number]" type="text" value="{{accountNumber}}">
+          </div>
+
+          <div class="form-group js-hidden" id="roll-number-hidden">
+            <label class="form-label" for="roll-number">Building society roll number</label>
+            <input class="form-control" id="roll-number" name="payment[roll-number]" type="text" value="{{rollNumber}}">
+          </div>
+
+          <button type="submit" class="button">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

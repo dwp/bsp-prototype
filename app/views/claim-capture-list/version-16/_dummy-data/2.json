@@ -1,0 +1,51 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Paul Grimes",
+    "nino": "KX123456X",
+    "dateOfClaim": "19 May 2018",
+    "dateOfBirth": "5 November 1979",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "33",
+      "street": "Blossom Drive",
+      "town": "Recar",
+      "county": "Middlesborough",
+      "postcode": "MT3 7ML"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Sophie Grimes",
+    "nino": "TX123456X",
+    "dateOfDeath": "13 May 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {},
+  "payment": {
+    "nameOnAccount": "Mr P Grimes",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "22 September 2006"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

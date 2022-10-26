@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Yasmin Shakib",
+    "nino": "MX644391X",
+    "dateOfClaim": "30 December 2018",
+    "dateOfBirth": "22 November 1968",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "219",
+      "street": "Park Leazes",
+      "town": "Derby",
+      "county": "United Kingdom",
+      "postcode": "DB6 8ZY"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": " Mohamed Shakib",
+    "nino": "SX734523X",
+    "dateOfDeath": "11 December 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs Y Shakib",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "11 July 1998"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

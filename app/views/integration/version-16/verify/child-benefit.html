@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify children details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group" id="child-benefit">
+            <div class="form-group">
+              <fieldset class="inline">
+                <h1 class="heading-large">Does the claimant have a Child Benefit
+                  number in Child Benefit online (CBOL)?</h1>
+
+                <div class="multiple-choice" data-target="child-benefit-number">
+                  <input id="child-benefit-yes" type="radio" name="chb[answer]" value="Yes" {{'checked' if data.children['child-benefit'] === 'Yes'}}>
+                  <label for="child-benefit-yes">Yes</label>
+                </div>
+
+                <div class="multiple-choice" data-target="pregnant-hidden">
+                  <input id="child-benefit-no" type="radio" name="chb[answer]" value="No" {{'checked' if data.children['child-benefit'] === 'No'}}>
+                  <label for="child-benefit-no">No</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="child-benefit-number">
+              <div class="form-group">
+                <label class="form-label" for="chb-number">Child Benefit number</label>
+                <input class="form-control" id="chb-number" name="chb[number]" type="text" value="{{data.children['chb-number']}}">
+              </div>
+
+              <div class="form-group">
+                <fieldset aria-label="Claimant date of birth">
+                  <legend class="heading-small">
+                    What date did their Child Benefit start?
+                  </legend>
+
+                  <div class="form-date">
+                    <div class="form-group form-group-day">
+                      <label class="form-label" for="chb-date-day">
+                        Day
+                      </label>
+                      <input class="form-control" id="chb-date-day" type="number"  min="0" name="chb[date][day]" value="{{data.chb.date.day}}"/>
+                    </div>
+
+                    <div class="form-group form-group-month">
+                      <label class="form-label" for="chb-date-month">
+                        Month
+                      </label>
+                      <input class="form-control" id="chb-date-month" type="number"  min="0" name="chb[date][month]" value="{{data.chb.date.month}}"/>
+                    </div>
+
+                    <div class="form-group form-group-year">
+                      <label class="form-label" for="chb-date-year">
+                        Year
+                      </label>
+                      <input class="form-control" type="number" id="chb-date-year" min="0" name="chb[date][year]" value="{{data.chb.date.year}}"/>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+
+          <button class="button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

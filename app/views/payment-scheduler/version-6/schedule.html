@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="#" class="link-back">Find a payment schedule</a>
+
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">Adam Gordon</span>
+          NG747132B
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          ACTIVE
+        </span>
+
+        <h2 class="heading-large">Log</h2>
+        <p>
+          <span class="bold">Switched from clerical process on 25 April 2017</span><br />
+          Initial payment and 3 monthly payments were made manually
+        </p>
+        
+        <h2 class="heading-small th">
+          Payment details
+          <p class="payment-link">
+            <a href="#">
+              Change
+            </a>
+          </p>
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            A Gordon
+          </dd>
+
+          <dt class="data-summary-key">
+            Account number
+          </dt>
+          <dd class="data-summary-value">
+            54123041
+          </dd>
+
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            58-41-32
+          </dd>
+
+          <dt class="data-summary-key">
+            Country
+          </dt>
+          <dd class="data-summary-value">
+            United Kingdom
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Payments
+        </h2>
+
+        <ul class="schedule">
+          <li>
+            <p>
+              No payments sent.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Planned payments
+          <p class="payment-link">
+            <a href="#">
+              Prevent payments
+            </a>
+          </p>
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
+              Due 2 May 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              Due 2 June 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE6">
+              Due 2 July 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE7">
+              Due 2 August 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE8">
+              Due 2 September 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE9">
+              Due 2 October 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 2 November 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
+              Due 2 December 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE12">
+              Due 2 January 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE13">
+              Due 2 February 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE14">
+              Due 2 March 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE15">
+              Due 2 April 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE16">
+              Due 2 May 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE17">
+              Due 2 June 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE18">
+              Due 2 July 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

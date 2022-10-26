@@ -1,0 +1,47 @@
+<h2 class="heading-medium">Claim history</h2>
+<ul class="log">
+  {% if decision === 'disallowed' %}
+    <li>
+      <span class="line"></span>
+      <h3 class="bold">Claim disallowed</h3>
+      <span class="paused-until-date">{{t.date}}</span>
+      {% if scenario === '5' %}
+        <p>The claimant was not married to the deceased at the time of death.</p>
+      {% elif scenario === '7' %}
+        <p>The claimant was over State Pension age at the time of death.</p>
+      {% else %}
+        <p>Claimant didn't send proof of their marriage or civil partnership.</p>
+      {% endif %}
+    </li>
+  {% endif %}
+  {% if decision === 'allowed' %}
+    <li>
+      <span class="line"></span>
+      <h3 class="bold">Claim allowed</h3>
+      <span class="paused-until-date">{{t.date}}</span>
+      <p>Payment schedule created at {{d.schedule.rate}} rate.</p>
+    </li>
+  {% endif %}
+  {% if decision === 'allowed' or decision === 'disallowed' %}
+    <li>
+      <span class="line"></span>
+      <h3 class="bold">Claim details confirmed</h3>
+      <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+      <span class="paused-until-date">{{t.date}}</span>
+    </li>
+  {% endif %}
+  {% for entry in data.log | reverse %}
+    <li>
+      <span class="line"></span>
+      <h3 class="bold">{{entry.title}}</h3>
+      {% if entry.caption %}<p>{{entry.caption}}</p>{% endif %}
+      <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+      <span class="paused-until-date">{{t.date}}</span>
+    </li>
+  {% endfor %}
+  {% if bf %}
+    {% include './_bf-history.html' %}
+  {% else %}
+    {% include './_linear-history.html' %}
+  {% endif %}
+</ul>

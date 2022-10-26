@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim disallowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include '../common/_paused-claim-banner.html' %}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="govuk-box-highlight">
+          <h1 class="heading-xlarge">
+            Claim allowed
+          </h1>
+          <p class="font-large">
+            Payment schedule created
+          </p>
+        </div>
+
+        <a href="/{{feature}}/{{sprint}}/claim/{{id}}/allowed">View this claim</a><br />
+        <a href="/{{feature}}/{{sprint}}/schedule/{{id}}">View this payment schedule</a>
+        {% if data.pausedClaims == 'Yes' %}
+          <h2 class="heading-small">Other options</h2>
+          <a href="/{{feature}}/{{sprint}}/claim/4/paused">Process a paused claim</a>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

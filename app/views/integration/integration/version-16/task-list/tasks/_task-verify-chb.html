@@ -1,0 +1,10 @@
+{% if data.children['dependant-children'] === 'Yes' %}
+  <li class="task-list-item">
+    <a class="task-name" href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+      Dependent children
+    </a>
+    {% if data.dependents.form or bf %}
+      <strong class="task-completed" >Completed</strong>
+    {% endif %}
+  </li>
+{% endif %}

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim allowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% if scenario === '5' %}
+          <a class="link-back" href="/{{feature}}/{{sprint}}/verify/relationship">Back</a>
+        {% elif scenario === '7' %}
+          <a class="link-back" href="/{{feature}}/{{sprint}}/start-a-new-claim">Back</a>
+        {% else %}
+          <a class="link-back" href="/{{feature}}/{{sprint}}/evidence-needed">Back</a>
+        {% endif %}
+
+        <h1 class="heading-large">
+          You are about to disallow this claim
+        </h1>
+
+        {% if scenario === '5' %}
+          <p>
+            You're about to disallow this claim because {{d.claimant.fullName}} 
+            was not married to {{d.partner.fullName}} at the time of death.
+         </p>
+        {% elif scenario === '7' %}
+          <p>
+            You're about to disallow this claim because you entered {{d.claimant.fullName}}'s 
+            date of birth as <span class="bold">{{d.claimant.dateOfBirth}}</span>. 
+            This means they were over State Pension age at the time of death.
+         </p>
+        {% else %}
+          <p>
+            You're about to disallow this claim because {{d.claimant.fullName}} 
+            has not sent in evidence of their marriage or civil partnership. 
+          </p>
+        {% endif %}
+
+        <form method="post">
+          <div class="form-group">
+            <button class="button button-red">Disallow claim</button>
+          </div>
+        </form>
+        
+        {% if scenario === '5' %}
+          <a href="/{{feature}}/{{sprint}}/verify/relationship">Cancel</a>
+        {% elif scenario === '7' %}
+          <a href="/{{feature}}/{{sprint}}/start-a-new-claim">Cancel</a>
+        {% else %}
+          <a href="/{{feature}}/{{sprint}}/evidence-needed">Cancel</a>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

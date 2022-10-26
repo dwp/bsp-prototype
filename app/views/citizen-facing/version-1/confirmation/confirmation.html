@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include 'includes/phase_banner_alpha.html' %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div id="alert-success" class="panel panel-border-wide alert alert-success js-hidden">
+        <p>You have been sent a confirmation email</p>
+      </div>
+
+      <h1 class="heading-large">You need to send your marriage or civil partnership certificate</h1>
+
+      <div class="panel panel-border-narrow indent-info-blue">
+        <p class="text">
+        Your online application has been received, but it can't be processed until you
+        send your original certificate.
+        </p>
+      </div>
+
+      <p>
+        Include your National Insurance number with the certificate and then
+        send it to:
+      </p>
+
+      <p>
+        Dover Benefit Centre<br>
+        Post Handling Site B<br>
+        Wolverhampton<br>
+        WV99 1LA
+      </p>
+
+      <h2 class="heading-medium">
+        If you'd prefer not to send it
+      </h2>
+
+      <p>
+        You can take your certificate to your nearest Jobcentre Plus where
+        an official copy can be made. You'll need to make an appointment before you go
+        using the following contact details:
+      </p>
+
+      <p>
+        Telephone: 0345 608 8601<br>
+        Textphone: 0345 608 8551
+      </p>
+
+      <p>
+        Monday to Friday, 8am to 6pm<br>
+        <a href="/call-charges">Find out about call charges</a>
+      </p>
+
+      <h2 class="heading-medium">
+        If you don't have a certificate
+      </h2>
+
+        <p>
+          The Bereavement Service will get in touch using the contact details you
+          provided to ask you for more information.
+        </p>
+      </div>
+
+      <hr class="print-hidden">
+
+      <p class="print-hidden">
+        <a href="download" target="_new" class="heading-medium">
+          <img class="print-save-icons" src="/public/images/icon-file-download.png">
+          Save this page
+        </a>
+      </p>
+
+      <p class="print-hidden">
+        <a id="print-button" href="end" class="heading-medium">
+          <img class="print-save-icons" src="/public/images/icon-print.png" width="30">
+          Print this page
+        </a>
+      </p>
+
+      <p class="print-hidden">
+        <a id="email-button" href="end" class="heading-medium">
+          <img class="print-save-icons" src="/public/images/icon-email.png" width="30">
+          Email this page
+        </a>
+
+        </p><div id="email-hidden" class="panel panel-border-narrow js-hidden">
+          <form>
+            <fieldset>
+              <div class="form-group">
+                <label class="form-label" for="email-address">Email address</label>
+                <input class="form-control" id="email-address" type="text">
+              </div>
+
+              <input type="submit" class="button" value="Email this page">
+            </fieldset>
+          </form>
+        </div>
+      <p></p>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

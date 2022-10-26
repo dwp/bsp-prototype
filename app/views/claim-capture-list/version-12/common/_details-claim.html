@@ -1,0 +1,108 @@
+<h2 class="heading-small th">
+  Claimant details
+  {% if not decision %}
+    <p class="payment-link">
+      <a href="/{{feature}}/{{sprint}}/capture/claimant-details">
+        Change
+      </a>
+    </p>
+  {% endif %}
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Title
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.title}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Full name
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.fullName}}
+  </dd>
+
+  <dt class="data-summary-key">
+    National Insurance number
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.nino}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Date of birth
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.dateOfBirth}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Sex
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.sex}}
+  </dd>
+</dl>
+
+<h2 class="heading-small th">
+  Partner details
+  {% if not decision %}
+    <p class="payment-link">
+      <a href="/{{feature}}/{{sprint}}/capture/partner-details">
+        Change
+      </a>
+    </p>
+  {% endif %}
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Title
+  </dt>
+  <dd class="data-summary-value">
+    {{d.partner.title or showDetails}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Full name
+  </dt>
+  <dd class="data-summary-value">
+    {{d.partner.fullName or showDetails}}
+  </dd>
+
+  <dt class="data-summary-key">
+    National Insurance number
+  </dt>
+  <dd class="data-summary-value">
+    {{d.partner.nino or showDetails}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Date of death
+  </dt>
+  <dd class="data-summary-value">
+    {{d.partner.dateOfDeath or showDetails}}
+  </dd>
+</dl>
+
+<h2 class="heading-small th">
+  Date of claim
+  {% if not decision %}
+    <p class="payment-link">
+      <a href="/{{feature}}/{{sprint}}/capture/date-of-claim">
+        Change
+      </a>
+    </p>
+  {% endif %}
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Date of claim
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.dateOfClaim}}
+  </dd>
+</dl>

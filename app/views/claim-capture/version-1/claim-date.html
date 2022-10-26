@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% set startActive = 'active' %}
+
+{% block page_title %}
+  Claim date
+{% endblock %}
+
+{% block customNav %}
+  {% include './_custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+        
+        <h1 class="heading-xlarge">
+          What is the date of claim?
+        </h1>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">Date of claim</legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="dateOfClaim-day">
+                    Day
+                  </label>
+                  <input class="form-control" id="dateOfClaim-day" type="number" name="dateOfClaim[day]">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dateOfClaim-month">
+                    Month
+                  </label>
+                  <input class="form-control" id="dateOfClaim-month" type="number" name="dateOfClaim[month]">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dateOfClaim-year">
+                    Year
+                  </label>
+                  <input class="form-control" type="number" id="dateOfClaim-year" min="0" name="dateOfClaim[year]">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

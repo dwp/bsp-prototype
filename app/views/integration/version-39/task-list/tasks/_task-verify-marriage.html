@@ -1,0 +1,15 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/verify/relationshipv2/{{scenario}}">
+    Relationship details
+  </a>
+  <!-- <strong class="task-completed">Completed</strong> -->
+ {% if data.deceased.form === 'Yes' %}
+    <strong class="task-completed">Completed</strong>
+    {% elif data.deceased.form === 'Yes1' or bf %}
+    <strong class="task-completed">Completed</strong>
+    {% elif data.deceased.form === 'Yes2' or bf %}
+    <strong class="task-completed">Completed</strong>
+  {% elif data.marriage.verified === 'No' or bf %}
+    <strong class="task-incomplete">Not complete</strong>
+  {% endif %}
+</li>

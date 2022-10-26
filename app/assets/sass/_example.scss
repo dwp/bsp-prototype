@@ -1,0 +1,29 @@
+@media (min-width: 641px) {
+  .example {
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 45px;
+  }
+}
+
+.example {
+  border: 1px solid $border-colour;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.example::before {
+  background: $border-colour;
+  color: $page-colour;
+  content: 'MOST RECENT';
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  left: 0;
+  padding: .2105263158em .7894736842em;
+  position: absolute;
+  text-transform: none;
+  top: 0;
+}

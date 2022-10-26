@@ -1,0 +1,37 @@
+{% if status == 'allowed' %}
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Claim allowed</h3>
+    <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+    <span class="paused-until-date">{{t.date}}</span><br />
+    <p>Payment schedule created at higher rate.</p>
+  </li>
+{% endif %}
+
+<li>
+  <span class="line"></span>
+  <h3 class="bold">Child benefit verified</h3>
+  <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+  <span class="paused-until-date">{{t.date}}</span>
+</li>
+
+<li>
+  <span class="line"></span>
+  <h3 class="bold">National Insurance contributions verified</h3>
+  <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+  <span class="paused-until-date">{{t.date}}</span>
+</li>
+
+<li>
+  <span class="line"></span>
+  <h3 class="bold">Death verified</h3>
+  <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+  <span class="paused-until-date">{{t.date}}</span>
+</li>
+
+<li>
+  <span class="line"></span>
+  <h3 class="bold">Marriage verified</h3>
+  <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+  <span class="paused-until-date">{{t.date}}</span>
+</li>

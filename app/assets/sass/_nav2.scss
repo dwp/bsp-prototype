@@ -1,0 +1,72 @@
+// scss-lint:enable IdSelector
+
+.nav-bar2 {
+  border-bottom: 1px solid $border-colour;
+  margin: auto;
+  max-width: 960px;
+
+  ul {
+    @extend %contain-floats;
+
+    margin: 0 auto;
+    max-width: 960px;
+  }
+
+  li {
+    float: left;
+    list-style-type: none;
+
+    @include media(mobile) {
+      border: 0;
+      width: 100%;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+
+    &:visited {
+      color: $link-colour;
+    }
+
+    &:hover {
+      background-color: $highlight-colour;
+    }
+  }
+
+  .active {
+    box-shadow: inset 0px -5px 0px 0px $govuk-blue;
+  }
+}
+
+.subnav {
+  border-bottom: 1px solid $border-colour;
+  max-width: 30em;
+
+  ul {
+    @extend %contain-floats;
+
+    margin: 0 auto;
+    max-width: 960px;
+  }
+
+  li {
+    float: left;
+    list-style-type: none;
+    padding: 15px;
+
+    @include media(mobile) {
+      width: 100%;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  .active {
+    box-shadow: inset 0px -5px 0px 0px $govuk-blue;
+  }
+}

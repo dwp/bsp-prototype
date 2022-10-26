@@ -1,0 +1,51 @@
+<h2 class="heading-small th">
+  Contact details
+  {% if not decision %}
+    <p class="payment-link">
+      <a href="/{{feature}}/{{sprint}}/capture/contact-details">
+        Change
+      </a>
+    </p>
+  {% endif %}
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Address
+  </dt>
+  <dd class="data-summary-value">
+    {% if data.claimant.address or showDetails %}
+      {{d2[scenario].claimant.currentAddress.number}} {{d2[scenario].claimant.currentAddress.street}}<br />
+      {{d2[scenario].claimant.currentAddress.town}}<br/>
+      {{d2[scenario].claimant.currentAddress.county}}<br />
+      {{d2[scenario].claimant.currentAddress.postcode}}
+    {% endif %}
+  </dd>
+  
+  {% if d2[scenario].claimant.contact.home %}
+    <dt class="data-summary-key">
+      Home phone
+    </dt>
+    <dd class="data-summary-value">
+      {{d2[scenario].claimant.contact.home}}
+    </dd>
+  {% endif %}
+
+  {% if d2[scenario].claimant.contact.mobile %}
+    <dt class="data-summary-key">
+      Mobile phone
+    </dt>
+    <dd class="data-summary-value">
+      {{d2[scenario].claimant.contact.mobile}}
+    </dd>
+  {% endif %}
+
+  {% if d2[scenario].claimant.contact.email %}
+    <dt class="data-summary-key">
+      Email address
+    </dt>
+    <dd class="data-summary-value">
+      {{d2[scenario].claimant.contact.email}}
+    </dd>
+  {% endif %}
+</dl>

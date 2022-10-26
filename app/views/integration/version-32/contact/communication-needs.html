@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Address
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+         Communication needs
+        </h1>
+
+        <form method="post" autocomplete="off">
+       
+        <div>
+          
+         
+            <div class="form-group">
+              <fieldset>
+                <legend>
+                  <span class="form-label-bold">
+                    Select all that apply
+                  </span>
+                </legend>
+                <div class="multiple-choice">
+                  <input
+                    id="cert"
+                    name="communication[text1][]"
+                    type="checkbox"
+                    value="Certificate"
+                  />
+                  <label for="cert">
+                    Braille
+                  </label>
+                </div>
+              
+                <div class="multiple-choice">
+                  <input
+                    id="cis"
+                    name="communication[text2][]"
+                    type="checkbox"
+                    value="CIS"
+                  />
+                  <label for="cis">
+                    Large print
+                  </label>
+                </div>
+              
+                <div class="multiple-choice">
+                  <input
+                    id="audio"
+                    name=""
+                    type="checkbox"
+                    value="audio"
+                  />
+                  <label for="audio">
+                    Audio
+                  </label>
+                </div>
+				 <div class="multiple-choice">
+                  <input
+                    id="signlanguage"
+                    name="communication[text3][]"
+                    type="checkbox"
+                    value="signlanguage"
+                  />
+                  <label for="signlanguage">
+                    Sign language
+                  </label>
+                </div>
+				 <div class="multiple-choice">
+                  <input
+                    id="inductionloop"
+                    name="communication[text4][]"
+                    type="checkbox"
+                    value="inductionloop"
+                  />
+                  <label for="inductionloop">
+                    Induction Loop
+                  </label>
+                </div>
+				 <div class="multiple-choice">
+                  <input
+                    id="textphone"
+                    name="communication[text5][]"
+                    type="checkbox"
+                    value="textphone"
+                  />
+                  <label for="textphone">
+                    Textphone
+                  </label>
+                </div>
+				 <div class="multiple-choice">
+                  <input
+                    id="typetalk"
+                    name="communication[text6][]"
+                    type="checkbox"
+                    value="typetalk"
+                  />
+                  <label for="typetalk">
+                    Typetalk
+                  </label>
+                </div>
+				 <div class="multiple-choice">
+                  <input
+                    id="welsh"
+                    name="communication[text7][]"
+                    type="checkbox"
+                    value="welsh"
+                  />
+                  <label for="welsh">
+                    Welsh
+                  </label>
+                </div>
+              </fieldset>
+
+
+            <fieldset>
+
+<br>
+                <p>
+                  Or
+                </p>
+         
+                <div class="multiple-choice">
+                  <input
+                    id="none"
+                    name="communication[text8][]"
+                    type="checkbox"
+                    value="none"
+                  />
+                  <label for="none">
+                    None
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+		</div>
+        
+
+        <button class="button" type="submit">Continue</button>
+      </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

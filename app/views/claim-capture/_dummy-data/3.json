@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Paused",
+    "pausedDate": "2 November 2017",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "fullName": "Amanda Marshall",
+    "nino": "CC123456C",
+    "dateOfClaim": "4 October 2017",
+    "dateOfBirth": "4 April 1982",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "6",
+      "street": "Charlton Road",
+      "town": "Irving",
+      "county": "Ayrshire",
+      "postcode": "KA3 7AP"
+    },
+    "contact": {
+      "mobile": "07712345678",
+      "email": "amarshall1@gmail.com"
+    }
+  },
+  "partner": {
+    "fullName": "Robert Marshall",
+    "nino": "JJ123456J",
+    "dateOfDeath": "29 September 2017"  
+  },
+  "children": {
+    "dependant": "No",
+    "pregnant": "Yes"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs A Marshall",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "verification": {
+    "marriage": "No",
+    "death": "Yes",
+    "conts": "Yes"
+  },
+  "schedule": {
+    "rate": "Higher",   
+    "payments": {
+      "number": 18,
+      "initial": "8 November 2017",
+      "backdated": "8 November 2017",
+      "firstMonthly": "29 November 2017"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% set startActive = '' %}
+
+{% block page_title %}
+  {% if start %}
+    Start a new claim
+  {% else %}
+    Claim details
+  {% endif %}
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav1.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if not start %}
+      {% if scenario !== '1' and scenario !== '2' %}
+        {% include '../common/_notification-banner.html' %}
+      {% endif %}
+    {% endif %}
+
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="claim-details.html" class="link-back">Back</a>
+
+
+        <h1 class="heading-large">
+          This claimant has a claim in progress using the deceased person's details
+        </h1>
+      
+        <p class="text">
+          You can continue with the existing claim, but you cannot start a new one.
+        </p>
+        
+          <h1 class="heading-medium" >Do you want to continue with the existing claim?</h1>
+          <fieldset class="inline">
+          
+            
+            <div class="multiple-choice" data-target="payment-details">
+              <input id="payment-details-yes" type="radio" name="payment-details-provided" value="Yes">
+              <label for="payment-details-yes">Yes</label>
+            </div>
+        
+            <div class="multiple-choice">
+              <input id="payment-details-no" type="radio" name="payment-details-provided" value="No">
+              <label for="payment-details-no">No</label>
+            </div>
+          </fieldset>
+          <br/>
+
+          <a href="tasklist-s2.html" class="button">Continue</a>
+
+      
+        </div>
+        
+        <div class="column-one-third">
+          <h1 class="heading-medium">Previous claims</h1>
+          <h2 class="heading-small"> Unfinished claim </h2>
+          <div class="panel panel-border-narrow js-visible" id="payment-details">
+           
+            <h2 class="heading-small"> Claimant </h2>
+            Rita Wilson
+            ZZ 34 34 34 R
+
+            <h2 class="heading-small"> Deceased </h2>
+            Tom Hanks
+            AA 77 66 55 R
+
+          </div>
+
+  
+      </div>
+    </div>
+  </main>
+{% endblock %}

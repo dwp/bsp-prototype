@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% set startActive = 'active' %}
+
+{% block page_title %}
+  Find a claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">1 paused claim needs attention</h1>
+
+        <form autocomplete="off" method="post">
+          <div class="form-group">
+            <p class="bold">
+              What do you want to do?
+            </p>
+
+            <fieldset>
+              <div class="multiple-choice">
+                <input id="paused-claim" type="radio" name="processType" value="paused">
+                <label for="paused-claim">Check the paused claim</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input id="new-claim" type="radio" name="processType" value="new">
+                <label for="new-claim">Start a new claim</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="button" type="submit">Continue</button>
+        </form>
+
+        {% if search %}
+          <h2 class="heading-medium">Results</h2>
+          <ul class="search-results">
+            {% if search == a.claimant.nino %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/1/sallowed" class="result-link">
+                  {{a.claim.status}} claim
+                </a>
+                <span class="result-meta">
+                  {{a.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{a.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search == b.claimant.nino %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/2/disallowed" class="result-link">
+                  {{b.claim.status}} claim
+                </a>
+                <span class="result-meta">
+                  {{b.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{b.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search == c.claimant.nino %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/3/paused" class="result-link">
+                  {{c.claim.status}} claim
+                </a>
+                <span class="result-meta">
+                  {{c.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{c.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search == d.claimant.nino %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/4/paused" class="result-link">
+                  {{d.claim.status}} claim
+                </a>
+                <span class="result-meta">
+                  {{d.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{d.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% else %}
+              No matching claims found.
+            {% endif %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

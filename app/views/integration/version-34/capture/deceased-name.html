@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claimant name
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group" id="partner-name">
+            
+            <div id="partner-name-fullname">
+              <h1 class="heading-large"> Deceased's full name </h1>
+              <label class="form-label" for="partner-full-name">Do not include title</label>
+				{% if data.partner['fullName'] %}
+				<input class="form-control" type="text" name="partner[fullName]" id="partner-full-name" value="{{data.partner['fullName']}}">
+				 {% else %}
+				 <input class="form-control" type="text" name="partner[fullName]" id="partner-full-name" value="{{d.partner['fullName']}}">
+				 {% endif %}
+            </div>
+          </div>
+
+          <button class="button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

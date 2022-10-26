@@ -1,0 +1,26 @@
+.log {
+  .line {
+    background-color: $govuk-blue;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 28px;
+    width: 10px;
+  }
+
+  li   {
+    border-left: 3px solid $govuk-blue;
+    padding: 20px 0 20px 20px;
+    position: relative;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+.panel-colour-timeline {
+  border-color: $govuk-blue;
+}

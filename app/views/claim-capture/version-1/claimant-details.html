@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claimant details
+{% endblock %}
+
+{% block customNav %}
+  {% include './_custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+      <a href="claim-date" class="link-back">Back</a>
+
+      <h1 class="heading-xlarge">
+        Claimant details
+      </h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <label for="full-name">
+            <span class="form-label">Full name</span>
+          </label>
+          <input class="form-control" type="text" name="claimant[full-name]" id="full-name">
+        </div>
+
+        <div class="form-group">
+          <label for="nino">
+            <span class="form-label">
+              National Insurance number
+            </span>
+          </label>
+          <input class="form-control" type="text" name="claimant[nino]" id="nino">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                Date of birth
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dateOfBirth-day">
+                  Day
+                </label>
+                <input class="form-control" id="dateOfBirth-day" type="number" name="claimant[dateOfBirth][day]" aria-describedby="dateOfBirth-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dateOfBirth-month">
+                  Month
+                </label>
+                <input class="form-control" id="dateOfBirth-month" type="number" name="claimant[dateOfBirth][month]">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dateOfBirth-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <div class="form-group">
+              <label for="normal-address">Home address where they normally live</label>
+              <textarea class="form-control form-control-3-4" name="claimant[address]" id="normal-address" rows="5"></textarea>
+            </div>
+
+            <h2 class="heading-small">
+              Is this address where they lived when their partner died?
+            </h2>
+
+            <div class="multiple-choice">
+              <input type="radio" name="notUsed[is-their-address-different]" id="is-their-address-different-no" value="No">
+              <label for="is-their-address-different-no">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="different-address">
+              <input type="radio" name="notUsed[is-their-address-different]" id="is-their-address-different-yes" value="Yes">
+              <label for="is-their-address-different-yes">No</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="different-address">
+              <label class="form-label" for="different-address">
+                Home address when their partner died
+              </label>
+              <textarea class="form-control form-control-3-4" name="claimant[alt-address]" id="different-address" rows="5"></textarea>
+            </div>
+          </fieldset>
+        </div>
+
+        <fieldset>
+          <legend class="heading-small">Contact information</legend>
+
+          <div class="multiple-choice" data-target="home-phone-hidden">
+            <input id="checkbox-home-phone" name="notUsed[checkbox-home-phone]" type="checkbox" value=true>
+            <label for="checkbox-home-phone">Home phone</label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="home-phone-hidden">
+            <label class="form-label" for="home-phone">Home phone number</label>
+            <input class="form-control" type="text" id="home-phone" name="claimant[home-phone]">
+          </div>
+
+          <div class="multiple-choice" data-target="mobile-phone-hidden">
+            <input id="checkbox-mobile-phone" name="notUsed[checkbox-mobile]" type="checkbox" value=true>
+            <label for="checkbox-mobile-phone">Mobile phone</label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="mobile-phone-hidden">
+            <label class="form-label" for="mobile-phone">Mobile phone number</label>
+            <input class="form-control" type="text" id="mobile-phone" name="claimant[mobile-phone]">
+          </div>
+
+          <div class="multiple-choice" data-target="email-hidden">
+            <input id="checkbox-email" name="notUsed[checkbox-email]" type="checkbox" value=true>
+            <label for="checkbox-email">Email</label>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="email-hidden">
+            <label class="form-label" for="email">Email address</label>
+            <input class="form-control" type="text" id="email" name="claimant[email]">
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <h2 class="heading-small">
+              Was the claimant married to or in a civil partnership with
+              the deceased person when they died?
+            </h2>
+
+            <div class="multiple-choice" data-target="can-you-verify-marriage">
+              <input id="still-married-yes" type="radio" name="eligibility[still-married]" value="Yes">
+              <label for="still-married-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="still-married-no" type="radio" name="eligibility[still-married]" value="No">
+              <label for="still-married-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline panel panel-border-narrow js-hidden" id="can-you-verify-marriage">
+            <h2 class="heading-small">
+              Can you verify the marriage?
+            </h2>
+
+            <div class="multiple-choice">
+              <input id="marriage-verified-yes" type="radio" name="verification[marriage-verified]" value="Yes">
+              <label for="marriage-verified-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="marriage-verified-no" type="radio" name="verification[marriage-verified]" value="No">
+              <label for="marriage-verified-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="button">
+          Continue
+        </button>
+      </div>
+    </form>
+  </main>
+{% endblock %}

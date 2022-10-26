@@ -1,0 +1,35 @@
+<a href="/{{feature}}/{{sprint}}/verify/check-nino" class="link-back">Back</a>
+
+<h1 class="heading-large">
+  Someone else has tried to get Bereavement Support Payment using that National
+  Insurance number
+</h1>
+
+<p>
+  Tell a decision maker this is the second claim featuring these details:
+</p>
+
+<p>
+  <span class="heading-small">{{d.partner.nino}}</span>
+  <br />
+  {{d.partner.fullName}}
+</p>
+
+<a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="button">
+  Continue with new claim
+</a>
+
+<h2 class="heading-medium">Previous claims</h2>
+<ul class="panel panel-border-narrow search-results">
+  <li class="result">
+    <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/disallowed" class="result-link">
+      Disallowed claim
+    </a>
+    <span class="result-meta">
+      {{d.claimant.fullName}}
+    </span>
+    <span class="result-meta">
+      {{d.claimant.dateOfClaim}}
+    </span>
+  </li>
+</ul>

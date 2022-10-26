@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify children details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group" id="can-you-verify-dependents">
+            <div class="form-group">
+              <fieldset class="inline">
+                <h1 class="heading-large">
+                  Have you seen evidence of dependent children?
+                </h1>
+
+                <div class="multiple-choice" data-target="date-of-birth">
+                  <input
+                    id="dependents-verified-yes"
+                    type="radio"
+                    name="dependents[form]"
+                    value="Yes"
+                    {{'checked' if data.dependents.form === 'Yes'}}
+                  />
+                  <label for="dependents-verified-yes">Yes</label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input
+                    id="dependents-verified-no"
+                    type="radio"
+                    name="dependents[form]"
+                    value="No"
+                    {{'checked' if data.dependents.form === 'No'}}
+                  />
+                  <label for="dependents-verified-no">No</label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="date-of-birth">
+            <div class="form-group">
+              <fieldset>
+                <legend class="heading-small">
+                  Where did you see evidence?
+                </legend>
+                <p>
+                  Select all that apply
+                </p>
+                <div class="multiple-choice" data-target="dob-hidden">
+                  <input
+                    id="cert"
+                    name="dependents[what-evidence][]"
+                    type="checkbox"
+                    value="Certificate"
+                  />
+                  <label for="cert">
+                    Birth certificate
+                  </label>
+                </div>
+
+                <fieldset class="panel panel-border-narrow js-hidden" id="dob-hidden">
+                  <legend>
+                    <span class="form-label-bold">
+                      Date of birth
+                    </span>
+                  </legend>
+
+                  <div class="form-date">
+                    <div class="form-group form-group-day">
+                      <label class="form-label" for="dependants-dateOfBirth-day">
+                        Day
+                      </label>
+                      <input
+                        class="form-control"
+                        id="dependants-dateOfBirth-day"
+                        type="number"
+                        name="dependants-dateOfBirth[day]"
+                        aria-describedby="dependants-dateOfBirth-hint"
+                        value="{{data.verification.dependants-dateOfBirth.day}}"
+                      />
+                    </div>
+
+                    <div class="form-group form-group-month">
+                      <label class="form-label" for="dependants-dateOfBirth-month">
+                        Month
+                      </label>
+                      <input
+                        class="form-control"
+                        id="dependants-dateOfBirth-month"
+                        type="number"
+                        name="dependants-dateOfBirth[month]"
+                        value="{{data.verification.dependants-dateOfBirth.month}}"
+                      />
+                    </div>
+
+                    <div class="form-group form-group-year">
+                      <label class="form-label" for="dependants-dateOfBirth-year">
+                        Year
+                      </label>
+                      <input
+                        class="form-control"
+                        type="number"
+                        id="dependants-dateOfBirth-year"
+                        min="0"
+                        name="dependants-dateOfBirth[year]"
+                        value="{{data.verification.dependants-dateOfBirth.year}}"
+                      />
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="multiple-choice" data-target="chb-hidden">
+                  <input
+                    id="cbol"
+                    name="dependents[what-evidence][]"
+                    type="checkbox"
+                    value="Child Benefit number"
+                  />
+                  <label for="cbol">
+                    In the Child Benefit Online System (CBOL)
+                  </label>
+                </div>
+
+                <div class="form-group js-hidden" id="chb-hidden">
+                  <div class="panel panel-border-narrow">
+                    <label class="form-label" for="chb-number">Child Benefit number</label>
+                    <input class="form-control" id="chb-number" name="chb[number]" type="text">
+                  </div>
+                </div>
+              
+                <div class="multiple-choice">
+                  <input
+                    id="letter"
+                    name="dependents[what-evidence][]"
+                    type="checkbox"
+                    value="Non-advanced education form"
+                  />
+                  <label for="letter">
+                    Non-advanced education form (IPC361)
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <button class="button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

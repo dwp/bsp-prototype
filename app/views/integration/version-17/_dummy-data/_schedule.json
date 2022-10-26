@@ -1,0 +1,24 @@
+{
+  "payments": {
+    "initial": "1 September 2018",
+    "firstMonthly": "1 September 2018",
+    "monthly": [
+      "1 October 2018",
+      "1 November 2018",
+      "1 December 2018",
+      "1 January 2019",
+      "1 February 2019",
+      "1 March 2019",
+      "1 April 2019",
+      "1 May 2019",
+      "1 June 2019",
+      "1 July 2019",
+      "1 August 2019",
+      "1 September 2019",
+      "1 October 2019",
+      "1 November 2019",
+      "1 December 2019",
+      "1 January 2020"
+    ]
+  }
+}

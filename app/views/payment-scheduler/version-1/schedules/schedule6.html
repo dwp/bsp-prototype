@@ -1,0 +1,251 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{sprint}}/find-a-payment-schedule" class="link-back">Find a payment schedule</a>
+        <h1 class="heading-xlarge schedule-heading">
+          KJ598575D
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          ACTIVE
+        </span>
+
+        <h2 class="heading-small th">
+          Bank account
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            Tony Brown
+          </dd>
+
+          <dt class="data-summary-key">
+            Account number
+          </dt>
+          <dd class="data-summary-value">
+            80257643
+          </dd>
+
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            09-02-18
+          </dd>
+
+          <dt class="data-summary-key">
+            Bank name
+          </dt>
+          <dd class="data-summary-value">
+            Santander
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Sent payments
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE3">
+              Due 15 January 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+            <span class="type initial">
+              Sent to CPS
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE2">
+              15 December 2015
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+            <span class="type initial">
+              Sent to CPS
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE1">
+              15 November 2015
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+            <span class="type initial">
+              Sent to CPS
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="backdated">
+              18 October 2015
+            </time>
+            <strong class="amount">
+              £200
+            </strong>
+            <span class="type initial">
+              Backdated monthly payments<br />
+              Sent to CPS
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="initial">
+              18 October 2016
+            </time>
+            <strong class="amount">
+              £2500
+            </strong>
+            <span class="type initial">
+              Initial payment<br />
+              Sent to CPS
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Future payments
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE4">
+              Due 15 February 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE5">
+              Due 15 March 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE6">
+              Due 15 April 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE7">
+              Due 15 May 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE8">
+              Due 15 June 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE9">
+              Due 15 July 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE10">
+              Due 15 August 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE11">
+              Due 15 September 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE12">
+              Due 15 October 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE13">
+              Due 15 November 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE14">
+              Due 15 December 2016
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE15">
+              Due 15 January 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2016-12-03T00:00:00.000Z" data-date="DATE16">
+              Due 15 February 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

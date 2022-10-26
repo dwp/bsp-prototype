@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Rajesh Singh",
+    "nino": "KJ123456X",
+    "dateOfClaim": "12 December 2018",
+    "dateOfBirth": "14 October 1965",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "24",
+      "street": "Park Drive",
+      "town": "Nottingham",
+      "county": "United Kingdom",
+      "postcode": "NG4 2PT"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Amira Singh",
+    "nino": "TX732419X",
+    "dateOfDeath": "3 December 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr R Singh",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "23 April 2000"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% set navClassFind = 'active' %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">Find a payment schedule</h1>
+
+        <form method="get">
+          <div class="form-group search-group ">
+            <label for="search-box" class="form-label">
+              <span>Enter the claimant's National Insurance number</span>
+            </label>
+            <input type="search" name="nino" class="form-control form-control-search" id="search-box" autocomplete="off" value="{{nino}}">
+
+            <button class="button-search" type="submit">
+              <span class="visually-hidden">Search</span>
+            </button>
+          </div>
+        </form>
+
+        {% if nino %}
+          <h2 class="heading-medium">Results</h2>
+          <ul class="search-results">
+            {% if nino == 'AB123456C' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/schedule" class="result-link">
+                  Active schedule
+                </a>
+                <span class="result-meta">
+                  Claire Brown, 12341234
+                </span>
+                <span class="result-meta">
+                  From 16 July 2017 till 10 December 2018
+                </span>
+              </li>
+            {% else %}
+              No matching payment schedules found.
+            {% endif %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

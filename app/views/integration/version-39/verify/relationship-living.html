@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify relationship
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+
+      <form method="post" autocomplete="off">
+              
+        <div>
+          <div class="form-group">
+            <fieldset class="inline">
+              <h1 class="heading-large">
+                Have you seen evidence that the claimant was living with the person who died?
+
+              </h1>
+          
+              <div class="multiple-choice" data-target="evidence">
+                <input
+                  id="marriage-evidence-yes"
+                  type="radio"
+                  name="livingmarriage[verified]"
+                  value="Yes"
+                />
+                <label for="marriage-evidence-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input
+                  id="marriage-evidence-no"
+                  type="radio"
+                  name="livingmarriage[verified]"
+                  value="No"
+                />
+                <label for="marriage-evidence-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="evidence">
+            <div class="form-group">
+              <fieldset>
+                <legend class="heading-small">
+                  Where did you see evidence?
+                </legend>
+                <p>
+                  Select all that apply
+                </p>
+                <div class="multiple-choice">
+                  <input
+                    id="cert"
+                    name="livingmarriage[what-evidence][]"
+                    type="checkbox"
+                    value="Certificate"
+                  />
+                  <label for="cert">
+                    Searchlight
+                  </label>
+                  </label>
+                </div>
+              
+                <div class="multiple-choice">
+                  <input
+                    id="cis"
+                    name="livingmarriage[what-evidence][]"
+                    type="checkbox"
+                    value="CIS"
+                  />
+                  <label for="cis">
+                    eNIRS
+                  </label>
+                </div>
+              
+                <div class="multiple-choice" data-target="evidence1">
+                  <input
+                    id="enirs"
+                    name="livingmarriage[what-evidence][]"
+                    type="checkbox"
+                    value="eNIRS"
+                  />
+                  <label for="enirs">
+                    Accptable form of evidence seen in DRS
+                  </label>
+                </div>
+
+              </fieldset>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="evidence1">
+              <div class="form-group">
+                <fieldset>
+                  
+                  <p>- Council Tax Statement</p>
+                  <p>- Driving license</p>
+                  <p>- Mortgage statement</p>
+                  <p>- Tenancy agreement</p>
+                  <p>- Bank or Building Society Statement </p>
+                  <p>- Utility Bill o Electoral register</p>
+                  <p>- Letter from employer</p>
+                  <p>- personal loan account statement</p>
+                  <p>- vehicle registration documents</p>
+                  <p>- correspondence from HMRC</p>
+                  <p>- UK full old style paper driving licence</p>
+                  <p>- letter from an accountant or solicitor </p>
+                  <p>- Tenancy agreement</p>
+                  <p>- letter from an educational institution</p>
+                  <p>- student loan documentation</p>
+                  <p>- life assurance or insurance policies</p>
+                  <p>- buildings, contents, vehicle insurance policies</p>
+                
+                  
+  
+                </fieldset>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div> 
+        <button class="button" type="submit">Continue</button>
+      </div>
+        
+      </form>
+    </div>
+  </main>
+{% endblock %}

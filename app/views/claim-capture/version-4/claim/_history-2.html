@@ -1,0 +1,30 @@
+{% if status == 'disallowed' %}
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Claim disallowed</h3>
+    <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+    <span class="paused-until-date">{{t.date}}</span><br />
+    <p>Claimant over State Pension age.</p>
+  </li>
+{% endif %}
+
+<li>
+  <span class="line"></span>
+  <h3 class="bold">National Insurance contributions verified</h3>
+  <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+  <span class="paused-until-date">{{t.date}}</span>
+</li>
+
+<li>
+  <span class="line"></span>
+  <h3 class="bold">Death verified</h3>
+  <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+  <span class="paused-until-date">{{t.date}}</span>
+</li>
+
+<li>
+<span class="line"></span>
+  <h3 class="bold">Marriage verified</h3>
+  <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+  <span class="paused-until-date">{{t.date}}</span>
+</li>

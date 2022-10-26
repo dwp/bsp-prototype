@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Jane Collins",
+    "nino": "QZ123456X",
+    "dateOfClaim": "21 March 2018",
+    "dateOfBirth": "13 November 1974",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "91",
+      "street": "Thorn Place",
+      "town": "Blackpool",
+      "county": "Blackpool",
+      "postcode": "BT9 7RR"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Michael Collins",
+    "nino": "QA123456X",
+    "dateOfDeath": "17 March 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs J Collins",
+    "sortCode": "112231",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "24 June 2001"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

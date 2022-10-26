@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim allowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+
+        {% if scenario == '1' %}
+        <div class="govuk-box-highlight govuk-box-highlight-sone">
+          <h1 class="heading-large">
+            Claim complete
+          </h1>
+          <p>
+            Standard rate awarded
+          </p>
+        </div>
+        <h2 class="heading-medium">
+          Letter sent
+        </h2>
+        <!--<p>The claimant has asked for the decision in:</p>
+        <ul class="largeprint-text">
+          <li>Large print</li>
+        </ul>-->
+        <p>The decision letter has been sent to the claimant automatically.</p>
+		    {% endif %}
+
+
+        {% if scenario == '2' %}
+        <div class="govuk-box-highlight govuk-box-highlight-stwo">
+          <h1 class="heading-large">
+            Claim allowed
+          </h1>
+          <p>
+            Higher rate awarded
+          </p>
+        </div>
+			<h2 class="heading-medium">
+				What you need to do next
+			</h2>
+			<!--<p>The claimant has asked for the decision in:</p>
+			<ul class="largeprint-text">
+				<li>Large print</li>
+			</ul>-->
+      <p>You need to send the decision letter to the claimant manually. </p>
+      <p>The claimant has asked for the decision in:</p>
+      <ul class="largeprint-text">
+        <li> large print</li>
+      </ul>
+      <br>
+      <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed">View this claim</a><br />
+		{% endif %}
+        <!--<a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}">View this payment schedule</a>-->
+        
+      </div>
+    </div>
+  </main>
+{% endblock %}

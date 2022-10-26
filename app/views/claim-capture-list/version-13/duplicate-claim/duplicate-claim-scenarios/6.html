@@ -1,0 +1,31 @@
+<div class="column-two-thirds">
+  <h1 class="heading-large">
+    This claimant aleady gets Bereavement Support Payment
+  </h1>
+
+  <p class="lede">
+    A claim using these details has already been allowed.
+  </p>
+</div>
+
+<div class="column-one-third">
+  <h2 class="heading-medium">Previous claims</h2>
+  <ul class="search-results">
+    <li class="result">
+      <h3 class="heading-small">Allowed claim</h3>
+      <div class="panel panel-border-narrow">
+        <h3 class="heading-small">Claimant</h3>
+        <p>
+          {{d.claimant.fullName}}<br/>
+          {{d.claimant.nino}}
+        </p>
+
+        <h3 class="heading-small">Deceased</h3>
+        <p>
+          {{d.partner.fullName}}<br />
+          {{d.partner.nino}}
+        </p>
+    </li>
+  </ul>
+</div>
+

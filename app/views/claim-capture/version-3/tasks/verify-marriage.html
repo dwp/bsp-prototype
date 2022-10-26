@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/{{feature}}/{{sprint}}/claim/{{id}}/paused">Back to claim</a>
+
+        <h1 class="heading-xlarge">Were they married at the time of death?</h1>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <fieldset>
+              <div class="multiple-choice" data-target="evidence">
+                <input id="yes-married" type="radio" name="marriageVerified" value="married">
+                <label for="yes-married">Yes</label>
+              </div>
+
+              <div class="multiple-choice" data-target="evidence">
+                <input id="yes-not-married" type="radio" name="marriageVerified" value="not-married">
+                <label for="yes-not-married">No</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="awaiting-evidence" type="radio" name="marriageVerified" value="awaiting-evidence">
+                <label for="awaiting-evidence">Still waiting for evidence</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="button" type="submit">Update</button>
+        </form>
+      </div>
+  </main>
+{% endblock %}

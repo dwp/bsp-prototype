@@ -1,0 +1,45 @@
+<h2 class="heading-small th">
+  Payment details
+  {% if changeLinks %}
+    <p class="payment-link">
+      <a href="/{{feature}}/{{sprint}}/payment-details">
+        Change
+      </a>
+    </p>
+  {% endif %}
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Name on account
+  </dt>
+  <dd class="data-summary-value">
+    {% if id === '5' and status === 'allowed' %}
+      {{data.payment['name-on-account']}}
+    {% else %}
+      {{d.payment.nameOnAccount}}
+    {% endif %}
+  </dd>
+
+  <dt class="data-summary-key">
+    Sort code
+  </dt>
+  <dd class="data-summary-value">
+    {% if id === '5' and status === 'allowed' %}
+      {{data.payment['sort-code']}}
+    {% else %}
+      {{d.payment.sortCode}}
+    {% endif %}
+  </dd>
+
+  <dt class="data-summary-key">
+    Account number
+  </dt>
+  <dd class="data-summary-value">
+    {% if id === '5' and status === 'allowed' %}
+      {{data.payment['account-number']}}
+    {% else %}
+      {{d.payment.accountNumber}}
+    {% endif %}
+  </dd>
+</dl>

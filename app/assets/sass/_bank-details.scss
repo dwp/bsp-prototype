@@ -1,0 +1,38 @@
+.twitter-typeahead {
+  width: 100%;
+
+  .tt-menu {
+    background: $white;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 4px 4px;
+    outline: 3px solid $yellow;
+    outline-offset: -2px;
+    line-height: normal;
+
+    strong {
+      font-weight: bold;
+      color: $black;
+    }
+
+    .tt-selectable {
+      cursor: pointer;
+      margin: 0;
+      padding: 2px;
+
+      &:hover {
+        background-color: $govuk-blue;
+        color: $white;
+      }
+    }
+
+    @media (min-width: 641px) {
+      max-width: 50%;
+    }
+  }
+}
+
+#countryFields,
+.bank-fields-wrapper {
+  display: none;
+}

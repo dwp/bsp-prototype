@@ -1,0 +1,105 @@
+<section class="details-wrapper">
+  <h2 class="heading-medium th">
+    Claimant details
+    <p class="verified-badge verified">
+      Verified
+    </p>
+  </h2>
+
+  <dl class="details-summary">
+    <dt class="details-summary-key">
+      Title
+    </dt>
+    <dd class="details-summary-value">
+      {{d.claimant.title}}
+    </dd>
+
+    <dt class="details-summary-key">
+      Full name
+    </dt>
+    <dd class="details-summary-value">
+      {{d.claimant.fullName}}
+    </dd>
+
+    <dt class="details-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="details-summary-value">
+      {{d.claimant.nino}}
+    </dd>
+
+    <dt class="details-summary-key">
+      Date of birth
+    </dt>
+    <dd class="details-summary-value">
+      {{d.claimant.dateOfBirth}}
+    </dd>
+
+    <dt class="details-summary-key">
+      Sex
+    </dt>
+    <dd class="details-summary-value">
+      {{d.claimant.sex}}
+    </dd>
+  </dl>
+</section>
+
+<section class="details-wrapper">
+  <h2 class="heading-medium th">
+    Deceased details
+    <p class="verified-badge verified">
+      Verified
+    </p>
+  </h2>
+
+  <dl class="details-summary">
+    <dt class="details-summary-key">
+      Title
+    </dt>
+    <dd class="details-summary-value">
+      {{d.partner.title or showDetails}}
+    </dd>
+
+    <dt class="details-summary-key">
+      Full name
+    </dt>
+    <dd class="details-summary-value">
+      {{d.partner.fullName or showDetails}}
+    </dd>
+
+    <dt class="details-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="details-summary-value">
+      {{d.partner.nino or showDetails}}
+    </dd>
+
+    <dt class="details-summary-key">
+      Date of death
+    </dt>
+    <dd class="details-summary-value">
+      {{d.partner.dateOfDeath or showDetails}}
+    </dd>
+  </dl>
+
+    {% if not data.stopReason %}
+      <a class="change-link" href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+        Change <span class="visually-hidden"> deceased details</span>
+      </a>
+    {% endif %}
+</section>
+
+<section class="details-wrapper">
+  <h2 class="heading-medium th">
+    Date of claim
+  </h2>
+
+  <dl class="details-summary">
+    <dt class="details-summary-key">
+      Date of claim
+    </dt>
+    <dd class="details-summary-value">
+      {{d.claimant.dateOfClaim}}
+    </dd>
+  </dl>
+</section>

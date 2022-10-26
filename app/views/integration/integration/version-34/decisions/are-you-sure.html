@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Disallow claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+		{% if data.conts.enough !== 'No' and data.conts.industrialInjury !== 'No' %}
+		<a class="link-back" href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}">Back</a>
+		{% else %}
+		<a class="link-back" href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">Back</a>
+		{% endif %}
+		
+		
+    
+        <h1 class="heading-large">
+          You are about to disallow this claim
+        </h1>
+		{% if data.conts.enough !== 'No' and data.conts.industrialInjury !== 'No' and scenario === '1' %}
+        <p>
+          You entered the claimant's date of birth as <b class="font-weight: bold">15 November 1954</b>. This means they were over State Pension age at the time of death.
+        </p>
+		{% elseif scenario === '3' %}
+		<p>
+		You entered the deceased's date of death as <b class="font-weight: bold">26 March 2017</b>. They must have died on or after <b class="font-weight: bold">6 April 2017</b> to be eligible for BSP.
+		</p>
+		{% else %}
+		<p>The deceased did not pay enough National Insurance contributions.</p>
+		{% endif %}
+        
+        <form method="post">
+          <div class="form-group">
+            <button class="button button-red">Disallow claim</button>
+          </div>
+        </form>
+		{% if data.conts.enough !== 'No' and data.conts.industrialInjury !== 'No' %}
+		<a href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}">Cancel</a>
+		{% else %}
+		<a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">Cancel</a>
+		{% endif %}
+		
+        
+      </div>
+    </div>
+  </main>
+{% endblock %}

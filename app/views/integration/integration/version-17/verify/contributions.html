@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify National Insurance Contributions
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="heading-small">
+                <h1 class="heading-large">
+                  Did the deceased pay enough UK National Insurance before they died?
+                </h1>
+              </legend>
+
+              <div class="multiple-choice">
+                <input id="enough-conts-yes" type="radio" name="conts[enoughUK]" id="enough-conts-yes" value="Yes" {{'checked' if data.eligibility['enoughConts'] === 'Yes'}}>
+                <label for="enough-conts-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice" data-target="foreign-insurance">
+                <input id="enough-conts-no" type="radio" name="conts[enoughUK]" id="enough-conts-no" value="No" {{'checked' if data.eligibility['enoughConts'] === 'No'}}>
+                <label for="enough-conts-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="foreign-insurance">
+            <div class="form-group">
+              <fieldset class="inline">
+                <legend class="heading-small">
+                  Did they pay enough foreign insurance?
+                </legend>
+
+                <div class="multiple-choice" data-target="hidden-country">
+                  <input id="enough-foreign-yes" type="radio" name="conts[enoughForeign]" value="Yes">
+                  <label for="enough-foreign-yes">Yes</label>
+                </div>
+
+                <div class="multiple-choice" data-target="iidb">
+                  <input id="enough-foreign-no" type="radio" name="conts[enoughForeign]" value="No">
+                  <label for="enough-foreign-no">No</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="hidden-country">
+              <label for="claimant-full-name">
+                <span class="form-label">Country</span>
+              </label>
+              <input class="form-control" type="text" name="conts[country]" id="country">
+            </div>
+          </div>
+  
+          <button class="button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

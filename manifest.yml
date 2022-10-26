@@ -1,0 +1,4 @@
+---
+applications:
+- name: bsp_manager
+  memory: 128M

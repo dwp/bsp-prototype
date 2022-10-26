@@ -1,0 +1,254 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+{% set page = 'schedule' %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">
+          {{d.claimant.fullName}}
+        </span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="schedule-status schedule-status-{{'paused' if data.stopReason else 'active'}}">
+          {{'Paused' if data.stopReason else 'Active'}}
+        </span>
+
+        {% include './_subnav-schedule.html' %}
+
+        {% include '../common/_details-payment.html' %}
+
+        <section class="details-wrapper">
+          <h2 class="heading-small th">
+            Rate
+          </h2>
+          <dl class="details-summary">
+            <dt class="details-summary-key">
+              {% if data.chb.answer === 'Yes' %}
+                Higher
+              {% else %}
+                Standard
+              {% endif %}
+            </dt>
+            <dd class="details-summary-value">
+            </dd>
+          </dl>
+          {% if data.chb.answer !== 'Yes' and not data.stopReason %}
+            <a class="change-link" href="/{{feature}}/{{sprint}}/capture/change-rate/{{scenario}}?returnToSchedule=true">
+              Change <span class="visually-hidden"> rate</span>
+            </a>
+          {% endif %}
+        </section>
+      </div>
+
+      <div class="column-one-third">
+        {% include './../history/_history.html' %}
+      </div>
+    </div>
+
+    <div class="grid row">
+      <div class="column-full">
+        <div class="grid-row">
+          <div class="column-one-half">
+            <h2 class="heading-small th">
+              Payments issued
+            </h2>
+
+            <ul class="schedule">
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  {{'9' if scenario === '1' else '5'}} June 2018
+                </time>
+                <strong class="amount">
+                  £100
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  {{'9' if scenario === '1' else '5'}} May 2018
+                </time>
+                <strong class="amount">
+                  £100
+                </strong>
+              </li>
+              <li class="payment">
+                <time>
+                  {{'9' if scenario === '1' else '5'}} April 2018
+                </time>
+                <strong class="amount">
+                  £2,500
+                </strong>
+                <span class="type">
+                  Initial payment
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="column-one-half">
+            <h2 class="heading-small th">
+              {% if data.stopReason %}
+                Paused payments
+                <p class="payment-link">
+                  <a href="#">
+                    Resume payments
+                  </a>
+                </p>
+              {% else %}
+                Planned payments
+                <p class="payment-link">
+                  <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}/prevent-payments">
+                    Prevent payments
+                  </a>
+                </p>
+              {% endif %}
+            </h2>
+
+            <ul class="schedule">
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} July 2018
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} August 2018
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} September 2018
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} October 2018
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} November 2018
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} December 2018
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} January 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} February 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} March 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} April 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} May 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} June 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} July 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} August 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} September 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z">
+                  Due {{'9' if scenario === '1' else '5'}} October 2019
+                </time>
+                <strong class="amount">
+                  {{'£350' if data.chb.answer === 'Yes' else '£100'}}
+                </strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+{% endblock %}

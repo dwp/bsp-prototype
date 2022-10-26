@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Confirm claim details
+{% endblock %}
+
+{% block customNav %}
+  {% include './custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/verify/child-benefit/1" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        This claim will be paid at the standard rate
+      </h1>
+
+      <p>
+        To get the higher rate, the claimant will need to provide more evidence.
+      </p>
+
+      <form method="post" autocomplete="off">
+      <div class="form-group">
+        <button type="submit" class="button">Continue</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

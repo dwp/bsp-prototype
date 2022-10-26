@@ -1,0 +1,17 @@
+<div class="header-proposition">
+  <div class="content">
+    <nav id="proposition-menu">
+      <a href="/" id="proposition-name">{% if serviceName %} {{ serviceName }} {% endif %}</a>
+      {% if includeMILink === 'true' %}
+        <ul id="proposition-links" class="proposition-links-right">
+          <li><a href="/{{feature}}/{{sprint}}/report/dec">View monthly report</a></li>
+        </ul>
+      {% endif %}
+      {% if includeMILink2 === 'true' %}
+        <ul id="proposition-links" class="proposition-links-right">
+          <li><a href="/{{feature}}/{{sprint}}/report/{{scenario}}">View report</a></li>
+        </ul>
+      {% endif %}
+    </nav>
+  </div>
+</div>

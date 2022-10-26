@@ -1,0 +1,15 @@
+{% extends "govuk_template_unbranded.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}{% endblock %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

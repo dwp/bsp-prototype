@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Settings
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Settings</h1>
+      <form method="post">
+        <div class="form-group">
+          <label class="form-label" for="currentUser">Agent name</label>
+          <input class="form-control" id="currentUser" name="currentUser" type="text">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="heading-small">Scenario</legend>
+            <div class="multiple-choice">
+              <input id="1" type="radio" name="scenario" value='1'>
+              <label for="1">
+                1. No evidence, contact the RVU / RVU came back ok
+              </label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="2" type="radio" name="scenario" value='2'>
+              <label for="2">
+                2. RVU, not married, disallow the claim
+              </label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="3" type="radio" name="scenario" value='3'>
+              <label for="3">
+                3. RVU, don't know, disallow the claim
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="button">Continue</button>
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}

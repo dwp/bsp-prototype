@@ -1,0 +1,31 @@
+// Big links on start page
+.big-links {
+  margin-top: 1.2em;
+}
+
+.big-link {
+	display: block;
+	background: $govuk-blue;
+  text-decoration: none;
+  font-size: 1.895em;
+  font-weight: 700;
+  padding: 0.694em 0.556em;
+  margin: 0.75em 0;
+  
+  span {
+    display: block;
+    font-size: 0.5em;
+  }
+
+  &:link,
+  &:visited {
+    color: $white;
+  }
+  &:active,
+  &:focus {
+    color: $black;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}

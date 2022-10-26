@@ -1,0 +1,31 @@
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Children details
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Dependent children
+    </dt>
+    <dd class="data-summary-value">
+      {{data.children['dependant-children'] or d.children['dependant-children']}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
+          Change <span class="visually-hidden"> dependent children details</span>
+        </a>
+      </span>
+    </dd>
+
+    <dt class="data-summary-key">
+      Pregnant
+    </dt>
+    <dd class="data-summary-value">
+      {{data.children.pregnant or d.children.pregnant}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
+          Change <span class="visually-hidden"> whether the claimant was pregnant</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+</div>

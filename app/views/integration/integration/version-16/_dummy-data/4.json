@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Daryl Peterson",
+    "nino": "KJ123456X",
+    "dateOfClaim": "11 August 2018",
+    "dateOfBirth": "2 December 1968",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "73",
+      "street": "Church Mews",
+      "town": "Jersey",
+      "county": "",
+      "postcode": ""
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Andrea Peterson",
+    "nino": "QP123456X",
+    "dateOfDeath": "2 August 2018"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr D Peterson",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "6 April 1995"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Samantha Moore",
+    "nino": "CC123456X",
+    "dateOfClaim": "2 July 2018",
+    "dateOfBirth": "10 February 1982",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "41",
+      "street": "Blackberry Drive",
+      "town": "Doncaster",
+      "county": "Yorkshire",
+      "postcode": "DB3 4NT"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Harry Moore",
+    "nino": "DD123456X",
+    "dateOfDeath": "15 June 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs S Moore",
+    "sortCode": "549137",
+    "accountNumber": "63020279",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "27 October 2012"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 5,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "David Stuart",
+    "nino": "QM123456X",
+    "dateOfClaim": "21 March 2018",
+    "dateOfBirth": "19 April 1981",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "24",
+      "street": "Pear Tree Mews",
+      "town": "Leeds",
+      "county": "Leeds",
+      "postcode": "LS11 1BR"
+    },
+    "contact": {
+      "home": "01320613721"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Samantha Stuart",
+    "nino": "QN123456X",
+    "dateOfDeath": "19 March 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr D Stuart",
+    "sortCode": "112211",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "16 July 2008"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}
+

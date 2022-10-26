@@ -1,0 +1,10 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+    Claim details
+  </a>
+  {% if scenario === '1' or scenario === '2' %}
+    <strong class="task-completed" >Completed</strong>
+  {% else %}
+    <strong class="task-incomplete" >Not complete</strong>
+  {% endif %}
+</li>

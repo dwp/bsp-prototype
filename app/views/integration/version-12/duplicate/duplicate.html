@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Duplicate claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}" class="link-back">Back</a>
+
+
+        <h1 class="heading-large">
+          You cannot process this claim right now
+        </h1>
+      
+        <p class="text">
+          Someone has already made a claim for Bereavement Support Payment using 
+          this deceased person’s National Insurance number.
+        </p>
+        <p>
+          <span class="bold">Deceased person’s National Insurance number</span><br />
+          <span class="bold">{{d.partner.nino}}</span>.
+        </p>
+        
+        <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed">
+          View the other claim that uses this National Insurance number
+        </a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

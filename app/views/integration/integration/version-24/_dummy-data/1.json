@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",
+    "fullName": "Nathan Adams",
+    "nino": "BQ123456Q",
+    "dateOfClaim": "18 May 2018",
+    "dateOfBirth": "11 December 1979",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "203",
+      "street": "Strawberry Hill",
+      "town": "Kent",
+      "county": "London",
+      "postcode": "CT1 3PD"
+    },
+    "contact": {
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Catherine Adams",
+    "nino": "SQ123456Q",
+    "dateOfDeath": "12 May 2018"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr N Adams",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "3 September 1999"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

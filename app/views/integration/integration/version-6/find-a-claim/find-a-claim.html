@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% set validateActive = 'active' %}
+
+{% block page_title %}
+  {% if search %}
+    Search results or find a claim
+  {% else %}
+    Find a claim
+  {% endif%}
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">Find a claim</h1>
+
+        <form autocomplete="off">
+          <div class="form-group search-group ">
+            <label for="search-box" class="form-label">
+              <span>Enter the claimant's National Insurance number</span>
+            </label>
+            <input type="search" name="findNino" class="form-control form-control-search" id="search-box" autocomplete="off" value="{{search}}">
+
+            <button class="button-search" type="submit">
+              <span class="visually-hidden">Search</span>
+            </button>
+          </div>
+        </form>
+
+        {% if search %}
+          <h2 class="heading-medium">Results</h2>
+          <ul class="search-results">
+            {% if search === 'EQ123456Q' or search === '1' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/1/allowed" class="result-link">
+                  Allowed claim
+                </a>
+                <span class="result-meta">
+                  Angela Meadows
+                </span>
+                <span class="result-meta">
+                  20 May 2018
+                </span>
+              </li>
+            {% elif search === 'TQ123123X' or search === '2' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/2/allowed" class="result-link">
+                  Allowed claim
+                </a>
+                <span class="result-meta">
+                  Kenneth Brown
+                </span>
+                <span class="result-meta">
+                  9 May 2018
+                </span>
+              </li>
+            {% elif search === 'GQ456321X' or search === '3' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/3/allowed" class="result-link">
+                  Allowed claim
+                </a>
+                <span class="result-meta">
+                  Katherine Stapleton
+                </span>
+                <span class="result-meta">
+                  15 May 2018
+                </span>
+              </li>
+            {% elif search === 'SQ123456X' or search === '4' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/4/allowed" class="result-link">
+                  Allowed claim
+                </a>
+                <span class="result-meta">
+                  Antonia Ward
+                </span>
+                <span class="result-meta">
+                  6 February 2018
+                </span>
+              </li>
+            {% elif search === 'UQ654321X' or search === '5' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/5/allowed" class="result-link">
+                  Allowed claim
+                </a>
+                <span class="result-meta">
+                  Timothy Bowman
+                </span>
+                <span class="result-meta">
+                  30 April 2018
+                </span>
+              </li>
+            {% else %}
+              No matching claims found.
+            {% endif %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

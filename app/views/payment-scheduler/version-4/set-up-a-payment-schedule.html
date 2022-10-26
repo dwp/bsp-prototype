@@ -1,0 +1,234 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <h1 class="heading-xlarge">
+      Set up a payment schedule
+    </h1>
+
+
+    <form method="post">
+      <h2 class="heading-large">
+        Claimant details
+      </h2>
+
+      <div class="form-section">
+      <div class="form-group">
+          <label for="input-full-name">
+            <span class="form-label">
+              Full name
+            </span>
+          </label>
+
+          <input class="form-control" type="text" id="input-full-name" name="full-name" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="input-nino">
+            <span class="form-label">
+              National Insurance number
+            </span>
+          </label>
+
+          <input class="form-control" type="text" id="input-nino" name="nino" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                Date of birth
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="input-dateOfBirth-day">
+                  Day
+                </label>
+
+                <input class="form-control" id="input-dateOfBirth-day" type="number" name="dateOfBirth[day]" aria-describedby="dateOfBirth-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="input-dateOfBirth-month">
+                  Month
+                </label>
+                <input class="form-control" id="input-dateOfBirth-month" type="number" name="dateOfBirth[month]">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="input-dateOfBirth-year">
+                  Year
+                </label>
+
+                <input class="form-control" type="number" id="input-dateOfBirth-year" min="0" name="dateOfBirth[year]">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group inline">
+          <fieldset>
+            <legend>
+              <span class="form-label">
+                Sex
+              </span>
+
+              <span class="form-hint">
+                Required to calculate state pension age
+              </span>
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="radio-sex-0" name="sex" value="Female" type="radio">
+              <label for="radio-sex-0">Female</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="radio-sex-1" name="sex" value="Male" type="radio">
+              <label for="radio-sex-1">Male</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                Partner’s date of death
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="input-dateOfDeath-day">
+                  Day
+                </label>
+                <input class="form-control" id="input-dateOfDeath-day" type="number" name="dateOfDeath[day]" aria-describedby="dateOfDeath-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="input-dateOfDeath-month">
+                  Month
+                </label>
+                <input class="form-control" id="input-dateOfDeath-month" type="number" name="dateOfDeath[month]" >
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="input-dateOfDeath-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="input-dateOfDeath-year" min="0" name="dateOfDeath[year]">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+     
+      <h2 class="heading-large">
+        Payment details
+      </h2>
+
+      <div class="form-section">
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                Date of claim
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="input-dateOfClaim-day">
+                  Day
+                </label>
+                <input class="form-control" id="input-dateOfClaim-day" type="number" name="dateOfClaim[day]" aria-describedby="dateOfClaim-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="input-dateOfClaim-month">
+                  Month
+                </label>
+                <input class="form-control" id="input-dateOfClaim-month" type="number" name="dateOfClaim[month]" >
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="input-dateOfClaim-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="input-dateOfClaim-year" min="0" name="dateOfClaim[year]">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group inline">
+          <fieldset>
+            <legend>
+              <span class="form-label">
+                What rate of payment are they eligible for?
+              </span>
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="radio-rate-0" name="rate" value="Standard" type="radio">
+              <label for="radio-rate-0">Standard</label>
+            </div>
+              
+            <div class="multiple-choice">
+              <input id="radio-rate-1" name="rate" value="Higher" type="radio">
+              <label for="radio-rate-1">Higher</label>
+            </div>      
+          </fieldset>
+        </div>
+
+        <h2 class="heading-medium">Account details</h2>
+        <div class="form-group" id="countryFields">
+          <div class="form-group">
+            <label for="input-nameOnAccount">
+              <span class="form-label">Name on account</span>
+            </label>
+            <input class="form-control" type="text" id="input-nameOnAccount" name="bankDetails[nameOnAccount]" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="input-sortCode">
+              <span class="form-label">Sort code</span>
+            </label>
+
+            <input class="form-control" type="text" id="input-sortCode" name="bankDetails[bankCode][Sort code]" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="input-accountNumber">
+              <span class="form-label">Account number</span>
+            </label>
+
+            <input class="form-control" type="text" id="input-accountNumber" name="bankDetails[bankNumber][Account number]" autocomplete="off">
+          </div>
+
+          <div class="form-group js-hidden" id="roll-number">
+            <label for="input-rollNumber">
+              <span class="form-label">Roll Number</span>
+            </label>
+            <input class="form-control" type="text" id="input-rollNumber" name="bankDetails[additional][Roll number]" autocomplete="off">
+          </div>
+        </div>
+
+        <button type="submit" class="button">
+          Set up payment schedule
+        </button>
+      </div>
+    </form>
+  </main>
+{% endblock %}

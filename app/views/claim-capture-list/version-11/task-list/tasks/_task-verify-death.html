@@ -1,0 +1,12 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/verify/death">
+    Death
+  </a>
+  {% if data.death.form or bf %}
+    {% if data.wait.death === 'Yes' %}
+      <strong class="task-incomplete" >Not complete</strong>
+    {% else %}
+      <strong class="task-completed" >Completed</strong>
+    {% endif %}
+  {% endif %}
+</li>

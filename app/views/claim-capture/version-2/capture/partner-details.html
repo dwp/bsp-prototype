@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Partner details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/claimant-details" class="link-back">Back</a>
+
+      <h1 class="heading-xlarge">
+        Partner details
+      </h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <div class="form-group">
+            <label for="full-name">
+              <span class="form-label">Full name</span>
+            </label>
+            <input class="form-control" type="text" name="partner[full-name]" id="full-name" value="{{data.partner['full-name']}}">
+          </div>
+        
+          <div class="form-group">
+            <label for="nino">
+              <span class="form-label">
+                National Insurance number
+              </span>
+            </label>
+            <input class="form-control" type="text" name="partner[nino]" id="nino" value="{{data.partner.nino}}">
+          </div>
+
+          <fieldset>
+            <legend class="form-label-bold">What date did they die?</legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dateOfDeath-day">
+                  Day
+                </label>
+                <input class="form-control" id="dateOfDeath-day" type="number" name="partner[dateOfDeath][day]" aria-describedby="dateOfDeath-hint" value="{{data.partner.dateOfDeath.day}}">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dateOfDeath-month">
+                  Month
+                </label>
+                <input class="form-control" id="dateOfDeath-month" type="number" name="partner[dateOfDeath][month]" value="{{data.partner.dateOfDeath.month}}">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dateOfDeath-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="dateOfDeath-year" min="0" name="partner[dateOfDeath][year]" value="{{data.partner.dateOfDeath.year}}">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend class="heading-small">
+              Did they pay enough National Insurance contributions before they died?
+            </legend>
+        
+            <div class="multiple-choice">
+              <input id="enough-conts-yes" type="radio" name="eligibility[enoughConts]" id="enough-conts-yes" value="Yes" {{'checked' if data.eligibility['enoughConts'] === 'Yes'}}>
+              <label for="enough-conts-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="industrial-injury">
+              <input id="enough-conts-no" type="radio" name="eligibility[enoughConts]" id="enough-conts-no" value="No" {{'checked' if data.eligibility['enoughConts'] === 'No'}}>
+              <label for="enough-conts-no">No</label>
+            </div>
+          </fieldset>
+            
+          <div class="form-group panel panel-border-narrow js-hidden" id="industrial-injury">
+            <fieldset class="inline">
+              <legend class="heading-small">
+                Did they die because of an accident, disease or illness connected with their work?
+              </legend>
+          
+              <div class="multiple-choice" data-target="verify-injury">
+                <input id="industrial-injury-yes" type="radio" name="eligibility[industrial-injury]" value="Yes" {{'checked' if data.eligibility['industrial-injury'] === 'Yes'}}>
+                <label for="industrial-injury-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice" data-target="worked-outside-uk">
+                <input id="industrial-injury-no" type="radio" name="eligibility[industrial-injury]" value="No" {{'checked' if data.eligibility['industrial-injury'] === 'No'}}>
+                <label for="industrial-injury-no">No</label>
+              </div>
+            </fieldset>
+
+            <div class="panel panel-border-narrow js-hidden" id="verify-injury">
+              <fieldset class="inline">
+                <legend class="form-label-bold">Can you verify this?</legend>
+                <div class="multiple-choice">
+                  <input id="radio-inline-1" type="radio" name="verification[industrial-injury]" value="Yes" {{'checked' if data.verification['industrial-injury'] === 'Yes'}}>
+                  <label for="radio-inline-1">Yes</label>
+                </div>
+            
+                <div class="multiple-choice">
+                  <input id="radio-inline-2" type="radio" name="verification[industrial-injury]" value="No" {{'checked' if data.verification['industrial-injury'] === 'No'}}>
+                  <label for="radio-inline-2">No</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-group panel panel-border-narrow js-hidden" id="worked-outside-uk">
+              <fieldset class="inline">
+                <legend class="heading-small">
+                  Did they ever live or work outside of the UK?
+                </legend>
+            
+                <div class="multiple-choice" data-target="country-hidden">
+                  <input id="worked-outside-uk-yes" type="radio" name="partner[worked-outside-uk]" value="Yes" {{'checked' if data.partner['worked-outside-uk'] === 'Yes'}}>
+                  <label for="worked-outside-uk-yes">Yes</label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input id="worked-outside-uk-no" type="radio" name="partner[worked-outside-uk]" value="No" {{'checked' if data.partner['worked-outside-uk'] === 'No'}}>
+                  <label for="worked-outside-uk-no">No</label>
+                </div>
+              </fieldset>
+
+              <div class="panel panel-border-narrow js-hidden" id="country-hidden">
+                <div class="form-group">
+                  <label for="country">
+                    <span class="form-label">
+                      Which country did they work in?
+                    </span>
+                  </label>
+                  <input class="form-control" type="text" id="country" name="partner[country]" value="{{data.partner.country}}">
+                </div>
+
+                <fieldset>
+                  <legend>
+                    <span class="form-label-bold">
+                      When did they work there?
+                    </span>
+                  </legend>
+
+                  <div class="form-date">
+                    <div class="form-group form-group-day">
+                      <label class="form-label" for="dateOfDeath-day">
+                        Day
+                      </label>
+                      <input class="form-control" id="dateOfDeath-day" type="number" name="partner[outside-uk][day]" aria-describedby="dateOfDeath-hint" value="{{data.partner['outside-uk'].day}}">
+                    </div>
+
+                    <div class="form-group form-group-month">
+                      <label class="form-label" for="dateOfDeath-month">
+                        Month
+                      </label>
+                      <input class="form-control" id="dateOfDeath-month" type="number" name="partner[outside-uk][month]" value="{{data.partner['outside-uk'].month}}">
+                    </div>
+
+                    <div class="form-group form-group-year">
+                      <label class="form-label" for="dateOfDeath-year">
+                        Year
+                      </label>
+                      <input class="form-control" type="number" id="dateOfDeath-year" min="0" name="partner[outside-uk][year]" value="{{data.partner['outside-uk'].year}}">
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="button">
+          Continue
+        </button>
+      </div>
+    </form>
+  </main>
+{% endblock %}

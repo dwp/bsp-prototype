@@ -1,0 +1,19 @@
+<h2 class="heading-small th">
+  Claim details
+  <p class="payment-link">
+    {% if not decision %}
+      <a href="/{{feature}}/{{sprint}}/capture/claim-details">
+        Change
+      </a>
+    {% endif %}
+  </p>
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Date of claim
+  </dt>
+  <dd class="data-summary-value">
+    {{d.claimant.dateOfClaim}}
+  </dd>
+</dl>

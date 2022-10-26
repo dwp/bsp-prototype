@@ -1,0 +1,34 @@
+{
+  "1": {
+    "claimant": {
+      "fullName": "Sarah Hawthorne",
+      "nino": "UX123456X"
+    },
+    "partner": {
+      "fullName": "Kevin Hawthorne",
+      "nino": "SQ123456X"
+    }
+  },
+
+  "2": {
+    "claimant": {
+      "fullName": "Daniel Carter",
+      "nino": "WX123456X"
+    },
+    "partner": {
+      "fullName": "Sophie Grimes",
+      "nino": "TX123456X"
+    }
+  },
+
+  "3": {
+    "claimant": {
+      "fullName": "Eleanor Sparks",
+      "nino": "XA123456X"
+    },
+    "partner": {
+      "fullName": "William Sparks",
+      "nino": "XT123456X"
+    }
+  }
+}

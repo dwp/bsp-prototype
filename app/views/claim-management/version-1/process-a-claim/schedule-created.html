@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="govuk-box-highlight">
+          <h1 class="heading-xlarge">
+            Payment schedule successfully created
+          </h1>
+        </div>
+
+        <p>
+          <a href="/{{feature}}/{{sprint}}/process-a-claim/schedule">
+            View this payment schedule
+          </a>
+        </p>
+
+        <h2 class="heading-medium">
+          Other options
+        </h2>
+
+        <ul>
+          <li>
+            <a href="/{{feature}}/{{sprint}}/process-a-claim">
+              Process a claim
+            </a>
+          </li>
+
+          <li>
+            <a href="/{{feature}}/{{sprint}}/capture-a-claim">
+              Capture a claim
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              Find a payment schedule
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+

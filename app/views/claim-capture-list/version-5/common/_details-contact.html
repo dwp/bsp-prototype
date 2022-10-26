@@ -1,0 +1,63 @@
+<h2 class="heading-small th">
+  Contact details
+  {% if not decision %}
+    <p class="payment-link">
+      <a href="/{{feature}}/{{sprint}}/capture/contact-details">
+        Change
+      </a>
+    </p>
+  {% endif %}
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Address
+  </dt>
+  <dd class="data-summary-value">
+    {% if data.claimant.address or showDetails %}
+      {{d.claimant.currentAddress.number}} {{d.claimant.currentAddress.street}}<br />
+      {{d.claimant.currentAddress.town}}<br/>
+      {{d.claimant.currentAddress.county}}<br />
+      {{d.claimant.currentAddress.postcode}}
+    {% endif %}
+  </dd>
+  
+  {% if
+    (d.claimant.contact.home and data.claimant.contact.home)
+    or
+    (d.claimant.contact.home and showDetails)
+  %}
+    <dt class="data-summary-key">
+      Home phone
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.contact.home}}
+    </dd>
+  {% endif %}
+
+  {% if
+    (d.claimant.contact.mobile and data.claimant.contact.mobile)
+    or
+    (d.claimant.contact.mobile and showDetails)
+  %}
+    <dt class="data-summary-key">
+      Mobile phone
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.contact.mobile}}
+    </dd>
+  {% endif %}
+
+  {% if
+    (d.claimant.contact.email and data.claimant.contact.email)
+    or
+    (d.claimant.contact.email and showDetails)
+  %}
+    <dt class="data-summary-key">
+      Email address
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.contact.email}}
+    </dd>
+  {% endif %}
+</dl>

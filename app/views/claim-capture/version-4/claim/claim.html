@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% set d = id | loadDummyData %}
+{% set t = '_test' | loadDummyData %}
+
+{% block page_title %}
+  Claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">{{d.claimant.fullName}}</span>
+          {{d.claimant.nino}}
+        </h1>
+
+        {% if status === 'disallowed' %}
+          {% include './_status-disallowed.html' %}
+        {% elif status === 'paused' %}
+          {% include './_status-paused.html' %}
+        {% else %}
+          {% include './_status-allowed.html' %} 
+          {% include './_subnav-claim.html' %}
+        {% endif %}
+
+        {% if status === 'paused' %}
+          {% include './_date-counter.html' %}
+          {% include './_tasks.html' %}
+        {% endif %}
+
+        {% include '../common/_details-claimant.html' %}
+        {% include '../common/_details-partner.html' %}
+        {% include '../common/_details-children.html' %}
+        {% if data.scenario !== '2' %}
+          {% include '../common/_details-payment.html' %}
+        {% endif %}
+        {% include '../common/_details-date-of-claim.html' %}
+        {% include '../common/_details-verification.html' %}
+      </div>
+      
+      <div class="column-one-third">
+        <h2 class="heading-medium">Claim history</h2>
+        <ul class="log">
+          {% include feature + '/' + sprint + '/claim/_history-' + id + '.html' %}
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

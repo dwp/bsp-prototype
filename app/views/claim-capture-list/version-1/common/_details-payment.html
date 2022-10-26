@@ -1,0 +1,39 @@
+<h2 class="heading-small th">
+  Payment details
+  <p class="payment-link">
+    {% if not decision %}
+      <a href="/{{feature}}/{{sprint}}/capture/payment-details">
+        Change
+      </a>
+    {% endif %}
+  </p>
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Name on account
+  </dt>
+  <dd class="data-summary-value">
+    {% if scenario !== '3' %}
+      {{d.payment.nameOnAccount if data.payment or showDetails}}
+    {% endif %}
+  </dd>
+
+  <dt class="data-summary-key">
+    Sort code
+  </dt>
+  <dd class="data-summary-value">
+    {% if scenario !== '3' %}
+      {{d.payment.sortCode if data.payment or showDetails}}
+    {% endif %}
+  </dd>
+
+  <dt class="data-summary-key">
+    Account number
+  </dt>
+  <dd class="data-summary-value">
+    {% if scenario !== '3' %}
+      {{d.payment.accountNumber if data.payment or showDetails}}
+    {% endif %}
+  </dd>
+</dl>

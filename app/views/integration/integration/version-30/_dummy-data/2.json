@@ -1,0 +1,68 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": "",
+	"settings": 2
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Millie Jessica Long",
+    "nino": "BE751239D",
+    "dateOfClaim": "31 August 2020",
+    "dateOfBirth": "24 December 1966",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "40",
+      "street": "North Promenade",
+      "town": "Dowally",
+      "county": "United Kingdom",
+      "postcode": "PH9 6PH"
+    },
+    "contact": {
+      "home": "070 8864 3510"
+    }
+  },
+  "partner": {
+    "title": "Dr",
+    "fullName": "Dominic Christopher Alexander",
+    "nino": "RS008078A",
+    "dateOfBirth": "04 January 1963",
+    "dateOfDeath": "06 March 2020"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "Yes",
+    "chb-number": "CHB1234567"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs M.J. Long and D.C Alexander",
+    "sortCode": "082082",
+    "accountNumber": "55779911",
+    "country": "United Kingdom"
+  },
+   "address": {
+	 "building": "40",
+     "street": "North Promenade",
+     "town": "Dowally",
+     "country": "United Kingdom",
+     "postcode": "PH9 6PH"
+  },
+  "communication": {
+	 "text8": "None"
+  },
+  "marriage": {
+    "where": "No",
+    "dateOfMarriage": "05 May 1980"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

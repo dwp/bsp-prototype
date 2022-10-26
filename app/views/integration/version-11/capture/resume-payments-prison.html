@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prevent payments
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}" class="link-back">Back</a>
+
+        <form method="post">
+          <div class="form-group" id="chb-no-no">
+            <div class="form-group">
+              <fieldset>
+                <legend class="heading-small">
+                  <h1 class="heading-large">
+                    What date was the claimant released from prison?
+                  </h1>
+                </legend>
+
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="resumed[date][day]">Day</label>
+                    <input class="form-control" id="resumed[date][day]" name="resumed[date][day]" type="number" aria-describedby="dob-hint">
+                  </div>
+            
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="resumed[date][month]">Month</label>
+                    <input class="form-control" id="resumed[date][month]" name="resumed[date][month]" type="number">
+                  </div>
+                  
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="resumed[date][year]">Year</label>
+                    <input class="form-control" id="resumed[date][year]" name="resumed[date][day]" type="number">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <button class="button" type="submitr">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

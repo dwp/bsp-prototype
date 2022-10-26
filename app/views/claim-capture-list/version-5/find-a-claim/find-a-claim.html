@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% set findActive = 'active' %}
+{% set a = '1' | loadDummyData('claim-capture-list') %}
+{% set b = '2' | loadDummyData('claim-capture-list') %}
+{% set c = '3' | loadDummyData('claim-capture-list') %}
+{% set d = '4' | loadDummyData('claim-capture-list') %}
+{% set e = '5' | loadDummyData('claim-capture-list') %}
+{% set f = '6' | loadDummyData('claim-capture-list') %}
+
+{% block page_title %}
+  {% if search %}
+    Search results or find a claim
+  {% else %}
+    Find a claim
+  {% endif%}
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">Find a claim</h1>
+
+        <form autocomplete="off">
+          <div class="form-group search-group ">
+            <label for="search-box" class="form-label">
+              <span>Enter the claimant's National Insurance number</span>
+            </label>
+            <input type="search" name="findNino" class="form-control form-control-search" id="search-box" autocomplete="off" value="{{search}}">
+
+            <button class="button-search" type="submit">
+              <span class="visually-hidden">Search</span>
+            </button>
+          </div>
+        </form>
+
+        {% if search %}
+          <h2 class="heading-medium">Results</h2>
+          <ul class="search-results">
+            {% if search === a.claimant.nino or search === '1' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/1/allowed" class="result-link">
+                  Allowed claim
+                </a>
+                <span class="result-meta">
+                  {{a.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{a.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search === b.claimant.nino or search === '2'%}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/task-list/2" class="result-link">
+                  Unfinished claim
+                </a>
+                <span class="result-meta">
+                  {{b.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{b.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search === c.claimant.nino or search === '3'%}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/task-list/3" class="result-link">
+                  Unfinished claim
+                </a>
+                <span class="result-meta">
+                  {{c.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{c.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search === d.claimant.nino or search === '4' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/task-list/4" class="result-link">
+                  Unfinished claim
+                </a>
+                <span class="result-meta">
+                  {{d.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{d.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search === e.claimant.nino or search === '5' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/5/disallowed" class="result-link">
+                  Disallowed claim
+                </a>
+                <span class="result-meta">
+                  {{e.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{e.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search === f.claimant.nino or search === '6'%}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/task-list/6" class="result-link">
+                  Unfinished claim
+                </a>
+                <span class="result-meta">
+                  {{f.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{f.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% else %}
+              No matching claims found.
+            {% endif %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

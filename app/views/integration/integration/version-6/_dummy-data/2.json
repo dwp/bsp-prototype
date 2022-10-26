@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 5,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Kenneth Brown",
+    "nino": "TQ123123X",
+    "dateOfClaim": "9 May 2018",
+    "dateOfBirth": "17 February 1965",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "12",
+      "street": "Roundpark Lane",
+      "town": "Manchester",
+      "county": "Greater Manchester",
+      "postcode": "M9 4QR"
+    },
+    "contact": {
+      "home": "04612934173"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Jessica Brown",
+    "nino": "PX654321X",
+    "dateOfDeath": "9 May 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr Kenneth Brown",
+    "sortCode": "456321",
+    "accountNumber": "87654321",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "5 March 2001"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}
+

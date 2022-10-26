@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Rebecca Walters",
+    "nino": "AQ123123X",
+    "dateOfClaim": "15 February 2018",
+    "dateOfBirth": "16 October 1970",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "16",
+      "street": "Trevaren Drive",
+      "town": "Ryhope",
+      "county": "Sunderland",
+      "postcode": "SR3 2PQ"
+    },
+    "contact": {
+      "home": "01915655819"
+    }
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Paul Walters",
+    "nino": "KQ123456X",
+    "dateOfDeath": "5 January 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs R Walters",
+    "sortCode": "123456",
+    "accountNumber": "12123434",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "12 July 2001"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

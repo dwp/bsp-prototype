@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% set startActive = 'active' %}
+
+{% block page_title %}
+  Change rate
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% if returnToSchedule %}
+          <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}" class="link-back">Back</a>
+        {% else %}
+          <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed" class="link-back">Back</a>
+        {% endif %}
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend>
+                <h1 class="heading-large">
+                  Does the claimant have a Child Benefit number?
+                </h1>
+              </legend>
+          
+              <div class="multiple-choice" data-target="chb-no-yes">
+                <input id="chb-yes" type="radio" name="chb[answer]" value="Yes">
+                <label for="chb-yes">Yes</label>
+              </div>
+              <div class="multiple-choice" data-target="chb-no-no">
+                <input id="chb-no" type="radio" name="chb[answer]" value="No">
+                <label for="chb-no">No</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="chb-no-yes">
+                <label class="form-label" for="chb-number">
+                  Child Benefit number
+                </label>
+                <input class="form-control" name="chb[number]" type="text" id="chb-number">
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="chb-no-no">
+                <div class="form-group">
+                  <fieldset class="inline">
+                    <legend class="heading-small">
+                      Was the claimant pregnant at the time of death?
+                    </legend>
+                    <div class="multiple-choice">
+                      <input id="children-pregnant-yes" type="radio" name="children[pregnant]" value="Yes">
+                      <label for="children-pregnant-yes">Yes</label>
+                    </div>
+                
+                    <div class="multiple-choice">
+                      <input id="children-pregnant-no" type="radio" name="children[pregnant]" value="No">
+                      <label for="children-pregnant-no">No</label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="button" type="submitr">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

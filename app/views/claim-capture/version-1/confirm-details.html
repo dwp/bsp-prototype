@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% set testDate = '18 October 2017' %}
+
+{% block page_title %}
+  Confirm details
+{% endblock %}
+
+{% block customNav %}
+  {% include './_custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+      
+      <a href="#" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Confirm claim details
+      </h1>
+
+      {% set dateOfClaim = data.dateOfClaim.day + data.dateOfClaim.month + data.dateOfClaim.year %}
+      {% if dateOfClaim == '02102017' or dateOfClaim == '2102017' %}
+          {% include 'claim-capture/version-1/confirm-details-2.html' %}
+      {% elif dateOfClaim == '03102017' or dateOfClaim == '3102017' %}
+          {% include 'claim-capture/version-1/confirm-details-3.html' %}
+      {% else %}
+        {% include 'claim-capture/version-1/confirm-details-1.html' %}
+      {% endif %}
+
+      <br />
+
+      <form method="post">
+      <div class="form-group">
+        <button type="submit" class="button">Confirm and process application</button>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

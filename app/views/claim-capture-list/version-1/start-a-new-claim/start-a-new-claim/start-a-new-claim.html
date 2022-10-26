@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Create a new claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+          Start a new claim
+        </h1>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <label for="full-name">
+              <span class="form-label">Full name</span>
+            </label>
+            <input class="form-control" type="text" name="claimant[full-name]" id="full-name" value="{{data.claimant['full-name']}}">
+          </div>
+
+          <div class="form-group">
+            <label for="nino">
+              <span class="form-label">
+                National Insurance number
+              </span>
+            </label>
+            <input class="form-control" type="text" name="claimant[nino]" id="nino" value="{{data.claimant.nino}}">
+          </div>
+          
+          <div class="form-group">
+            <fieldset>
+              <legend class="heading-small">Date of birth</legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="dateOfBirth-day">
+                    Day
+                  </label>
+                  <input class="form-control" id="dateOfBirth-day" type="number" name="claimant[dateOfBirth][day]"/>
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dateOfBirth-month">
+                    Month
+                  </label>
+                  <input class="form-control" id="dateOfBirth-month" type="number" name="claimant[dateOfBirth][month]"/>
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dateOfBirth-year">
+                    Year
+                  </label>
+                  <input class="form-control" type="number" id="dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]"/>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+              <legend class="heading-small">Date of claim</legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="dateOfClaim-day">
+                    Day
+                  </label>
+                  <input class="form-control" id="dateOfClaim-day" type="number" name="dateOfClaim[day]" value="{{data.dateOfClaim.day}}">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dateOfClaim-month">
+                    Month
+                  </label>
+                  <input class="form-control" id="dateOfClaim-month" type="number" name="dateOfClaim[month]" value="{{data.dateOfClaim.month}}">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dateOfClaim-year">
+                    Year
+                  </label>
+                  <input class="form-control" type="number" id="dateOfClaim-year" min="0" name="dateOfClaim[year]" value="{{data.dateOfClaim.year}}">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

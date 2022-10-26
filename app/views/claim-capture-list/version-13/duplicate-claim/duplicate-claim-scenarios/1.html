@@ -1,0 +1,64 @@
+<div class="column-two-thirds">
+  <h1 class="heading-large">
+    Check the partner's National Insurance number
+  </h1>
+
+  <p class="lede">
+    Someone else has tried to get Bereavement Support Payment using the deceased 
+    partner's National Insurance number.
+  </p>
+
+  <p>
+    You entered: <span class="bold">{{d2[scenario].partner.nino}}</span>
+  </p>
+
+  <form method="post">
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="heading-small">Is this number correct?</legend>
+        <div class="multiple-choice" data-target="yes-instructions">
+          <input id="nino-correct-yes" type="radio" name="duplicate[ninoCorrect]" value="Yes">
+          <label for="nino-correct-yes">Yes</label>
+        </div>
+
+        <div class="multiple-choice">
+          <input id="nino-correct-no" type="radio" name="duplicate[ninoCorrect]" value="No">
+          <label for="nino-correct-no">No</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="panel panel-border-narrow js-hidden" id="yes-instructions">
+      Tell a decision maker someone else is trying to get Bereavement Support
+      Payment using these details.
+    </div>
+    <button class="button" type="submit">Continue</button>
+  </form>
+</div>
+
+<div class="column-one-third">
+  <h2 class="heading-medium">Previous claims</h2>
+  <ul class="search-results">
+    <li class="result">
+      <h3 class="heading-small">Disallowed claim</h3>
+      <div class="panel panel-border-narrow">
+        <h3 class="heading-small">Claimant</h3>
+        <p>
+          {{d.claimant.fullName}}<br/>
+          {{d.claimant.nino}}
+        </p>
+
+        <h3 class="heading-small">Deceased</h3>
+        <p>
+          {{d2[scenario].partner.fullName}}<br />
+          {{d2[scenario].partner.nino}}
+        </p>
+
+        <h3 class="heading-small">Reason</h3>
+        <p>
+          The claimant didn't send proof of their marriage or civil partnership.
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

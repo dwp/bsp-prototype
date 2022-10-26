@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="/{{feature}}/{{sprint}}/set-up-a-payment-schedule" class="link-back">Edit</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">Confirm details and issue payment</h1>
+
+        <h2 class="heading-medium">Claim details</h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">Full name</dt>
+          <dd class="data-summary-value">Adam Gordon</dd>
+
+          <dt class="data-summary-key">National Insurance number</dt>
+          <dd class="data-summary-value">NG747132B</dd>
+
+          <dt class="data-summary-key">Date of birth</dt>
+          <dd class="data-summary-value">29/06/1980</dd>
+
+          <dt class="data-summary-key">Sex</dt>
+          <dd class="data-summary-value">Male</dd>
+
+          <dt class="data-summary-key">Partner’s date of death</dt>
+          <dd class="data-summary-value">02/01/2017</dd>
+        </dl>
+
+        <h2 class="heading-medium">Payment details</h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">Date of claim</dt>
+          <dd class="data-summary-value">10/01/2017</dd>
+
+          <dt class="data-summary-key">Rate of pay</dt>
+          <dd class="data-summary-value">Standard</dd>
+
+          <dt class="data-summary-key">Country</dt>
+          <dd class="data-summary-value">United Kingdom</dd>
+
+          <dt class="data-summary-key">Name on account</dt>
+          <dd class="data-summary-value">A Gordon</dd>
+
+          <dt class="data-summary-key">Sort code</dt>
+          <dd class="data-summary-value">58-41-32</dd>
+
+          <dt class="data-summary-key">Account Number</dt>
+          <dd class="data-summary-value">54123041</dd>
+        </dl>
+
+        <h2 class="heading-medium">Manual payments made</h2>
+
+        <p>
+          All payments upto and including April 2017 have been made.
+        </p>
+        
+        <br />
+        
+        <form method="post">
+          <div class="form-group">
+            <button class="button" type="submit">Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <a href="/{{feature}}/{{sprint}}/set-up-a-payment-schedule" class="link-back">Edit</a>
+  </main>
+{% endblock %}

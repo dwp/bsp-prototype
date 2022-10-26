@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Priya Patel",
+    "nino": "BX158226X",
+    "dateOfClaim": "29 December 2018",
+    "dateOfBirth": "21 August 1969",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "61",
+      "street": "Blockhurst Drive",
+      "town": "Leeds",
+      "county": "United Kingdom",
+      "postcode": "LS9 8RM"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Javinder Patel",
+    "nino": "KX541192X",
+    "dateOfDeath": "20 December 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs P Patel",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "16 December 2000"
+  },
+  "conts": {
+    "year": "2013"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

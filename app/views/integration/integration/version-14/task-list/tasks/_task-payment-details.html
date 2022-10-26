@@ -1,0 +1,8 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
+    Payment details
+  </a>
+  {% if data['payment-details-provided'] === 'Yes' or bf %}
+    <strong class="task-completed" >Completed</strong>
+  {% endif %}
+</li>

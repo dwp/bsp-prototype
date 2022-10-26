@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Address
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+         Address
+        </h1>
+
+        <form method="post" autocomplete="off">
+		
+		<div class="form-group">
+			<label for="claimant-postcode">
+			<span class="form-label">Postcode</span>
+			</label>
+			<input class="form-control short-input" type="text" name="" id="claimant-postcode" value="">
+		</div>
+		<div class="form-group">
+			<button class="button find-address-btn" type="button">Find Address</button>
+		</div>
+		<div class="form-group">
+			<details role="group">
+				<summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">Enter address manually</span></summary>
+				<div class="panel" id="details-content-1" aria-hidden="true">
+					
+				  <div class="form-group-compound">
+					<fieldset class="inline">
+					  <legend class="heading-small">Address</legend>
+					  
+					  <div class="form-group-compound">
+						<label for="line1" class="form-label">Building and street</label>
+						<input class="form-control" type="text" name="address[building]" value="{{data.address.building}}">
+					  </div>
+
+					  <div class="form-group-compound">
+						<label for="line1" class="visually-hidden">Line 2</label>
+						<input class="form-control" type="text" name="address[street]" value="{{data.address.street}}">
+					  </div>
+					   <div class="form-group">
+						<label for="line1" class="form-label">Town or city</label>
+						<input class="form-control" type="text" name="address[town]" value="{{data.address.town}}">
+					  </div>
+					    <div class="form-group">
+						<label for="line1" class="form-label">Country (optional)</label>
+						<input class="form-control" type="text" name="address[country]" value="{{data.address.country}}">
+					  </div>
+					  <div class="form-group">
+						<label for="line1" class="form-label">Postcode</label>
+						<input class="form-control" type="text" name="address[postcode]" value="{{data.address.postcode}}">
+					  </div>
+					</fieldset>
+				  </div>
+				
+				</div>
+			</details>
+		</div>
+		
+		
+		<button class="button" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

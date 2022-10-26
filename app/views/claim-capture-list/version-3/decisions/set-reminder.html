@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim paused
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+          {% if data.pauseFor === '1week' %}
+            Claim paused for 1 week
+          {% elif data.pauseFor === '2weeks' %}
+            Claim paused for 2 weeks
+          {% else %}
+            Claim paused for 1 day
+          {% endif %}
+        </h1>
+
+        <h2 class="heading-medium">Reasons</h2>
+        <ul class="list list-bullet">
+          <li>Payment details not provided</li>
+        </ul>
+
+        <a href="/{{feature}}/{{sprint}}/claim/{{id}}/paused-tasks">View claim</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

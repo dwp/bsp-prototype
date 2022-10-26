@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Kevin Powell",
+    "nino": "QR123456X",
+    "dateOfClaim": "15 March 2018",
+    "dateOfBirth": "21 August 1980",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "21",
+      "street": "Fenwick Close",
+      "town": "Derby",
+      "county": "Derby",
+      "postcode": "D13 4PQ"
+    },
+    "contact": {
+      "mobile": "07748633147"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Sarah Powell",
+    "nino": "QP123456X",
+    "dateOfDeath": "10 March 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr K Powell",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "3 July 2017"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

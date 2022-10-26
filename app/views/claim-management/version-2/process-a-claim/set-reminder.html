@@ -1,0 +1,41 @@
+{% extends "layout-dwp-admin.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          How long do you want to pause this claim for?
+        </h1>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset>
+              <div class="multiple-choice">
+                <input id="radio-1" type="radio" name="firstClaimFinished" value="Yes">
+                <label for="radio-1">1 Week</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input id="radio-2" type="radio" name="firstClaimFinished" value="Yes">
+                <label for="radio-2">2 Weeks</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="button" type="submit">Pause claim</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+

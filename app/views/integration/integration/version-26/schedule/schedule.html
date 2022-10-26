@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">
+          {{d.claimant.fullName}}
+        </span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          Active
+        </span>
+        
+        <div class="panel panel-indent notification-banner">
+          <h2 class="heading-small">Fewer payments than usual</h2>
+          {% if scenario === '2' %}
+            <p>
+              The claim was late
+            </p>
+          {% elif scenario === '3' %}
+            <p>
+              The claimant reaches State Pension Age in November 2019.<br />
+              The claim was late.
+            </p>
+          {% else %}
+            <p>
+              The claimant reaches State Pension Age in September 2020.
+            </p>
+          {% endif %}
+        </div>
+
+        {% include './_subnav-schedule.html' %}
+
+        {% include '../common/_details-payment.html' %}
+
+        <h2 class="heading-small th">
+          Rate
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            {{d.schedule.rate}}
+          </dt>
+          <dd class="data-summary-value">
+            {% if d.schedule.rate === 'Standard' %}
+              <span class="change-link">
+                <a href="#">
+                  Change <span class="visually-hidden"> rate</span>
+                </a>
+              </span>
+            {% endif %}
+          </dd>
+        </dl>
+      </div>
+    </div>
+    
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Payments
+        </h2>
+
+        <ul class="schedule">
+          {% if scenario === '2' %}
+            {% include './_payments-made-2.html' %}
+          {% elif scenario === '3' %}
+            {% include './_payments-made-3.html' %}
+          {% else %}
+            <li class="payment">No payments issued.</li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Planned payments
+          <p class="payment-link">
+            <a href="#">
+              Prevent payments
+            </a>
+          </p>
+        </h2>
+
+        {% include "./_payments-due-" + scenario + ".html" %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

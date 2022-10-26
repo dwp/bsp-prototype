@@ -1,0 +1,279 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Unfinished claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% if scenario !== '1' and scenario !== '2' %}
+      {% include '../common/_notification-banner.html' %}
+    {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">
+			{% if data.claimant.fullName %}
+				{{data.claimant.fullName}}
+			{% else %}
+				{{d.claimant.fullName}}
+			{% endif %}
+			</span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="claim-status">
+          Unfinished
+        </span>
+        <style>
+          .govuk-warning-text__icon {
+          margin-top: -5px;
+      }
+          .govuk-warning-text__icon {
+          font-family: "GDS Transport",arial,sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-weight: 700;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          display: inline-block;
+          position: absolute;
+          left: 15px;
+          min-width: 35px;
+          min-height: 35px;
+          margin-top: -7px;
+          border: 3px solid #0b0c0c;
+          border-radius: 50%;
+          color: #fff;
+          background: #0b0c0c;
+          font-size: 30px;
+          line-height: 29px;
+          text-align: center;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          forced-color-adjust: none;
+        top: 24px;
+      }
+      .govuk-warning-text {
+          margin-bottom: 30px;
+      }
+      .govuk-warning-text {
+          position: relative;
+          margin-bottom: 20px;
+          padding: 10px 0;
+        background: #ddd;
+      }
+      .govuk-warning-text__text {
+          font-size: 19px !important;
+          font-size: 1.1875rem;
+          line-height: 1.31579;
+      }
+      .govuk-warning-text__text {
+          font-family: "GDS Transport",arial,sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-weight: 700;
+          font-size: 16px;
+          font-size: 1rem;
+          line-height: 1.25;
+          color: #0b0c0c;
+          display: block;
+          padding-left: 70px;
+      }
+      .govuk-warning-text__assistive {
+          position: absolute !important;
+          width: 1px !important;
+          height: 1px !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+          clip: rect(0 0 0 0) !important;
+          -webkit-clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
+          border: 0 !important;
+          white-space: nowrap !important;
+      }
+
+
+
+      .govuk-notification-banner {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    border: 5px solid #1d70b8;
+    background-color: #1d70b8;
+}
+
+
+.govuk-notification-banner__header {
+    padding: 2px 15px 5px;
+    border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+
+.govuk-notification-banner__title {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3157894737;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+
+.govuk-notification-banner__content {
+    color: #0b0c0c;
+    padding: 15px;
+    background-color: #fff;
+}
+
+
+.govuk-notification-banner__heading {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.25;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.govuk-notification-banner__link {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, 0.0625rem);
+    text-underline-offset: 0.1em;
+}
+
+          </style>
+          
+
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">
+                Claimant over the State Pension Age.
+                <a class="govuk-notification-banner__link" href="/{{feature}}/{{sprint}}/decisions/are-you-sure/1">Disallow the claim
+                </a>.
+              </p>
+            </div>
+          </div>
+
+          <!--
+          <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Claimant over the State Pension Age.
+        <div style="font-weight: normal !important;">Disallow the claim</div>
+        </strong>
+      </div>
+      -->
+      
+        <div class="tabs">
+          <div class="tabs-nav">
+            <ul class="tabs-list">
+              <li>
+                <a id="taskstocomplete" href="#tasks-to-complete">
+                  Tasks to complete
+                </a>
+              </li>
+              <li>
+                <a id="claimdetails" href="#claim-details">
+                  Claim details
+                </a>
+              </li>
+             <!--  <li>
+                <a href="#evidence">
+                  Evidence
+                </a>
+              </li> -->
+            </ul>
+          </div>
+
+          <div class="tabs-content">
+            <div class="tabs-panel" id="tasks-to-complete">
+              <div class="tabs-panel-inner">
+                <h2 class="js-hidden heading-medium">
+                  Tasks to complete
+                </h2>
+
+                {% include './_tasks-to-complete.html' %}
+              </div>
+            </div>
+
+            <div class="tabs-panel" id="claim-details">
+              <div class="tabs-panel-inner">
+                <h2 class="js-hidden heading-medium">
+                  Claim details
+                </h2>
+
+                {% include '../common/_details-claim.html' %}
+				
+                {% if data.claimant.address %}
+                  {% include '../common/_details-contact.html' %}
+                {% endif %}
+                {% if data.children %}
+                  {% include '../common/_details-children.html' %}
+                {% endif %}
+                {% if data['payment-details-provided'] === 'Yes' %}
+                  {% include '../common/_details-payment.html' %}
+				        {% include '../common/_details-address.html' %}
+				  
+                {% endif %}
+              </div>
+            </div>
+
+            <!-- <div class="tabs-panel" id="evidence">
+              <div class="tabs-panel-inner">
+                <h2 class="js-hidden heading-medium">
+                  Evidence
+                </h2>
+
+                {% include '../common/_details-verification.html' %}
+              </div>
+            </div> -->
+          </div>
+          
+          <a class=" button button-green" 
+          href="/{{feature}}/{{sprint}}/decisions/are-you-sure/1">Disallow claim</a>
+          <button class=" button button-red">
+            Delete claim
+          </button>
+        </div>
+      </div>
+
+      <div class="column-one-third">
+        {% include './../history/_history.html' %}
+      </div>
+    </div>
+    <a class="secret-link" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}" aria-hidden="true" tabindex="-1">Skip to next page</a>
+  </main>
+
+
+  <script>
+    setTimeout(function(){ document.getElementById('claimdetails').click(); }, 500);
+    </script>
+
+{% endblock %}

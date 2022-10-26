@@ -1,0 +1,42 @@
+{% extends "layout-dwp-admin.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include './custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+   <div class="grid-row">
+      <div class="column-half">
+        <ul class="big-links">
+          {% if data.claimsToProcess > 0 %}
+            <li>
+              <a href="/{{feature}}/{{sprint}}/process-a-claim/new-claim" class="big-link">
+                Continue a claim
+                <span>
+                  {{claimsToProcess}} paused claim{{'s' if data.claimsToProcess > 1}} need{{'s' if data.claimsToProcess == 1}} attention
+                </span>
+              </a>
+            </li>
+          {% endif %}
+        
+          <li>
+            <a href="/{{feature}}/{{sprint}}/build-a-claim" class="big-link">
+              Build a claim
+            </a>
+          </li>
+
+          <li>
+            <a href="/{{feature}}/{{sprint}}/find-a-claim" class="big-link">
+              Find a claim
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

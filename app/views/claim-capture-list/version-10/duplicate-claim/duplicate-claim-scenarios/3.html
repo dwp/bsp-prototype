@@ -1,0 +1,36 @@
+<a href="/{{feature}}/{{sprint}}/verify/check-nino" class="link-back">Back</a>
+
+<h1 class="heading-large">
+  There's an unfinished claim using that National Insurance number
+</h1>
+
+<p>
+  You can't continue with this claim.
+</p>
+
+<p>
+  Tell a decision maker someone else is trying to get Bereavement Support
+  Payment using these details:
+</p>
+
+
+<p>
+  <span class="heading-small">{{d.partner.nino}}</span>
+  <br />
+  {{d.partner.fullName}}
+</p>
+
+<h2 class="heading-medium">Previous claims</h2>
+<ul class="panel panel-border-narrow search-results">
+  <li class="result">
+    <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="result-link">
+      Unfinished claim
+    </a>
+    <span class="result-meta">
+      {{d.claimant.fullName}}
+    </span>
+    <span class="result-meta">
+      {{d.claimant.dateOfClaim}}
+    </span>
+  </li>
+</ul>

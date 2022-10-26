@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify relationship details
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+
+      <form method="post" autocomplete="off">
+        <div class="form-group" id="can-you-verify-marriage">
+          <div class="form-group">
+            <fieldset class="inline">
+              <h1 class="heading-large">
+                Does the claimant say they were married or in a civil 
+                partnership at the time of death?
+              </h1>
+
+              <div class="multiple-choice" data-target="date-of-marriage">
+                <input
+                  id="marriage-verified-yes"
+                  type="radio"
+                  name="marriage[form]"
+                  value="Yes"
+                  {{'checked' if data.marriage.form === 'Yes'}}
+                  {{'checked' if scenario === '3'}}
+                  {{'checked' if scenario === '4'}}
+                  {{'checked' if scenario === '6'}}
+                />
+                <label for="marriage-verified-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input
+                  id="marriage-verified-no"
+                  type="radio"
+                  name="marriage[form]"
+                  value="No"
+                  {{'checked' if data.marriage.form === 'No'}}
+                />
+                <label for="marriage-verified-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="panel panel-border-narrow js-hidden" id="date-of-marriage">
+          <div class="form-group">
+            <fieldset>
+              <legend class="heading-small">Have you seen evidence of this?</legend>
+          
+              <div class="multiple-choice" data-target="evidence">
+                <input
+                  id="marriage-evidence-yes"
+                  type="radio"
+                  name="marriage[verified]"
+                  value="Yes"
+                />
+                <label for="marriage-evidence-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input
+                  id="marriage-evidence-no"
+                  type="radio"
+                  name="marriage[verified]"
+                  value="No"
+                />
+                <label for="marriage-evidence-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="evidence">
+            <div class="form-group">
+              <fieldset>
+                <legend class="heading-small">
+                  What evidence did you see?
+                </legend>
+                <div class="multiple-choice">
+                  <input
+                    id="drs"
+                    type="radio"
+                    name="marriage[where]"
+                    value="drs"
+                  />
+                  <label for="drs">
+                    Marriage certificate
+                  </label>
+                </div>
+            
+                <div class="multiple-choice">
+                  <input
+                    id="cis"
+                    type="radio"
+                    name="marriage[where]"
+                    value="cis"
+                  />
+                  <label for="cis">
+                    Verified in CIS
+                  </label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input
+                    id="enirs"
+                    type="radio"
+                    name="marriage[where]"
+                    value="enirs"
+                  />
+                  <label for="enirs">
+                    Verified in eNIRS
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+            
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">
+                  Date of marriage or civil partnership
+                </span>
+              </legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="dateOfMarriage-day">
+                    Day
+                  </label>
+                  <input
+                    class="form-control"
+                    id="dateOfMarriage-day"
+                    type="number"
+                    name="marriage[dateOfMarriage][day]"
+                    aria-describedby="dateOfMarriage-hint"
+                    value="{{data.verification.dateOfMarriage.day}}"
+                  />
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dateOfMarriage-month">
+                    Month
+                  </label>
+                  <input
+                    class="form-control"
+                    id="dateOfMarriage-month"
+                    type="number"
+                    name="marriage[dateOfMarriage][month]"
+                    value="{{data.verification.dateOfMarriage.month}}"
+                  />
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dateOfMarriage-year">
+                    Year
+                  </label>
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="dateOfMarriage-year"
+                    min="0"
+                    name="marriage[dateOfMarriage][year]"
+                    value="{{data.verification.dateOfMarriage.year}}"
+                  />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <button class="button" type="submit">Continue</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

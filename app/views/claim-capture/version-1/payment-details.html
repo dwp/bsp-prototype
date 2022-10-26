@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Payment details
+{% endblock %}
+
+{% block customNav %}
+  {% include './_custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+        <a href="children-details" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+          Payment details
+        </h1>
+
+          <form method="post">
+            <div class="form-group">
+              <label class="form-label" for="name-on-account">Name on account</label>
+              <input class="form-control" id="name-on-account" name="payment[name-on-account]" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sort-code">Sort code</label>
+              <input class="form-control" id="sort-code" name="payment[sort-code]" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="account-number">Account number</label>
+              <input class="form-control" id="account-number" name="payment[account-number]" type="text">
+            </div>
+
+            <button type="submit" class="button">Continue</button>
+          </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

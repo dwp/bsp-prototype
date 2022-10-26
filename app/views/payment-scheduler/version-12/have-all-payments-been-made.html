@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="/{{feature}}/{{sprint}}/have-all-payments-been-made" class="link-back">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          Have all payments up to and including yesterday been made?
+        </h1>
+
+        <p>
+          If a payment is due to be made today, it will form part of the payment 
+          schedule you create using this service.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">          
+              <div class="multiple-choice">
+                <input id="payments-all-made-yes" type="radio" name="payments-all-made" value="Yes">
+                <label for="payments-all-made-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input id="payments-all-made-no" type="radio" name="payments-all-made" value="No">
+                <label for="payments-all-made-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="button">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+

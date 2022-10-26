@@ -1,0 +1,99 @@
+<section class="details-wrapper">
+  <h2 class="heading-medium th">
+    Marriage or civil partnership
+    <p class="verified-badge verified">
+      Verified
+    </p>
+  </h2>
+
+  <dl class="details-summary">
+    <dt class="details-summary-key">
+      Evidence
+    </dt>
+    <dd class="details-summary-value">
+      Certificate
+    </dd>
+    <dt class="details-summary-key">
+      Date
+    </dt>
+    <dd class="details-summary-value">
+      {{d.marriage.dateOfMarriage}}
+    </dd>
+  </dl>
+</section>
+
+<section class="details-wrapper">
+  <h2 class="heading-medium th">
+    Death
+    <p class="verified-badge verified">
+      Verified
+    </p>
+  </h2>
+
+  <dl class="details-summary">
+    <dt class="details-summary-key">
+      Evidence
+    </dt>
+    <dd class="details-summary-value">
+      CIS<br />
+    </dd>
+    <dt class="details-summary-key">
+      Date
+    </dt>
+    <dd class="details-summary-value">
+      {{d.partner.dateOfDeath}}
+    </dd>
+  </dl>
+</section>
+
+<section class="details-wrapper">
+  <h2 class="heading-medium th">
+    National Insurance contributions
+    <p class="verified-badge verified">
+      Verified
+    </p>
+  </h2>
+
+  <dl class="details-summary">
+    <dt class="details-summary-key">
+      Year
+    </dt>
+    <dd class="details-summary-value">
+      {{data.conts.year or '2015'}}
+    </dd>
+  </dl>
+</section>
+
+{% if scenario === '2' or scenario === '3' %}
+  <section class="details-wrapper">
+    <h2 class="heading-medium th">
+      Child Benefit
+      {% if data.chb.answer === 'Yes' %}
+        <p class="verified-badge verified">
+          Verified
+        </p>
+      {% else %}
+        <p class="verified-badge">
+          Not verified
+        </p>
+      {% endif %}
+    </h2>
+
+    <dl class="details-summary">
+      <dt class="details-summary-key">
+        Child Benefit number
+      </dt>
+      <dd class="details-summary-value">
+        {% if data.uprated %}
+          {{data.chb.number}}
+        {% else %}
+          Missing
+        {% endif %}
+      </dd>
+    </dl>
+
+    <a class="change-link" href="/{{feature}}/{{sprint}}/child-benefit/{{scenario}}">
+      Change <span class="visually-hidden"> evidence for Child Benefit</span>
+    </a>
+  </section>
+{% endif %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify National Insurance Contributions
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <fieldset class="inline">
+            <legend class="heading-small">
+              <h1 class="heading-large">
+                Did the deceased pay enough National Insurance before they died?
+              </h1>
+            </legend>
+
+            <div class="multiple-choice" data-target="conts-year">
+              <input id="enough-conts-yes" type="radio" name="conts[enough]" id="enough-conts-yes" value="Yes" {{'checked' if data.eligibility['enoughConts'] === 'Yes'}}>
+              <label for="enough-conts-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="industrial-injury">
+              <input id="enough-conts-no" type="radio" name="conts[enough]" id="enough-conts-no" value="No" {{'checked' if data.eligibility['enoughConts'] === 'No'}}>
+              <label for="enough-conts-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="conts-year">
+          <label class="form-label" for="conts-year">Which year did you use as verification?</label>
+          <input class="form-control" id="conts-year" name="conts[year]" type="number" value="{{data.eligibility.contsYear}}">
+        </div>
+
+        <button class="button" type="submit">Continue</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

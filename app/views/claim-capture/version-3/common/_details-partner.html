@@ -1,0 +1,33 @@
+<h2 class="heading-small th">
+  Partner details
+  {% if changeLinks %}
+    <p class="payment-link">
+      <a href="/{{feature}}/{{sprint}}/partner-details">
+        Change
+      </a>
+    </p>
+  {% endif %}
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Full name
+  </dt>
+  <dd class="data-summary-value">
+    {{d.partner.fullName}}
+  </dd>
+
+  <dt class="data-summary-key">
+    National Insurance number
+  </dt>
+  <dd class="data-summary-value">
+    {{d.partner.nino}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Date of death
+  </dt>
+  <dd class="data-summary-value">
+    {{d.partner.dateOfDeath}}
+  </dd>
+</dl>

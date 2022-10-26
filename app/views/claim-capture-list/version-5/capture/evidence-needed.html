@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% set d = scenario | loadDummyData('claim-capture-list') %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Evidence needed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">Evidence of marriage or civil partnership needed</h1>
+
+        <p class="text">
+          You can't process this claim until {{d.claimant.fullName}} 
+          has sent in evidence of their marriage or civil partnership.
+        </p>
+        
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <fieldset>
+              <legend class="heading-small">
+                Do you want to allow more time?
+              </legend>
+              <div class="multiple-choice" data-target="hidden">
+                <input
+                  id="wait-yes"
+                  type="radio"
+                  name="wait"
+                  value="Yes"
+                />
+                <label for="wait-yes">
+                  Yes, wait a bit longer
+                </label>
+              </div>
+
+              <div class="multiple-choice">
+                <input
+                  id="wait-no"
+                  type="radio"
+                  name="wait"
+                  value="No"
+                />
+                <label for="wait-no">
+                  No, disallow the claim
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="hidden">
+            <p class="text">
+              You may need to contact {{d.claimant.fullName}} to remind them to 
+              send in their evidence.
+            </p>
+          </div>
+
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

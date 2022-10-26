@@ -1,0 +1,19 @@
+<nav class="nav-bar">
+  <ul>
+    {% if data.claimsToProcess > 0 %}
+      <li>
+        <a href="/{{feature}}/{{sprint}}/process-a-claim/new-claim">
+          Continue a claim ({{claimsToProcess}})
+        </a>
+      </li>
+    {% endif %}
+
+    <li>
+      <a href="/{{feature}}/{{sprint}}/capture-a-claim">Build a claim</a>
+    </li>
+
+    <li>
+      <a href="/{{feature}}/{{sprint}}/find-a-claim">Find a claim</a>
+    </li>
+  </ul>
+</nav>

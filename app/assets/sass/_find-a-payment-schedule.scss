@@ -1,0 +1,66 @@
+input[type="search"] {
+  @include box-sizing(border-box);
+}
+
+.search-group {
+  padding-right: 2.632em;
+}
+
+.form-control-search {
+  width: 100%;
+  height: 2.632em;
+  border-right: 0;
+  float: left;
+}
+
+.button-search {
+  background: $govuk-blue url('/public/images/search-button.png') no-repeat center center;
+  background-position: 82% 50%;
+  border: none;
+  width: 2.632em;
+  height: 2.632em;
+  font-size: 1em;
+  margin-right: -2.632em;
+  float: right;
+
+  &:hover, &:focus {
+    cursor: pointer;
+    background-color: $link-hover-colour;
+  }
+  &:active {
+    border-top: 2px solid $link-hover-colour;
+  }
+}
+
+.search-results {
+  margin: 0 0 2em;
+}
+
+.result {
+  border-bottom: 1px solid $grey-2;
+  margin: 0;
+  padding: 1em 0;
+}
+
+.result-meta,
+.result-link {
+  display: block;
+}
+
+.result-link {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.result-meta {
+  font-size: .842105263157895em;
+}
+
+.result:first-child {
+  padding-top: 0;
+}
+
+.result:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}

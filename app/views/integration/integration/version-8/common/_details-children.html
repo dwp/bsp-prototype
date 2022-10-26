@@ -1,0 +1,39 @@
+<section class="details-wrapper">
+  <h2 class="heading-medium th">
+    Children details
+  </h2>
+
+  <dl class="details-summary">
+    <dt class="details-summary-key">
+      Dependent children
+    </dt>
+    <dd class="details-summary-value">
+      {% if scenario === '2' or scenario === '3' %}
+        Yes
+      {% else %}
+        No
+      {% endif %}
+    </dd>
+
+    <dt class="details-summary-key">
+      Pregnant
+    </dt>
+    <dd class="details-summary-value">
+      {% if scenario === '1' or scenario === '2' %}
+        {% if data.uprated %}
+          Yes
+        {% else %}
+          No
+        {% endif %}
+      {% else %}
+        No
+      {% endif %}
+    </dd>
+  </dl>
+
+  {% if not data.stopReason %}
+    <a class="change-link" href="/{{feature}}/{{sprint}}/change-rate/change-rate/{{scenario}}">
+      Change <span class="visually-hidden"> dependent children details</span>
+    </a>
+  {% endif %}
+</section>

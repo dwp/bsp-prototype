@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Dependent children
+{% endblock %}
+
+{% block customNav %}
+  {% include '../../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}" class="link-back">Back</a>
+
+        {% include './scenarios/' + scenario + '.html' %}
+        
+      </div>
+    </div>
+  </main>
+{% endblock %}

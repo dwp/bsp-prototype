@@ -1,0 +1,237 @@
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Marriage or civil partnership
+    {% if data.marriage.verified === 'Yes' %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% else %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    {% if data.marriage.verified === 'Yes' %}
+      <dd class="data-summary-value">
+        {% for ev in data.marriage['what-evidence'] %}
+          {{ev}}<br />
+        {% endfor %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/relationship/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of marriage or civil partnership</span>
+          </a>
+        </span>
+      </dd>
+      <dt class="data-summary-key">
+        Date
+      </dt>
+      <dd class="data-summary-value">
+        {{d.marriage.dateOfMarriage}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/relationship/{{scenario}}">
+            Change <span class="visually-hidden"> date of marriage or civil partnership</span>
+          </a>
+        </span>
+      </dd>
+    {% else %}
+      <dd class="data-summary-value">
+        Evidence of marriage or civil partnership needed
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/relationship/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of marriage or civil partnership</span>
+          </a>
+        </span>
+      </dd>
+    {% endif%}
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Death
+    {% if scenario === '1' or data.dateOfdeath%}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% else %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    {% if scenario === '1' %}
+      <dd class="data-summary-value">
+        CIS<br />
+      </dd>
+      <dt class="data-summary-key">
+        Date
+      </dt>
+      <dd class="data-summary-value">
+        {{d.partner.dateOfDeath}}
+      </dd>
+    {% elif data.dateOfdeath %}
+      <dd class="data-summary-value">
+        {% for ev in data.death['what-evidence'] %}
+          {{ev}}<br />
+        {% endfor %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of death</span>
+          </a>
+        </span>
+      </dd>
+      <dt class="data-summary-key">
+        Date
+      </dt>
+      <dd class="data-summary-value">
+        {{d.partner.dateOfDeath}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+            Change <span class="visually-hidden"> verified date of death</span>
+          </a>
+        </span>
+      </dd>
+    {% else %}
+      <dd class="data-summary-value">
+        Evidence of death needed
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of death</span>
+          </a>
+        </span>
+      </dd>
+    {% endif%}
+  </dl>
+</div>
+
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    National Insurance contributions
+    {% if data.conts %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% else %}
+      <p class="verified-badge">
+        Not verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    {% if data.conts.enoughUK or data.conts.enoughForeign %}
+      <dt class="data-summary-key">
+        Year
+      </dt>
+      <dd class="data-summary-value">
+        2015
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+            Change <span class="visually-hidden"> year used for National Insurance contributions</span>
+          </a>
+        </span>
+      </dd>
+
+      {% if data.conts.industrialInjury %}
+        <dt class="data-summary-key">
+          Industrial injury or illness
+        </dt>
+        <dd class="data-summary-value">
+          {% if data.conts.industrialInjury === 'Yes' %}
+            Yes
+          {% else %}
+            No
+          {% endif %}
+          <span class="change-link">
+            <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+              Change <span class="visually-hidden"> answer for industrial injury or illness</span>
+            </a>
+          </span>
+        </dd>
+      {% endif %}
+    {% else %}
+      <dt class="data-summary-key">
+        Evidence
+      </dt>
+      <dd class="data-summary-value">
+        Evidence of National Insurance contributions needed
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of National Insurance contributions</span>
+          </a>
+        </span>
+      </dd>
+    {% endif%}
+  </dl>
+</div>
+
+{% if data.children['dependant-children'] === 'Yes' %}
+  <div class="details-wrapper">
+    <h2 class="heading-medium th">
+      Dependent children
+      {% if data.dependents.form === 'Yes' %}
+        <p class="verified-badge verified">
+          Verified
+        </p>
+      {% else %}
+        <p class="verified-badge">
+          Not verified
+        </p>
+      {% endif %}
+    </h2>
+
+    <dl class="data-summary">
+      <dt class="data-summary-key">
+        Evidence
+      </dt>
+      <dd class="data-summary-value">
+        {{data.dependents['what-evidence'] or 'Evidence of dependent children needed'}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+            Change <span class="visually-hidden"> Dependent children verification</span>
+          </a>
+        </span>
+      </dd>
+      {% if data.chb.number %}
+        <dt class="data-summary-key">
+          Child Benefit number
+        </dt>
+        <dd class="data-summary-value">
+          {{data.chb.number}}
+          <span class="change-link">
+            <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+              Change <span class="visually-hidden"> Child Benefit number</span>
+            </a>
+          </span>
+        </dd>
+      {% endif %}
+      {% if data.dependents['what-evidence'] and ("Certificate" in data.dependents['what-evidence']) %}
+        <dt class="data-summary-key">
+          Date of birth
+        </dt>
+        <dd class="data-summary-value">
+          {% if scenario === '2' %}
+            18 June 2010
+          {% else %}
+            29 April 2001
+          {% endif %}
+          <span class="change-link">
+            <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+              Change <span class="visually-hidden"> Dependants date of birth</span>
+            </a>
+          </span>
+        </dd>
+      {% endif %}
+    </dl>
+  </div>
+{% endif %}

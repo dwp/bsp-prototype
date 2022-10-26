@@ -1,0 +1,58 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",
+    "fullName": "Amanda Aktar",
+    "nino": "LM123456X",
+    "dateOfClaim": "30 October 2018",
+    "dateOfBirth": "24 August 1971",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "4",
+      "street": "Broadwater Way",
+      "town": "Peterlee",
+      "county": "United Kingdom",
+      "postcode": "DH5 2MP"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Martin Aktar",
+    "nino": "KP123456X",
+    "dateOfDeath": "28 September 2018"  
+  },
+  "children": {
+    "dependant": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs A Aktar",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "13 July 2008"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "21 August 2018",
+      "backdated": "21 August 2018",
+      "firstMonthly": "2 September 2018"
+    }
+  }
+}

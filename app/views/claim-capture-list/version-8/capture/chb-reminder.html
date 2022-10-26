@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Evidence needed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/verify/child-benefit" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+          {{d.claimant.fullName}} will get the standard rate
+        </h1>
+
+        <p class="text">
+          They've said they have dependent children but there’s no Child Benefit 
+          number. This means they can’t get the higher rate yet.
+        </p>
+        <p> 
+          You should contact {{d.claimant.fullName}} to see if they need to 
+          apply for Child Benefit. When they've done this, and if they are 
+          entitled to Child Benefit, their claim can be changed to the higher rate.
+        </p>
+
+        <a class="button" href="/{{feature}}/{{sprint}}/task-list/{{scenario}}">Continue</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

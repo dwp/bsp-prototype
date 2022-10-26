@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="{{backlink}}" class="link-back">Edit</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          When was the last manual payment made?
+        </h1>
+      </div>
+    </div>
+
+    <form method="post">
+      <div class="form-group">      
+        <legend class="visually-hidden">Do you already have a personal user account?</legend>
+    
+        <div class="multiple-choice">
+          <input id="radio-inline-1" type="radio" name="radio-inline-group" value="april">
+          <label for="radio-inline-1">10 January 2017</label>
+        </div>
+
+        <div class="multiple-choice">
+          <input id="radio-inline-2" type="radio" name="radio-inline-group" value="may">
+          <label for="radio-inline-2">2 February 2017</label>
+        </div>
+
+        <div class="multiple-choice">
+          <input id="radio-inline-3" type="radio" name="radio-inline-group" value="june">
+          <label for="radio-inline-3">2 March 2017</label>
+        </div>
+
+        <div class="multiple-choice">
+          <input id="radio-inline-4" type="radio" name="radio-inline-group" value="june">
+          <label for="radio-inline-4">2 April 2017</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="button">Create payment schedule</button>
+      </div>
+    </form>
+
+    <a href="{{backlink}}" class="link-back">Edit</a>
+  </main>
+{% endblock %}

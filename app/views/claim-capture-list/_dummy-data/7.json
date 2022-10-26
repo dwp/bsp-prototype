@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 2,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Pamela McKenzie",
+    "nino": "GG123456X",
+    "dateOfClaim": "10 February 2018",
+    "dateOfBirth": "9 January 1953",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "21",
+      "street": "Treetop Street",
+      "town": "Manchester",
+      "county": "Greater Manchester",
+      "postcode": "M1 9FF"
+    },
+    "contact": {
+      "home": "01206445654"
+    }
+  },
+  "partner": {
+    "fullName": "Christopher McKenzie",
+    "nino": "HH123456X",
+    "dateOfDeath": "6 February 2018"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs P McKenzie",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "11 November 2003"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

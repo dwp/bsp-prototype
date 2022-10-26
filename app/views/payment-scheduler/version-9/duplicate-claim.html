@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="/{{feature}}/{{sprint}}/set-up-a-payment-schedule" class="link-back">Edit</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          AA111999A already has an active payment schedule
+        </h1>
+
+        <p>
+          Check the details you entered. If the National Insurance number is
+          correct, read the guidance to find out what to do when someone has
+          multiple active claims.
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock %}

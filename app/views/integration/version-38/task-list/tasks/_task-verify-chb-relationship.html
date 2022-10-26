@@ -1,0 +1,23 @@
+{% if (data.deceased.form === 'Yes' or data.deceased.form == 'Yes1' or data.deceased.form == 'Yes2') %}
+
+  <li class="task-list-item">
+
+    {% if data.deceased.form === 'Yes' %}
+    <a class="task-name" href="/{{feature}}/{{sprint}}/verify/relationship-married/{{scenario}}">
+      Relationship
+    </a>
+    {% elif data.deceased.form === 'Yes1' or bf %}
+    <a class="task-name" href="/{{feature}}/{{sprint}}/verify/relationship-civilpartnership/{{scenario}}">
+      Relationship
+    </a>
+    {% elif data.deceased.form === 'Yes2' or bf %}
+    <a class="task-name" href="/{{feature}}/{{sprint}}/verify/relationship-living/{{scenario}}">
+      Relationship
+    </a>
+  {% endif %}
+    
+    {% if data.relationshipmarriage.verified or data.livingmarriage.verified or data.civilmarriage.verified or bf %}
+      <strong class="task-completed" >Completed</strong>
+    {% endif %}
+  </li>
+{% endif %}

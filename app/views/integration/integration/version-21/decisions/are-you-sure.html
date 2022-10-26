@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Disallow claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">Back</a>
+    
+        <h1 class="heading-large">
+          You are about to disallow this claim
+        </h1>
+        
+        {% if scenario === '3' %}
+          <p>
+            The RVU found that the marriage or civil partnership was not valid.
+          </p>
+        {% else %}
+          <p>
+            You're about to disallow this claim because there is no proof the 
+            claimant was married to the deceased at the time of death.
+          </p>
+        {% endif %}
+        
+        <form method="post">
+          <div class="form-group">
+            <button class="button button-red">Disallow claim</button>
+          </div>
+        </form>
+
+        <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">Cancel</a>
+        
+      </div>
+    </div>
+  </main>
+{% endblock %}

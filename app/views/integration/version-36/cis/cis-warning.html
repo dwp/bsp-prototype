@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Could not get data
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        {% include './scenarios/' + scenario + '.html' %}
+        
+      </div>
+    </div>
+  </main>
+{% endblock %}

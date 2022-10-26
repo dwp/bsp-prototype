@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<style>li .schedule-status {margin-bottom: 0;}</style>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+        Sprint 4
+      </h1>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-one-third">
+      <h2 class="heading-small">Scenario 1</h2>
+      <ul class="list list-bullet">
+        <li>Status: <span class="schedule-status schedule-status-active">ACTIVE</span></li>
+        <li>Sent payments: no</li>
+        <li>Future payments: yes</li>
+        <li>Back dated payments: no</li>
+        <li>Rate: Standard</li>
+      </ul>
+      <a class="button" href="/{{feature}}/{{sprint}}/find-a-payment-schedule?nino=JL765432A">Load scenario 1</a>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-small">Scenario 2</h2>
+      <ul class="list list-bullet">
+        <li>Status: <span class="schedule-status">ENDED</span></li>
+        <li>Sent payments: yes</li>
+        <li>Future payments: no</li>
+        <li>Back dated payments: no</li>
+        <li>Rate: Higher</li>
+      </ul>
+      <a class="button" href="/{{feature}}/{{sprint}}/find-a-payment-schedule?nino=BA441865B">Load scenario 2</a>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-small">Scenario 3</h2>
+      <ul class="list list-bullet">
+        <li>Status: <span class="schedule-status schedule-status-active">ACTIVE</span></li>
+        <li>Sent payments: no</li>
+        <li>Future payments: yes</li>
+        <li>Back dated payments: yes</li>
+        <li>Rate: Standard</li>
+      </ul>
+      <a class="button" href="/{{feature}}/{{sprint}}/find-a-payment-schedule?nino=AB657234D">Load scenario 3</a>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="grid-row">
+    <div class="column-one-third">
+      <h2 class="heading-small">Scenario 4</h2>
+      <ul class="list list-bullet">
+        <li>Status: <span class="schedule-status">ENDED</span></li>
+        <li>Sent payments: yes</li>
+        <li>Future payments: no</li>
+        <li>Back dated payments: yes</li>
+        <li>Rate: Standard</li>
+      </ul>
+      <a class="button" href="/{{feature}}/{{sprint}}/find-a-payment-schedule?nino=BA254819C">Load scenario 4</a>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-small">Scenario 5</h2>
+      <ul class="list list-bullet">
+        <li>Status: <span class="schedule-status schedule-status-active">ACTIVE</span></li>
+        <li>Sent payments: yes</li>
+        <li>Rate: Standard</li>
+        <li>Future payments: yes</li>
+        <li>Back dated payments: no</li>
+      </ul>
+      <a class="button" href="/{{feature}}/{{sprint}}/find-a-payment-schedule?nino=JH463887B">Load scenario 5</a>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-small">Scenario 6</h2>
+      <ul class="list list-bullet">
+        <li>Status: <span class="schedule-status schedule-status-active">ACTIVE</span></li>
+        <li>Sent payments: yes</li>
+        <li>Rate: Standard</li>
+        <li>Future payments: yes</li>
+        <li>Back dated payments: yes</li>
+      </ul>
+      <a class="button" href="/{{feature}}/{{sprint}}/find-a-payment-schedule?nino=KJ598575D">Load scenario 6</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

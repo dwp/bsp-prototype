@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+   <div class="grid-row">
+      <div class="column-half">
+
+        <ul class="big-links">
+          <li>
+            <a href="#" class="big-link">
+              Capture a claim
+            </a>
+          </li>
+
+          <li>
+            <a href="/{{feature}}/{{sprint}}/process-a-claim" class="big-link">
+              Process a claim
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </main>
+{% endblock %}

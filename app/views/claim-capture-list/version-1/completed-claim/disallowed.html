@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% set t = '_test' | loadDummyData(feature) %}
+{% set d = scenario | loadDummyData(feature) %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">{{d.claimant.fullName}}</span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="claim-status claim-status-rejected">
+          Disallowed
+        </span>
+
+        {% include '../common/_details-claim.html' %}
+        {% include '../common/_details-claimant.html' %}
+        {% include '../common/_details-partner.html' %}
+        {% include '../common/_details-payment.html' %}
+      </div>
+
+      <div class="column-one-third">
+        {% include './../common/_history.html' %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

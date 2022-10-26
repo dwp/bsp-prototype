@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/{{feature}}/{{sprint}}/claim-1">Back to claim</a>
+
+        <h1 class="heading-xlarge">
+          Can you verify that the deceased paid enough National Insurance contributions?
+        </h1>
+
+        <p>
+          National Insurance contributions can be verified using the eNIRS system.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">     
+              <div class="multiple-choice">
+                <input id="radio-inline-1" type="radio" name="contsVerified" value="Yes">
+                <label for="radio-inline-1">Yes</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input id="radio-inline-2" type="radio" name="contsVerified" value="No">
+                <label for="radio-inline-2">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="button" type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

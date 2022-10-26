@@ -1,0 +1,42 @@
+<h2 class="heading-small th">
+  Payment details
+  <p class="payment-link">
+    {% if not decision %}
+      <a href="/{{feature}}/{{sprint}}/capture/payment-details">
+        Change
+      </a>
+    {% endif %}
+  </p>
+</h2>
+
+<dl class="data-summary">
+  <dt class="data-summary-key">
+    Name on account
+  </dt>
+  <dd class="data-summary-value">
+    {{d.payment.nameOnAccount}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Sort code
+  </dt>
+  <dd class="data-summary-value">
+    {{d.payment.sortCode}}
+  </dd>
+
+  <dt class="data-summary-key">
+    Account number
+  </dt>
+  <dd class="data-summary-value">
+    {{d.payment.accountNumber}}
+  </dd>
+
+  {% if d.payment.rollNumber %}
+    <dt class="data-summary-key">
+      Roll number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.payment.rollNumber}}
+    </dd>
+  {% endif %}
+</dl>

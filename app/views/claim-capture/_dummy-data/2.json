@@ -1,0 +1,41 @@
+{
+  "claim": {
+    "status": "Disallowed"
+  },
+  "claimant": {
+    "fullName": "Sarah Wilson",
+    "nino": "BB123456B",
+    "dateOfClaim": "2 October 2017",
+    "dateOfBirth": "11 August 1950",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "8",
+      "street": "Limetree Grove",
+      "town": "Selby",
+      "county": "Leeds",
+      "postcode": "L1 4PP"
+    },
+    "contact": {
+      "home": "11311234567"
+    }
+  },
+  "partner": {
+    "fullName": "Patrick Wilson",
+    "nino": "HH123456H",
+    "dateOfDeath": "10 October 2017"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs S Wilson",
+    "sortCode": "121234",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "verification": {
+    "marriage": "Yes",
+    "death": "Yes",
+    "conts": "Yes"
+  }
+}

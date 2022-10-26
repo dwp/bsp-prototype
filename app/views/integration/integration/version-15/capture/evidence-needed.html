@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Evidence needed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/verify/relationship/1" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+          Evidence needed
+        </h1>
+
+        <p class="text">
+          You cannot process this claim until you have seen evidence of their 
+          marriage or civil partnership.
+        </p>
+        
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <fieldset>
+              <legend class="heading-small">
+                How do you want to collect this evidence?
+              </legend>
+              <div class="multiple-choice">
+                <input
+                  id="wait-claimant"
+                  type="radio"
+                  name="wait"
+                  value="claimant"
+                />
+                <label for="wait-claimant">
+                  Wait for the claimant to send it in
+                </label>
+              </div>
+
+              <div class="multiple-choice">
+                <input
+                  id="wait-rvu"
+                  type="radio"
+                  name="wait"
+                  value="rvu"
+                />
+                <label for="wait-rvu">
+                  Contact the Relationship Verification Unit (RVU)
+                </label>
+              </div>
+
+              <p class="form-block">or</p>
+              
+              <div class="multiple-choice">
+                <input
+                  id="wait-disallow"
+                  type="radio"
+                  name="wait"
+                  value="disallow"
+                />
+                <label for="wait-disallow">
+                  No evidence has been found – disallow this claim
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

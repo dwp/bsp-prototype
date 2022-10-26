@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">    
+        <a href="/{{feature}}/{{sprint}}/claim-details/{{scenario}}" class="link-back">Back</a>
+      </div>
+
+      {% include './duplicate-claim-scenarios/' + scenario + '.html' %}
+
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,20 @@
+
+{% if 
+  data.children
+  and (data.conts.enoughUK === 'Yes' or data.conts.verified === 'Yes' or data.conts.enoughForeign === 'Yes') 
+  and (data.marriage.verified === 'Yes' or data.rvu.response === 'Yes')
+  and data['payment-details-provided'] === 'Yes'
+%}
+  <li>
+    <h2 class="task-list-section">
+      Submit claim
+    </h2>
+    <ul class="task-list-items">
+      <li class="task-list-item">
+        <a class="task-name" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}">
+          Check and confirm
+        </a>
+      </li>
+    </ul>
+  </li>
+{% endif %}

@@ -1,0 +1,11 @@
+{% if scenario === '3' %}
+  {% set decision = 'finished' %}
+{% else %}
+  {% set decision = 'allowed' %}
+{% endif %}
+<div class="subnav">
+  <ul>
+    <li><a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/{{decision}}/">Claim details</a></li>
+    <li class="active">Payment schedule</a></li>
+  </ul>
+</div>

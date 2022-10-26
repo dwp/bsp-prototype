@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",
+    "fullName": "David Jones",
+    "nino": "AA123456X",
+    "dateOfClaim": "30 January 2018",
+    "dateOfBirth": "19 August 1968",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "34",
+      "street": "Farm View",
+      "town": "Shipley",
+      "county": "Leeds",
+      "postcode": "LS2 7QB"
+    },
+    "contact": {
+      "mobile": "07123477777",
+      "email": "djones@sky.com"
+    }
+  },
+  "partner": {
+    "fullName": "Claire Jones",
+    "nino": "AB123456X",
+    "dateOfDeath": "29 January 2018"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr David Jones",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "4 July 1995"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

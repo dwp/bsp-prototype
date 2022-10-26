@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Verify death
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+      
+      <h1 class="heading-large">Where did you verify the death?</h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label" for="verify-death">Where did you verify the death?</label>
+          <input class="form-control" id="verify-death" name="dateOfDeath[where]" type="text">  
+        </div>
+        
+        <fieldset>
+          <legend class="heading-small">What date did they die?</legend>
+
+          <div class="form-group">
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dateOfDeath-day">
+                  Day
+                </label>
+                <input class="form-control" id="dateOfDeath-day" type="number" name="dateOfdeath[day]" aria-describedby="dateOfDeath-hint" value="{{data.dateOfDeath.day}}">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dateOfDeath-month">
+                  Month
+                </label>
+                <input class="form-control" id="dateOfDeath-month" type="number" name="dateOfdeath[month]" value="{{data.dateOfdeath.month}}">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dateOfDeath-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="dateOfDeath-year" min="0" name="dateOfdeath[year]" value="{{data.dateOfDeath.year}}">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <button class="button" type="submit">Continue</button>
+      </form>
+    </div>
+  </main>
+{% endblock %}

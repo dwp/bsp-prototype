@@ -1,0 +1,389 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/payment-scheduler/{{sprint}}/find-a-payment-schedule" class="link-back">Find a payment schedule</a>
+
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">Claire Brown</span>
+          AB123456C
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          ACTIVE
+        </span>
+
+        {% if data.bankDetailsChanged or data.backdateAll %}
+          <h2 class="heading-large">Log</h2>
+
+          {% if data.bankDetailsChanged %}
+            <h2 class="bold">Bank details changed on 1 September 2017</h2>
+            <div class="panel panel-border-narrow">
+              Old account: C Brown, 12341234, 112233<br />
+              New account: {{data.bankDetails.nameOnAccount}}, {{data.bankDetails.bankNumber}}, {{data.bankDetails.bankCode}}
+            </div>
+          {% endif %}
+
+          {% if data.backdateAll === 'Yes'  %}
+            <h2 class="bold">Switched to higher rate on 1 September 2017</h2>
+            <div class="panel panel-border-narrow">
+              Backdated initial payment and backdated monthly payments added to
+              schedule.
+            </div>
+          {% endif %}
+        {% endif %}
+
+        <h2 class="heading-small th">
+          Payment details
+          <p class="payment-link">
+            <a href="/{{feature}}/{{sprint}}/change-payment-details">
+              Change
+            </a>
+          </p>
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            {{ data.bankDetails.nameOnAccount if data.bankDetails.nameOnAccount else 'C Brown' }}
+          </dd>
+
+          <dt class="data-summary-key">
+            {{ 'Iban number' if data.bankDetails.country != 'United Kingdom' else 'Account number' }}
+          </dt>
+          <dd class="data-summary-value">
+            {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber else '12341234' }}
+          </dd>
+
+          <dt class="data-summary-key">
+            {{ 'Bic code' if data.bankDetails.country != 'United Kingdom' else 'Sort code' }}
+          </dt>
+          <dd class="data-summary-value">
+            {{ data.bankDetails.bankCode if data.bankDetails.bankCode else '112233' }}
+          </dd>
+
+          <dt class="data-summary-key">
+            Country
+          </dt>
+          <dd class="data-summary-value">
+            {{ data.bankDetails.country if data.bankDetails.country else 'United Kingdom' }}
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Rate
+          {% if not data.backdateAll %}
+            <p class="payment-link">
+              <a href="/{{feature}}/{{sprint}}/change-rate">
+                Change
+              </a>
+            </p>
+          {% endif %}
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            {{ 'Higher' if data.backdateAll else 'Standard' }}
+          </dt>
+          <dd class="data-summary-value">
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Payments
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE9">
+              10 August 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+            <span class="type">
+              {{ '12341234<br />'|safe if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+              16 July 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+            <span class="type">
+              {{ '12341234<br />'|safe if data.bankDetails.bankNumber }}
+              Backdated monthly payments
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
+              16 July 2017
+            </time>
+            <strong class="amount">
+              £2500
+            </strong>
+            <span class="type">
+              {{ '12341234<br />'|safe if data.bankDetails.bankNumber }}
+              Initial payment
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Planned payments
+          <p class="payment-link">
+            <a href="#">
+              Prevent payments
+            </a>
+          </p>
+        </h2>
+
+        <ul class="schedule">
+          {% if data.backdateAll === 'Yes' %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE1">
+                Due 2 September 2017
+              </time>
+              <strong class="amount">
+                £1000
+              </strong>
+              <span class="type">
+                {% if data.bankDetails.bankNumber %}
+                  {{data.bankDetails.bankNumber}}<br />
+                {% endif %}
+                Backdated initial payment
+              </span>
+            </li>
+
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE2">
+                Due 2 September 2017
+              </time>
+              <strong class="amount">
+                £500
+              </strong>
+              <span class="type">
+                {% if data.bankDetails.bankNumber %}
+                  {{data.bankDetails.bankNumber}}<br />
+                {% endif %}
+                Backdated monthly payments
+              </span>
+            </li>
+          {% endif %}
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE16">
+              Due 10 September 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
+              Due 10 October 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
+              Due 10 November 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
+              Due 10 December 2017
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
+              Due 10 January 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
+              Due 10 February 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              Due 10 March 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE6">
+              Due 10 April 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE7">
+              Due 10 May 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE12">
+              Due 10 June 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE13">
+              Due 10 July 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE14">
+              Due 10 August 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE15">
+              Due 10 September 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+          
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE16">
+              Due 10 October 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE17">
+              Due 10 November 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE18">
+              Due 10 December 2018
+            </time>
+            <strong class="amount">
+              {{ '£350' if data.backdateAll else '£100' }}
+            </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

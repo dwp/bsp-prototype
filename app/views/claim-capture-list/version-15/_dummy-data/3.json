@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Elaine Sparks",
+    "nino": "XA123456Q",
+    "dateOfClaim": "15 May 2018",
+    "dateOfBirth": "9 March 1972",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "17",
+      "street": "Seaworth Grove",
+      "town": "Blackpool",
+      "county": "Lancashire",
+      "postcode": "BT9 7PM"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "William Sparks",
+    "nino": "XT123456X",
+    "dateOfDeath": "9 May 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs E Sparks",
+    "sortCode": "112233",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "27 September 1997"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

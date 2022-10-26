@@ -1,0 +1,177 @@
+.claim-status,
+.schedule-status {
+  text-transform: uppercase;
+  background-color: $grey-1;
+  padding: 5px;
+  display: inline-block;
+  width: auto;
+  margin-bottom: 3em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: $white;
+}
+
+.claim-status-new {
+  background-color: $grass-green;
+}
+.claim-status-paused {
+  background-color: $govuk-blue;
+}
+.claim-status-rejected {
+  background-color: $mellow-red;
+}
+
+.claim-status-bf,
+.claim-status-active,
+.schedule-status-active {
+  background-color: $grass-green;
+}
+
+.schedule-status-stopped {
+  background-color: $mellow-red;
+}
+
+.schedule-heading {
+  margin-bottom: 0;
+}
+
+.th {
+  margin-top: 3em;
+  max-width: 30em;
+}
+.change-button {
+  float: right;
+}
+
+.schedule-log {
+  margin-bottom: 1.578947368421053em;
+
+  .text {
+    margin: 0;
+  }
+}
+
+.schedule {
+  border-top: 1px solid $grey-2;
+  margin-bottom: 0;
+}
+
+.payment {
+  border-bottom: 1px solid $grey-2;
+  padding: .6315789474em 1.0526315789em .4736842105em 0;
+  position: relative;
+}
+
+.payment-suspended {
+  background-color: $grey-4;
+  border-left: 5px solid $border-colour;
+  color: $secondary-text-colour;
+  padding-left: 10px;
+}
+
+.amount {
+  display: block;
+  font-weight: 700;
+}
+
+.type {
+  color: $grey999;
+  height: 50px;
+  margin-top: -25px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 50%;
+
+  @media(max-width: 400px) {
+    display: block;
+    height: auto;
+    margin-top: 5px;
+    position: static;
+    text-align: left;
+  }
+}
+
+.schedule-label {
+  margin: .5em 0;
+}
+
+.schedule-controls {
+  margin: 1.5em 0;
+
+  li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.button-red {
+  $button-warning-border: #630811;
+  $button-warning-hover: #960c1a;
+
+  background-color: $error-colour;
+  box-shadow: 0 2px 0 $button-warning-border;
+
+  &:hover {
+    background-color: $button-warning-hover;
+  }
+
+  &:visited {
+    background-color: $error-colour;
+  }
+
+  &:active {
+    background-color: $error-colour;
+  }
+}
+
+.button-grey {
+  background-color: $grey666;
+  box-shadow: 0 2px 0 $grey333;
+
+  &:hover {
+    background-color: $grey666;
+  }
+
+  &:visited {
+    background-color: $grey666;
+  }
+
+  &:active {
+    background-color: $grey666;
+  }
+}
+
+.visually-hidden + .schedule {
+  border-top: 0;
+}
+
+.notification {
+  max-width: 30em;
+  padding: .526315789473684em;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.suspended {
+  background-color: mix($page-colour, $grey-2, 90%);
+  border-left: .526315789473684em solid $grey-2;
+  padding-left: .526315789473684em;
+}
+
+.warning {
+  background-color: mix($page-colour, $mellow-red, 90%);
+  border-left: .526315789473684em solid $red;
+  padding-left: .526315789473684em;
+}
+
+.paused-until-date {
+  color: $secondary-text-colour;
+}

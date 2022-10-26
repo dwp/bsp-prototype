@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          Do you want to pay the higher rate for all previous payments?
+        </h1>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">          
+              <div class="multiple-choice" data-target="contact-by-email">
+                <input id="backdateAll-yes" type="radio" name="backdateAll" value="Yes">
+                <label for="backdateAll-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice" data-target="contact-by-phone">
+                <input id="backdateAll-no" type="radio" name="backdateAll" value="No">
+                <label for="backdateAll-no">No</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+            
+
+                <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label-bold">
+                        Child Benefit start date
+                      </span>
+                    </legend>
+
+                    <div class="form-date">
+                      <div class="form-group form-group-day">
+                        <label class="form-label" for="input-dateOfChb-day">
+                          Day
+                        </label>
+                        <input class="form-control" id="input-dateOfChb-day" type="number" name="dateOfChb[day]" aria-describedby="dateOfClaim-hint">
+                      </div>
+
+                      <div class="form-group form-group-month">
+                        <label class="form-label" for="input-dateOfChb-month">
+                          Month
+                        </label>
+                        <input class="form-control" id="input-dateOfChb-month" type="number" name="dateOfChb[month]" >
+                      </div>
+
+                      <div class="form-group form-group-year">
+                        <label class="form-label" for="input-dateOfChb-year">
+                          Year
+                        </label>
+                        <input class="form-control" type="number" id="input-dateOfChb-year" min="0" name="dateOfChb[year]">
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button class="button" type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

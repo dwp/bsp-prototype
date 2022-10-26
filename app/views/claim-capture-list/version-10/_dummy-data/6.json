@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 5,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Brian Peters",
+    "nino": "AA123456X",
+    "dateOfClaim": "25 January 2018",
+    "dateOfBirth": "19 April 1965",
+    "sex": "Male",
+    "currentAddress": {
+      "number": "94",
+      "street": "Sea Grange",
+      "town": "Otterburn",
+      "county": "Northumberland",
+      "postcode": "NE3 5PR"
+    },
+    "contact": {
+      "mobile": "07711122234"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Helen Peters",
+    "nino": "AB123456X",
+    "dateOfDeath": "29 January 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr B Peters",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "24 March 1991"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}
+

@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 8,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Daniel Chambers",
+    "nino": "DD123456X",
+    "dateOfClaim": "17 February 2018",
+    "dateOfBirth": "6 September 1978",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "23",
+      "street": "Chancery Drive",
+      "town": "Selby",
+      "county": "Leeds",
+      "postcode": "LS11 2SA"
+    },
+    "contact": {
+      "mobile": "07733674132"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Emma Chambers",
+    "nino": "DC123456X",
+    "dateOfDeath": "3 February 2018"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs D Chambers",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "15 July 2000"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

@@ -1,0 +1,8 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+    Contact details
+  </a>
+  {% if data.claimant.address or bf %}
+    <strong class="task-completed" >Completed</strong>
+  {% endif %}
+</li>

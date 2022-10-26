@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Late claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}" class="link-back">Back</a>
+
+
+        <h1 class="heading-large">
+          You're about to disallow this claim
+        </h1>
+      
+        <p class="text">
+          You entered the date of death as <span class="bold">{{d.partner.dateOfDeath}}</span>. 
+          This means the claim is more than 21 months late.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <button class="button button-red">Disallow claim</button>
+          </div>
+        </form>
+        
+        <a href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}">Cancel</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,55 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 8,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Clive Reynolds",
+    "nino": "DA123456X",
+    "dateOfClaim": "29 December 2017",
+    "dateOfBirth": "12 April 1967",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "52",
+      "street": "Hedge Row",
+      "town": "Stockton",
+      "county": "Middlesborough",
+      "postcode": "TS9 4QY"
+    },
+    "contact": {
+      "home": "01915218371"
+    }
+  },
+  "partner": {
+    "fullName": "Moira Reynolds",
+    "nino": "EE123456E",
+    "dateOfDeath": "1 January 2018"  
+  },
+  "children": {
+    "dependant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr C Reynolds",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "17 September 1996"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Sophie Barker",
+    "nino": "QP123456X",
+    "dateOfClaim": "10 February 2018",
+    "dateOfBirth": "13 June 1980",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "29",
+      "street": "Range Farm",
+      "town": "Nottingham",
+      "county": "Nottingham",
+      "postcode": "NG4 2LM"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": " Joseph Barker",
+    "nino": "CB123456X",
+    "dateOfDeath": "5 February 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs S Barker",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "12 August 2001"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}

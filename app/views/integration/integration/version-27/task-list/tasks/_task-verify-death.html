@@ -1,0 +1,8 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+    Death
+  </a>
+  {% if scenario === '1' or data.death['what-evidence'] %}
+    <strong class="task-completed" >Completed</strong>
+  {% endif %}
+</li>

@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">
+          Check your answers
+        </h1>
+
+        <div class="check-your-answers-hmrc">
+          <h2 class="heading-small">Exporter</h2>
+          <span class="visuallyhidden">Answer</span>
+          <p>ACME Exports<br />
+            First line of address<br />
+            Second line of address<br />
+            Contact: Contact Name<br />
+            Tel: 01234 567 890<br />
+            Email: email@email.com</p>
+          <footer class="group">
+            <p><a href="#" class="change-answer">Edit<span class="visuallyhidden"> your answer for Exporter</span></a></p>
+          </footer>
+        </div>
+
+        <div class="check-your-answers-hmrc">
+          <h2 class="heading-small">Producer</h2>
+          <span class="visuallyhidden">Answer</span>
+          <p>ACME Products</p>
+          <footer class="group">
+            <p><a href="#" class="change-answer">Edit<span class="visuallyhidden"> your answer for Producer</span></a></p>
+          </footer>
+        </div>
+
+        <div class="check-your-answers-hmrc">
+          <h2 class="heading-small">Site of export</h2>
+          <span class="visuallyhidden">Answer</span>
+          <p>Site of export name</p>
+          <footer class="group">
+            <p><a href="#" class="change-answer">Edit<span class="visuallyhidden"> your answer for Site of export</span></a></p>
+          </footer>
+        </div>
+
+        <div class="check-your-answers-hmrc">
+          <h2 class="heading-small">Importer</h2>
+          <span class="visuallyhidden">Answer</span>
+          <p>ACME Imports<br>
+            First line of address<br />
+            Second line of address<br />
+            Contact: Contact Name<br />
+            Tel: 01234 567 890<br />
+            Email: email@email.com</p>
+          <footer class="group">
+            <p><a href="#" class="change-answer">Edit<span class="visuallyhidden"> your answer for Importer</span></a></p>
+          </footer>
+        </div>
+
+        <div class="check-your-answers-hmrc">
+          <h2 class="heading-small">Recovery facilities</h2>
+          <span class="visuallyhidden">Answer</span>
+          <p>Recovery facilities name</p>
+          <footer class="group">
+            <p><a href="#" class="change-answer">Edit<span class="visuallyhidden"> your answer for Recovery facilities</span></a></p>
+          </footer>
+        </div>
+
+        <div class="check-your-answers-hmrc">
+          <h2 class="heading-small">Recovery site</h2>
+          <span class="visuallyhidden">Answer</span>
+          <p>Recovery site name</p>
+          <footer class="group">
+            <p><a href="#" class="change-answer">Edit<span class="visuallyhidden"> your answer for Recovery site</span></a></p>
+          </footer>
+        </div>
+
+        <h2 class="heading-medium">Now send your application</h2>
+
+        <p class="text">
+          By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+        </p>
+
+        <div class="form-group">
+          <a href="confirmation-page" class="button">Accept and send application</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+{% endblock %}

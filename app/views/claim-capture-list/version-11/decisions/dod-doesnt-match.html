@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Date of death doesn't match
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <h1 class="heading-large">
+          The date of death on the claim form does not match the verified date 
+          of death.
+        </h1>
+
+        <p class="text">
+          The system will use the verified date of death, so make sure you 
+          double check you have entered both dates correctly.
+        </p>
+
+        <div class="form-group">
+          <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="button">Continue</a>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

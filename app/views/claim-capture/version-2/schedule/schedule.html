@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+{% set d = id | loadDummyData %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% include '../common/_paused-claim-banner.html' %}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">
+          {{d.claimant.fullName}}
+        </span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          Active
+        </span>
+
+        {% include './_subnav-schedule.html' %}
+
+        <h2 class="heading-small th">
+          Payment details
+          <p class="payment-link">
+            <a href="#">
+              Change
+            </a>
+          </p>
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            {{d.payment.nameOnAccount}}
+          </dd>
+          
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            {{d.payment.sortCode}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Account number
+          </dt>
+          <dd class="data-summary-value">
+            {{d.payment.accountNumber}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Country
+          </dt>
+          <dd class="data-summary-value">
+            {{d.payment.country}}
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Rate
+          {% if d.schedule.rate === 'Standard' %}
+            <p class="payment-link">
+              <a href="#">
+                Change
+              </a>
+            </p>
+          {% endif %}
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            {{d.schedule.rate}}
+          </dt>
+          <dd class="data-summary-value">
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Payments
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">No payments issued.
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Planned payments
+          <p class="payment-link">
+            <a href="#">
+              Prevent payments
+            </a>
+          </p>
+        </h2>
+
+        <ul class="schedule">
+          {% if d.schedule.payments.initial %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
+                Due {{d.schedule.payments.initial}}
+              </time>
+              <strong class="amount">
+                £{{'3,500' if d.schedule.rate == 'Higher' else '2,500'}}
+              </strong>
+              <span class="type">
+                Initial payment
+              </span>
+            </li>
+          {% endif %}
+
+          {% if d.schedule.payments.backdated %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+                Due {{d.schedule.payments.backdated}}
+              </time>
+              <strong class="amount">
+                £{{'350' if d.schedule.rate == 'Higher' else '150'}}
+              </strong>
+              <span class="type">
+                Backdated monthly payments
+              </span>
+            </li>
+          {% endif %}
+
+          {% if d.schedule.payments.monthly %}
+            {% for payment in d.schedule.payments.monthly %}
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE9">
+                  Due {{payment}}
+                </time>
+                <strong class="amount">
+                  £{{'350' if d.schedule.rate == 'Higher' else '150'}}
+                </strong>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

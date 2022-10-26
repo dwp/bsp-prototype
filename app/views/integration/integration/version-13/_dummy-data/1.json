@@ -1,0 +1,59 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",
+    "fullName": "Monica Witten",
+    "nino": "MQ123456X",
+    "dateOfClaim": "10 August 2018",
+    "dateOfBirth": "14 May 1970",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "12",
+      "street": "Heaton Way",
+      "town": "Liverpool",
+      "county": "",
+      "postcode": "L1 1JD"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Andrew Witten",
+    "nino": "RB665544X",
+    "dateOfDeath": "2 August 2018"  
+  },
+  "children": {
+    "dependant": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "Yes",
+    "number": "12345678AB"
+  },
+  "payment": {
+    "nameOnAccount": "Mr M Witton",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "19 March 1999"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Higher",   
+    "payments": {
+      "number": 18,
+      "initial": "21 August 2018",
+      "backdated": "21 August 2018",
+      "firstMonthly": "2 September 2018"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 4,
+    "class": ""
+  },
+  "claimant": {
+    "title": "MrS",    
+    "fullName": "Natasha Andrews",
+    "nino": "JQ123456Q",
+    "dateOfClaim": "20 May 2018",
+    "dateOfBirth": "16 June 1981",
+    "sex": "Female",    
+    "currentAddress": {
+      "number": "41",
+      "street": "Blackberry Drive",
+      "town": "Doncaster",
+      "county": "Yorkshire",
+      "postcode": "DB3 4NT"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Fred Andrews",
+    "nino": "WQ123456Q",
+    "dateOfDeath": "11 May 2018"  
+  },
+  "children": {
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs N Andrews",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "13 December 2006"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

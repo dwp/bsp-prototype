@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Settings
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+    <h1 class="heading-xlarge">Settings</h1>
+    <form method="post">
+      <div class="form-group">
+        <label class="form-label" for="currentUser">Agent name</label>
+        <input class="form-control" id="currentUser" name="currentUser" type="text">
+      </div>
+
+      <div class="form-group">
+        <fieldset class="inline">
+          <legend class="heading-small">Activate paused claims banner?</legend>
+          <div class="multiple-choice">
+            <input id="paused-claims-yes" type="radio" name="pausedClaims" value="Yes">
+            <label for="paused-claims-yes">Yes</label>
+          </div>
+      
+          <div class="multiple-choice">
+            <input id="paused-claims-no" type="radio" name="pausedClaims" value="No">
+            <label for="paused-claims-no">No</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="button">Continue</button>
+      </div>
+    </form>
+  </main>
+{% endblock %}

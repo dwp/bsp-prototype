@@ -1,0 +1,56 @@
+{
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",    
+    "fullName": "Timothy Bowman",
+    "nino": "JQ123123X",
+    "dateOfClaim": "15 May 2018",
+    "dateOfBirth": "18 July 1972",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "118",
+      "street": "Barber Close",
+      "town": "Eastwood",
+      "county": "Nottingham",
+      "postcode": "NT5 2RT"
+    },
+    "contact": {
+      "home": "0131481367"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": " Suzanne Bowman",
+    "nino": "YQ123456X",
+    "dateOfDeath": "9 April 2017"  
+  },
+  "children": {
+    "dependant": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No",
+    "number": ""
+  },
+  "payment": {
+    "nameOnAccount": "Mr T Bowman",
+    "sortCode": "665544",
+    "accountNumber": "11223344",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "5 October 2009"
+  },
+  "conts": {
+    "year": "1975"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

@@ -1,0 +1,22 @@
+<ol class="task-list">
+  <li>
+    <h2 class="task-list-section">
+      Tasks to complete
+    </h2>
+    <ul>
+      {% if id === '5' %}
+          <li class="task-list-item">
+            <a class="task-name" href="/{{feature}}/{{sprint}}/add-payment-details/{{id}}" aria-describedby="eligibility-completed">
+              Add payment details
+            </a>
+          </li>
+        {% else %}
+          <li class="task-list-item">
+            <a class="task-name" href="/{{feature}}/{{sprint}}/verify-marriage/{{id}}" aria-describedby="eligibility-completed">
+              Verify marriage
+            </a>
+          </li>
+        {% endif %}
+    </ul>
+  </li>
+</ol>

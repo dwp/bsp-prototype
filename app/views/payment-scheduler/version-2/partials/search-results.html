@@ -1,0 +1,79 @@
+<h2 class="heading-medium">Results</h2>
+
+<ul class="search-results">
+  {% if nino == 'JL765432A' %}
+    <li class="result">
+      <a href="/{{sprint}}/schedule/1" class="result-link">
+        Active schedule
+      </a>
+      <span class="result-meta">
+        John Smith, 80257643
+      </span>
+      <span class="result-meta">
+        From 12 January 2017 till 8 July 2018
+      </span>
+    </li>
+  {% elseif nino == 'BA441865B' %}
+    <li class="result">
+      <a href="/{{sprint}}/schedule/2" class="result-link">
+        Ended schedule
+      </a>
+      <span class="result-meta">
+        Jane Doe, 80257643
+      </span>
+      <span class="result-meta">
+        From 15 July 2015 till 15 December 2016
+      </span>
+    </li>
+  {% elseif nino == 'AB657234D' %}
+    <li class="result">
+      <a href="/{{sprint}}/schedule/3" class="result-link">
+        Active schedule
+      </a>
+      <span class="result-meta">
+        Janet Briggs, 80257643
+      </span>
+      <span class="result-meta">
+        From 12 January 2017 till 3 April 2018
+      </span>
+    </li>
+  {% elseif nino == 'BA254819C' %}
+    <li class="result">
+      <a href="/{{sprint}}/schedule/4" class="result-link">
+        Ended schedule
+      </a>
+      <span class="result-meta">
+        Peter Barnes, 80257643
+      </span>
+      <span class="result-meta">
+        From 15 July 2015 till 13 August 2016
+      </span>
+    </li>
+  {% elseif nino == 'JH463887B' %}
+    <li class="result">
+      <a href="/{{sprint}}/schedule/5" class="result-link">
+        Active schedule
+      </a>
+      <span class="result-meta">
+        Gemma Burns, 80257643
+      </span>
+      <span class="result-meta">
+        From 18 October 2016 till 15 April 2018
+      </span>
+    </li>
+  {% elseif nino == 'KJ598575D' %}
+    <li class="result">
+      <a href="/{{sprint}}/schedule/6" class="result-link">
+        Active schedule
+      </a>
+      <span class="result-meta">
+        Tony Brown, 80257643
+      </span>
+      <span class="result-meta">
+        From 18 October 2016 till 15 February 2018
+      </span>
+    </li>
+  {% else %}
+    No matching payment schedules found.
+  {% endif %}
+</ul>

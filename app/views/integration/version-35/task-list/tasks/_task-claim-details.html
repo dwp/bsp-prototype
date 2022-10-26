@@ -1,0 +1,21 @@
+<li class="task-list-item">
+  <a class="task-name">
+    Claim details
+  </a>
+<!--
+  <a class="task-name" onclick="claimDetails()" href="javascript:;">
+    Claim details
+  </a>
+-->
+  <strong class="task-completed" >Completed</strong>
+</li>
+
+
+<script>
+function claimDetails() {
+	document.getElementById("claim-details").setAttribute("aria-hidden", "false");
+	document.getElementById("tasks-to-complete").setAttribute("aria-hidden", "true");
+	document.getElementById("claimdetails").setAttribute("aria-selected", "true");
+	document.getElementById("taskstocomplete").setAttribute("aria-selected", "false");
+}
+</script>

@@ -1,0 +1,74 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": "",
+	"settings": 2
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Maxine Greene",
+    "nino": "TX616796C",
+    "dateOfClaim": "16 September 2020",
+    "dateOfBirth": "10 Feburary 1984",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "40",
+      "street": "North Promenade",
+      "town": "Dowally",
+      "county": "United Kingdom",
+      "postcode": "PH9 6PH"
+    },
+    "contact": {
+      "home": "070 8864 3510"
+    }
+  },
+  "partner": {
+    "title": "Dr",
+    "fullName": "Martin Green",
+    "nino": "JR123456C",
+    "dateOfBirth": "19 Feburary 1988",
+    "dateOfDeath": "12 September 2020"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "Yes",
+    "chb-number": "CHB1234567"
+  },
+  "payment": {
+    "nameOnAccount": "Mr Maxine Green",
+    "sortCode": "090856",
+    "accountNumber": "23145698",
+    "country": "United Kingdom"
+  },
+   "address": {
+	 "building": "12",
+     "street": "St Mary’s Terrace",
+     "town": "Tweedmouth",
+     "country": "England",
+     "postcode": "TD15 2DX"
+  },
+  "communication": {
+	 "text8": "Large print"
+  },
+  "marriage": {
+    "where": "No",
+    "dateOfMarriage": "02 June 2015",
+	"verified": "Yes",
+	"dateOfMarriage": {
+		"day": "",
+		"month": "",
+		"year": ""
+	}
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
+  }
+}

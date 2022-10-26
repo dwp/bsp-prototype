@@ -1,0 +1,41 @@
+<div class="column-two-thirds">
+  <h1 class="heading-large">
+    Check the partner's National Insurance number
+  </h1>
+
+  <p class="lede">
+    Someone has already claimed Bereavement Support Payment using the deceased 
+    partner's National Insurance number.
+  </p>
+
+  <p>
+    You entered: <span class="bold">{{d2[scenario].partner.nino}}</span>.
+  </p>
+
+  <p>
+    If the number you entered is correct, tell a decision maker someone else is 
+    trying to get Bereavement Support Payment using these details.
+  </p>
+</div>
+
+<div class="column-one-third">
+  <h2 class="heading-medium">Previous claims</h2>
+  <ul class="search-results">
+    <li class="result">
+      <h3 class="heading-small">Allowed claim</h3>
+      <div class="panel panel-border-narrow">
+        <h3 class="heading-small">Claimant</h3>
+        <p>
+          {{d.claimant.fullName}}<br/>
+          {{d.claimant.nino}}
+        </p>
+
+        <h3 class="heading-small">Deceased</h3>
+        <p>
+          {{d2[scenario].partner.fullName}}<br />
+          {{d2[scenario].partner.nino}}
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

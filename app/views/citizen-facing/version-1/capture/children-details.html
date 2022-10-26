@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% set serviceName = 'Apply for Bereavement Support Payment' %}
+
+{% block page_title %}
+  Do you have any dependent children?
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% include 'includes/phase_banner_alpha.html' %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">
+          Do you have any dependent children?
+        </h1>
+
+        <p>
+          If you get Child Benefit (or if you don’t get it but are entitled to it),
+          you'll get the higher rate of Bereavement Support Payment.
+        </p>
+
+        <form method="post" autocomplete="off">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="visually-hidden">Do you have any dependent children?</legend>
+
+              <div class="multiple-choice">
+                <input id="children-yes" type="radio" name="children[yesNo]" value="Yes">
+                <label for="children-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice" data-target="pregnant-hidden">
+                <input id="children-no" type="radio" name="children[yesNo]" value="No">
+                <label for="children-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="pregnant-hidden">
+            <div class="form-group">
+            <fieldset class="inline">
+              <legend class="heading-small">Are you pregnant?</legend>
+
+              <div class="multiple-choice">
+                <input id="pregnant-yes" type="radio" name="children[pregnant]" value="Yes">
+                <label for="pregnant-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="pregnant-no" type="radio" name="children[pregnant]" value="No">
+                <label for="pregnant-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

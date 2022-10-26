@@ -1,0 +1,58 @@
+{
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mr",
+    "fullName": "William Graves",
+    "nino": "ZQ123123X",
+    "dateOfClaim": "30 April 2018",
+    "dateOfBirth": "14 December 1967",
+    "sex": "Male",    
+    "currentAddress": {
+      "number": "34",
+      "street": "Farm View",
+      "town": "Shipley",
+      "county": "Leeds",
+      "postcode": "LS2 7QB"
+    },
+    "contact": {
+      "mobile": "07123477777",
+      "email": "wgraves@sky.com"
+    }
+  },
+  "partner": {
+    "title": "Mrs",
+    "fullName": "Abigail Graves",
+    "nino": "DQ123456X",
+    "dateOfDeath": "15 February 2018"  
+  },
+  "children": {
+    "dependant": "No",
+    "pregnant": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mr W Graves",
+    "sortCode": "123123",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "17 March 1998"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
+  }
+}

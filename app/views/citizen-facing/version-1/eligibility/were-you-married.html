@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% set serviceName = 'Apply for Bereavement Support Payment' %}
+
+{% block page_title %}
+  Were you married to, or in a civil partnership with your partner when they died?
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    {% include 'includes/phase_banner_alpha.html' %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend>
+                <h1 class="heading-large">
+                  Were you married to, or in a civil partnership with, your partner when they died?
+                </h1>
+              </legend>
+
+              <div class="multiple-choice">
+                <input id="eligibility-married-yes" type="radio" name="eligibility[married]" value="Yes">
+                <label for="eligibility-married-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="eligibility-married-no" type="radio" name="eligibility[married]" value="No">
+                <label for="eligibility-married-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <button class="button" type="submit">Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}
