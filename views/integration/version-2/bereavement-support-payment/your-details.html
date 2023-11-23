@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <form action="task-list" method="post" class="form">
+
+            <a href="task-list" class="govuk-back-link">Back</a>
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Your details
+                  </h1>
+                </legend>
+                         
+                <fieldset class="govuk-fieldset">
+
+                  <div class="govuk-form-group">              
+                    <label class="govuk-label" for="event-name">
+                      Full name (excluding title)
+                    </label>
+                    <input class="govuk-input govuk-!-width-three-quarters" id="Claimant-fullname" name="Claimant-fullname" type="text" value="{{ data['Claimant-fullname'] }}">
+                  </div>
+                    <div class="govuk-form-group">              
+                      <label class="govuk-label" for="event-name">
+                        Your National Insurance number?
+                      </label>
+                      <input class="govuk-input govuk-input--width-10" id="Claimant-fullname" name="Claimant-fullname" type="text" value="{{ data['Claimant-fullname'] }}">
+                    </div>
+                  </fieldset> <br>
+                
+    
+              </div>
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

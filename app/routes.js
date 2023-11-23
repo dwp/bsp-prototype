@@ -1,13 +1,15 @@
-//
-// For guidance on how to create routes see:
-// https://prototype-kit.service.gov.uk/docs/create-routes
-//
+const express = require('express')
+const router = express.Router()
 
-const govukPrototypeKit = require('govuk-prototype-kit')
-const router = govukPrototypeKit.requests.setupRouter()
+router.use('/', (req, res, next) => {
+  req.feature = req.originalUrl.split('/')[1]
+  req.sprint = req.originalUrl.split('/')[2]
+  res.locals.feature = req.feature
+  res.locals.sprint = req.sprint
+  next()
+})
 
-// Add your routes here
-
+// Add your routes here - above the module.exports line
 router.get('/', function (req, res) {
   res.locals.includeServiceName = 'true'
   res.render('index')
@@ -7708,18 +7710,18 @@ router.get('/version-2/bereavement-support-payment/infosent', function (req, res
 router.post('/about-children-answer', function (req, res) {
 
   // Make a variable and give it the value from 'howmanychildren'
-  var howmanychildren = req.session.data['children']
+  var howmanychildren = req.session.data['nochildren']
 
   // Check whether the variable matches a condition
-  if (howmanychildren == "None of these apply"){
+  if (howmanychildren == "no-children"){
     // Send user to ineligibility page
     res.redirect('/private-beta/v3/bereavement-support-payment/nochildren-not-eligible')
   } else {
     // Send user to next paget
-    res.redirect('/private-beta/v3/bereavement-support-payment/country')
+    res.redirect('/private-beta/v3/bereavement-support-payment/about-cb')
   }
 
-}) 
+})
 
 // Run this code when a form is submitted to 'email-notifications-answer'
 router.post('/email-notifications-answer', function (req, res) {
@@ -7748,6 +7750,7 @@ router.post('*', function (req, res, next) {
   }
 });
 
+module.exports = router
 
 // TEST ROUTE 
 router.post('/relationship-answer', function(request, response) {
@@ -7764,249 +7767,40 @@ router.post('/relationship-answer', function(request, response) {
   }
 })
 
-// // ROUTE FOR MARRIED to SKIP CB QUESTION 
-// router.post('/child-benefit-answer', function(request, response) {
+// ROUTE FOR MARRIED to SKIP CB QUESTION 
+router.post('/child-benefit-answer', function(request, response) {
 
-//   var children = request.session.data['children']
-//   if (children.includes("I was responsible for a child under 16")){
-//       response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
-//   } else if (children == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
-//       response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
-//   } else {
-//       response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
-//   }
-// })
+  var children = request.session.data['children']
+  if (children.includes("I was responsible for a child under 16")){
+      response.redirect("/private-beta/v4/bereavement-support-payment/about-cb")
+  } else if (children == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
+      response.redirect("/private-beta/v4/bereavement-support-payment/about-cb")
+  } else {
+      response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
+  }
+})
 
-// // ROUTE FOR CIVIL PARTNERSHIP TO SKIP CB QUESTION 
-// router.post('/child-benefit-answer-cp', function(request, response) {
+// ROUTE FOR CIVIL PARTNERSHIP TO SKIP CB QUESTION 
+router.post('/child-benefit-answer-cp', function(request, response) {
 
-//   var childrencp = request.session.data['childrencp']
-//   if (childrencp.includes("I was responsible for a child under 16")){
-//       response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
-//   } else if (childrencp == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
-//       response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
-//   } else {
-//       response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
-//   }
-// })
+  var childrencp = request.session.data['childrencp']
+  if (childrencp.includes("I was responsible for a child under 16")){
+      response.redirect("/private-beta/v5/bereavement-support-payment/about-cb")
+  } else if (childrencp == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
+      response.redirect("/private-beta/v5/bereavement-support-payment/about-cb")
+  } else {
+      response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
+  }
+})
 
-// EMAIL CONFIRMATION QUESTION V8
-
-// router.post('/email-answer', function(request, response) {
-
-//   var emailanswer = request.session.data['emailanswer']
-//   if (emailanswer == "yes"){
-//       response.redirect("/private-beta/v8/bereavement-support-payment/email-confirm2")
-//   } else {
-//       response.redirect("/private-beta/v8/bereavement-support-payment/comms-needs")
-//   }
-// })
-
-// NEW ROUTE DUE TO ALT FORMAT PLUGIN 
+// EMAIL CONFIRMATION QUESTION
 
 router.post('/email-answer', function(request, response) {
 
   var emailanswer = request.session.data['emailanswer']
   if (emailanswer == "yes"){
-      response.redirect("/private-beta/v8/bereavement-support-payment/email-confirm2")
+      response.redirect("/private-beta/v6/bereavement-support-payment/email-confirm2")
   } else {
-      response.redirect("/dwp-alternative-formats-plugin/start?alternative_formats_exit_url=/private-beta/v8/bereavement-support-payment/declaration")
+      response.redirect("/private-beta/v6/bereavement-support-payment/comms-needs")
   }
 })
-
-
-// IDENTITY ANSWER
-
-// router.post('/identity-answer', function(request, response) {
-
-//   var identity = request.session.data['identitycheck']
-//   if (identity == "Yes"){
-//       response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
-//   } else {
-//       response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
-//   }
-// })
-
-// COMMS ANSWER V7
-
-router.post('/comms-answer', function(request, response) {
-
-  var comms = request.session.data['commsneeds']
-  if (comms == "yes"){
-      response.redirect("/private-beta/v8/bereavement-support-payment/comms-type")
-  } else {
-      response.redirect("/private-beta/v8/bereavement-support-payment/check-answers-contact")
-  }
-})
-
-// COMPUTER OR TABLET ANSWER IDV
-
-router.post('/tech-answer', function(request, response) {
-
-  var tech = request.session.data['computerortablet']
-  if (tech == "Yes"){
-      response.redirect("/private-beta/idv/do-you-have-smartphone")
-  } else {
-      response.redirect("/private-beta/idv/which-smartphone")
-  }
-})
-
-// VALID PASSPORT ANSWER
-
-router.post('/valid-passport-answer', function(request, response) {
-
-  var passport = request.session.data['valid-passport']
-  if (passport == "Yes"){
-      response.redirect("/private-beta/idv/passport-symbol")
-  } else {
-      response.redirect("/private-beta/idv/biometric")
-  }
-})
-
-// ID-TYPE ANSWER
-
-router.post('/id-type-answer', function(request, response) {
-
-  var idtype = request.session.data['have-photo-id']
-  if (idtype == "Yes"){
-      response.redirect("/private-beta/idv/computer-or-tablet")
-  } else {
-      response.redirect("/private-beta/idv/id-at-post-office")
-  }
-})
-
-// Routes for Driving licence CRI
-
-router.get('/who-issued-licence/answer', (req, res) => {
-  // Check if there was an error
-  const showErrorSummary = req.query.error === 'true';
-
-  // Render the template with the error condition
-  res.render('/page-index/driving-licence-cri/who-issued-licence.html', { showErrorSummary });
-});
-
-// Handle form submission
-router.post('/who-issued-licence/answer', (req, res) => {
-  // Check if a radio button is selected
-  const selectedOption = req.body['issuerName'];
-
-  if (selectedOption) {
-    // If radio option is selected:
-    if (selectedOption === "dvla") {
-      // Send user to set up auth app
-      res.redirect('/private-beta/idv/online/enter-dvla-driving-licence-details');
-    } else if (selectedOption === "dva") {
-      // Send user to enter passport details
-      res.redirect('/private-beta/idv/online/enter-dva-driving-licence-details');
-    } else if (selectedOption === "no-uk-licence") {
-      // Send user to prove identity at the post office
-      res.redirect('/private-beta/idv/online/manual-identity');
-    }
-  } else {
-    // If no radio button is selected, redirect to /ineligible-next-steps/answer with error
-    res.redirect('/who-issued-licence/answer?error=true');
-  }
-});
-
-router.get('/ineligible-next-steps/answer', (req, res) => {
-  // Check if there was an error
-  const showErrorSummary = req.query.error === 'true';
-
-  // Render the template with the error condition
-  res.render('/page-index/app-cri/ineligible.html', { showErrorSummary });
-});
-
-// Handle form submission
-router.post('/ineligible-next-steps/answer', (req, res) => {
-  // Check if a radio button is selected
-  const selectedOption = req.body['ineligible-next-steps'];
-
-  if (selectedOption) {
-    // If radio option is selected:
-    if (selectedOption === "security-questions-driving-licence") {
-  // Send user to...
-      res.redirect('/private-beta/idv/online/who-issued-licence');
-    } else if (selectedOption === "security-questions-passport") {
-      // Send user to enter passport details
-      res.redirect('/private-beta/idv/online/enter-passport-details');
-    } else if (selectedOption === "another-way") {
-      // Send user to prove identity at the post office
-      res.redirect('/private-beta/idv/online/prove-identity-at-post-office');
-    }
-  } else {
-    // If no radio button is selected, redirect to /ineligible-next-steps/answer with error
-    res.redirect('/ineligible-next-steps/answer?error=true');
-  }
-});
-
-
-// SMARTPHONE ANSWER
-
-router.post('/smartphone-answer', function(request, response) {
-
-  var smartphone = request.session.data['have-a-smartphone']
-  if (smartphone == "I don't have either of these"){
-      response.redirect("/private-beta/idv/online/manual-identity")
-  } else {
-      response.redirect("/private-beta/idv/valid-passport")
-  }
-})
-
-// WHICH SMARTPHONE ANSWER
-
-router.post('/which-smartphone-answer', function(request, response) {
-
-  var whichsmartphone = request.session.data['smartphone']
-  if (whichsmartphone == "Neither of these phones"){
-      response.redirect("/private-beta/idv/online/manual-identity")
-  } else {
-      response.redirect("/private-beta/idv/valid-passport")
-  }
-})
-
-// WORKING CAMERA ANSWER
-
-router.post('/working-camera-answer', function(request, response) {
-
-  var workingcamera = request.session.data['working-camera']
-  if (workingcamera == "No"){
-      response.redirect("/private-beta/idv/online/manual-identity")
-  } else {
-      response.redirect("/private-beta/idv/flashing-colours")
-  }
-})
-
-// FLASHING COLOURS ANSWER
-
-router.post('/flashing-colours-answer', function(request, response) {
-
-  var flashingcolours = request.session.data['flashing-colours']
-  if (flashingcolours == "No"){
-      response.redirect("/private-beta/idv/online/manual-identity")
-  } else {
-      response.redirect("/private-beta/idv/app-version-dynamic")
-  }
-})
-
-// DRIVING LICENCE ANSWER
-
-router.post('/driving-licence-answer', function(request, response) {
-
-  var drivinglicence = request.session.data['driving-licence']
-  if (drivinglicence == "No"){
-      response.redirect("/private-beta/idv/online/manual-identity")
-  } else {
-      response.redirect("/private-beta/idv/use-app")
-  }
-})
-
-// ALT FORMATS PLUGIN
-
-router.get("/dwp-alternative-formats-plugin/v2/journey-1/check-answers", (req, res) => {
-  res.render("/private-beta/v8/bereavement-support-payment/check-answers-alt-format");
-})
-
-const alternativeFormatsPlugin = require("alternative-formats-plugin");
-
-alternativeFormatsPlugin(router);
-

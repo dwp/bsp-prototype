@@ -1,28 +1,26 @@
 
-{% extends "layouts/main.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
-}) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
 {% block content %}
 <div class="govuk-width-container">
-    
+  
+  
 
+  {% if data['marriage-location'] == 'No' %}
+
+  <a href="marriage.html" class="govuk-back-link">Back</a>             
+   {% else %}
+   <a href="marriage-register.html" class="govuk-back-link">Back</a>  
+  {% endif %}
+
+
+
+  
+  <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -40,7 +38,7 @@
 
             <div class="govuk-form-group">
 
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   <h1 class="govuk-fieldset__heading">
                     Do you have a marriage certificate?
                   </h1>
@@ -48,9 +46,9 @@
                          
                 <fieldset class="govuk-fieldset">
 
-                  <div id="changedName-hint" class="govuk-hint">
-                    We may ask to see your certificate as proof you were legally married.
-                  </div>
+                  <p>
+                      We may ask to see your certificate as proof you were legally married.
+                    </p>
 
                   <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                     <div class="govuk-radios__item">
@@ -67,7 +65,6 @@
                       </label>
                     </div>
 
-                    <div class="govuk-radios__divider">or</div>
 
                     <div class="govuk-radios__item">              
                       <input name="marriage-certificate" class="govuk-radios__input" id="marriage-certificate-Idontknow" type="radio" value="I don't know" data-aria-controls="conditional-marriage-certificate-Idontknow">              

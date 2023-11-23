@@ -1,27 +1,26 @@
 
-{% extends "layouts/main.html" %}
+{% extends "layout.html" %}
 
-{% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
-}) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+	{% if checkanswer ==undefined and checkanswerdeceased==undefined %}
 	    <form action="deceased-work" method="post" class="form">
-    
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkanswerdeceased =='true' %}
+	    <form action="check-answers-deceased" method="post" class="form">
+	{% endif %} 
+      
+            <a href="deceased-details.html" class="govuk-back-link">Back</a>
+            <div class="govuk-!-padding-bottom-6"></div>      
                 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Did your partner die because of an accident at work or a disease caused by work?
                 </h1><br>
             <div class="govuk-form-group">                  

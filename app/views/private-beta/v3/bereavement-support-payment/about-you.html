@@ -1,34 +1,21 @@
 
-{% extends "layouts/main.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
-}) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
 {% block content %}
 
 
-<div class="govuk-width-container">           
-
+<div class="govuk-width-container">
+  <a href="check-answers-eligibility.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="your-name" method="post" class="form">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-2">About you</h1>
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">About you</h1>
            <br>
                 <div class="govuk-form-group">          
                   <h2 class="govuk-heading-m">We’ll ask:

@@ -1,130 +1,211 @@
-{% extends "layouts/main.html" %}
+
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
+<div class="govuk-width-container">
+  <a href="deceased-death.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkanswerdeceased==undefined %}
+	    <form action="check-answers-deceased" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkanswerdeceased =='true' %}
+	    <form action="check-answers-deceased" method="post" class="form">
+	{% endif %} 
+      
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Did your partner ever live or work outside the UK?</h1><br>
+            <div class="govuk-form-group">                  
+              <fieldset class="govuk-fieldset heavy-hint">
+                
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Why are we asking this?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    We can check if you could be eligible for bereavement benefits from another country as well as the UK.
+                    <br><br>
+                    <p class="govuk-body">It will depend on:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>the country they lived or worked in (only some pay bereavement benefits)</li>
+                      <li>whether they paid National Insurance contributions there</li>
+                    </ul>
+                </div>
+                </details>
 
-      <form class="form" action="check-answers-deceased" method="post">
+                <div class="govuk-inset-text">
+                  Do not include any time they served in the British armed forces.
+                </div>
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-
-{% set textHtml %}
-{{ govukInput({
-  label: {
-    text: "Countries they lived or worked in"
-  },
-  hint: {
-    text: "For example, France, Spain"
-  },
-  classes: "govuk-!-width-two-thirds",
-  id: "countryworked",
-  name: "countryworked",
-  autocomplete: "address-level2"
-}) }}
-{% endset -%}
-
-<h1 class="govuk-heading-l">Did your partner ever live or work outside the UK?</h1>
-
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Why are we asking this?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    We can check if you could be eligible for bereavement benefits from another country as well as the UK.
-    <br><br>
-    <p class="govuk-body">It will depend on:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>the country they lived or worked in (only some pay bereavement benefits)</li>
-      <li>whether they paid National Insurance contributions there</li>
-    </ul>
-</div>
-</details>
-
-<div class="govuk-inset-text">
-  Do not include any time they served in the British armed forces.
-</div>
-
-{{ govukRadios({
-  name: "workedabroad",
-  fieldset: {
-    legend: {
-      text: "",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-  {
-    value: "Yes",
-    text: "Yes",
-    conditional: {
-      html: textHtml
-    }
-  },
-    {
-      value: "No",
-      text: "No"
-    },
-    {
-      divider: "or"
-    },
-    {
-      value: "I don't know",
-      text: "I don't know"
-    }
-  ]
-}) }}
-
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Get help with your application
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            Telephone: 0800 731 0469 <br>
-            Welsh language: 0800 731 0453 <br>
-            <br>
-            Textphone: 0800 731 0464 <br>
-            Welsh language: 0800 731 0456 <br>
-            <br>
-            If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
-            <br>
-            Monday to Friday, 9.30am to 3.30pm <br>
-            Find out about call charges <br>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">              
+                    <input name="deceasedwork" class="govuk-radios__input" id="work-outside-uk-yes" aria-expanded="false" data-aria-controls="conditional-work-outside-uk-yes" type="radio" value="Yes" {{ checked("deceasedwork", "Yes") }}>              
+                    <label class="govuk-label govuk-radios__label" for="work-outside-uk-yes">              
+                      Yes             
+                     </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-outside-uk-yes">              
+                    <div class="govuk-form-group">              
+                       <label class="govuk-label govuk-!-font-weight-bold" for="work-outside-uk">              
+                        Countries they lived or worked in
+                       </label>
+                       <span id="deceased-dod-hint" class="govuk-hint">
+                        For example, France, Spain
+                      </span>
+                      <div id="kids">
+                      <input style="margin-bottom: 10px" name="deceasedworkyes" class="govuk-input govuk-!-width-two-thirds" id="work-outside-uk" type="text" value="{{ data['deceasedworkyes'] }}" >
+          
           </div>
-        </details>
 
-      </form>
+                    
+                    </div>
+                  </div>
 
-    </div>
+
+                  <div class="govuk-radios__item">              
+                    <input name="deceasedwork" class="govuk-radios__input" id="work-outside-uk-no" type="radio" value="No" {{ checked("deceasedwork", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="work-outside-uk-no">
+                      No
+                     </label>
+                  </div>
+
+                  <p>Or </p>
+
+                  <div class="govuk-radios__item">
+                      <input name="deceasedwork" class="govuk-radios__input" id="work-outside-uk-dontknow" type="radio" value="I don't know" {{ checked("deceasedwork", "I don't know") }}>
+                      <label class="govuk-label govuk-radios__label" for="work-outside-uk-dontknow">                
+                        I don't know               
+                       </label>
+                    </div>
+              </div>
+              
+              </fieldset>
+            </div>
+          </div>
+        </div>
+
+            <!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}    
+   -->
+   
+      {% if checkanswer ==undefined and checkanswerdeceased==undefined %}
+      <button class="govuk-button" id="btnGet" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" id="btnGet" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+     {% if checkanswerdeceased =='true' %}
+     <button class="govuk-button" id="btnGet" data-module="govuk-button">Save and Continue</button>
+     {% endif %}
+
+
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+   
+    </form>      
   </div>
+  </main>            
+  </div>
+<!--
+<script>
+let index = [];
+index.push(0);
+index.push(1);
 
+let indexCount = document.getElementById('work-outside-uk').value;
+let arryCount = indexCount.split(',');
+
+
+if(arryCount.length !=0) {
+	for(let i=1; i<arryCount.length; i++) { 
+		let div = document.createElement('div');
+		let id = getID();
+		div.setAttribute("id","Div_"+i);
+		div.innerHTML = '<div style="margin-bottom: 10px"><input type="text" class="govuk-input govuk-!-width-two-thirds" name="deceasedworkyes" value="'+arryCount[i]+'"/> <a href="javascript:;" id="rem_kid()_' + i + '" onclick="remkid('+i+')" class="govuk-link govuk-link--no-visited-state">Remove</a></div>';
+		document.getElementById('kids').appendChild(div);
+	}
+document.getElementById("work-outside-uk").value = arryCount[0];	
+}
+
+function addkid() {
+	let div = document.createElement('div');
+	let id = getID();
+	div.setAttribute("id","Div_"+id);
+	div.innerHTML = '<div style="margin-bottom: 10px"><input type="text" class="govuk-input govuk-!-width-two-thirds" name="deceasedworkyes"/> <a href="javascript:;" id="rem_kid()_' + id + '" onclick="remkid('+id+')" class="govuk-link govuk-link--no-visited-state">Remove</a></div>';
+	document.getElementById('kids').appendChild(div);
+}
+
+function remkid(id) {
+	try{
+		var element = document.getElementById("Div_"+id)
+		element.parentNode.removeChild(element);
+		index[id] = -1;
+	}
+	catch(err){
+		alert("id: Div_"+id)
+		alert(err)
+
+	}
+} 
+
+function getID(){
+	var emptyIndex = index.indexOf(-1);
+	if (emptyIndex != -1){
+		index[emptyIndex] = emptyIndex
+
+		return emptyIndex
+	} else {
+		emptyIndex = index.length
+		index.push(emptyIndex)
+		return emptyIndex
+	}
+}
+/*$(function () {
+	$("#btnGet").bind("click", function () {
+        var values = "";
+        $("input[name=deceasedworkyes]").each(function () {
+            values += $(this).val() + "\n";
+        });
+        alert(values);
+    });
+});*/
+</script>
+-->
 {% endblock %}

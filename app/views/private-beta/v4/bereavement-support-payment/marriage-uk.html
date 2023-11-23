@@ -1,157 +1,110 @@
-{% extends "layouts/main.html" %}
+
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-What country did you get married in? – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
-}) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
+<div class="govuk-width-container">
+  <a href="marriage-date.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	     <form action="marriage-certificate" method="post" class="form">  
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+                
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="marriage-location-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Did you get married in the UK?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marriage-location" name="marriage-location" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="marriage-location">
+                      Yes
+                    </label>
+                  </div>
 
-      <form class="form" action="marriage-certificate" method="post">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marriage-location-2" name="marriage-location" type="radio" value="No" data-aria-controls="conditional-marriage-location-2">
+                    <label class="govuk-label govuk-radios__label" for="marriage-location-2">
+                      No
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriage-location-2">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="marriage-location-country">
+                        Which country did you get married in?
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="marriage-location-country" name="marriage-location-country" type="tel" value="{{ data['marriage-location-country'] }}"> </div>            
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
 
+            
+            <!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+  
+-->
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        
-        {% set marriedcountry %}
-        {{ govukInput({
-          label: {
-            text: "What country did you get married in?",
-            classes: "govuk-label--s",
-            isPageHeading: true
-          },
-          id: "marriedcountry",
-          name: "marriedcountry"
-        }) }}
-        {% endset -%}
-        
-        {{ govukRadios({
-          name: "countrymarried",
-          value: data['countrymarried'],
-          fieldset: {
-            legend: {
-              text: "Where did you get married?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "England",
-              text: "England"
-            },
-            {
-              value: "Scotland",
-              text: "Scotland"
-            },
-            {
-              value: "Wales",
-              text: "Wales"
-            },
-            {
-              value: "Northern Ireland",
-              text: "Northern Ireland"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "Outside the UK",
-              text: "Outside the UK",
-              conditional: {
-                html: marriedcountry
-              }
-            }
-          ]
-        }) }}
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
-        <!-- {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-
-{% set textHtml %}
-{{ govukInput({
-  label: {
-    text: "Which country did you get married in?"
-  },
-  classes: "govuk-!-width-two-thirds",
-  id: "countrymarried",
-  name: "countrymarried",
-  autocomplete: "address-level2"
-}) }}
-{% endset -%}
-
-{{ govukRadios({
-  name: "marriedinuk",
-  fieldset: {
-    legend: {
-      text: "Did you get married in the UK?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-  {
-    value: "Yes",
-    text: "Yes"
-  },
-    {
-      value: "No",
-      text: "No",
-      conditional: {
-        html: textHtml
-      }
-    }
-  ]
-}) }}
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>  
+	{% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
 
 
-        {{ govukButton({
-          text: "Continue"
-        }) }} -->
 
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Get help with your application
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            Telephone: 0800 731 0469 <br>
-            Welsh language: 0800 731 0453 <br>
-            <br>
-            Textphone: 0800 731 0464 <br>
-            Welsh language: 0800 731 0456 <br>
-            <br>
-            If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
-            <br>
-            Monday to Friday, 9.30am to 3.30pm <br>
-            Find out about call charges <br>
-          </div>
-        </details>
-
-      </form>
-
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+    
+    </form>
     </div>
   </div>
 
+</main>
+</div>
 {% endblock %}

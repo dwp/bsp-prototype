@@ -5,23 +5,15 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
 {% block content %}
 
-<div class="govuk-width-container">      
-
+<div class="govuk-width-container">
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>           
+  <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="https://www.gov.uk/after-a-death/bereavement-help-and-support" method="post" class="form">
-       
-       
         <h1 class="govuk-heading-l">You cannot get Bereavement Support Payment</h1>
                 <div class="govuk-form-group">          
                   <p class="govuk-body govuk-!-font-size-19">This is because when your partner died you did not have dependent children and were not pregnant.

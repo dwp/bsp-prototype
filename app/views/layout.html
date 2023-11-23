@@ -56,19 +56,16 @@
     containerClasses: "govuk-width-container"
   }) }}
   {% endif %}
-  
-  <div class="govuk-phase-banner govuk-header__container govuk-width-container">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-  
-  
+
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  classes: 'govuk-header__container govuk-width-container',
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }} 
+
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
@@ -83,7 +80,7 @@
             text: "GOV.UK Prototype Kit " + releaseVersion
           },
           {
-            href: "/manage-prototype/clear-data",
+            href: "/prototype-admin/clear-data",
             text: "Clear data"
           }
         ]
@@ -98,4 +95,17 @@
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+  
+  <script>
+let urladdrsss = window.location.pathname;
+let url = urladdrsss.split('/');
+if(url[1] == 'beta') {
+	document.getElementById("alpha").innerHTML = "beta";
+} else {
+	document.getElementById("alpha").innerHTML = "beta";
+}
+</script>
+  
 {% endblock %}
+
+

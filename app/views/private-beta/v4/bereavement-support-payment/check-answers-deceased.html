@@ -1,30 +1,19 @@
+{% extends "layout.html" %}
 
-{% extends "layouts/main.html" %}
-
-{% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
-}) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+{% block pageTitle %}
+Check your answers
 {% endblock %}
 
 {% block content %}
 <div class="govuk-width-container">
-
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
+  <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/private-beta/v6/bereavement-support-payment/contact-info" method="post" class="form">
       
-      <form action="/private-beta/v8/bereavement-support-payment/contact-info" method="post" class="form">
-      
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         Check your answers
       </h1>
 
@@ -103,37 +92,28 @@
 
 
 
-        {% if (data['workedabroad'] == 'No' or data['workedabroad'] == "I don't know") %}
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Lived or worked outside the UK
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['workedabroad'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="deceased-work?checkanswerdeceased=true">
-              Change
-            </a>
-          </dd> 
-        </div>
-        {% endif %}
 
-        {% if data['workedabroad'] == "Yes" %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-third">
             Lived or worked outside the UK
           </dt>
+		  {% if data['deceasedwork'] == 'Yes' %}
           <dd class="govuk-summary-list__value">
-            Yes, {{ data['countryworked'] }}
+            {{ data['deceasedworkyes'] }}
           </dd>
+		  {% endif %}
+		  {% if data['deceasedwork'] != 'Yes' %}
+          <dd class="govuk-summary-list__value">
+            {{ data['deceasedwork'] }}
+          </dd>
+		  {% endif %}
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="deceased-work?checkanswerdeceased=true">
               Change
             </a>
           </dd> 
         </div>
-        {% endif %}
 
 
         </dl>

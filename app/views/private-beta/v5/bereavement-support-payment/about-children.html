@@ -1,39 +1,26 @@
 
-{% extends "layouts/main.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
-}) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
 {% endblock %}
 
 {% block content %}
 
 
 <div class="govuk-width-container">
-
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
+  <main class="govuk-main-wrapper">
     
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="check-answers-about-you" method="post">
+        <form class="form" action="/child-benefit-answer-cp" method="post">
       
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
   
           {{ govukCheckboxes({
-            name: "children",
-            values: data["children"],
+            name: "childrencp",
+            values: data["childrencp"],
             fieldset: {
               legend: {
                 text: "When your partner died, did any of these apply to you?",
@@ -50,8 +37,8 @@
                 text: "I was responsible for a child under 16"
               },
               {
-                value: "I was responsible for a child aged 16 to 19 in full-time education or training",
-                text: "I was responsible for a child aged 16 to 19 in full-time education or training"
+                value: "I was responsible for a child aged 16 to 19 and in full-time education or training",
+                text: "I was responsible for a child aged 16 to 19 and in full-time education or training"
               },
               {
                 value: "I was pregnant",

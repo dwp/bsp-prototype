@@ -1,29 +1,15 @@
 
-
-{% extends "layouts/main.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
-}) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
 {% block content %}
 
-<div class="govuk-width-container">     
-            
+<div class="govuk-width-container">
+  <a href="your-postcode.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">            
 
 
   <div class="govuk-grid-row">
