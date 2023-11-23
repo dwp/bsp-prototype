@@ -1,0 +1,120 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <a href="about-child.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <form action="about-cb-claim" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+      
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Do you get Child Benefit?
+              </h1>
+            </legend>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What is Child Benefit?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body"> You get Child Benefit if you’re responsible for bringing up a child who is:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>under 16</li>
+                  <li>under 20 if they stay in approved education or training</li>
+                </ul>
+                <p>It’s paid every 4 weeks.</p>
+              </div>
+            </details>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="acb" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-3" name="acb" type="radio" value="No" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-radios__label" for="contact-3">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                     <p>Go to <a href="#" class="govuk-body govuk-!-font-size-19">www.gov.uk/child-benefit</a> or call <b>0300 200 3100</b> to check if you could be entitled and to make a claim.</p>
+                     <p>If you start getting Child Benefit, we can pay you the higher rate of Bereavement Support Payment. </p>
+                    </div>
+            </div>
+        
+          </fieldset>
+        </div>
+                <br>
+
+<!--
+
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %} 
+   -->
+
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+   
+    </form>      
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

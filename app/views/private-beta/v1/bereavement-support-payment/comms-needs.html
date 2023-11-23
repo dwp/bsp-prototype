@@ -1,0 +1,169 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkanswercontact==undefined %}
+	    <form action="comms-lang" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkanswercontact =='true' %}
+	    <form action="check-answers-contact" method="post" class="form">
+	{% endif %} 
+      
+            <a href="email-confirm" class="govuk-back-link">Back</a>             
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Do you need us to use a different format when we contact you?
+
+                  </h1>
+                </legend>
+                <div id="waste-hint" class="govuk-hint">
+                  For example, large print, braille or textphone.
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" id="commsNeedsGroup">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">  
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="f-commsNeeds" name="commsNeeds" type="radio" value="{{ data['commsNeedsOptions'] }}" data-aria-controls="conditional-f-commsNeeds">
+                          <label class="govuk-label govuk-radios__label" for="f-commsNeeds">
+                            Yes        
+                          </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-f-commsNeeds">
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            Select all that apply
+                            </legend>
+                            <div class="govuk-checkboxes" id="f-commsNeedsOptions-wrapper">
+                        
+                            <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="f-commsNeedsOptions" name="commsNeedsOptions" type="checkbox" value="Braille">
+                                  <label class="govuk-label govuk-checkboxes__label" for="f-commsNeedsOptions">                
+                                    Braille                
+                                  </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">                
+                                  <input class="govuk-checkboxes__input" id="commsNeedsOptions-2" name="commsNeedsOptions" type="checkbox" value="Large print">                
+                                  <label class="govuk-label govuk-checkboxes__label" for="commsNeedsOptions-2">
+                                    Large print                
+                                  </label>                
+                            </div>
+                        
+                            <div class="govuk-checkboxes__item">                
+                                  <input class="govuk-checkboxes__input" id="commsNeedsOptions-3" name="commsNeedsOptions" type="checkbox" value="Audio">                
+                                  <label class="govuk-label govuk-checkboxes__label" for="commsNeedsOptions-3">
+                                    Audio                
+                                  </label>                                                      
+                            </div>
+                        
+                            <div class="govuk-checkboxes__item">                
+                                  <input class="govuk-checkboxes__input" id="commsNeedsOptions-4" name="commsNeedsOptions" type="checkbox" value="Sign language">                
+                                  <label class="govuk-label govuk-checkboxes__label" for="commsNeedsOptions-4">
+                                    Sign language                
+                                  </label>               
+                            </div>
+                        
+                            <div class="govuk-checkboxes__item">               
+                                  <input class="govuk-checkboxes__input" id="commsNeedsOptions-5" name="commsNeedsOptions" type="checkbox" value="Induction Loop">                
+                                  <label class="govuk-label govuk-checkboxes__label" for="commsNeedsOptions-5">               
+                                    Induction Loop                
+                                  </label>
+                            </div>
+                        
+                            <div class="govuk-checkboxes__item">                
+                                  <input class="govuk-checkboxes__input" id="commsNeedsOptions-6" name="commsNeedsOptions" type="checkbox" value="Textphone">               
+                                  <label class="govuk-label govuk-checkboxes__label" for="commsNeedsOptions-6">               
+                                    Textphone                
+                                  </label>
+                            </div>
+
+                            <div class="govuk-checkboxes__item">               
+                                  <input class="govuk-checkboxes__input" id="commsNeedsOptions-7" name="commsNeedsOptions" type="checkbox" value="Typetalk">                
+                                  <label class="govuk-label govuk-checkboxes__label" for="commsNeedsOptions-7">                
+                                    Typetalk               
+                                  </label>               
+                            </div>
+
+                            </div>
+                        
+                          </fieldset>  
+                        </div>
+                      </div>
+
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="f-commsNeeds-2" name="commsNeeds" type="radio" value="No">
+                          <label class="govuk-label govuk-radios__label" for="f-commsNeeds-2">
+                            No
+                          </label>
+                        </div>
+                
+                    </div>        
+                  </fieldset>
+                </div>
+
+
+            
+              </fieldset>
+            </div>
+            <input name="getcountrycb" class="govuk-radios__input" id="get-cb-no1" type="hidden" value="{{ data['getcountrycb'] }}" >
+<!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}   
+   -->
+
+      {% if checkanswer ==undefined and checkanswercontact==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkanswercontact =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %} 
+   
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+   
+    </form>      
+  </div>            
+  </div>
+             
+
+{% endblock %}

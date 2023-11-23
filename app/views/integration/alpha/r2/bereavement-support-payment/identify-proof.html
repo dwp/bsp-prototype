@@ -1,0 +1,54 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <a href="check-answers-bank.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="identify-choose-2-items" method="post" class="form">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Prove your identity
+                </h1>
+                <p>Proving your identity makes it quicker to process your application. It also helps to reduce fraud.
+
+                </p>
+           <br>
+                <div class="govuk-form-group">          
+                  <h2 class="govuk-heading-s">We'll ask if you can answer questions about 2 of the following:
+
+
+                  </h2>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>a UK passport</li>
+                    <li>your P60 or a payslip from the last 12 months</li>
+                    <li>tax credits, if you get them</li>
+                    <li>your credit record, for example, the year you took out a credit card or phone contract</li>
+                  </ul>
+                  <div class="govuk-inset-text">
+                    You can still submit your application if you cannot answer these questions. You'll be able to <a href="#"> confirm your identity in a different way.</a>
+                  </div>
+                  
+
+
+                  </p>
+                </div>
+              <button class="govuk-button" data-module="govuk-button">Continue
+              </button>   
+    </form>      
+  </div>            
+  </div>
+        
+</main>
+</div>
+
+</main>
+</div>
+{% endblock %}

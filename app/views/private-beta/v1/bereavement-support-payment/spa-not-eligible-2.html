@@ -1,0 +1,43 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="relationship" method="post" class="form">
+        <h1 class="govuk-heading-l">You're not eligible for Bereavement Support Payment</h1>
+                <div class="govuk-form-group">          
+                  <p class="govuk-body govuk-!-font-size-19">This is because you reached State Pension age before your partner died.
+                  </p>
+                  <p class="govuk-body govuk-!-font-size-19">You must be under State Pension age to be able to get Bereavement Support Payment.
+                  </p>
+                  <a href="https://www.gov.uk/" role="button" class="govuk-button" data-module="govuk-button">
+                    Finish
+                  </a>
+                  <h2 class="govuk-heading-m">Find other support</h2>
+                  <p class="govuk-body govuk-!-font-size-19">You may be able to get other benefits. Check what you can get with a <a href="https://www.gov.uk/benefits-calculators">benefits calculator.</a>
+                  </p>
+                  <p class="govuk-body govuk-!-font-size-19">If you need emotional help and support, you can contact <a href="https://www.cruse.org.uk">Cruse Bereavement Support.</a>
+                  </p>
+                  <h2 class="govuk-heading-m">Get a decision in writing</h2>
+                  <p class="govuk-body govuk-!-font-size-19">You can finish your application even though you do not qualify and won't get Bereavement Support Payment.
+                  </p>
+                  <p class="govuk-body govuk-!-font-size-19"><a href="relationship1">Continue application</a> </p>
+                    </fieldset>
+              
+    </form>      
+  </div>            
+  </div>        
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="your-address.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="task-list" method="post" class="form">
+        
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        About you
+      </h2>
+       
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Full name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['claimantfullname'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="your-name?checkanswer=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['claimantinsurancenumber'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="your-ni?checkanswer=true">
+              Change
+            </a>
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['sort'] }} &nbsp; {{ data['postcode'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="your-postcode?checkanswer=true">
+              Change
+            </a>
+          </dd>
+        </div>
+
+<!--
+		{% if data['cp-location'] %}
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Civil partnership registration
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['cp-location'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		{% endif %}
+		
+		{% if data['CPdateday'] and data['CPdatemonth'] and data['CPdateyear'] %}
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of civil partnership
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['CPdateday'] }} / {{data['CPdatemonth'] }} / {{data['CPdateyear'] }}
+			
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp-date?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		{% endif %}
+		{% if data['cpr'] %}
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Civil partnership registered in UK
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['cpr'] }}
+			
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		{% endif %}
+		{% if data['cpcertificate'] %} 
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Have a civil partnership certificate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['cpcertificate'] }}
+			
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp-certificate?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		{% endif %}
+    
+  
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Children and pregnancy
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {% if data['16years'] %}
+		I have a child under 16 years old<br>
+		{% endif %}
+		{% if data['16to19'] %}
+		I have a child aged between 16 to 19 and in full-time education or training<br>
+		{% endif %}
+		{% if data['farm1'] %}
+		I was pregnant when my partner died<br>
+		{% endif %}
+		{% if data['farm2'] %}
+		None of these apply<br>
+		{% endif %}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="about-child?checkanswer=true&aboutyou=true">
+          Change
+        </a>
+      </dd>
+    </div>
+    {% if data['farm1'] =='' or data['farm2'] == '' and data['16years'] or data['16to19'] %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Get Child Benefit
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['acb'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="about-cb?checkanswer=true">
+          Change
+        </a>
+      </dd>
+    </div>
+  
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Child Benefit claim in your name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['cbclaim'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="about-cb-claim?checkanswer=true">
+          Change
+        </a>
+      </dd>
+    </div>
+{% endif %}
+-->
+  </dl>
+
+
+		<input name="appcount" class="govuk-radios__input" id="get-cb-no2" type="text" value="2" /> 
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+
+  </div>
+
+
+</main>
+</div> 
+{% endblock %}

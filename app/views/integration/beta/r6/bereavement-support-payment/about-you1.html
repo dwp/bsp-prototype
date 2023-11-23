@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <a href="check-answers-eligibility.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="your-name" method="post" class="form">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">About you</h1>
+           <br>
+                <div class="govuk-form-group">          
+                  <h2 class="govuk-heading-m">We’ll ask:
+                  </h2>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>your name, address and National Insurance number</li>
+                    <li>about your marriage (date, where it took place and if you have a certificate)</li>
+                    <li>about any children you have or if you were pregnant when your partner died</li>
+                  </ul>
+
+                  <p>We ask about children to check if you're entitled to the higher rate of Bereavement Support Payment.</p>
+                </div>
+              <button class="govuk-button" data-module="govuk-button">Continue
+              </button>   
+    </form>      
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

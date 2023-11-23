@@ -1,0 +1,55 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="your-postcode.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">            
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{data['getcb']}}
+      <form action="check-answers-about-you" method="post" class="form">
+                         
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-2">No address found</h1><br>
+
+                <p class="govuk-body govuk-!-font-size-19">We could not find an address that matches [insert postcode]. You can search again or enter the address manually.</p>
+
+                <p class="govuk-body govuk-!-font-size-19"> <a href="your-address.html">Search again</a></p>
+ 
+              <p class="govuk-body govuk-!-font-size-19"> <a href="your-address-manual.html">Enter address manually</a></p>
+              <div class="govuk-!-padding-bottom-4"></div>
+   
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Get help with your application
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  Telephone: 0800 731 0469 <br>
+                  Welsh language: 0800 731 0453 <br>
+                  <br>
+                  Textphone: 0800 731 0464 <br>
+                  Welsh language: 0800 731 0456 <br>
+                  <br>
+                  If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+                  <br>
+                  Monday to Friday, 9.30am to 3.30pm <br>
+                  Find out about call charges <br>
+                </div>
+              </details>
+   
+            </form>      
+  </div>            
+  </div>
+             
+</main>
+</div>
+{% endblock %}

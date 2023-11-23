@@ -1,0 +1,147 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  
+  
+
+  {% if data['marriage-location'] == 'No' %}
+
+  <a href="marriage.html" class="govuk-back-link">Back</a>             
+   {% else %}
+   <a href="marriage-register.html" class="govuk-back-link">Back</a>  
+  {% endif %}
+
+
+
+  
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	     <form action="about-child" method="post" class="form"> 
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+      
+
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Do you have a marriage certificate?
+                  </h1>
+                </legend>
+                         
+                <fieldset class="govuk-fieldset">
+
+                  <p>
+                      We may ask to see your certificate as proof you were legally married.
+                    </p>
+
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input name="marriage-certificate" class="govuk-radios__input" id="marriage-certificate-yes" type="radio"  value="Yes">              
+                      <label class="govuk-label govuk-radios__label" for="marriage-certificate-yes">
+                        Yes              
+                      </label>
+                    </div>
+                    
+                    <div class="govuk-radios__item">              
+                      <input name="marriage-certificate" class="govuk-radios__input" id="marriage-certificate-no" type="radio" value="No" data-aria-controls="conditional-marriage-certificate-no">              
+                      <label class="govuk-label govuk-radios__label" for="marriage-certificate-no">
+                        No              
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriage-certificate-no">
+                        <p>
+                          We'll contact you if we need more information and explain what to do.
+                        </p>
+                      </div>
+
+
+                    <div class="govuk-radios__item">              
+                      <input name="marriage-certificate" class="govuk-radios__input" id="marriage-certificate-Idontknow" type="radio" value="I don't know" data-aria-controls="conditional-marriage-certificate-Idontknow">              
+                      <label class="govuk-label govuk-radios__label" for="marriage-certificate-Idontknow">
+                        I don't know              
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriage-certificate-Idontknow">
+                      <p>
+                        We'll contact you if we need more information and explain what to do.
+                      </p>
+                    </div>
+
+
+                  </div>
+                  </fieldset>
+              </div>
+
+              <!--
+             {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+-->
+
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>  
+	{% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+
+    
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+    
+    </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

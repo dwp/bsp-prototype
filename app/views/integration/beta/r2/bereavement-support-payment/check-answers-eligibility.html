@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="live-in-uk" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="about-you" method="post" class="form">
+      
+      
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Eligibility
+      </h2>
+      
+
+      <dl class="govuk-summary-list">
+       
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Your date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['claimantday'] }} / {{ data['claimantmonth'] }} / {{ data['claimantyear'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="spa?checkanswereligibility=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Date partner died
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['claimantdaydod'] }} / {{ data['claimantmonthdod'] }} / {{ data['claimantyeardod'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="dod?checkanswereligibility=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Person who's died
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['getcb'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="relationship?checkanswereligibility=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Where you live
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['getcountrycb'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="country?checkanswereligibility=true">
+              Change
+            </a>
+          </dd> 
+        </div>      
+  
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+        Lived in UK at time of death
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['uklocation'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="live-in-uk?checkanswereligibility=true">
+          Change
+        </a>
+      </dd> 
+    </div>     
+
+  </dl>
+<br>
+  <p class="govuk-body-m">You have completed section 1 of 4</p>
+
+		<input name="appcount" class="govuk-radios__input" id="get-cb-no2" type="text" value="1" /> 
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+
+  </div>
+
+
+</main>
+</div> 
+{% endblock %}

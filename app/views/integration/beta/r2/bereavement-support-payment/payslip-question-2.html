@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="payslip-question-1.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkansweridentity==undefined %}
+	    <form action="check-answers-identity-proof" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+	{% if checkansweridentity =='true' %}
+    <form action="check-answers-identity-proof" method="post" class="form">
+{% endif %}
+  <input name="payslipquestion2" value="true" type="hidden"/>
+                <h1 class="govuk-heading-xl">
+                    Enter the amount of tax deducted on a payslip
+                </h1>
+
+                <div id="benefit-amount2-hint" class="govuk-hint">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Use a payslip dated after May 20, 2020</li>
+                        <li>Get the figure from the 'Deductions' section. It may be called 'PAYE' or 'Income Tax'</li>
+                        <li>Do not use the 'Year To Date' figure</li>
+                    </ul>
+                </div>
+
+                <div class="govuk-form-group">
+                    <div class="govuk-input__wrapper">
+                      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                      <input class="govuk-input govuk-input--width-5" id="benefit-amount2" name="benefit-amount2" type="text" spellcheck="false"
+                      value="{{data['benefit-amount2']}}">
+                    </div>
+                  </div>
+
+                </fieldset>
+                <br>
+                {% if checkanswer ==undefined and checkansweridentity==undefined %}
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+          {% endif %}
+          {% if checkanswer=='true' %}
+          <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+          {% endif %}
+          
+          {% if checkansweridentity =='true' %}
+          <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+          {% endif %} 
+           
+              <p class="body-text"><a href="check-answers-identity-proof.html?payslipquestion2=false">I don't have that information</a></p>
+    
+            </form>
+           
+        </div>            
+    
+            
+    </div>            
+      </div>
+            
+    </main>
+    </div>
+    
+    </main>
+    </div>
+
+{% endblock %}

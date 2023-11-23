@@ -1,0 +1,104 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="deceased-death.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer!='true' %}
+	    <form action="check-answer-partner" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answer-partner" method="post" class="form">
+	{% endif %}
+      
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did your {{data['getcb']}} ever live or work outside the UK?</h1>
+            <div class="govuk-form-group">                  
+              <fieldset class="govuk-fieldset heavy-hint">
+                
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Why are we asking this?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    We can check if you could be eligible for bereavement benefits from another country as well as the UK.
+                    <br><br>
+                    <p class="govuk-body">It will depend on:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>the country they lived or worked in (only some pay bereavement benefits)</li>
+                      <li>whether they paid National Insurance contributions there</li>
+                    </ul>
+                </div>
+                </details>
+
+                <div class="govuk-inset-text">
+                  Do not include any time they served in the British armed forces.
+                </div>
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios__item">              
+                        <input name="deceasedwork" class="govuk-radios__input" id="work-outside-uk-yes" aria-expanded="false" data-aria-controls="conditional-work-outside-uk-yes" type="radio" value="Yes" {{ checked("deceasedwork", "Yes") }}>              
+                        <label class="govuk-label govuk-radios__label" for="work-outside-uk-yes">              
+                          Yes             
+                         </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-outside-uk-yes">              
+                        <div class="govuk-form-group">              
+                           <label class="govuk-label govuk-!-font-weight-bold" for="work-outside-uk">              
+                            Name of country
+                           </label>
+                           <span id="deceased-dod-hint" class="govuk-hint">
+                            For example, Spain
+                          </span>
+                          <input name="deceasedworkyes" class="govuk-input govuk-!-width-two-thirds" id="work-outside-uk" type="text" value="{{ data['deceasedworkyes'] }}" >
+                          <br><br>
+                          <a href="#" class="govuk-link govuk-link--no-visited-state">Add country</a>
+
+                        
+                        </div>
+                      </div>
+
+
+                      <div class="govuk-radios__item">              
+                        <input name="deceasedwork" class="govuk-radios__input" id="work-outside-uk-no" type="radio" value="No" {{ checked("deceasedwork", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="work-outside-uk-no">
+                          No
+                         </label>
+                      </div>
+
+                      <p>Or </p>
+
+                      <div class="govuk-radios__item">
+                          <input name="deceasedwork" class="govuk-radios__input" id="work-outside-uk-dontknow" type="radio" value="I don't know" {{ checked("deceasedwork", "I don't know") }}>
+                          <label class="govuk-label govuk-radios__label" for="work-outside-uk-dontknow">                
+                            I don't know               
+                           </label>
+                        </div>
+                  </div>
+              
+              </fieldset>
+            </div>
+
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}    
+    </form>      
+  </div>            
+  </div>
+       </div>      
+</main>
+{% endblock %}

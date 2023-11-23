@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
+
+  <main class="govuk-main-wrapper">
+    
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="country" method="post" class="form">
+      
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Have you applied for Child Benefit?
+              </h1>
+            </legend>
+            <br>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Why are we asking this?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">You have told us that you are responsible for a child.</p>
+                <p class="govuk-body">We verify this by checking your entitlement to Child Benefit.</p>
+                <p class="govuk-body">You may get your money sooner if you have already applied for Child Benefit.</p>
+              </div>
+            </details>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live" name="childb" type="radio" value="Yes, I have applied in my name">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                  Yes, I have applied in my name
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-2" name="childb" type="radio" value="No, but my partner may have applied">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                  No, but my partner may have applied
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-6" name="childb" type="radio" value="I don't know">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+                  I don't know
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+                <br>
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+              </form>    
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+     
+  </div>            
+  </div>
+        
+</main>
+</div>
+
+
+{% endblock %}

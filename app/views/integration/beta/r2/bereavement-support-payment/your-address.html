@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="your-postcode.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">            
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="marriage-date" method="post" class="form">
+                         
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your home address?</h1>
+           <br>
+                
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Postcode
+              </h2>
+              <p class="govuk-body govuk-!-font-size-19"> <b>{{ data['postcode'] }}</b>  &nbsp;  <a href="your-postcode.html">Change</a></p>
+            </div>
+<br>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Select an address
+              </h2>
+              <select class="govuk-select" id="sort" name="sort">
+                <option value="1, Street name, City, County" selected>Select an address</option>
+                <option value="2, Street name, City, County">1, Street name</option>
+                <option value="3, Street name, City, County">2, Street name</option>
+                <option value="4, Street name, City, County">3, Street name</option>
+                <option value="5, Street name, City, County">4, Street name</option>
+              </select> <br><br>
+              <p class="govuk-body govuk-!-font-size-19"> <a href="your-address-manual.html">Enter address manually</a></p>
+            </div>
+
+			<input name="getcb" class="govuk-radios__input" id="get-cb-no3" type="hidden" value="{{ data['getcb'] }}" >
+              <button class="govuk-button" data-module="govuk-button">Continue
+              </button>   
+   
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Get help with your application
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  Telephone: 0800 731 0469 <br>
+                  Welsh language: 0800 731 0453 <br>
+                  <br>
+                  Textphone: 0800 731 0464 <br>
+                  Welsh language: 0800 731 0456 <br>
+                  <br>
+                  If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+                  <br>
+                  Monday to Friday, 9.30am to 3.30pm <br>
+                  Find out about call charges <br>
+                </div>
+              </details>
+   
+            </form>      
+  </div>            
+  </div>
+             
+</main>
+</div>
+{% endblock %}

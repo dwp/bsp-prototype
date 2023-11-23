@@ -1,0 +1,810 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+      <h1 class="govuk-heading-l">
+        Bereavement Support Payment Citizen journey
+      </h1>
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                User Research 05.07.23 &nbsp;  <strong class="govuk-tag govuk-tag--red"> Private beta </strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              <p class="govuk-body govuk-!-font-size-19">This research is a second round of end to end testing with further iterations for service improvement.</p>
+              <p class="govuk-body govuk-!-font-size-19">New iterations to the form include:</p>
+              <li>updated GOV.UK guidance</li>
+              <li>an objective way to tell users how long the form will take</li>
+              <li>changed H1 for relationship question</li>
+              <li>a component to toggle to Welsh</li>
+              <li>a child benefit question included in the flow</li>
+              <li>DWP's find an address pattern</li>
+              <li>a new pattern to capture email for confirmation</li>
+              <li>mock decision emails</li>
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+              Start now
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/email-positive'" class="govuk-button" data-module="govuk-button">
+              Email decision (a)
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/email-negative'" class="govuk-button" data-module="govuk-button">
+              Email decision (b)
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/start1'" class="govuk-button" data-module="govuk-button">
+              Language toggle
+            </button>
+
+            <p class="govuk-body"><B>Pages being tested
+            </b></p>           
+              <ol class="govuk-list govuk-list--number">
+                <li><a href="/private-beta/v6/bereavement-support-payment/govuk-overview">/govuk-how-it-works</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/govuk-eligibility">/govuk-eligibility</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/govuk-whatyoullget">/govuk-what-you'll-get</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/govuk-howtoclaim">/govuk-how-to-claim</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/start">/start-page</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/relationship">/relationship-question</a></li>
+                <li><a href="/private-beta/v4/bereavement-support-payment/about-cb">/child-benefit</a></li>
+                <li><a href="/private-beta/v4/bereavement-support-payment/your-postcode">/what-is-your-address</a></li>
+                <li><a href="/private-beta/v4/bereavement-support-payment/your-address">/select-your-home-address</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/email-details2">/confirmation-email-question</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/email-confirm2">/email-input</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/email-positive">/decision-email-positive</a></li>
+                <li><a href="/private-beta/v6/bereavement-support-payment/email-negative">/decision-email-negative</a></li>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                User Research 03.05.23 &nbsp;  <strong class="govuk-tag govuk-tag--red"> Private beta </strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              <p class="govuk-body govuk-!-font-size-19">This aim of this research is to test the online form end to end with users with added iterations for service improvement.</p>
+              <p class="govuk-body govuk-!-font-size-19">New iterations to the form include:</p>
+              <li>update to accident at work question</li>
+              <li>new email input</li>
+              <li>additional question to ask users if they would like a decision by email</li>
+              <li>content on end page signposting to apply for Child Benefit</li>
+              <li>splitting out alternative communication question over 2 pages</li>
+              <li>testing understanding of question about Child Benefit</li>
+              <li>pulling out conditional reveal content behind radios</li>
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <button onclick="javascript:location.href='/private-beta/v4/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+              Married
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v5/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+              Civil Partnership
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+              Living together
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/about-children-before-cb'" class="govuk-button" data-module="govuk-button">
+              Child Benefit
+            </button>
+
+            <p class="govuk-body"><B>Pages being tested
+            </b></p>           
+              <ol class="govuk-list govuk-list--number">
+                <li><a href="/private-beta/v3/bereavement-support-payment/deceased-death">/accident-at-work</a></li>
+                <li><a href="/private-beta/v3/bereavement-support-payment/email-notifications">/email-notifications</a></li>
+                <li><a href="/private-beta/v3/bereavement-support-payment/email-details">/email-input</a></li>
+                <li><a href="/private-beta/v3/bereavement-support-payment/infosent">/application-complete</a></li>
+                <li><a href="/private-beta/v3/bereavement-support-payment/about-cb">/about-child-benefit</a></li>
+                <li><a href="/private-beta/v3/bereavement-support-payment/comms-needs">/comms-needs</a></li>
+                <li><a href="/private-beta/v3/bereavement-support-payment/marriage-date">/marriage-date</a></li>
+                <li><a href="/private-beta/v3/bereavement-support-payment/marriage-certificate">/marriage-certificate</a></li>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                User Research 06.02.23&nbsp;  <strong class="govuk-tag govuk-tag--red">Private beta</strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              <p class="govuk-body govuk-!-font-size-19">This aim of this research is to test:</p>
+              <li>kick out page designs</li>
+              <li>service unanavailable and error pages</li>
+              <li>updated GOV.UK guidance for cohabitee go-live</li>
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+            <!--
+            <button onclick="javascript:location.href='/beta/r4/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+              View prototype 1
+            </button>
+-->
+
+            <button onclick="javascript:location.href='/private-beta/v1/bereavement-support-payment/start1'" class="govuk-button" data-module="govuk-button">
+              Journey a
+            </button>
+
+            <button onclick="javascript:location.href='/private-beta/v1/bereavement-support-payment/start2'" class="govuk-button" data-module="govuk-button">
+              Journey b
+            </button>
+
+            <button onclick="javascript:location.href='/private-beta/v1/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+              Journey c
+            </button>
+
+            <button onclick="javascript:location.href='/private-beta/v1/bereavement-support-payment/govuk-howtoclaim2'" class="govuk-button" data-module="govuk-button">
+              Journey d
+            </button>
+
+            <button onclick="javascript:location.href='/private-beta/v1/bereavement-support-payment/govuk-howtoclaim3'" class="govuk-button" data-module="govuk-button">
+              Journey e
+            </button>
+
+            <p class="govuk-body"><B>Pages being tested
+            </b></p>           
+              <ol class="govuk-list govuk-list--number">
+                <li><a href="/private-beta/v1/bereavement-support-payment/spa-not-eligible-1">/spa-not-eligible-1</a></li>
+                <li><a href="/private-beta/v1/bereavement-support-payment/spa-not-eligible-2">/spa-not-eligible-2</a></li>
+                <li><a href="/private-beta/v1/bereavement-support-payment/govuk-overview">/how it works</a></li>
+                <li><a href="/private-beta/v1/bereavement-support-payment/govuk-eligibility">/eligibility</a></li>
+                <li><a href="/private-beta/v1/bereavement-support-payment/govuk-whatyoullget">/what you'll get</a></li>
+                <li><a href="/private-beta/v1/bereavement-support-payment/govuk-howtoclaim">/how to claim</a></li>
+                <li><a href="/private-beta/v1/bereavement-support-payment/serviceproblem">/service-problem</a></li>
+                <li><a href="/private-beta/v1/bereavement-support-payment/serviceunavailable">/service-unavailable</a></li>
+                <li><a href="/private-beta/v1/bereavement-support-payment/serviceunavailable100cap">/service-unavailable-100cap</a></li>
+
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                UR session 7 &nbsp;  <strong class="govuk-tag govuk-tag--red">Private beta</strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              This research aims to test two versions of the relationship question on the cohabitee journey and test the email capture on the payment and contact details section for sending the confirmation email for the claimant.
+            </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+
+            <button onclick="javascript:location.href='/beta/r7/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+              Journey 1
+            </button>
+
+            <button onclick="javascript:location.href='/beta/r8/bereavement-support-payment/start.html'" class="govuk-button" data-module="govuk-button">
+              Journey 2
+            </button>
+
+            <button onclick="javascript:location.href='/beta/r9/bereavement-support-payment/contact-info'" class="govuk-button" data-module="govuk-button">
+              Payment and Contact details
+            </button>
+
+            <p class="govuk-body"><B>Pages</b></p>           
+<ol class="govuk-list govuk-list--number">
+  <li><a href="/beta/r4/bereavement-support-payment.html">/bereavement-support-payment</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/what-youll-get.html">/what-youll-get</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/how-to-claim.html">/how-to-claim</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/start.html">/apply</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/apply-not-eligible.html">/apply-drop-out</a></li>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+  <p><b>Eligibility</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/spa.html">/date-of-birth</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/dod.html">/date-partner-died</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/relationship.html">/person-who-died</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cohabitation.html">/Cohabitation</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/country.html">/where-you-live</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/live-in-uk.html">/lived-UK-when-partner-died</a></li>
+  
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers-eligibility.html">/check-your-answer-eligibility</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Eligibility kickouts</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/spa-not-eligible.html">/not-eligible-state-pension-age</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/relationship-not-eligible.html">/not-eligible-relationship</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/dod-not-eligible.html">/not-eligible-late-application</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/not-eligible-death-before-bsp.html">/not-eligible-death-before-bsp</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/country-not-eligible">/live-outside-UK</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/live-in-uk-not-eligible.html">/did-not-live-UK</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+  <p><b>About you</b></p>
+
+  <li><a href="/beta/r4/bereavement-support-payment/about-you.html">/about-you</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-name.html">/your-name</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-ni.html">/national-insurance-number</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-postcode.html">/address-postcode</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-address.html">/select-address</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-address-manual.html">/address-manually</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/marriage-date.html">/marriage-date</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/marriage.html">/marriage-uk</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/marriage-certificate.html">/marriage-certificate</a></li>
+  <p><b>Civil partner</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/cp-date.html">/civil-partner-date</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cp.html">/civil-partner-uk</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cp-certificate.html">/civil-partner-certificate</a></li>
+  <br>
+  <li><a href="/beta/r4/bereavement-support-payment/about-child.html">/about-children</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers-about-you.html">/check-your-answer-about-you</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>About deceased</b></p>
+
+  <li><a href="/beta/r4/bereavement-support-payment/about-deceased.html">/about-your partner</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/deceased-details.html">/partner-details</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/deceased-death.html">/partner-died-work-related</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/deceased-work.html">/partner-live-work-outside-uk</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers-deceased.html">/check-your-answers-about-your-partner</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Payment and contact details</b></p>
+
+  <li><a href="/beta/r4/bereavement-support-payment/contact-info.html">/about-payment-contact-details</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/bank-details.html">/account-details</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/contact-details.html">/contact</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/comms-needs.html">/contact-different-format</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/comms-lang.html">/welsh-language</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers-contact.html">/checy-your-answers-payment-contact-details</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/declaration.html">/declaration</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers.html">/Check your answer</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/infosent.html">/application-complete</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/infosent-ni.html">/application-complete</a> <strong class="govuk-tag govuk-tag--yellow">Northern Ireland</strong></li>
+  <li><a href="/beta/r6/bereavement-support-payment/infosent-ni-v1.html">/NI contact-details</a><strong class="govuk-tag govuk-tag--yellow">Northern Ireland V1</strong></li>
+  <li><a href="/beta/r6/bereavement-support-payment/infosent-ni-v2.html">/NI contact-details</a><strong class="govuk-tag govuk-tag--yellow">Northern Ireland V2</strong></li>
+  <li><a href="/beta/r6/bereavement-support-payment/infosent-ni-v3.html">/NI contact-details</a><strong class="govuk-tag govuk-tag--yellow">Northern Ireland V3</strong></li>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Feedback</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/feedback.html">/feedback</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/feedback-sent.html">/feedback-sent</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Cookie banner</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/cookie-banner.html">/cookie-banner</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cookie-policy.html">/cookie-policy</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cookie-details.html">/cookie-details</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Timeout</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/timeout-success.html">/timeout-start again</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/service-unavailable.html">/Service-Unavailable</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/unavailable.html">/Unhappy path</a></li>
+
+</ol>
+               
+          </div>
+        </div>
+
+
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                UR session 6 &nbsp;  <strong class="govuk-tag govuk-tag--red">
+  Private beta
+</strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              Cohabitee Journey
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+            <!--
+            <button onclick="javascript:location.href='/beta/r4/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+              View prototype 1
+            </button>
+-->
+
+            <button onclick="javascript:location.href='/beta/r6/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+              Journey 1
+            </button>
+
+            <button onclick="javascript:location.href='/beta/r5/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+              Journey 2
+            </button>
+
+
+
+
+
+            <p class="govuk-body"><B>Pages</b></p>           
+<ol class="govuk-list govuk-list--number">
+  <li><a href="/beta/r4/bereavement-support-payment.html">/bereavement-support-payment</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/what-youll-get.html">/what-youll-get</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/how-to-claim.html">/how-to-claim</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/start.html">/apply</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/apply-not-eligible.html">/apply-drop-out</a></li>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+  <p><b>Eligibility</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/spa.html">/date-of-birth</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/dod.html">/date-partner-died</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/relationship.html">/person-who-died</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cohabitation.html">/Cohabitation</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/country.html">/where-you-live</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/live-in-uk.html">/lived-UK-when-partner-died</a></li>
+  
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers-eligibility.html">/check-your-answer-eligibility</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Eligibility kickouts</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/spa-not-eligible.html">/not-eligible-state-pension-age</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/relationship-not-eligible.html">/not-eligible-relationship</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/dod-not-eligible.html">/not-eligible-late-application</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/not-eligible-death-before-bsp.html">/not-eligible-death-before-bsp</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/country-not-eligible">/live-outside-UK</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/live-in-uk-not-eligible.html">/did-not-live-UK</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+  <p><b>About you</b></p>
+
+  <li><a href="/beta/r4/bereavement-support-payment/about-you.html">/about-you</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-name.html">/your-name</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-ni.html">/national-insurance-number</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-postcode.html">/address-postcode</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-address.html">/select-address</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/your-address-manual.html">/address-manually</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/marriage-date.html">/marriage-date</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/marriage.html">/marriage-uk</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/marriage-certificate.html">/marriage-certificate</a></li>
+  <p><b>Civil partner</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/cp-date.html">/civil-partner-date</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cp.html">/civil-partner-uk</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cp-certificate.html">/civil-partner-certificate</a></li>
+  <br>
+  <li><a href="/beta/r4/bereavement-support-payment/about-child.html">/about-children</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers-about-you.html">/check-your-answer-about-you</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>About deceased</b></p>
+
+  <li><a href="/beta/r4/bereavement-support-payment/about-deceased.html">/about-your partner</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/deceased-details.html">/partner-details</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/deceased-death.html">/partner-died-work-related</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/deceased-work.html">/partner-live-work-outside-uk</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers-deceased.html">/check-your-answers-about-your-partner</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Payment and contact details</b></p>
+
+  <li><a href="/beta/r4/bereavement-support-payment/contact-info.html">/about-payment-contact-details</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/bank-details.html">/account-details</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/contact-details.html">/contact</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/comms-needs.html">/contact-different-format</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/comms-lang.html">/welsh-language</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers-contact.html">/checy-your-answers-payment-contact-details</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/declaration.html">/declaration</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/check-answers.html">/Check your answer</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r4/bereavement-support-payment/infosent.html">/application-complete</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/infosent-ni.html">/application-complete</a> <strong class="govuk-tag govuk-tag--yellow">Northern Ireland</strong></li>
+  <li><a href="/beta/r6/bereavement-support-payment/infosent-ni-v1.html">/NI contact-details</a><strong class="govuk-tag govuk-tag--yellow">Northern Ireland V1</strong></li>
+  <li><a href="/beta/r6/bereavement-support-payment/infosent-ni-v2.html">/NI contact-details</a><strong class="govuk-tag govuk-tag--yellow">Northern Ireland V2</strong></li>
+  <li><a href="/beta/r6/bereavement-support-payment/infosent-ni-v3.html">/NI contact-details</a><strong class="govuk-tag govuk-tag--yellow">Northern Ireland V3</strong></li>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Feedback</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/feedback.html">/feedback</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/feedback-sent.html">/feedback-sent</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Cookie banner</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/cookie-banner.html">/cookie-banner</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cookie-policy.html">/cookie-policy</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/cookie-details.html">/cookie-details</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Timeout</b></p>
+  <li><a href="/beta/r4/bereavement-support-payment/timeout-success.html">/timeout-start again</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/service-unavailable.html">/Service-Unavailable</a></li>
+  <li><a href="/beta/r4/bereavement-support-payment/unavailable.html">/Unhappy path</a></li>
+
+</ol>
+               
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                UR session 5 &nbsp;  <strong class="govuk-tag govuk-tag--red">
+  Private beta
+</strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              Updated relationship question, removed child benefit question and minor content changes
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+            <button onclick="javascript:location.href='/beta/r3/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+              View prototype
+            </button>
+
+            <p class="govuk-body"><B>Pages</b></p>           
+<ol class="govuk-list govuk-list--number">
+  <li><a href="/beta/r3/bereavement-support-payment.html">/bereavement-support-payment</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/what-youll-get.html">/what-youll-get</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/how-to-claim.html">/how-to-claim</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/start.html">/apply</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/apply-not-eligible.html">/apply-drop-out</a></li>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+  <p><b>Eligibility</b></p>
+  <li><a href="/beta/r3/bereavement-support-payment/spa.html">/date-of-birth</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/dod.html">/date-partner-died</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/relationship.html">/person-who-died</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/country.html">/where-you-live</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/live-in-uk.html">/lived-UK-when-partner-died</a></li>
+  
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r3/bereavement-support-payment/check-answers-eligibility.html">/check-your-answer-eligibility</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Eligibility kickouts</b></p>
+  <li><a href="/beta/r3/bereavement-support-payment/spa-not-eligible.html">/not-eligible-state-pension-age</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/relationship-not-eligible.html">/not-eligible-relationship</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/dod-not-eligible.html">/not-eligible-late-application</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/not-eligible-death-before-bsp.html">/not-eligible-death-before-bsp</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/country-not-eligible">/live-outside-UK</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/live-in-uk-not-eligible.html">/did-not-live-UK</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+  <p><b>About you</b></p>
+
+  <li><a href="/beta/r3/bereavement-support-payment/about-you.html">/about-you</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/your-name.html">/your-name</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/your-ni.html">/national-insurance-number</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/your-postcode.html">/address-postcode</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/your-address.html">/select-address</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/your-address-manual.html">/address-manually</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/marriage-date.html">/marriage-date</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/marriage.html">/marriage-uk</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/marriage-certificate.html">/marriage-certificate</a></li>
+  <p><b>Civil partner</b></p>
+  <li><a href="/beta/r3/bereavement-support-payment/cp-date.html">/civil-partner-date</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/cp.html">/civil-partner-uk</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/cp-certificate.html">/civil-partner-certificate</a></li>
+  <br>
+  <li><a href="/beta/r3/bereavement-support-payment/about-child.html">/about-children</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r3/bereavement-support-payment/check-answers-about-you.html">/check-your-answer-about-you</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>About deceased</b></p>
+
+  <li><a href="/beta/r3/bereavement-support-payment/about-deceased.html">/about-your partner</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/deceased-details.html">/partner-details</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/deceased-death.html">/partner-died-work-related</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/deceased-work.html">/partner-live-work-outside-uk</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r3/bereavement-support-payment/check-answers-deceased.html">/check-your-answers-about-your-partner</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Payment and contact details</b></p>
+
+  <li><a href="/beta/r3/bereavement-support-payment/contact-info.html">/about-payment-contact-details</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/bank-details.html">/account-details</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/contact-details.html">/contact</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/comms-needs.html">/contact-different-format</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/comms-lang.html">/welsh-language</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/check-answers-contact.html">/checy-your-answers-payment-contact-details</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/declaration.html">/declaration</a></li>
+ 
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r3/bereavement-support-payment/check-answers.html">/Check your answer</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <li><a href="/beta/r3/bereavement-support-payment/infosent.html">/application-complete</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/infosent-ni.html">/application-complete</a> <strong class="govuk-tag govuk-tag--yellow">Northern Ireland</strong></li>
+  <li><a href="/beta/r3/bereavement-support-payment/about-you.html">/NI contact-details</a><strong class="govuk-tag govuk-tag--yellow">Northern Ireland</strong></li>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Feedback</b></p>
+  <li><a href="/beta/r3/bereavement-support-payment/feedback.html">/feedback</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/feedback-sent.html">/feedback-sent</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Cookie banner</b></p>
+  <li><a href="/beta/r3/bereavement-support-payment/cookie-banner.html">/cookie-banner</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/cookie-policy.html">/cookie-policy</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/cookie-details.html">/cookie-details</a></li>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <p><b>Timeout</b></p>
+  <li><a href="/beta/r3/bereavement-support-payment/timeout-success.html">/timeout-start again</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/service-unavailable.html">/Service-Unavailable</a></li>
+  <li><a href="/beta/r3/bereavement-support-payment/unavailable.html">/Unhappy path</a></li>
+
+</ol>
+               
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                UR session 4 &nbsp;  <strong class="govuk-tag govuk-tag--red">
+  Private beta
+</strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              Without any logic on page, sprint goal (start page, Child Benefit, check your answer, feedback)
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+            <button onclick="javascript:location.href='/beta/r2/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+              View prototype
+            </button>
+
+            <p class="govuk-body"><B>Pages</b></p>           
+<ol class="govuk-list govuk-list--number">
+  <li><a href="/beta/r2/bereavement-support-payment.html">/bereavement-support-payment</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/what-youll-get.html">/what-youll-get</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/how-to-claim.html">/how-to-claim</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/start.html">/apply (v1)</a> <a href="/beta/r2/bereavement-support-payment/start1.html">/apply (v2)</a></li>
+ <br> <p><b>Eligibility</b></p>
+  <li><a href="/beta/r2/bereavement-support-payment/spa.html">/date-of-birth</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/dod.html">/date-partner-died</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/relationship.html">/person-who-died</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/country.html">/where-you-live</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/live-in-uk.html">/lived-UK-when-partner-died</a></li>
+  <br>
+
+  <p><b>Eligibility kickouts</b></p>
+  <li><a href="/beta/r2/bereavement-support-payment/spa-not-eligible.html">/not-eligible-state-pension-age</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/dod-not-eligible.html">/not-eligible-late-application</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/relationship-not-eligible.html">/not-eligible-relaionship</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/country-not-eligible">/live-outside-UK</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/live-in-uk-not-eligible.html">/did-not-live-UK</a></li>
+  <br>
+  <li><a href="/beta/r2/bereavement-support-payment/check-answers-eligibility.html">/check-your-answer-eligibility</a></li>
+  <br>
+
+  <p><b>About you</b></p>
+
+  <li><a href="/beta/r2/bereavement-support-payment/about-you.html">/about-you</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/your-name.html">/your-name</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/your-ni.html">/national-insurance-number</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/your-postcode.html">/address-postcode</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/your-address.html">/select-address</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/your-address-manual.html">/address-manually</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/marriage-date.html">/marriage-date</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/marriage.html">/marriage-uk</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/marriage-certificate.html">/marriage-certificate</a></li>
+  <p><b>Civil partner</b></p>
+  <li><a href="/beta/r2/bereavement-support-payment/declaration.html">/civil-partner-date</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/declaration.html">/civil-partner-uk</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/declaration.html">/civil-partner-certificate</a></li>
+  <br>
+  <li><a href="/beta/r2/bereavement-support-payment/about-child.html">/about-children</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/about-cb.html">/CB1</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/check-answers-about-you.html">/check-your-answer-about-you</a></li>
+  <br>
+
+  <p><b>About deceased</b></p>
+
+  <li><a href="/beta/r2/bereavement-support-payment/about-deceased.html">/about-your partner</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/deceased-details.html">/partner-details</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/deceased-death.html">/partner-died-work-related</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/deceased-work.html">/partner-live-work-outside-uk</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/check-answers-deceased.html">/check-your-answers-about-your-partner</a></li>
+  <br>
+
+  <p><b>Payment and contact details</b></p>
+
+  <li><a href="/beta/r2/bereavement-support-payment/contact-info.html">/about-payment-contact-details</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/bank-details.html">/account-details</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/contact-details.html">/contact</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/comms-needs.html">/contact-different-format</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/comms-lang.html">/welsh-language</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/check-answers-contact.html">/checy-your-answers-payment-contact-details</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/declaration.html">/declaration</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/check-answers.html">/CYA</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/infosent.html">/application-complete</a></li>
+
+  <p><b>Feedback</b></p>
+  <li><a href="/beta/r2/bereavement-support-payment/feedback.html">/feedback</a></li>
+  <li><a href="/beta/r2/bereavement-support-payment/feedback-sent.html">/feedback-sent</a></li>
+
+
+</ol>
+               
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                UR session 3 &nbsp;  <strong class="govuk-tag govuk-tag--red">
+  Private beta
+</strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              Linear journey without citizen verification journey.
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+ <p class="govuk-body"><B>Things to do:</b></p>           
+<ol class="govuk-list govuk-list--number">
+  <li>Start page (need to understand private beta user group)</li>
+  <li>Drop out journey and its subsequent page has to be finalised</li>
+  <li>CYA page: research required (<a href="/beta/r1/bereavement-support-payment/declaration.html">version1<a>, <a href="/beta/r1/bereavement-support-payment/declaration-link.html">version2</a>)</li>
+  <li>Application sent page need to conceptualise</li>
+</ol>
+                <button onclick="javascript:location.href='/beta/r1/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+                  View prototype
+                </button>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                UR session 2 &nbsp; <strong class="govuk-tag govuk-tag--yellow">
+  Alpha
+</strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              Linear journey includes Citizen verification journey.
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+            
+                <button onclick="javascript:location.href='/alpha/r2/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+                  View prototype
+                </button>
+
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                UR session 1 &nbsp; <strong class="govuk-tag govuk-tag--yellow">
+  Alpha
+</strong>
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              Linear and Task list Journey.
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+            <ul class="govuk-list">
+              <li>
+                <button onclick="javascript:location.href='/version-1/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+                  Linear joureny
+                </button>
+                        </li>
+              <li>
+                <button onclick="javascript:location.href='/version-2/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
+                  Tasklist Journey
+                </button>              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                Citizen feeback
+              </span>
+            </h2>
+            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+              Citizen gives feedback on Design.
+            </div>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
+            <ul class="govuk-list">
+              <li>
+                <button onclick="javascript:location.href='/feedback/bereavement-support-payment/question1.html'" class="govuk-button" data-module="govuk-button">
+                  Citizen feedback
+                </button>
+          
+                        </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    
+
+      
+
+    </div>
+  </div>
+
+{% endblock %}

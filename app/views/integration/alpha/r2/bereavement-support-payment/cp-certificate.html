@@ -1,0 +1,116 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="cp.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <form action="about-child" method="post" class="form"> 
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+    {% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Do you have a civil partnership certificate?
+                  </h1>
+                </legend>
+                         
+                <fieldset class="govuk-fieldset">
+
+                  <p>We may ask to see your certificate as proof you were in a legal civil partnership.</p>
+
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input name="cpcertificate" class="govuk-radios__input" id="cpcertificate-yes" type="radio"  value="Yes"}}>              
+                      <label class="govuk-label govuk-radios__label" for="cpcertificate-yes">
+                        Yes              
+                      </label>
+                    </div>
+                    
+                    <div class="govuk-radios__item">              
+                      <input name="cpcertificate" class="govuk-radios__input" id="cpcertificate-no" type="radio" value="No" data-aria-controls="conditional-cpcertificate-no">              
+                      <label class="govuk-label govuk-radios__label" for="cpcertificate-no">
+                        No              
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-cpcertificate-no">
+                      <p>
+                        We'll contact you if we need more information and explain what to do.
+                      </p>
+                    </div>
+
+
+                    <div class="govuk-radios__item">              
+                      <input name="cpcertificate" class="govuk-radios__input" id="cpcertificate-Idontknow" type="radio" value="I don't know" data-aria-controls="conditional-cpcertificate-Idontknow">              
+                      <label class="govuk-label govuk-radios__label" for="cpcertificate-Idontknow">
+                        I don't know              
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-cpcertificate-Idontknow">
+                      <p>
+                        We'll contact you if we need more information and explain what to do.
+                      </p>
+                    </div>
+
+
+                  </div>
+
+                  </fieldset>
+                  
+<br>
+                
+    
+              </div>
+
+              <!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+-->
+
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+<button class="govuk-button" data-module="govuk-button">Continue</button> 
+{% endif %}
+{% if checkanswer=='true' %}
+<button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+{% endif %}
+{% if checkansweraboutyou =='true' %}
+<button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+{% endif %}
+
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

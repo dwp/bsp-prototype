@@ -1,0 +1,125 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkanswerdeceased==undefined %}
+	    <form action="deceased-work" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkanswerdeceased =='true' %}
+	    <form action="check-answers-deceased" method="post" class="form">
+	{% endif %} 
+      
+            <a href="deceased-details.html" class="govuk-back-link">Back</a>             
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did your {{data['getcb']}} die because of an accident at work or a disease caused by work?
+                </h1>
+            <div class="govuk-form-group">                  
+              <fieldset class="govuk-fieldset heavy-hint">
+                
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Why are we asking this?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    We will only use this information if your {{data['getcb']}} has not paid enough National Insurance contributions. 
+                    <br> <br>
+                    <p class="govuk-body">This is because you are only eligible for Bereavement Support Payment if your {{data['getcb']}} either: 
+                    </p>                   
+                   <ul class="govuk-list govuk-list--bullet">
+                    <li>paid enough National Insurance contributions</li>
+                    <li>died because of an accident at work or a disease caused by work</li>
+                  </ul>
+                </div>
+                </details>
+
+              
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios__item">              
+                        <input name="deceaseddeath" class="govuk-radios__input" id="work-outside-uk-yes" aria-expanded="false" data-aria-controls="conditional-work-outside-uk-yes" type="radio" value="Yes" {{ checked("deceaseddeath", "Yes") }}>              
+                        <label class="govuk-label govuk-radios__label" for="work-outside-uk-yes">              
+                          Yes             
+                         </label>
+                      </div>
+
+
+                      <div class="govuk-radios__item">              
+                        <input name="deceaseddeath" class="govuk-radios__input" id="work-outside-uk-no" type="radio" value="No" {{ checked("deceaseddeath", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="work-outside-uk-no">
+                          No
+                         </label>
+                      </div>
+
+                      <p>Or </p>
+
+                      <div class="govuk-radios__item">
+                          <input name="deceaseddeath" class="govuk-radios__input" id="work-outside-uk-dontknow" type="radio" value="I don't know" {{ checked("deceaseddeath", "I don't know") }}>
+                          <label class="govuk-label govuk-radios__label" for="work-outside-uk-dontknow">                
+                            I don't know               
+                           </label>
+                        </div>
+                  </div>
+              
+              </fieldset>
+            </div>
+<!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}   
+    
+      -->
+
+      {% if checkanswer ==undefined and checkanswerdeceased==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+     {% if checkanswerdeceased =='true' %}
+     <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+     {% endif %}
+
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+    
+    </form>      
+  </div>            
+  </div>
+             
+
+{% endblock %}

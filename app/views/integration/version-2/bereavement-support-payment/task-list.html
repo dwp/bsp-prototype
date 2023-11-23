@@ -1,0 +1,244 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Apply for Bereavement Support Payment
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed <span id="count"></span> of 7 sections.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Check before you start
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="check-answers-eligibility" aria-describedby="eligibility-status">
+                  Check eligibility
+                </a>
+              </span>
+			  {% if data['claimantday'] and data['claimantdaydod'] and data['getcb'] and data['getcountrycb'] and (data['16years'] or data['16to19'] or data['farm1'] or data['farm2']) %}
+              <strong class="govuk-tag app-task-list__tag" id="task-status">Completed</strong>
+			 
+			  {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Application details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+			  {% if data['claimantfullname'] and data['claimantinsurancenumber'] and data['postcode'] %}
+                <a href="check-answers-about-you" aria-describedby="company-information-status">
+                  About you
+                </a>
+				{% else %}
+				<a href="your-name" aria-describedby="company-information-status">
+                  About you
+                </a>
+				{% endif %}
+              </span>
+              {% if data['claimantfullname'] and data['claimantinsurancenumber'] and data['postcode'] %}
+              <strong class="govuk-tag app-task-list__tag" id="task-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="company-information-status">Not started</strong>
+              {% endif %}
+              
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+			  {% if data['deceasedfullname'] and data['deceasedday'] and data['deceasedmonth'] and data['deceasedyear'] and data['deceasedinsurancenumber'] and data['deceaseddeath'] and data['deceasedwork'] %}
+                <a href="check-answer-partner" aria-describedby="list-convictions-status">
+                  About your {{data['getcb']}}
+                </a>
+				{% else %}
+				<a href="deceased-details" aria-describedby="list-convictions-status">
+                  About your {{data['getcb']}}
+                </a>
+				{% endif %}
+              </span>
+			  {% if data['deceasedfullname'] and data['deceasedday'] and data['deceasedmonth'] and data['deceasedyear'] and data['deceasedinsurancenumber'] and data['deceaseddeath'] and data['deceasedwork'] %}
+			  <strong class="govuk-tag app-task-list__tag" id="task-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="about-your-status">Not started</strong>
+			  {% endif %}
+            </li>
+			
+            
+			{% if data['getcb'] == 'civil partner' %}
+			<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+			  {% if data['CPdateday'] and data['CPdatemonth'] and data['CPdateyear'] and data['cpr'] and data['cpcertificate'] %}
+                <a href="check-answer-relationship" aria-describedby="list-convictions-status">
+                  Your civil partnership 
+                </a>
+				{% else %}
+				<a href="cp-date" aria-describedby="list-convictions-status">
+                  Your civil partnership 
+                </a>
+				{% endif %}
+              </span>
+			  {% if data['CPdateday'] and data['CPdatemonth'] and data['CPdateyear'] and data['cpr'] and data['cpcertificate'] %}
+			  <strong class="govuk-tag app-task-list__tag" id="task-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+			  {% endif %}
+            </li>
+			{% else %}
+			<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+			  {% if data['claimantdaymd'] and data['marriage-location'] and data['marriage-register'] or data['marriage-certificate'] %}
+                <a href="check-answer-relationship" aria-describedby="list-convictions-status">
+                  Your marriage 
+                </a>
+			  {% else %}
+			  <a href="marriage-date" aria-describedby="list-convictions-status">
+                  Your marriage 
+                </a>
+				{% endif %}
+              </span>
+			  {% if data['claimantdaymd'] and data['marriage-location'] and data['marriage-register'] or data['marriage-certificate'] %}
+			  <strong class="govuk-tag app-task-list__tag" id="task-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+			  {% endif %}
+            </li>
+			{% endif %}
+			{% if data['16years'] or data['16to19'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+			  {% if data['acb'] and data['cbclaim'] %}
+                <a href="check-answer-children" aria-describedby="list-convictions-status">
+                  Children 
+                </a>
+			  {% else %}
+			  <a href="about-cb" aria-describedby="list-convictions-status">
+                  Children 
+                </a>
+				{% endif %}
+              </span>
+			  {% if data['acb'] and data['cbclaim'] %}
+			  <strong class="govuk-tag app-task-list__tag" id="task-status">Completed</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+			  {% endif %}
+            </li>
+			 {% endif %}
+          </ul>
+        </li>
+
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Payment and contact details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+			  {% if data['name-on-the-account'] and data['sort-code'] and data['account-number'] %}
+                <a href="check-answer-bank" aria-describedby="company-information-status">
+                  Payment details
+                </a>
+				{% else %}
+				<a href="bank-details" aria-describedby="company-information-status">
+                  Payment details
+                </a>
+				{% endif %}
+              </span>
+			  {% if data['name-on-the-account'] and data['sort-code'] and data['account-number'] %}
+				<strong class="govuk-tag app-task-list__tag" id="task-status">Completed</strong>
+				{% else %}
+				<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="company-information-status">Not started</strong>
+			  {% endif %}
+              
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+			  {% if data['telephonenumber'] or data['emailaddress'] and data['contactemail'] or data['letter'] and data['commsNeedsOptions'] %}
+                <a href="check-answer-contact" aria-describedby="list-convictions-status">
+                  Your contact details
+                </a>
+				{% else %}
+				<a href="contact-details" aria-describedby="list-convictions-status">
+                  Your contact details
+                </a>
+				 {% endif %}
+              </span>			  
+			  {% if data['telephonenumber'] or data['emailaddress'] and data['contactemail'] or data['letter'] and data['commsNeedsOptions'] %}
+				<strong class="govuk-tag app-task-list__tag" id="task-status">Completed</strong>
+				{% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+			  {% endif %}
+            </li>
+          </ul>
+        </li>
+
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Apply
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+             
+
+
+        {% if data['telephonenumber'] or data['emailaddress'] and data['contactemail'] or data['letter'] and data['commsNeedsOptions'] and data['name-on-the-account'] and data['sort-code'] and data['account-number'] and data['acb'] and data['cbclaim'] and data['claimantdaymd'] and data['marriage-location'] and data['marriage-register'] and data['marriage-certificate'] and data['CPdateday'] and data['CPdatemonth'] and data['CPdateyear'] and data['cpr'] and data['cpcertificate'] and data['deceasedfullname'] and data['deceasedday'] and data['deceasedmonth'] and data['deceasedyear'] and data['deceasedinsurancenumber'] and data['deceaseddeath'] and data['deceasedwork'] and data['claimantfullname'] and data['claimantinsurancenumber'] and data['sort'] and data['postcode'] and data['claimantday'] and data['claimantdaydod'] and data['getcb'] and data['getcountrycb'] and (data['16years'] or data['16to19'] or data['farm1'] or data['farm2']) %}
+
+        <h2 class="govuk-heading-m">
+          Now send your application </h2>
+          <p class="govuk-body">By sending your application, you agree that:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the information is correct and complete as far as you know</li>
+            <li>you'll pay back any money you're overpaid if you're asked to</li>
+          </ul>
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or do not report changes.
+            </strong>
+          </div>
+
+    <button onclick="javascript:location.href='/version-2/bereavement-support-payment/infosent.html'" class="govuk-button" data-module="govuk-button">Agree and send</button>
+
+      {% else %}
+
+<span class="app-task-list__task-name">
+              Submit application
+            </span>
+
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+      {% endif %}
+
+
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+<script>
+if(document.getElementById("count") != null){ 
+    document.getElementById('count').innerHTML = document.querySelectorAll('#task-status').length;
+}
+</script>
+{% endblock %}

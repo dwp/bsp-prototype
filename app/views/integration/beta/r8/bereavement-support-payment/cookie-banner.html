@@ -1,0 +1,94 @@
+
+
+<div class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on [name of service]">
+  <div class="govuk-cookie-banner__message govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on [name of service]</h2>
+
+        <div class="govuk-cookie-banner__content">
+          <p>We use some essential cookies to make this service work.</p>
+          <p>We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-button-group">
+      <button value="accept" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+        Accept analytics cookies
+      </button>
+      <button value="reject" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+        Reject analytics cookies
+      </button>
+      <a class="govuk-link" href="#">View cookies</a>
+    </div>
+  </div>
+</div>
+
+{% extends "layout.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  <a href="/alpha/r2/bereavement-support-payment/how-to-claim.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <form action="spa" method="post" class="form">
+
+      
+
+          <article>
+
+              <h1 class="govuk-heading-xl">Apply for Bereavement Support Payment</h1>
+          
+           
+          
+              <p class="govuk-body-m">It takes about 15 minutes to apply. <br> <br>
+                You cannot save your application and come back later. 
+                If you do not enter anything for more than 30 minutes, your application will time out and you'll need to start again. 
+  
+              </p>
+            
+              <h2 class="govuk-heading-m">Do you have everything you need to apply?</h2>
+
+              <p class="govuk-body">You need:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>your National Insurance number</li>
+                <li>your partner's National Insurance number</li>
+                <li>the date your partner died</li>
+                <li>your bank or building society account details</li>
+              </ul>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input name="SPAApply" class="govuk-radios__input" id="SPA-Apply-Yes" type="radio"  value="Yes" {{ checked("SPA-Apply", "Yes") }}>              
+                  <label class="govuk-label govuk-radios__label" for="SPA-Apply-Yes">
+                    Yes              
+                  </label>
+                </div>
+                <div class="govuk-radios__item">              
+                  <input name="SPAApply" class="govuk-radios__input" id="SPA-Apply-No" type="radio" value="No" {{ checked("SPA-Apply", "No") }}>              
+                  <label class="govuk-label govuk-radios__label" for="SPA-Apply-No">
+                    No              
+                  </label>
+                </div>
+          </div>  <br>        
+                    <button class="govuk-button" data-module="govuk-button">Start now</button>
+          
+       
+          </form>
+
+  </div>
+</div>
+
+
+</main>
+</div>
+{% endblock %}

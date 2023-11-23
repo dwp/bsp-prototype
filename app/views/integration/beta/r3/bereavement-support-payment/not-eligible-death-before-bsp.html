@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="dod.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="relationship" method="post" class="form">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Based on your answers, you are not eligible for Bereavement Support Payment.
+                </h1>
+           <br>
+                <div class="govuk-form-group">          
+                  <p class="govuk-body govuk-!-font-size-24">You are not eligible because your partner died before 6 April 2017.</p>
+                  <p class="govuk-body govuk-!-font-size-24">You may be able to get <a href="https://www.gov.uk/after-a-death/bereavement-help-and-support"> Widowed Parent's Allowance</a> instead.</p>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <p class="govuk-body govuk-!-font-size-27"><b>If you still want to apply</b></p>
+                      <p class="govuk-body govuk-!-font-size-24"> You can still apply if you want a decision in writing.</p> 
+                      <p class="govuk-body govuk-!-font-size-24"><a href="https://www.gov.uk/after-a-death/bereavement-help-and-support">Continue application</a> </p>
+                    </fieldset>
+                  </div>
+                </div>
+    </form>      
+  </div>            
+  </div>        
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="deceased-work.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="task-list" method="post" class="form">
+        
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        About your {{data['getcb']}} </h2>
+      
+
+      <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Full name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['deceasedfullname'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="deceased-details?checkanswer=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['deceasedday'] }} / {{ data['deceasedmonth'] }} / {{ data['deceasedyear'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="deceased-details?checkanswer=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['deceasedinsurancenumber'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="deceased-details?checkanswer=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Died because of an accident at work or illness caused by work
+          </dt>
+		  {% if data['deceaseddeath'] == 'Yes' %}
+          <dd class="govuk-summary-list__value">
+            Yes <!-- {{ data['deceaseddeathcountry'] }} -->
+          </dd>
+		  {% endif %}
+		  {% if data['deceaseddeath'] != 'Yes' %}
+          <dd class="govuk-summary-list__value">
+            {{ data['deceaseddeath'] }}
+          </dd>
+		  {% endif %}
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="deceased-death?checkanswer=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Lived or worked outside the UK
+          </dt>
+		  {% if data['deceasedwork'] == 'Yes' %}
+          <dd class="govuk-summary-list__value">
+            {{ data['deceasedworkyes'] }}
+          </dd>
+		  {% endif %}
+		  {% if data['deceasedwork'] != 'Yes' %}
+          <dd class="govuk-summary-list__value">
+            {{ data['deceasedwork'] }}
+          </dd>
+		  {% endif %}
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="deceased-work?checkanswer=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+
+
+        </dl>
+       <input name="appcount" class="govuk-radios__input" id="get-cb-no2" type="text" value="3" /> 
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+
+  </div>
+
+
+</main>
+</div> 
+{% endblock %}

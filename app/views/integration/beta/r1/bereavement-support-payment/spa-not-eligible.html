@@ -1,0 +1,67 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="spa.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="dod" method="post" class="form">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Based on your answers, you are not eligible for Bereavement Support Payment.
+                </h1>
+           <br>
+                <div class="govuk-form-group">          
+                  <h2 class="govuk-heading-s">You are only eligible if:
+                  </h2>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>you were under State Pension age at the time of death</li>
+                    <li>you were married or in a civil partnership with the person who died</li>
+                    <li>the death was less than 21 months ago</li>
+                    <li>the death was on or after 7 April 2017</li>
+                  </ul>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-bottom-1">
+                        Do you still want to apply?            
+                      </legend>
+                      <p>You can still apply if you want a formal decision in writing.
+                      </p>
+                      <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input name="SPAApply" class="govuk-radios__input" id="SPA-Apply-Yes" type="radio"  value="Yes" {{ checked("SPA-Apply", "Yes") }}>              
+                              <label class="govuk-label govuk-radios__label" for="SPA-Apply-Yes">
+                                Yes              
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">              
+                              <input name="SPAApply" class="govuk-radios__input" id="SPA-Apply-No" type="radio" value="No" {{ checked("SPA-Apply", "No") }}>              
+                              <label class="govuk-label govuk-radios__label" for="SPA-Apply-No">
+                                No              
+                              </label>
+                            </div>
+                      </div>              
+                    </fieldset>
+                  </div>
+
+                </div>
+              <button class="govuk-button" data-module="govuk-button">Continue
+              </button>   
+    </form>      
+  </div>            
+  </div>
+        
+</main>
+</div>
+
+</main>
+</div>
+
+{% endblock %}

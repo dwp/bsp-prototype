@@ -1,0 +1,80 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>            
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	    <form action="your-address" method="post" class="form">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        <div class="govuk-width-container">
+
+          <h1 class="govuk-heading-l">What is your address?</h1>
+          {{ govukInput({
+            label: {
+            text: "Postcode"
+            },
+            classes: "govuk-!-width-two-thirds",
+            hint: {
+            text: "For example, AA3 1AB."
+            },
+            id: "postcode",
+            name: "postcode"
+            }) }}
+            
+            {{ govukInput({
+            label: {
+            text: "Building number or name"
+            },
+            classes: "govuk-!-width-two-thirds",
+            hint: {
+            text: "For example, 15 or Prospect Cottage."
+            },
+            id: "searchString",
+            name: "searchString"
+            }) }}
+            
+            {{ govukButton({
+            text: "Find address"
+            }) }}
+  
+         <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+         </div>
+         <div class="govuk-!-padding-bottom-4"></div>
+      
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+  
+    </form>      
+  </div>            
+  </div>
+             
+</main>
+{% endblock %}

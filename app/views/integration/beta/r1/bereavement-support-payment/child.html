@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="pregnant" method="post" class="form">
+          <a href="marriage" class="govuk-back-link">Back
+          </a>
+
+          <div class="govuk-form-group">    
+            <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading">
+                      Do you have a dependent child?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="bsp-married-yes" name="bsp-married" type="radio" value="Yes" {{ checked("bsp-married", "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="bsp-married-yes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="bsp-married-no" name="bsp-married" type="radio" value="No" {{ checked("bsp-married", "No") }}>
+                      <label class="govuk-label govuk-radios__label" for="bsp-married-no">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+          </div>         
+                    <button class="govuk-button" data-module="govuk-button">Continue
+                    </button>
+      
+      </form>
+    </div>
+  </div>
+
+</main>
+</div>
+{% endblock %}

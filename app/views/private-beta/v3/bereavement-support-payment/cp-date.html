@@ -1,0 +1,128 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="your-address.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <form action="cp" method="post" class="form">  
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+               
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <h1 class="govuk-heading-l"> Do you know the date you registered your civil partnership?
+              </h1>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input name="MarriageDate" class="govuk-radios__input" id="MarriageDate-Yes" aria-expanded="false" data-aria-controls="conditional-MarriageDate-Yes" type="radio" value="{{ data['CPdateday'] / data['CPdatemonth'] / data['CPdateyear'] }}">
+                  <label class="govuk-label govuk-radios__label" for="MarriageDate-Yes">              
+                    Yes
+                  </label>              
+                </div>                             
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-MarriageDate-Yes">  
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="MarriageDate-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            Enter the date you registered your civil partnership
+                          </legend>
+                          <span class="govuk-hint" id="claimantMarriageDate-hint">              
+                          For example, 31 3 1980              
+                          </span>
+                          <div class="govuk-date-input" id="MarriageDate">
+                            <div class="govuk-date-input__item">              
+                              <div class="govuk-form-group">              
+                                <label class="govuk-label govuk-date-input__label" for="ClaimantCPD-Day">              
+                                Day              
+                              </label>
+                              <input name="CPdateday" class="govuk-input govuk-date-input__input govuk-input--width-2 &#10;          &#10;        " id="ClaimantCPD-dd" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['CPdateday'] }}">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">             
+                                <label class="govuk-label govuk-date-input__label" for="ClaimantCPD-Month">              
+                                Month              
+                                </label>
+                                <input name="CPdatemonth" class="govuk-input govuk-date-input__input govuk-input--width-2 &#10;          &#10;        " id="ClaimantCPD-mm" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['CPdatemonth'] }}">
+                              </div>
+                            </div>                    
+                            <div class="govuk-date-input__item">              
+                              <div class="govuk-form-group">              
+                                <label class="govuk-label govuk-date-input__label" for="ClaimantCPD-Year">              
+                                Year              
+                                </label>
+                              <input name="CPdateyear" class="govuk-input govuk-date-input__input govuk-input--width-4 &#10;          &#10;        " id="ClaimantCPD-yyyy" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['CPdateyear'] }}">              
+                            </div>
+                            </div>              
+                          </div>
+                      </fieldset>
+                      </div>
+                     </div>
+
+                <div class="govuk-radios__item">
+                  <input name="MarriageDate" class="govuk-radios__input" id="MarriageDate-No" aria-expanded="false" data-aria-controls="conditional-MarriageDate-No" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="MarriageDate-No">
+                     No
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-MarriageDate-No">
+                  <div class="govuk-form-group">
+                  <p>We'll contact you if we need the date.
+                  </p>  
+                  </div>
+                </div> 
+
+
+            </div>            
+            </fieldset>
+             
+         </div>
+              
+ 
+<!--
+                {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+			{% endif %}
+-->
+
+
+{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+<button class="govuk-button" data-module="govuk-button">Continue</button> 
+{% endif %}
+{% if checkanswer=='true' %}
+<button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+{% endif %}
+{% if checkansweraboutyou =='true' %}
+<button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+{% endif %}
+
+
+    </form>
+  </div>
+</div>
+
+
+</main>
+</div>
+
+{% endblock %}

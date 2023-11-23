@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <a href="check-answers-about-you.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="deceased-details" method="post" class="form">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">About your partner
+                </h1>
+           <br>
+                <div class="govuk-form-group">          
+                  <h2 class="govuk-heading-m">We’ll ask:
+                  </h2>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>their name, date of birth and National Insurance number</li>
+                    <li>if they ever lived or worked abroad</li>
+                    <li> if they died because of an accident at work or illness caused by work</li>
+                  </ul>
+
+                  <p>If your partner lived or worked abroad, we'll check if you're eligible for any bereavement benefits from that country.</p>
+                </div>
+              <button class="govuk-button" data-module="govuk-button">Continue
+              </button>   
+   
+            
+            </form>      
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

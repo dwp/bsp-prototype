@@ -1,0 +1,114 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="about-you.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+  
+    <div class="govuk-grid-column-two-thirds">
+    
+
+    <!--
+      {% if checkanswer ==undefined %}
+	     <form action="your-ni" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+	{% if checkanswerdeceased =='true' %}
+	    <form action="check-answers-deceased" method="post" class="form">
+	{% endif %} 	
+      -->
+
+
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <form action="your-ni" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %} 
+      
+
+
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    What is your full name?
+                  </h1>
+                </legend>
+                         
+                <fieldset class="govuk-fieldset">
+
+                  <div class="govuk-form-group">
+                    <input class="govuk-input govuk-!-width-three-quarters" id="Claimant-firstname" name="claimantfirstname" type="text" value="{{ data['claimantfirstname'] }}">
+                  </div>
+
+                    
+                  </fieldset> <br>
+                
+    
+              </div>
+<!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+-->
+
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <button class="govuk-button" data-module="govuk-button">Continue </button>
+	{% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %} 
+
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Get help with your application
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  Telephone: 0800 085 2463<br>
+                
+                  <a target="_blank" href="https://www.nidirect.gov.uk/articles/contacting-08-and-03-numbers" class="govuk-body govuk-!-font-size-19">Find out about call charges (opens in a new tab)</a><br>
+
+                  For sign language,<a target="_blank" href="https://dwpnibereavementservice.signvideo.net/" class="govuk-body govuk-!-font-size-19">use the video relay service (opens in a new tab)</a><br>
+                  Monday to Friday, 9am to 5pm
+
+
+                </div>
+              </details>
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,196 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="task-list" method="post" class="form">
+        
+      <h1 class="govuk-heading-xl">
+        Check your answers  
+      </h1>
+	  {% if data['getcb'] != 'civil partner' %}
+      <h2 class="govuk-heading-m">
+        About your marriage
+      </h2>
+       
+      <dl class="govuk-summary-list">
+
+	   <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of marriage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['claimantdaymd'] }} / {{ data['claimantmonthmd'] }} / {{ data['claimantyearmd'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage-date?checkanswer=true">
+              Change
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Marriage in UK
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% for feature in data['marriage-location'] %}
+            {{ feature }}
+            {% else %}
+            No
+            {% endfor %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage?checkanswer=true">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        {% if data['marriage-register'] %}
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Signed marriage register
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['marriage-register'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage-register?checkanswer=true">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Have a marriage certificate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['marriage-certificate'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage-certificate?checkanswer=true">
+              Change
+            </a>
+          </dd>
+        </div>
+        
+		{% if data['Married-in-UK'] == 'Religious' %}
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Religious
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['ReligiousMarriage'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage-type?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		{% endif %}
+		
+		{% if data['Married-in-UK'] == 'Humanaist' %}
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Humanaist
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['Marriage-country-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage-type?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		{% endif %}
+		
+		{% if data['Married-in-UK'] == 'Ceremony' %}
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            No, we were married under a different ceremony
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['Marriage-ceremony-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage-type?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		{% endif %}
+		<br>
+		</dl>
+		{% else %}
+			<h2 class="govuk-heading-m">
+        About your civil partnership
+      </h2>
+	  <dl class="govuk-summary-list">
+	  <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of civil partnership
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['CPdateday'] }} / {{data['CPdatemonth'] }} / {{data['CPdateyear'] }}
+			
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp-date?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Civil partnership registered in UK
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['cpr'] }}
+			
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		<div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Have a civil partnership certificate
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['cpcertificate'] }}
+			
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp-certificate?checkanswer=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+		</dl>
+		{% endif %}
+<input name="appcount" class="govuk-radios__input" id="get-cb-no2" type="text" value="4" /> 
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+
+  </div>
+
+
+</main>
+</div> 
+{% endblock %}

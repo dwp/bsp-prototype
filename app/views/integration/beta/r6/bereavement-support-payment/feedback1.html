@@ -1,0 +1,314 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+      <form action="feedback-sent" method="post" class="form"> 
+
+      <h1 class="govuk-heading-xl">
+        Give feedback
+      </h1>
+
+        <div class="govuk-form-group">
+          <span class="govuk-caption-m">Question 1 of 5</span>
+          <h2 class="govuk-heading-m">Overall, how did you feel about the service you received today?</h2>
+          
+          <fieldset class="govuk-fieldset">
+
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input name="getcb" class="govuk-radios__input" id="get-cb-yes1" type="radio"  value="husband" {{ checked("getcb", "Yes") }}>              
+              <label class="govuk-label govuk-radios__label" for="get-cb-yes1">
+                Very satisfied              
+              </label>
+            </div>
+            <div class="govuk-radios__item">              
+              <input name="getcb" class="govuk-radios__input" id="get-cb-no2" type="radio" value="wife" {{ checked("getcb", "No") }}>              
+              <label class="govuk-label govuk-radios__label" for="get-cb-no2">
+                Satisfied              
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">              
+              <input name="getcb" class="govuk-radios__input" id="get-cb-no3" type="radio" value="civil partner" {{ checked("getcb", "No") }}>              
+              <label class="govuk-label govuk-radios__label" for="get-cb-no3">
+                Neither satisfied nor dissatisfied             
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">              
+              <input name="getcb" class="govuk-radios__input" id="get-cb-no4" type="radio" value="Partner I lived with" {{ checked("getcb", "No") }}>              
+              <label class="govuk-label govuk-radios__label" for="get-cb-no4">
+                Dissatisfied              
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">              
+              <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+              <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+                Very dissatisfied            
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+<div class="govuk-form-group">
+  <span class="govuk-caption-m">Question 2 of 5</span>
+  <h2 class="govuk-heading-m">Why did you choose to use the online service? (Select all that apply)
+  </h2>
+  
+  <fieldset class="govuk-fieldset">
+
+
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+    <div class="govuk-radios__item">
+      <input name="getcb" class="govuk-radios__input" id="get-cb-yes1" type="radio"  value="husband" {{ checked("getcb", "Yes") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-yes1">
+        I could apply in my own time              
+      </label>
+    </div>
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-no2" type="radio" value="wife" {{ checked("getcb", "No") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-no2">
+        I could apply without having to speak to someone on the phone              
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-no3" type="radio" value="civil partner" {{ checked("getcb", "No") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-no3">
+        I could apply without having to complete a paper form that needed posting             
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-no4" type="radio" value="Partner I lived with" {{ checked("getcb", "No") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-no4">
+        I feel comfortable completing online application forms              
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        I tried telephone or paper first, but then decided to apply online           
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        I was not aware there was another way to apply           
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="getcb-2" name="getcb" type="radio" value="No" data-aria-controls="conditional-getcb-2">
+      <label class="govuk-label govuk-radios__label" for="getcb-2">
+        Other
+      </label>
+    </div>
+    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-getcb-2">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="getcb-country">
+          please state
+        </label>
+        <input class="govuk-input govuk-!-width-one-third" id="getcb-country" name="getcb-country" type="tel" value="{{ data['getcb-country'] }}"> </div>            
+    </div>
+
+
+    </div>
+  </fieldset>
+</div>
+
+
+<div class="govuk-form-group">
+  <span class="govuk-caption-m">Question 3 of 5</span>
+  <h2 class="govuk-heading-m">How did you find out about Bereavement Support Payment? (Select all that apply)
+  </h2>
+  
+  <fieldset class="govuk-fieldset">
+
+  <div class="govuk-radios" >
+    <div class="govuk-radios__item">
+      <input name="getcb" class="govuk-radios__input" id="get-cb-yes1" type="radio"  value="husband" {{ checked("getcb", "Yes") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-yes1">
+        Bereavement Service              
+      </label>
+    </div>
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-no2" type="radio" value="wife" {{ checked("getcb", "No") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-no2">
+        When applying for financial help from DWP              
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-no3" type="radio" value="civil partner" {{ checked("getcb", "No") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-no3">
+        Registrar             
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-no4" type="radio" value="Partner I lived with" {{ checked("getcb", "No") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-no4">
+        Funeral Director              
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Friend or family member           
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Doctor or GP           
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Charity (e.g. Citizens Advice, Cruse Bereavement etc)           
+      </label>
+    </div>
+
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Google Search           
+      </label>
+    </div>
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Through local authority           
+      </label>
+    </div>
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Bereavement Support Group           
+      </label>
+    </div>
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Support Worker          
+      </label>
+    </div>
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Media (TV, newspaper, or radio, newsletter)          
+      </label>
+    </div>
+    <div class="govuk-radios__item">              
+      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+        Was already aware           
+      </label>
+    </div>
+  </div>
+</fieldset>
+</div>
+
+<div class="govuk-form-group">
+  <span class="govuk-caption-m">Question 4 of 5</span>
+  <h2 class="govuk-heading-m">How could we improve this service?</h2>
+  
+<fieldset class="govuk-fieldset">
+
+
+ <p>Do not include any personal or financial information, for example your National Insurance number or credit card numbers.</p>
+ <p>The feedback you provide is anonymous and not part of your application</p>
+ <div class="govuk-inset-text">We will not respond to your feedback or use it when we process your claim.</div>
+ 
+ <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1200">
+  <div class="govuk-form-group">
+    <textarea class="govuk-textarea govuk-js-character-count" id="label-as-page-heading" name="label-as-page-heading" rows="5" aria-describedby="label-as-page-heading-info"></textarea>
+  </div>
+
+  <div id="label-as-page-heading-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+    You can enter up to 1200 characters
+  </div>
+
+</div>
+</fieldset>
+</div>
+
+
+<div class="govuk-form-group">
+  <span class="govuk-caption-m">Question 5 of 5</span>
+      <h2 class="govuk-heading-m">Would you like to volunteer to take part in further research to improve this service?
+      </h2>
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="marriage-location-2" name="marriage-location" type="radio" value="No" data-aria-controls="conditional-marriage-location-2">
+        <label class="govuk-label govuk-radios__label" for="marriage-location-2">
+          Yes
+        </label>
+      </div>
+      
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriage-location-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="marriage-location-country">
+            Your name
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="marriage-location-country" name="marriage-location-country" type="tel" value="{{ data['marriage-location-country'] }}">
+        </div> 
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="marriage-location-country">
+            Phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="marriage-location-country" name="marriage-location-country" type="tel" value="{{ data['marriage-location-country'] }}">
+        </div> 
+
+      </div>
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="marriage-location" name="marriage-location" type="radio" value="Yes">
+        <label class="govuk-label govuk-radios__label" for="marriage-location">
+          No
+        </label>
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Send feedback
+</button>
+ <br>
+
+
+
+
+    </div>
+  </div>
+  </div>
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,148 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="about-deceased.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if checkanswer ==undefined and checkanswerdeceased==undefined %}
+	    <form action="deceased-death" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+     {% if checkanswerdeceased =='true' %}
+	    <form action="check-answers-deceased" method="post" class="form">
+	{% endif %}  
+
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Your partner's details
+                  </h1>
+                </legend>
+                      <br>   
+                <fieldset class="govuk-fieldset">
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="Deceased-firstname">
+                      Full name
+                    </label>
+                    <input class="govuk-input govuk-!-width-three-quarters" id="Deceased-firstname" name="Deceasedfirstname" type="text" value="{{ data['Deceasedfirstname'] }}">
+                  </div>
+
+
+
+                  <div class="govuk-form-group">              
+                    <label class="govuk-body govuk-!-font-weight-bold" for="event-name">
+                      Date of birth
+                    </label>
+                    <div id="dob-hint" class="govuk-hint">
+                      For example, 31 3 1980
+                    </div>
+                    <div class="govuk-date-input" id="DeceasedDOB">              
+                      <div class="govuk-date-input__item">
+                  
+                        <div class="govuk-form-group">              
+                          <label class="govuk-label govuk-date-input__label" for="DeceasedDOB-Day">              
+                            Day              
+                          </label>
+                          <input name="deceasedday" class="govuk-input govuk-date-input__input govuk-input--width-2 &#10;        &#10;      " id="DeceasedDOB-dd" type="number" pattern="[0-9]*" value="{{ data['deceasedday'] }}" >              
+                        </div>              
+                      </div>
+                      <div class="govuk-date-input__item">              
+                        <div class="govuk-form-group">              
+                          <label class="govuk-label govuk-date-input__label" for="DeceasedDOB-Month">              
+                            Month              
+                          </label>
+                          <input name="deceasedmonth" class="govuk-input govuk-date-input__input govuk-input--width-2 &#10;        &#10;      " id="DeceasedDOB-mm" type="number" pattern="[0-9]*" value="{{ data['deceasedmonth'] }}" >              
+                        </div>              
+                      </div>              
+                      <div class="govuk-date-input__item">              
+                        <div class="govuk-form-group">              
+                          <label class="govuk-label govuk-date-input__label" for="DeceasedDOB-Year">              
+                            Year              
+                          </label>              
+                          <input name="deceasedyear" class="govuk-input govuk-date-input__input govuk-input--width-4 &#10;        &#10;      " id="DeceasedDOB-yyyy" type="number" pattern="[0-9]*" value="{{ data['deceasedyear'] }}">              
+                        </div>              
+                      </div>
+                    </div>                  
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="national-insurance-number">
+                      National Insurance number
+                    </label>
+                    <div id="national-insurance-number-hint" class="govuk-hint">
+                      It’s on your partner's National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
+                    </div>
+                    <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="deceasedinsurancenumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
+                  </div>
+                 
+                  
+
+                </fieldset> <br>
+              </div>
+              
+              <!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %} 
+-->
+
+
+      {% if checkanswer ==undefined and checkanswerdeceased==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+     {% if checkanswerdeceased =='true' %}
+     <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+     {% endif %}
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="email-notifications.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkanswercontact==undefined %}
+	    <form action="email-confirm" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkanswercontact =='true' %}
+	    <form action="check-answers-contact" method="post" class="form">
+	{% endif %} 
+      
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-2">What is your email address?</h1>
+                <br>
+                 <div class="govuk-form-group">
+                  <!-- <label class="govuk-heading-m" for="more-detail">
+                    Email address (optional)
+                  </label> -->
+                  <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="emailaddress" value="{{data['emailaddress']}}" type="text"></div>
+
+
+                  <!--
+                 <div class="govuk-form-group">
+                  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+                    Email address (optional)
+                    </label>
+                  </h1>
+                  <span class="govuk-hint" id="ClaimantMD-hint">
+                    We'll use this to confirm we have received your application.
+                 </span>
+                  <input class="govuk-input govuk-input--width-20" id="width-20" name="emailaddress" value="{{data['emailaddress']}}" type="text"></div> -->
+
+               
+<!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}   
+   -->
+
+      {% if checkanswer ==undefined and checkanswercontact==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkanswercontact =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %} 
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+
+    </form>      
+  </div>            
+  </div>
+
+  </main>
+  </div>
+
+{% endblock %}

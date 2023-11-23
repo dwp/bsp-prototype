@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">  
+        <h1 class="govuk-panel__title">  
+          Application complete 
+        </h1>  
+      </div>
+     
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>You should get a decision within 15 working days.  We’ll contact you if we need more information.</li>
+        <li>If your application is successful, we’ll make a payment into your account as soon as possible.</li>
+        <li>If you have any queries about your claim, call the Bereavement Support Payment team on <b>0800 085 2463 (option 2)</b>.</li>
+      </ul>
+
+      <p>If your partner was receiving benefits, you should call the Bereavement Service on <b>0800 085 2463</b>. They will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>stop any benefits paid to your partner</li>
+        <li>check if you are entitled to claim benefits</li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+	<!--
+      {% if data['acb'] == 'Yes' %}
+      <h3 class="govuk-heading-m">Child Benefit entitlement</h3>
+      <p>Make sure your Child Benefit claim is in your name, not your partner's.</p>
+      <p>If your partner claimed it for your family, you will need to make a new claim.</p>
+      <p>You can <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/child-benefit" class="govuk-body govuk-!-font-size-19">contact Child Benefit</a>&nbsp to check.</p>
+	  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+     {% endif %}
+     
+        {% if data['acb'] == "I don't know" %}
+      <h3 class="govuk-heading-m">Child Benefit entitlement</h3>
+     <p><a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/child-benefit">Contact Child Benefit </a>to check if you're entitled. They can tell you if you need to make a claim.</p> 
+
+      <p>You can get the higher rate of Bereavement Support Payment when you get Child Benefit.</p>
+      
+	  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+     {% endif %}
+     -->
+      <h2 class="govuk-heading-m">Financial help and emotional support</h2> 
+      <p>Check the help and support available.
+        
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with funeral costs
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            You could be eligible for help with funeral costs if you get certain benefits.
+            Check if you can  <a href="https://www.nidirect.gov.uk/articles/funeral-expenses-payments" class="govuk-body govuk-!-font-size-19">get help to pay for the funeral</a>.</p>
+                    </div>
+        </details>
+
+      
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with living costs and rates
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>You might be eligible for benefits or help with rates.</p>
+            <p class="govuk-body">To check, you can:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>use the 'Make the call' service by calling for free on <b>0800 232 1271</b></li>
+                  <li>contact the Land and Property Services on <b>0300 200 7802</b> to see if you can get help with rates</li>
+                  <li>use a <a href="www.gov.uk/benefits-calculator" class="govuk-body govuk-!-font-size-19">benefits calculator</a></li> 
+                <li>visit your local Jobs and Benefits office</li> 
+              </ul>
+        
+            <p>Local advice agencies can also give you support and guidance.</p> 
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Emotional support
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p><a href="https://www.cruse.org.uk/get-help/local-services/northern-ireland/northern-ireland" class="govuk-body govuk-!-font-size-19">Cruse Bereavement Care</a> is a voluntary organisation you can contact for emotional help and support during a bereavement.</p>
+            <p>You can call them for free on <b>0808 808 1677</b>.</p>
+            <p>You can also <a href="https://www.gov.uk/after-a-death/bereavement-help-and-support">find other organisations who offer bereavement support, help and information</a>.
+            </p>
+          </div>
+        </details>
+       
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      
+
+        <h3 class="govuk-heading-m">Feedback</h3>
+        <p><a target="_blank" href="/beta/r3/bereavement-support-payment/feedback" class="govuk-body govuk-!-font-size-19">What did you think of this service? (opens in a new tab)</a> - takes less than 30 seconds.</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="contact-details.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer!='true' %}
+	    <form action="comms-needs" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answer-contact" method="post" class="form">
+	{% endif %}
+      
+               
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                How would you like to receive the decision about your application?
+              </h1>
+            </legend>
+            <div id="nationality-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+			{% if data['emailaddress'] %}
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="nationality" name="contactemail" type="checkbox" value="Email" aria-describedby="nationality-item-hint">
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  Email
+                </label>
+                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  {{data['emailaddress']}}
+                </div>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="nationality-2" name="letter" type="checkbox" value="Letter">
+                <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                  Letter
+                </label>
+                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  {{ data['sort'] }} <br> {{ data['postcode'] }}
+                </div>
+              </div>
+            </div>
+			{% endif %}
+			
+			{% if data['emailaddress'] == '' %}
+    
+			<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+			  <div class="govuk-checkboxes__item">
+				<input class="govuk-checkboxes__input" id="contact" name="contactemail" type="checkbox" value="Email" data-aria-controls="conditional-contact">
+				<label class="govuk-label govuk-checkboxes__label" for="contact">
+				  Email
+				</label>
+			  </div>
+			  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+				<div class="govuk-form-group">
+				  <label class="govuk-label" for="contact-by-email">
+					Enter your email address
+				  </label>
+				  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="emailaddress" value="{{data['emailaddress']}}" type="email" spellcheck="false"></div>
+			  </div>
+			  <div class="govuk-checkboxes__item">
+				<input class="govuk-checkboxes__input" id="nationality-2" name="letter" type="checkbox" value="Letter">
+				<label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+				  Letter
+				</label>
+				<div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+				  {{ data['sort'] }} <br> {{ data['postcode'] }}
+				</div>
+			  </div>
+			</div>
+			{% endif %}
+
+			  
+        
+          </fieldset>
+        </div>
+               
+
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}    
+    
+    
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+    
+    
+    </form>      
+  </div>            
+  </div>
+
+  </main>
+  </div>
+
+{% endblock %}

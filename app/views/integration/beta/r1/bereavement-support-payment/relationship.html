@@ -1,0 +1,119 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="dod.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if checkanswer ==undefined and checkanswereligibility==undefined %}
+	     <form action="country" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkanswereligibility =='true' %}
+	    <form action="check-answers-eligibility" method="post" class="form">
+	{% endif %} 
+      
+
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Who is the person who's died?
+                  </h1>
+                </legend>
+                         
+
+                <p>
+                  They were my:
+                </p> 
+
+                <fieldset class="govuk-fieldset">
+
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-yes1" type="radio"  value="husband" {{ checked("getcb", "Yes") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-yes1">
+                        Husband              
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-no2" type="radio" value="wife" {{ checked("getcb", "No") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-no2">
+                        Wife              
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-no3" type="radio" value="civil partner" {{ checked("getcb", "No") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-no3">
+                        Civil partner (we had a registered civil partnership)              
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-no4" type="radio" value="Partner I lived with" {{ checked("getcb", "No") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-no4">
+                        Partner I lived with              
+                      </label>
+                    </div>
+
+                    <p>Or</p>
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Someone else" {{ checked("getcb", "Idonotknow") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+                        Someone else             
+                      </label>
+                    </div>
+              </div>
+<br>
+                
+    
+              </div>
+              <!--
+               {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+
+-->
+
+      {% if checkanswer ==undefined and checkanswereligibility==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue
+        {% endif %}
+ {% if checkanswer=='true' %}
+ <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+ {% endif %}
+ {% if checkanswereligibility =='true' %}
+ <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+ {% endif %} 
+
+
+    
+
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

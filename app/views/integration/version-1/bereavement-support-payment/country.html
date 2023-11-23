@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="relationship.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if checkanswer!='true' %}
+	     <form action="about-you" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+      
+
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Where do you live?
+                  </h1>
+                </legend>
+                         
+                <fieldset class="govuk-fieldset">
+
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input name="getcountrycb" class="govuk-radios__input" id="get-cb-yes4" type="radio"  value="England" {{ checked("getcountrycb", "England") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-yes4">
+                        England              
+                      </label>
+                    </div>
+                    
+                    <div class="govuk-radios__item">              
+                      <input name="getcountrycb" class="govuk-radios__input" id="get-cb-no2" type="radio" value="Scotland" {{ checked("getcountrycb", "Scotland") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-no2">
+                        Scotland              
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios__item">              
+                      <input name="getcountrycb" class="govuk-radios__input" id="get-cb-no1" type="radio" value="Wales" {{ checked("getcountrycb", "Wales") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-no1">
+                        Wales              
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">              
+                      <input name="getcountrycb" class="govuk-radios__input" id="get-cb-no3" type="radio" value="Northern Ireland" {{ checked("getcountrycb", "Northern Ireland") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-no3">
+                        Northern Ireland              
+                      </label>
+                    </div>
+
+                    <p>Or</p>
+                   
+                    <div class="govuk-radios__item">              
+                      <input name="getcountrycb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Outside the UK" {{ checked("getcountrycb", "Outside the UK") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+                        Outside the UK             
+                      </label>
+                    </div>
+              </div>
+<br>
+                
+    
+              </div>
+               {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

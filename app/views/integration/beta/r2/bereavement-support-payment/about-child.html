@@ -1,0 +1,120 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+  {% if data['getcb'] == 'civil partner' %}
+
+  <a href="cp-certificate.html" class="govuk-back-link">Back</a>             
+   {% else %}
+   <a href="marriage-certificate.html" class="govuk-back-link">Back</a>  
+  {% endif %}
+
+
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <form action="about-cb" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+      
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">About children</h1>
+                <span class="govuk-caption-m">You could get the higher rate of Bereavement Support Payment if you're responsible for a child or were pregnant when your partner died.
+                </span>
+                <br>
+                <div class="govuk-form-group">          
+                  <h2 class="govuk-heading-m">Do any of these apply to you?
+                  </h2>
+                
+                  <div id="waste-hint" class="govuk-hint">
+                    Select all that apply.
+                  </div>
+                  <div class="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="16years" type="checkbox" value="16years">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        I have a child under 16 years old
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-2" name="16to19" type="checkbox" value="16to19">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                        I have a child aged 16 to 19 and in full-time education or training
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="farm1" type="checkbox" value="farm1">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        I was pregnant when my partner died
+                      </label>
+                    </div>
+                  <p>Or</p>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="farm2" type="checkbox" value="farm2">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      None of these apply
+                    </label>
+                  </div>
+                </div>
+                <br>
+                <!--
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}  
+  -->
+
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+    </form>      
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

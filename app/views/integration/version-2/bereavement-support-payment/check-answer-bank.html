@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="bank-details.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="task-list" method="post" class="form">
+        
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">
+          Payment details</h2>
+        
+  
+        <dl class="govuk-summary-list">
+  
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Name on account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['name-on-the-account'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-details?checkanswer=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Sort code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['sort-code'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-details?checkanswer=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Account number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['account-number'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-details?checkanswer=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+		  {% if data['roll-number'] != '' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Roll number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['roll-number'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-details?checkanswer=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+			{% endif %}
+          </dl>
+		<input name="appcount" class="govuk-radios__input" id="get-cb-no2" type="text" value="6" /> 
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+
+  </div>
+
+
+</main>
+</div> 
+{% endblock %}

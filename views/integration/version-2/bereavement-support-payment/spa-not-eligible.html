@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="relationship" method="post" class="form">
+            <a href="start" class="govuk-back-link">Back</a>
+           
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">
+                  You are not eligible
+                </h1>
+                <div class="govuk-panel__body">
+                  You must be under State Pension age</div>
+              </div>
+              </fieldset>
+             
+            </div>
+
+      </form>
+  </div>
+</div>
+
+{% endblock %}

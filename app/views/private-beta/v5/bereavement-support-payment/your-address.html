@@ -1,0 +1,83 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="your-postcode.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">            
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="cp-date" method="post" class="form">
+               
+        <div class="govuk-width-container">
+          <p>3 addresses found for <b>AB12 345</b> and <b>1</b>. <a href="your-postcode">Search again</a></p>
+          <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                      Select your home address
+                  </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="1 Example Street, Town, AB12 3CD">
+                      <label class="govuk-label govuk-radios__label" for="select-an-address">
+                          1 Example Street, Town, AB12 3CD
+                      </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="select-an-address-2" name="select-an-address" type="radio" value="12 Example Street, Town, AB12 3CD">
+                      <label class="govuk-label govuk-radios__label" for="select-an-address-2">
+                          12 Example Street, Town, AB12 3CB
+                      </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="select-an-address-3" name="select-an-address" type="radio" value="13 Example Street, Town, AB12 3CD">
+                      <label class="govuk-label govuk-radios__label" for="select-an-address-3">
+                          13 Example Street, Town, AB12 3CB
+                      </label>
+                  </div>
+              </div>
+          </fieldset>
+          </div><button class="govuk-button" data-module="govuk-button">
+          Use this address
+          </button>
+          <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+          </div> 
+
+          <div class="govuk-!-padding-bottom-4"></div>
+   
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Get help with your application
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  Telephone: 0800 731 0469 <br>
+                  Welsh language: 0800 731 0453 <br>
+                  <br>
+                  Textphone: 0800 731 0464 <br>
+                  Welsh language: 0800 731 0456 <br>
+                  <br>
+                  If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+                  <br>
+                  Monday to Friday, 9.30am to 3.30pm <br>
+                  Find out about call charges <br>
+                </div>
+              </details>
+   
+            </form>      
+  </div>            
+  </div>
+             
+</main>
+</div>
+{% endblock %}

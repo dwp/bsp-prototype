@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="start.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="relationship" method="post" class="form">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You must have all the information you need to apply online
+                </h1>
+           <br>
+                <div class="govuk-form-group">          
+                  <p class="govuk-body govuk-!-font-size-19">If you cannot find this information, <a href="https://www.gov.uk/after-a-death/bereavement-help-and-support">call the Bereavement Service</a>. They may be able to take your claim over the phone instead.
+                  </p>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <h2 class="govuk-heading-m">How to find a National Insurance number</h2>
+                      <p class="govuk-body govuk-!-font-size-19"> A National Insurance number will be shown on a payslip, P60, benefit letter or National Insurance card.</p> 
+                    </fieldset>
+                  </div>
+                </div>
+    </form>      
+  </div>            
+  </div>        
+</main>
+</div>
+
+{% endblock %}

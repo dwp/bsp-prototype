@@ -1,0 +1,83 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="country.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	
+  <!--    {% if checkanswer!='true' %}
+	     <form action="check-answers-eligibility" method="post" class="form">  
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+     -->           
+
+	
+        <form action="relationship-not-eligiblepost" method="post" class="form">
+	 
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="uk-location-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    When your partner died, were you living together?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="uk-location" name="cohabitation" type="radio" value="Yes" {{ checked("cohabitation", "Yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="uk-location">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="uk-location-2" name="cohabitation" type="radio" value="No" {{ checked("cohabitation", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="uk-location-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+
+        <!--      
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+  -->
+
+      {% if checkanswer ==undefined and checkanswereligibility==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+ {% if checkanswer=='true' %}
+ <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+ {% endif %}
+ {% if checkanswereligibility =='true' %}
+ <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+ {% endif %} 
+    
+    </form>
+    </div>
+  </div>
+
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="bank-details" method="post" class="form">
+            <a href="work.html" class="govuk-back-link">Back</a>             
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did they die because of an accident or illness caused by work?</h1>
+            <div class="govuk-form-group">          
+              <fieldset class="govuk-fieldset heavy-hint">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input name="died-at-work" class="govuk-radios__input" id="died-at-work-yes" type="radio"  value="Yes" {{ checked("died-at-work", "Yes") }}>              
+                    <label class="govuk-label govuk-radios__label" for="died-at-work-yes">
+                      Yes              
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">              
+                    <input name="died-at-work" class="govuk-radios__input" id="died-at-work-no" type="radio" value="No" {{ checked("died-at-work", "No") }}>              
+                    <label class="govuk-label govuk-radios__label" for="died-at-work-no">
+                      No              
+                    </label>
+                  </div>
+            </div>
+              
+              </fieldset>
+            </div>
+              
+
+              <button class="govuk-button" data-module="govuk-button">Continue
+              </button>   
+    </form>      
+  </div>            
+  </div>
+             
+
+{% endblock %}

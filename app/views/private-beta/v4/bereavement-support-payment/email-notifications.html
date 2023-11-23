@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="bank-details.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	
+	    <form method="POST" class="form" action="/email-notifications-answer">
+      
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What emails do you want to receive about your application?
+        </h1>
+      </legend>
+      <div id="countries-hint" class="govuk-hint">
+        Select all that apply.
+      </div>
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="countries" name="emailtype" type="checkbox" value="Confirmation you received my application">
+          <label class="govuk-label govuk-checkboxes__label" for="countries">
+            Confirmation you received my application
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="countries-2" name="emailtype" type="checkbox" value=" Outcome of my application">
+          <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+            Outcome of my application
+          </label>
+          <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+            You will also receive this by post
+          </div>
+        </div>
+        <div class="govuk-checkboxes__divider">or</div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="countries-5" name="emailtype" type="checkbox" value="no-emails" data-behaviour="exclusive">
+          <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+            I do not want to receive emails
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  
+                 
+
+      {% if checkanswer ==undefined and checkanswercontact==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkanswercontact =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %} 
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+
+    </form>      
+  </div>            
+  </div>
+
+  </main>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+
+{% extends "layout.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+  
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="infosent" method="post" class="form"> 
+            <a href="check-answers.html" class="govuk-back-link">Back</a>
+          <article>                
+            
+            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+              <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                  Important
+                </h2>
+              </div>
+              <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                  Check your answers before sending your application
+                  <a class="govuk-notification-banner__link" href="check-answers.html">View answers</a>.
+                </p>
+              </div>
+            </div>
+            
+            <h1 class="govuk-heading-xl">Declaration</h1>
+
+                <p>By sending the application you agree that the information you've given is complete and correct.
+                  If you deliberately give the wrong or incomplete information, or you do not report any changes, you may:
+                </p>
+                
+<ul class="govuk-list govuk-list--bullet">
+  <li>be prosecuted</li>
+  <li>need to pay a financial penalty</li>
+  <li>need to pay back any money you're overpaid if you're asked to</li>
+</ul>
+
+                <div class="govuk-button-group">
+                  <button class="govuk-button" data-module="govuk-button">
+                    I agree - send my application
+                  </button>  
+                </div>
+          
+
+               
+          </article>     
+      </form>
+    </div>
+</div>
+
+{% endblock %}

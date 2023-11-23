@@ -1,0 +1,95 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/app/views/index" method="post" class="form">
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    About your relationship
+                  </h1>
+                </legend>
+                                  
+                <fieldset class="govuk-fieldset">
+                  <p class="govuk-body govuk-!-font-weight-bold">When your partner died, were you:</p>
+                    
+              
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-yes1" 
+                      type="radio"  value="Married" >              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-yes1">
+                        Married             
+                      </label>
+                    </div>
+                   
+                   
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-no3" type="radio" value="Civil partnership">              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-no3">
+                        In a registered civil partnership              
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="living-together"
+                       type="radio" value="Living together" >              
+                      <label class="govuk-label govuk-radios__label" for="living-together">
+                        Living together
+                      </label>
+                    </div>
+
+                    <p>Or</p>
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="No" >              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+                        None of these apply           
+                      </label>
+                    </div>
+              </div>
+              <input class="govuk-radios__input" id="getcb-hidden4" name="checkanswereligibility" type="hiddden" value="{{checkanswereligibility}}"/>
+<br>
+                
+    
+              </div>
+             
+
+      {% if checkanswer ==undefined and checkanswereligibility==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue
+        {% endif %}
+ {% if checkanswer=='true' %}
+ <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+ {% endif %}
+ {% if checkanswereligibility =='true' %}
+ <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+ {% endif %} 
+
+
+    
+
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

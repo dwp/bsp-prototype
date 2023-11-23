@@ -1,0 +1,91 @@
+
+{% extends "layout.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  <a href="/alpha/r2/bereavement-support-payment/cookie-banner.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <form action="spa" method="post" class="form">
+
+      
+
+          <article>
+
+              <h1 class="govuk-heading-xl">How we use cookies</h1>
+          
+           
+          
+              <p class="govuk-body-m">A cookie is a small file which we store on your device for a short time to make this service work.
+              </p>
+            
+              <p class="govuk-body">We use cookies that are:
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>essential - these make the service work, for example by remembering your answers to certain questions
+                </li>
+                <li>optional - these will not stop the service from working, but will give us information to help us make it better
+                </li>
+              </ul>
+
+
+              <p class="govuk-body">We will not:
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>use any essential cookies until you use the service
+                </li>
+                <li>use any optional cookies unless you tell us we can
+                </li>
+                <li>be able identify you through using cookies
+                </li>
+              </ul>
+
+              <h2 class="govuk-heading-l">Optional cookie settings</h2>
+              <p class="govuk-body">You can change the settings on this page at any time.
+              </p>
+
+              <h3 class="govuk-heading-s">Analytics cookies
+              </h3>
+              <p class="govuk-body">We use Google Analytics to get information about how you use this service, which helps us to make it better.
+              </p>
+
+              <h2 class="govuk-heading-m">Can we use cookies to help us improve the service?
+              </h2>
+
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input name="SPAApply" class="govuk-radios__input" id="SPA-Apply-Yes" type="radio"  value="Yes" {{ checked("SPA-Apply", "Yes") }}>              
+                  <label class="govuk-label govuk-radios__label" for="SPA-Apply-Yes">
+                    Yes              
+                  </label>
+                </div>
+                <div class="govuk-radios__item">              
+                  <input name="SPAApply" class="govuk-radios__input" id="SPA-Apply-No" type="radio" value="No" {{ checked("SPA-Apply", "No") }}>              
+                  <label class="govuk-label govuk-radios__label" for="SPA-Apply-No">
+                    No              
+                  </label>
+                </div>
+          </div>  <br>        
+                    <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+          
+       
+          </form>
+
+          <p class="govuk-body govuk-!-font-size-19"><a href="https://www.gov.uk/after-a-death/bereavement-help-and-support">Find out more about cookies on this service</a>
+          </p>
+
+  </div>
+</div>
+
+
+</main>
+</div>
+{% endblock %}

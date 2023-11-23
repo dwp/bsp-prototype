@@ -1,0 +1,65 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="/alpha/r2/bereavement-support-payment/how-to-claim.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <form action="spa" method="post" class="form">
+
+      
+
+          <article>
+
+              <h1 class="govuk-heading-xl">Apply for Bereavement Support Payment</h1>
+          
+           
+          
+            <p class="govuk-body-m">We'll ask some eligibility questions first. If you're eligible to apply, 
+              we'll ask for the rest of the information we need.
+            </p>
+          
+            <h3 class="govuk-heading-m">Proving your identity</h3>
+
+            <p class="govuk-body-m">Proving your identity makes it quicker to process your application. It also helps to reduce fraud.
+            </p>
+
+
+              <p class="govuk-body">At the end of your application, we'll ask if you can answer questions about 2 of the following:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>a UK passport</li>
+                <li>your P60 or a payslip from the last 12 months</li>
+                <li>tax credits, if you get them</li>
+                <li>your credit record, for example, the year you took out a credit card or phone contract</li>
+              </ul>
+
+
+              <p class="govuk-body-m"><b>If you cannot prove your identity, you can still submit your application.</b></p>
+
+            <div class="govuk-inset-text">
+             
+              It takes about 15 minutes to apply. <br> You cannot save your application and come back later. If you do not enter anything for more than 30 minutes, your application will time out and you'll need to start again.
+
+            </div>
+                
+
+                  <button class="govuk-button" data-module="govuk-button">Start now</button>
+        
+       
+          </form>
+
+  </div>
+</div>
+
+
+</main>
+</div>
+{% endblock %}

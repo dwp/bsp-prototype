@@ -1,0 +1,130 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="dod.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        {% if checkanswereligibility !='true' %}
+        <form action="countrypost" method="post" class="form">
+          {% endif %} 
+
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    About your relationship
+                  </h1>
+                </legend>
+                <h3 class="govuk-heading-m">
+                  When your partner died, were you:
+                </h3>                 
+                <fieldset class="govuk-fieldset">
+                  <div id="aste-hint" class="govuk-hint">
+                    Select all that apply.
+                  </div>
+                
+             <!--   
+                  <div class="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input name="Married" class="govuk-checkboxes__input" id="get-cb-yes1" 
+                      type="checkbox"  value="Married" {{ checked("Married", "Married") }}>              
+                      <label class="govuk-label govuk-checkboxes__label" for="get-cb-yes1">
+                        Married              
+                      </label>
+                    </div>
+                   
+                   
+                    <div class="govuk-checkboxes__item">              
+                      <input name="Civilpartnership" class="govuk-checkboxes__input" id="get-cb-no3" type="checkbox" value="Civilpartnership" {{ checked("Civilpartnership", "Civilpartnership") }}>              
+                      <label class="govuk-label govuk-checkboxes__label" for="get-cb-no3">
+                        In a registered civil partnership              
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">              
+                      <input name="Livingtogether" class="govuk-checkboxes__input" id="living-together"
+                       type="checkbox" value="Livingtogether" {{ checked("Livingtogether", "Livingtogether") }} >              
+                      <label class="govuk-label govuk-checkboxes__label" for="living-together">
+                        Living together
+                      </label>
+                    </div>
+
+                    <p>Or</p>
+                    <div class="govuk-checkboxes__item">              
+                      <input name="No" class="govuk-checkboxes__input" id="get-cb-Idonotknow" type="checkbox" value="No" {{ checked("No", "No") }}>              
+                      <label class="govuk-label govuk-checkboxes__label" for="get-cb-Idonotknow">
+                        None of these apply           
+                      </label>
+                    </div>
+              </div>
+
+
+
+-->                
+                <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input name="Married" class="govuk-checkboxes__input" id="get-cb-yes1" 
+                    type="checkbox"  value="Married" {{ checked("Married", "Married") }}>              
+                    <label class="govuk-label govuk-checkboxes__label" for="get-cb-yes1">
+                      Married              
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input name="Civilpartnership" class="govuk-checkboxes__input" id="get-cb-no3" 
+                    type="checkbox" value="Civilpartnership" {{ checked("Civilpartnership", "Civilpartnership") }}>              
+                      <label class="govuk-label govuk-checkboxes__label" for="get-cb-no3">
+                        In a registered civil partnership              
+                      </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input name="Livingtogether" class="govuk-checkboxes__input" id="living-together"
+                       type="checkbox" value="Livingtogether" {{ checked("Livingtogether", "Livingtogether") }} >              
+                      <label class="govuk-label govuk-checkboxes__label" for="living-together">
+                        Living together
+                      </label>
+                  </div>
+                <p>Or</p>
+                <div class="govuk-checkboxes__item">
+                  <input name="No" class="govuk-checkboxes__input" id="get-cb-Idonotknow" 
+                  type="checkbox" value="No" {{ checked("No", "No") }}>              
+                      <label class="govuk-label govuk-checkboxes__label" for="get-cb-Idonotknow">
+                        None of these apply           
+                      </label>
+                </div>
+              </div>
+
+              <input class="govuk-radios__input" id="getcb-hidden4" name="checkanswereligibility" type="hiddden" value="{{checkanswereligibility}}"/>
+
+
+
+
+<br>
+                
+    
+              </div>
+             
+
+      <button class="govuk-button" data-module="govuk-button">Continue </button>
+
+
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

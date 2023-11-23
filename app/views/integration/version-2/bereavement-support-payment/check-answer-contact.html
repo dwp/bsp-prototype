@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="comms-needs.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="task-list" method="post" class="form">
+        
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">
+           Your contact details </h2>
+          
+    
+          <dl class="govuk-summary-list">
+    
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                Telephone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['telephonenumber'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-details?checkanswer=true">
+                  Change
+                </a>
+              </dd> 
+            </div>
+  
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                Receive confirmation email
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['emailaddress'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-details?checkanswer=true">
+                  Change
+                </a>
+              </dd> 
+            </div>
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                How you want to receive your decision
+              </dt>
+			  
+			  <dd class="govuk-summary-list__value">
+			  {% if data['contactemail'] %}
+				{{ data['contactemail'] }} <br>
+		<!--		{{data['emailaddress']}} -->
+			   {% endif %}
+			   {% if data['letter'] %}
+				{{ data['letter'] }} <br>
+			<!--	{{ data['sort'] }} <br> {{ data['postcode'] }} -->
+			  {% endif %}
+			  </dd>
+			  
+			  
+			  
+              
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-decision?checkanswer=true">
+                  Change
+                </a>
+              </dd> 
+            </div>
+  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                Use a different format to contact you
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% for feature in data['commsNeedsOptions'] %}
+            {{ feature }}
+            {% else %}
+            No
+            {% endfor %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="comms-needs?checkanswer=true">
+                  Change
+                </a>
+              </dd> 
+            </div>
+  
+            </dl>
+
+		<input name="appcount" class="govuk-radios__input" id="get-cb-no2" type="text" value="7" /> 
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+
+  </div>
+
+
+</main>
+</div> 
+{% endblock %}

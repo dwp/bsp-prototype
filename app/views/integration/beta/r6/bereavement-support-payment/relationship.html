@@ -1,0 +1,128 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+ 
+ 
+ 
+  {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+  <a href="about-child.html" class="govuk-back-link">Back</a>
+  {% endif %}
+  
+  {% if checkanswer=='true' %}
+  <a href="check-answers.html" class="govuk-back-link">Back</a>  
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+  <a href="check-answers-eligibility.html" class="govuk-back-link">Back</a>  
+	{% endif %}
+
+ 
+ 
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+      {% if checkanswereligibility =='true' %}
+      
+        <form action="relationshipcountrypost" method="post" class="form">
+
+          {% endif %} 
+          {% if checkanswereligibility !='true' %}
+          <form action="countrypost" method="post" class="form">
+            {% endif %} 
+  
+            <div class="govuk-form-group">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    When your partner died, were you married or in a registered civil partnership with them?
+                  </h1>
+                </legend>
+                                  
+                <fieldset class="govuk-fieldset">
+
+                  <input type="hidden" name="child1" value="{{data.farm1}}" />
+                  <input type="hidden" name="child2" value="{{data.farm2}}" />
+                  <input type="hidden" name="child3" value="{{data.farm3}}" />
+                  <input type="hidden" name="child4" value="{{data.farm4}}" />
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-yes1" type="radio"
+                        value="Married" {{ checked("getcb", "Married") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-yes1">
+                        Yes - we were married              
+                      </label>
+                    </div>
+                  
+                   
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-no3" type="radio"
+                       value="Civil partnership"  {{ checked("getcb", "Civil partnership") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-no3">
+                        Yes - we had a registered civil partnership              
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="living-together" type="radio"
+                       value="Living together"  {{ checked("getcb", "Living together") }} >              
+                      <label class="govuk-label govuk-radios__label" for="living-together">
+                        No  - but we were living together          
+                      </label>
+                    </div>
+                    
+                    <p>Or</p>
+                    <div class="govuk-radios__item">              
+                      <input name="getcb" class="govuk-radios__input" id="get-cb-Idonotknow"
+                       type="radio" value="No"  {{ checked("getcb", "No") }}>              
+                      <label class="govuk-label govuk-radios__label" for="get-cb-Idonotknow">
+                        No - and we were living apart           
+                      </label>
+                    </div>
+              </div>
+              <input class="govuk-checkboxes__input" id="getcb-hidden1" name="farm1" type="hiddden" value="{{data['farm1']}}"/>
+              <input class="govuk-checkboxes__input" id="getcb-hidden2" name="farm2" type="hiddden" value="{{data['farm2']}}"/>
+              <input class="govuk-checkboxes__input" id="getcb-hidden3" name="farm3" type="hiddden" value="{{data['farm3']}}"/>
+              <input class="govuk-checkboxes__input" id="getcb-hidden4" name="farm4" type="hiddden" value="{{data['farm4']}}"/>
+              <input class="govuk-checkboxes__input" id="getcb-hidden4" name="checkanswereligibility" type="hiddden" value="{{checkanswereligibility}}"/>
+              
+<br>
+                
+    
+              </div>
+             
+
+      {% if checkanswer ==undefined and checkanswereligibility==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue
+        {% endif %}
+ {% if checkanswer=='true' %}
+ <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+ {% endif %}
+ {% if checkanswereligibility =='true' %}
+ <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+ {% endif %} 
+
+
+    
+
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

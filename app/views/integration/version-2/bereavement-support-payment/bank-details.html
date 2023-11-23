@@ -1,0 +1,102 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="task-list.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer!='true' %}
+	    <form action="check-answer-bank" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answer-bank" method="post" class="form">
+	{% endif %}
+      
+                         
+               
+            <h1 class="govuk-heading-xl">Bank or building society account details</h1>
+            <span class="govuk-caption-l">We will make payments into this account if your application is successful.
+            </span>
+            <br>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="name-on-the-account">
+    Name on the account
+  </label>
+  <input class="govuk-input" id="name-on-the-account" name="name-on-the-account" value="{{data['name-on-the-account']}}" type="text" spellcheck="false"></div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="sort-code">
+    Sort code
+  </label>
+  <div id="sort-code-hint" class="govuk-hint">
+    Must be 6 digits long
+  </div>
+  <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" value="{{data['sort-code']}}" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="account-number">
+    Account number
+  </label>
+  <div id="account-number-hint" class="govuk-hint">
+    Must be between 6 and 8 digits long
+  </div>
+  <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" value="{{data['account-number']}}" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="roll-number">
+    Building society roll number (if you have one)
+  </label>
+  <div id="roll-number-hint" class="govuk-hint">
+    You can find it on your card, statement or passbook
+  </div>
+  <input class="govuk-input govuk-input--width-10" id="roll-number" name="roll-number" value="{{data['roll-number']}}" type="text" spellcheck="false" aria-describedby="roll-number-hint">
+</div>
+
+ {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}  
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+    </form>      
+  </div>            
+  </div>
+
+  
+</main>
+</div>
+
+{% endblock %}

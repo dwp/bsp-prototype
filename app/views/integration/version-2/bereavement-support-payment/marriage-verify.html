@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="marriage-date.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="marriage-type" method="post" class="form">            
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="marriage-verify-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Were you married by a registrar?
+                  </h1>
+                </legend>
+                <div id="marriage-verify-hint" class="govuk-hint">
+                  This could have been at the register office or at a licensed venue, such as a hotel or town hall.
+                  There would have been 2 witnesses and you will have signed the marriage register.
+                </div>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marriage-verify" name="marriage-verify" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="marriage-verify">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marriage-verify-2" name="marriage-verify" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="marriage-verify-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+
+              
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,144 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkanswercontact==undefined %}
+	    <form action="check-answers-contact" method="post" class="form">
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+	
+	{% if checkanswercontact =='true' %}
+	    <form action="check-answers-contact" method="post" class="form">
+	{% endif %} 
+      
+  <a href="comms-needs.html" class="govuk-back-link">Back</a>  
+             
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Your language preference
+                  </h1>
+                </legend>
+                <div id="waste-hint" class="govuk-hint">
+                  If you live in Wales you can choose to communicate with us in Welsh.
+                </div>
+                  <br>
+                <div class="govuk-form-group">          
+                  <fieldset class="govuk-fieldset heavy-hint">
+    
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-3">
+                      What language do you want to use for written communications?  
+                    </legend>
+                    
+                    <span class="govuk-hint" id="claimantMarriageDate-hint">              
+                      This includes letters and emails.              
+                      </span>
+    
+                    <div class="govuk-radios">
+                          <div class="govuk-radios__item">              
+                            <input name="written" class="govuk-radios__input" id="written" type="radio" value="English" {{ checked("written", "English") }}>              
+                            <label class="govuk-label govuk-radios__label" for="written">              
+                              English             
+                             </label>
+                          </div>
+                          <div class="govuk-radios__item">              
+                            <input name="written" class="govuk-radios__input" id="written" type="radio" value="Welsh" {{ checked("written", "Welsh") }}>
+                            <label class="govuk-label govuk-radios__label" for="written-welsh">
+                              Welsh
+                             </label>
+                          </div>
+                      </div>                  
+                  </fieldset>
+                </div>
+                  
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-1">
+                      What language do you want us to speak to you in?            
+                    </legend>
+                    <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input name="speak" class="govuk-radios__input" id="speak" type="radio"  value="English" {{ checked("speak", "English") }}>              
+                            <label class="govuk-label govuk-radios__label" for="speak">
+                              English              
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">              
+                            <input name="speak" class="govuk-radios__input" id="written" type="radio" value="Welsh" {{ checked("speak", "Welsh") }}>              
+                            <label class="govuk-label govuk-radios__label" for="written">
+                              Welsh              
+                            </label>
+                          </div>
+                    </div>              
+                  </fieldset>
+                </div>
+                  
+
+            
+              </fieldset>
+              </div>
+           <!--   
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}   
+   -->
+   
+      {% if checkanswer ==undefined and checkanswercontact==undefined %}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      {% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkanswercontact =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %} 
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+   
+    </form>      
+  </div>            
+  </div>
+             
+</main>
+</div>
+{% endblock %}

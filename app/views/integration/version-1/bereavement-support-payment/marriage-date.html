@@ -1,0 +1,105 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="your-address.html" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer!='true' %}
+	    <form action="marriage" method="post" class="form">  
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+               
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              
+              
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  When did you get married?
+                </h1>
+              </legend>
+
+                <span class="govuk-hint" id="ClaimantMD-hint">
+                  For example, 23 05 2007
+               </span>              
+                <div class="govuk-date-input" id="ClaimantMD">              
+                  <div class="govuk-date-input__item">
+              
+                    <div class="govuk-form-group">              
+                      <label class="govuk-label govuk-date-input__label" for="ClaimantMD-Day">              
+                        Day              
+                      </label>
+                      <input name="claimantdaymd" class="govuk-input govuk-date-input__input govuk-input--width-2 &#10;        &#10;      " id="ClaimantMD-dd" type="number" pattern="[0-9]*" value="{{ data['claimantdaymd'] }}" >              
+                    </div>              
+                  </div>
+                  <div class="govuk-date-input__item">              
+                    <div class="govuk-form-group">              
+                      <label class="govuk-label govuk-date-input__label" for="ClaimantMD-Month">              
+                        Month              
+                      </label>
+                      <input name="claimantmonthmd" class="govuk-input govuk-date-input__input govuk-input--width-2 &#10;        &#10;      " id="ClaimantMD-mm" type="number" pattern="[0-9]*" value="{{ data['claimantmonthmd'] }}" >              
+                    </div>              
+                  </div>              
+                  <div class="govuk-date-input__item">              
+                    <div class="govuk-form-group">              
+                      <label class="govuk-label govuk-date-input__label" for="ClaimantMD-Year">              
+                        Year              
+                      </label>              
+                      <input name="claimantyearmd" class="govuk-input govuk-date-input__input govuk-input--width-4 &#10;        &#10;      " id="ClaimantMD-yyyy" type="number" pattern="[0-9]*" value="{{ data['claimantyearmd'] }}">              
+                    </div>              
+                  </div>
+                </div>
+              </fieldset>
+             
+            </div>
+              
+ 
+				{% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+     
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+    </form>
+  </div>
+</div>
+
+
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="ni-cons" method="post" class="form">
+            <a href="deceased-details.html" class="govuk-back-link">Back</a>             
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did they ever live or work outside of the UK?</h1>
+            <div class="govuk-form-group">                  
+              <fieldset class="govuk-fieldset heavy-hint">
+                <p>              
+                  We might be able to include any National Insurance contributions that were paid in another country.             
+                </p>
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                      <div class="govuk-radios__item">              
+                        <input name="work-outside-uk" class="govuk-radios__input" id="work-outside-uk-yes" aria-expanded="false" data-aria-controls="conditional-work-outside-uk-yes" type="radio" value="{{ data['work-outside-uk-yes'] }}" {{ checked("work-outside-uk", "Yes") }}>              
+                        <label class="govuk-label govuk-radios__label" for="work-outside-uk-yes">              
+                          Yes             
+                         </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-outside-uk-yes">              
+                        <div class="govuk-form-group">              
+                           <label class="govuk-label govuk-!-font-weight-bold" for="work-outside-uk">              
+                            Name of country
+                           </label>
+                           <span id="deceased-dod-hint" class="govuk-hint">
+                            For example, Spain, France
+                          </span>
+                          <input name="work-outside-uk-yes" class="govuk-input govuk-!-width-two-thirds" id="work-outside-uk" type="text" value="{{ data['work-outside-uk-yes'] }}" >
+                        
+                          <Br> 
+                          
+                            <a class="govuk-link" href="#">Add a country</a>
+                        
+                        </div>
+                      </div>
+
+
+                      <div class="govuk-radios__item">              
+                        <input name="work-outside-uk" class="govuk-radios__input" id="work-outside-uk-no" type="radio" value="No" {{ checked("work-outside-uk", "No") }}>
+                        <label class="govuk-label govuk-radios__label" for="work-outside-uk-no">
+                          No
+                         </label>
+                      </div>
+
+                      <p>Or </p>
+
+                      <div class="govuk-radios__item">
+                          <input name="work-outside-uk" class="govuk-radios__input" id="work-outside-uk-dontknow" type="radio" value="I don't know" {{ checked("work-outside-uk", "I don't know") }}>
+                          <label class="govuk-label govuk-radios__label" for="work-outside-uk-dontknow">                
+                            I don't know               
+                           </label>
+                        </div>
+                  </div>
+              
+              </fieldset>
+            </div>
+
+              <button class="govuk-button" data-module="govuk-button">Continue
+              </button>   
+    </form>      
+  </div>            
+  </div>
+             
+
+{% endblock %}

@@ -1,0 +1,47 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>           
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="https://www.gov.uk/after-a-death/bereavement-help-and-support" method="post" class="form">
+        <h1 class="govuk-heading-l">You cannot get Bereavement Support Payment</h1>
+                <div class="govuk-form-group">          
+                  <p class="govuk-body govuk-!-font-size-19">This is because you reached State Pension age before your partner died.
+                  </p>
+                  <p class="govuk-body govuk-!-font-size-19">You must be under State Pension age to be able to get Bereavement Support Payment.
+                  </p>
+
+                  <div class="govuk-inset-text">
+                    If you live in Northern Ireland you may be able to <a rel="external" href="https://www.nidirect.gov.uk/articles/financial-help-bereaved">apply for other benefits</a>.
+                  </div>
+                
+                    <a href="https://www.gov.uk/browse/benefits/bereavement" role="button" class="govuk-button" data-module="govuk-button">
+                      Find other support
+                    </a>
+                
+                    <p class="govuk-body govuk-!-font-size-19">If you need emotional help you can contact <a href="https://www.cruse.org.uk">Cruse Bereavement Support (opens in new tab)</a>.
+                    </p>
+
+                  <p class="govuk-body govuk-!-font-size-19">If you want this decision in writing you can finish your application even though you cannot get Bereavement Support Payment.
+                  </p>
+
+                  <p class="govuk-body govuk-!-font-size-19"><a href="relationship1">Get a decision in writing</a> </p>
+                    </fieldset>
+              
+    </form>      
+  </div>            
+  </div>        
+</main>
+</div>
+
+{% endblock %}

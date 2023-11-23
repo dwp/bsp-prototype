@@ -1,0 +1,92 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="cp-date.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+	{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <form action="cp-certificate" method="post" class="form"> 
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="declaration" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+                 
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="cp-location-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Did you register your civil partnership in the UK?
+                  </h1>
+                </legend>
+                <!-- <div id="cp-location-hint" class="govuk-hint">
+                  This includes changing your last name or spelling your name differently.
+                </div> -->
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marriage-location" name="cpr" type="radio" value="Yes" data-aria-controls="conditional-marriage-location">
+                    <label class="govuk-label govuk-radios__label" for="marriage-location">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marriage-location-2" name="cpr" type="radio" value="No" data-aria-controls="conditional-marriage-location-2">
+                    <label class="govuk-label govuk-radios__label" for="marriage-location-2">
+                      No
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriage-location-2">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="marriage-location-by-phone">
+                        Which country did you register your civil partnership in?
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="marriage-location-by-phone" name="cpcountry" type="text" value="{{ data['cpcountry'] }}">
+                    </div>            
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+<!--
+              
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+
+-->
+
+
+      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <button class="govuk-button" data-module="govuk-button">Continue</button> 
+	{% endif %}
+	{% if checkanswer=='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+	{% endif %}
+
+
+      </form>
+    </div>
+  </div>
+
+</main>
+</div>
+{% endblock %}

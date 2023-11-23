@@ -1,0 +1,101 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+<a href="relationship.html" class="govuk-back-link">Back</a>  
+{% endif %}
+
+
+{% if checkanswer=='true' %}
+<a href="check-answers.html" class="govuk-back-link">Back</a>  
+{% endif %}
+{% if checkansweraboutyou =='true' %}
+<a href="check-answers-eligibility.html" class="govuk-back-link">Back</a>  
+{% endif %}
+
+
+  <main class="govuk-main-wrapper">
+    
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="POST" class="form" action="/about-children-answer">
+      
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-2">About children</h1>
+               
+                <br>
+                <div class="govuk-form-group">          
+                  <h2 class="govuk-heading-s">When your partner died, did any of these apply to you?
+                  </h2>
+                  <div id="waste-hint" class="govuk-hint">
+                    Select all that apply.
+                  </div>
+                  <div class="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="nochildren" type="checkbox" value="I had a child under 16 years old">
+                      
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        I had a child under 16 years old
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-2" name="nochildren" type="checkbox" value="I had a child aged 16 to 19 and in full-time education or training">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                        I had a child aged 16 to 19 and in full-time education or training
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="nochildren" type="checkbox" value="I was pregnant when my partner died">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        I was pregnant when my partner died
+                      </label>
+                    </div>
+                  <p>Or</p>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-4" name="nochildren" type="checkbox" value="no-children" data-item="nochildren">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-4">
+                      None of these apply
+                    </label>
+                  </div>
+                </div>
+                <br>
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+              </form>    
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+     
+  </div>            
+  </div>
+        
+</main>
+</div>
+
+
+{% endblock %}

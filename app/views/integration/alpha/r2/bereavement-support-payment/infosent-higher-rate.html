@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">  
+        <h1 class="govuk-panel__title">  
+          Application successful 
+        </h1>
+        <div class="govuk-panel__body">
+          Reference number: your National Insurance number
+        </div>
+      </div>
+
+
+      <p class="govuk-body govuk-!-font-size-19">Your application for Bereavement Support Payment has been successful. You will get the 
+        {% if data['16years'] and data['16to19'] == undefined %}
+        <b>higher rate</b>.
+         {% endif %}
+         {% if data['farm1'] %}
+         <b>higher rate</b>.	  {% endif %}
+        {% if data['farm2'] %}
+        <b>standard rate</b>.	  {% endif %}
+
+        </p>
+		{% if data['emailaddress'] %}
+        <p class="govuk-body">We’ve sent a confirmation email to <b>{{data['emailaddress']}}</b></p>
+		{% endif %}
+
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+     
+      <h2 class="govuk-heading-m">What happens next</h2>
+	  
+      <p class="govuk-body">You'll get an 
+	  {% if data['emailaddress'] and data['letter'] == undefined %}
+		<b>email</b>
+	  {% endif %}
+	  
+	  {% if data['letter'] == 'Letter' and data['emailaddress'] == undefined %}
+		<b>Letter</b>
+	  {% endif %}
+	  
+	  {% if data['emailaddress'] and data['letter'] %}
+	  <b>email and letter</b>
+	  {% endif %}
+	  
+	    which explains:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>what you'll be paid and when</li> 
+        <li>what you need to know about your claim</li> 
+      </ul>
+
+      <p>We'll make a payment into your account as soon as possible.</p>
+      <p>If you have any questions
+	{% if data['emailaddress'] and data['letter'] == undefined %}
+	  after receiving your <b>email </b>
+	  {% endif %}
+	  
+	  {% if data['letter'] == 'Letter' and data['emailaddress'] == undefined %}
+	  after receiving your <b>letter </b>
+	  {% endif %}
+	  
+	  {% if data['emailaddress'] and data['letter'] %}
+	  after receiving your <b>letter or email </b>
+	  {% endif %}
+	  
+	  , call the Bereavement Support Payment team on <b>0800 731 0139</b>.</p>
+
+
+
+    {% if data['16years'] %}
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h3 class="govuk-heading-m">Child Benefit entitlement</h3>
+    <p><a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/child-benefit" class="govuk-body govuk-!-font-size-19">Contact Child Benefit</a>&nbsp if you think you could be entitled but have not made a claim.
+      If your Child Benefit was in your partner’s name, you’ll need to make a new claim.</p>
+    {% endif %}
+
+    {% if data['16to19'] %}
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h3 class="govuk-heading-m">Child Benefit entitlement</h3>
+    <p><a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/child-benefit" class="govuk-body govuk-!-font-size-19">Contact Child Benefit</a>&nbsp if you think you could be entitled but have not made a claim.
+      If your Child Benefit was in your partner’s name, you’ll need to make a new claim.</p>
+    {% endif %}
+
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Help with funeral costs</h2> 
+      <p>You could be eligible for help with funeral costs if you get certain benefits.
+        Check if you can  <a href="https://www.gov.uk/funeral-payments" class="govuk-body govuk-!-font-size-19">get help to pay for the funeral</a>.</p>
+      
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Financial help</h2> 
+      <p>You might be eligible for benefits or help towards your Council Tax.</p>
+
+      <p class="govuk-body">Check by:</p>
+          <ul class="govuk-list govuk-list--bullet">
+          <li>using a <a href="www.gov.uk/benefits-calculator" class="govuk-body govuk-!-font-size-19">benefits calculator</a></li> 
+          <li>contacting your local jobcentre for advice</li> 
+          <li>asking your local council about help to pay Council Tax</li>
+        </ul>
+  
+      <p>Citizens Advice can also give you support and guidance.</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Emotional support</h2> 
+
+        <p><a href="https://www.gov.uk/after-a-death/bereavement-help-and-support" class="govuk-body govuk-!-font-size-19">Find support, help and information on dealing with a bereavement</a>.</p>
+  
+    </div>
+
+    
+
+
+
+      </details>
+  
+    </div>
+  
+{% endblock %}

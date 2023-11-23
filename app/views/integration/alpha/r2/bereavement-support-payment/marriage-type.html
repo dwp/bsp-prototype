@@ -1,0 +1,105 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="marriage-verify.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
+	    <form action="check-answers" method="post" class="form">  
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answers" method="post" class="form">
+	{% endif %}
+	{% if checkansweraboutyou =='true' %}
+	    <form action="check-answers-about-you" method="post" class="form">
+	{% endif %}
+                
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="marriage-verify-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Was it a religious or humanist ceremony?
+                  </h1>
+                </legend>
+                <!--
+                <div id="marriage-verify-hint" class="govuk-hint">
+                  This could have been at the register office or at a licensed venue, such as a hotel or town hall.
+                  There would have been 2 witnesses and you will have signed the marriage register.
+                </div> -->
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input name="Married-in-UK" class="govuk-radios__input" id="marriage-type-religious" aria-expanded="false" data-aria-controls="conditional-marriage-type-religious" type="radio" value="Religious">
+                    <label class="govuk-label govuk-radios__label" for="marriage-type-religious">             
+                      Religious
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriage-type-religious">              
+                    <div class="govuk-form-group">              
+                       <label class="govuk-label govuk-!-font-weight-bold" for="Marriage-religion">              
+                        Which religion were you married under?
+                       </label>
+                      <input name="ReligiousMarriage" class="govuk-input govuk-!-width-two-thirds" id="Marriage-religion" type="text" value="{{ data['ReligiousMarriage'] }}" >
+                     </div>
+                    </div>
+
+                  <div class="govuk-radios__item">
+                    <input name="Married-in-UK" class="govuk-radios__input" id="marriage-type-humanist" aria-expanded="false" data-aria-controls="conditional-marriage-type-humanist" type="radio" value="Humanaist" >
+                    <label class="govuk-label govuk-radios__label" for="marriage-type-humanist">
+                        Humanaist
+                    </label>
+                  </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriage-type-humanist">              
+                       <div class="govuk-form-group">              
+                          <label class="govuk-label govuk-!-font-weight-bold" for="Marriage-country">              
+                            Which country did you get married in?
+                          </label>
+                         <input name="Marriage-country-name" class="govuk-input govuk-!-width-two-thirds" id="Marriage-country" type="text" value="{{ data['Marriage-country-name'] }}" >
+                        </div>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input name="Married-in-UK" class="govuk-radios__input" id="marriage-type-ceremony" aria-expanded="false" data-aria-controls="conditional-marriage-type-ceremony" type="radio" value="Ceremony" >
+                    <label class="govuk-label govuk-radios__label" for="marriage-type-ceremony">
+                      No, we were married under a different ceremony
+                    </label>
+                  </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-marriage-type-ceremony">              
+                       <div class="govuk-form-group">              
+                          <label class="govuk-label govuk-!-font-weight-bold" for="Marriage-ceremony">              
+                            Which country did you get married in?
+                          </label>
+                         <input name="Marriage-ceremony-name" class="govuk-input govuk-!-width-two-thirds" id="Marriage-ceremony" type="text" value="{{ data['Marriage-ceremony-name'] }}" >
+                        </div>
+                  </div>
+                  
+               </div>
+            
+              </fieldset>
+            </div>
+
+              
+              {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+      </form>
+    </div>
+  </div>
+
+</main>
+</div>
+{% endblock %}

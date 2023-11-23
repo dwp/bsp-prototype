@@ -1,0 +1,86 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href="question1.html" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="question3" method="post" class="form">
+
+      
+            <div class="govuk-form-group">
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Question 2 of 6</span>
+                    <h1 class="govuk-fieldset__heading">
+                      The information presented feels easy to understand
+                    </h1>
+                  </legend>
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="question2" name="question2" type="radio" value="I strongly disagree">
+                      <label class="govuk-label govuk-radios__label" for="question2">
+                        I strongly disagree
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="question2-2" name="question2" type="radio" value="I disagree">
+                      <label class="govuk-label govuk-radios__label" for="question2-2">
+                        I disagree
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="question2-3" name="question2" type="radio" value="I agree">
+                      <label class="govuk-label govuk-radios__label" for="question2-3">
+                        I agree
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="question2-4" name="question2" type="radio" value="I strongly agree">
+                      <label class="govuk-label govuk-radios__label" for="question2-4">
+                        I strongly agree
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="question2-5" name="question2" type="radio" value="Don't know">
+                      <label class="govuk-label govuk-radios__label" for="question2-5">
+                        Don't know
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="question2-6" name="question2" type="radio" value="Prefer not to say">
+                      <label class="govuk-label govuk-radios__label" for="question2-6">
+                        Prefer not to say
+                      </label>
+                    </div>
+                  </div>
+              
+                </fieldset>
+              </div>
+                
+    
+              </div>
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>                   
+         
+    </div>
+      </details>
+    </div>
+  </div>
+
+
+  </main>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,208 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a href={% if data['twooptions'] and data['twooptions'].includes('P60') %} "p60-question-2.html" {% else %} "payslip-question-2.html" {% endif %} class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+	  	
+      <!-- <form action={% if data['passportdetails']==='false' or data['payslipquestion1']==='false' or data['payslipquestion2']==='false' or data['p60question1']==='false' or data['p60question2']==='false'  %} "check-answers" {% else %} "infosent-higher-rate" {% endif %}  method="post" class="form"> -->
+	  
+	  <form action="check-answers"  method="post" class="form">
+      
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+
+        <h2 class="govuk-heading-m">Prove your identify</h2>
+        
+  
+        <dl class="govuk-summary-list">
+  
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Used to prove identify
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['twooptions'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="identify-choose-2-items?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Passport number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['passportdetails']==='false' %}
+                I don't have that information
+              {% else %} 
+                {{ data['passport'] }}
+              {% endif %} 
+             </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="your-passport-details?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Surname on passport
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['passportdetails']==='false' %}
+                I don't have that information
+              {% else %} 
+                {{ data['surname'] }}
+              {% endif %}               
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="your-passport-details?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Given names on passport
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['passportdetails']==='false' %}
+                I don't have that information
+              {% else %} 
+                {{ data['givenNames'] }}
+              {% endif %}              
+             </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="your-passport-details?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+		  
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Passport expiry date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['passportdetails']==='false' %}
+               I don't have that information
+              {% else %} 
+                {{ data['ppExpiryDateDay'] }} / {{ data['ppExpiryDateMonth'] }} / {{ data['ppExpiryDateYear'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="your-passport-details?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+
+          {% if data['twooptions'] != undefined and data['twooptions'].includes('Payslip') %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              National Insurance amount on payslip
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['payslipquestion1']==='false' %}
+                I don't have that information
+              {% else %} 
+                {{ data['benefit-amount'] }}
+              {% endif %}              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="payslip-question-1?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Tax deducted on payslip
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['payslipquestion2']==='false' %}
+                I don't have that information
+              {% else %} 
+                {{ data['benefit-amount2'] }}
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="payslip-question-2?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+          {% elif data['twooptions'] != undefined and data['twooptions'].includes('P60') %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Total pay on P60
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['p60question1']==='false' %}
+                I don't have that information
+              {% else %} 
+                {{ data['p60-amount'] }}
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="p60-question-1?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              National Insurance paid in last year
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['p60question2']==='false' %}
+                I don't have that information
+              {% else %} 
+                {{ data['p60-amount2'] }}
+              {% endif %}               
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="p60-question-2?checkansweridentity=true">
+                Change
+              </a>
+            </dd> 
+          </div>
+          {% endif %}
+          </dl>
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+
+  </div>
+
+
+</main>
+</div> 
+{% endblock %}

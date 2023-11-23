@@ -1,0 +1,91 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="marriage.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+	{% if checkanswer!='true' %}
+	     <form action="marriage-certificate" method="post" class="form">   
+	{% endif %}
+	{% if checkanswer=='true' %}
+	    <form action="check-answer-relationship" method="post" class="form">
+	{% endif %}
+                
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="marriage-register-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Did you sign the marriage register as part of your ceremony?
+                  </h1>
+                </legend>
+                <div id="marriage-register-hint" class="govuk-hint">
+                  The marriage register is signed by you, your partner and 2  witnesses.<br>
+                  You then get a marriage certificate.
+                </div>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marriage-register" name="marriage-register" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="marriage-register">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="marriage-register-2" name="marriage-register" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="marriage-register-2">
+                      No
+                    </label>
+                  </div>
+                </div>            
+              </fieldset>
+            </div>
+
+              
+             {% if checkanswer!='true' %}
+              <button class="govuk-button" data-module="govuk-button">Continue
+                </button>
+			{% endif %}
+			{% if checkanswer=='true' %}
+              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
+			{% endif %}
+      
+    
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+    
+    
+    
+    </form>
+    </div>
+  </div>
+
+</main>
+</div>
+{% endblock %}

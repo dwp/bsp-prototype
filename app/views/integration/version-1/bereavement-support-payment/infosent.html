@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">  
+        <h1 class="govuk-panel__title">  
+          Application complete 
+        </h1>  
+        <div class="govuk-panel__body">
+          Reference number: your National Insurance number
+        </div>
+      </div>
+      <p class="govuk-body">We’ve sent a confirmation email to <b>{{data['emailaddress']}}</b></p>
+
+     
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>You should get a decision within 15 working days.  We’ll contact you if we need more information.</p>
+      <p>If your application is successful, we’ll make a payment into your account as soon as possible.</p>
+      <p>If you have any questions, call the Bereavement Support Payment team on <b>0800 731 0139</b>.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m">Child Benefit entitlement</h3>
+      <p><a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/child-benefit" class="govuk-body govuk-!-font-size-19">Contact Child Benefit</a>&nbsp if you think you could be entitled but have not made a claim.
+        If your Child Benefit was in your partner’s name, you’ll need to make a new claim.</p>
+     
+     
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Help with funeral costs</h2> 
+      <p>You could be eligible for help with funeral costs if you get certain benefits.
+        Check if you can  <a href="https://www.gov.uk/funeral-payments" class="govuk-body govuk-!-font-size-19">get help to pay for the funeral</a>.</p>
+      
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Financial help</h2> 
+      <p>You might be eligible for benefits or help towards your Council Tax.</p>
+
+      <p class="govuk-body">Check by:</p>
+          <ul class="govuk-list govuk-list--bullet">
+          <li>using a <a href="www.gov.uk/benefits-calculator" class="govuk-body govuk-!-font-size-19">benefits calculator</a></li> 
+          <li>contacting your local jobcentre for advice</li> 
+          <li>asking your local council about help to pay Council Tax</li>
+        </ul>
+  
+      <p>Citizens Advice can also give you support and guidance.</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h2 class="govuk-heading-m">Emotional support</h2> 
+
+        <p><a href="https://www.gov.uk/after-a-death/bereavement-help-and-support" class="govuk-body govuk-!-font-size-19">Find support, help and information on dealing with a bereavement</a>.</p>
+  
+    </div>
+
+    
+
+
+
+      </details>
+  
+    </div>
+  
+{% endblock %}

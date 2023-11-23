@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <a href="about-child.html" class="govuk-back-link">Back</a>             
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="relationship" method="post" class="form">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Based on your answers, you are not eligible for Bereavement Support Payment.
+                </h1>
+           <br>
+                <div class="govuk-form-group">          
+                  <p class="govuk-body govuk-!-font-size-24">To be eligible you must have been living with your partner and:
+                    <ul class="govuk-list govuk-list--bullet  govuk-!-font-size-24">
+                      <li>be currently responsible for a child, or</li>
+                      <li>have been pregnant when your partner died</li>
+                   </ul>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <p class="govuk-body govuk-!-font-size-27"><b>If you still want to apply</b></p>
+                      <p class="govuk-body govuk-!-font-size-24"> You can still apply if you want a decision in writing.</p> 
+                      <p class="govuk-body govuk-!-font-size-24"><a href="country.html">Continue application</a> </p>
+                    </fieldset>
+                  </div>
+                </div>
+    </form>      
+  </div>            
+  </div>        
+</main>
+</div>
+
+
+{% endblock %}

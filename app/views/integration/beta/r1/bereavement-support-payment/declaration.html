@@ -1,0 +1,803 @@
+
+{% extends "layout.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+  
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="infosent" method="post" class="form"> 
+            <a href="check-answers-contact.html" class="govuk-back-link">Back</a>
+          <article>                
+                <h1 class="govuk-heading-xl">Declaration</h1>
+
+                <p>By sending the application you agree that the information you've given is complete and correct.
+                  If you deliberately give the wrong or incomplete information, or you do not report any changes, you may:
+                </p>
+                
+<ul class="govuk-list govuk-list--bullet">
+  <li>be prosecuted</li>
+  <li>need to pay a financial penalty</li>
+  <li>need to pay back any money you're overpaid if you're asked to</li>
+</ul>
+
+                <div class="govuk-button-group">
+                  <button class="govuk-button" data-module="govuk-button">
+                    I agree - send my application
+                  </button>  
+                </div>
+          
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  
+
+      
+                <form action={% if data['twooption']==='false' or data['passportdetails']==='false' or data['payslipquestion1']==='false' or data['payslipquestion2']==='false' or data['p60question1']==='false' or data['p60question2']==='false'  %} "declaration" {% else %} "declaration-higher-rate" {% endif %}  method="post" class="form">
+
+
+                  <h1 class="govuk-heading-l">
+                    Check your answers
+                  </h1>
+            
+                  <h2 class="govuk-heading-m">
+                    Eligibility
+                  </h2>
+                  
+            
+                  <dl class="govuk-summary-list">
+                   
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Your date of birth
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['claimantday'] }} / {{ data['claimantmonth'] }} / {{ data['claimantyear'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="spa?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Date partner died
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['claimantdaydod'] }} / {{ data['claimantmonthdod'] }} / {{ data['claimantyeardod'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="dod?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Person who's died
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['getcb'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="relationship?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Where you live
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['getcountrycb'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="country?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Lived in UK at time of death
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['uklocation'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="live-in-uk?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>    
+            
+                  </dl>
+            
+            
+                  <h2 class="govuk-heading-m">
+                    About you
+                  </h2>
+                   
+                  <dl class="govuk-summary-list">
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        First name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['claimantfirstname'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="your-name?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Last name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['claimantlastname'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="your-name?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        National Insurance number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['claimantinsurancenumber'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="your-ni?checkanswer=true">
+                          Change
+                        </a>
+                      </dd>
+                    </div>
+            
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Home address
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['sort'] }}, &nbsp; {{ data['postcode'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="your-postcode?checkanswer=true">
+                          Change
+                        </a>
+                      </dd>
+                    </div>
+            
+            
+            
+                  
+                 {% if data['getcb'] === 'husband' or data['getcb'] === 'wife' %}
+                 <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Date of marriage
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['claimantdaymd'] }} / {{ data['claimantmonthmd'] }} / {{ data['claimantyearmd'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="marriage-date?checkanswer=true">
+                          Change
+                        </a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Marriage in UK
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                       
+                        {{ data['marriage-location'] }}, {{ data['marriage-location-country'] }}
+            <!--
+                        {% for feature in data['marriage-location'] %}
+                        {{ feature }}
+                        {% else %}
+                        No, {{ data['marriage-location-country'] }}
+                        {% endfor %} -->
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="marriage?checkanswer=true">
+                          Change
+                        </a>
+                      </dd>
+                    </div>
+            
+                  
+            
+                <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Have a marriage certificate
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['marriage-certificate'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="marriage-certificate?checkanswer=true">
+                          Change
+                        </a>
+                      </dd>
+                    </div>
+                
+                {% endif %}
+            
+            
+                {% if data['getcb'] === 'civil partner' %}
+                <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Date of civil partnership
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['CPdateday'] }} / {{data['CPdatemonth'] }} / {{data['CPdateyear'] }}
+                  
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="cp-date?checkanswer=true">
+                          Change 
+                        </a>
+                      </dd>
+                    </div>
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                       Civil partnership registered in UK
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['cpr'] }}, {{ data['cpcountry'] }}
+                  
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="cp?checkanswer=true">
+                          Change 
+                        </a>
+                      </dd>
+                    </div>
+            
+                <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                      Have a civil partnership certificate
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['cpcertificate'] }}
+                  
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="cp-certificate?checkanswer=true">
+                          Change 
+                        </a>
+                      </dd>
+                    </div>
+                {% endif %}
+                
+              
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Children and pregnancy
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data['16years'] %}
+                I have a child under 16 years old<br>
+                {% endif %}
+                {% if data['16to19'] %}
+                I have a child aged between 16 to 19 and in full-time education or training<br>
+                {% endif %}
+                {% if data['farm1'] %}
+                I was pregnant when my partner died<br>
+                {% endif %}
+                {% if data['farm2'] %}
+                None of these apply<br>
+                {% endif %}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="about-child?checkanswer=true">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              
+              {% if data['farm2'] == undefined and data['farm1'] == undefined %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Get Child Benefit
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['acb'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="about-cb?checkanswer=true">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Child Benefit claim in your name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['cbclaim'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="about-cb-claim?checkanswer=true">
+                      Change
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+              </dl>
+            
+            
+            
+                  <h2 class="govuk-heading-m">
+                    About your {{data['getcb']}} </h2>
+                  
+            
+                  <dl class="govuk-summary-list">
+            
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        First name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['Deceasedfirstname'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="deceased-details?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Last name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['Deceasedlastname'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="deceased-details?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Date of birth
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['deceasedday'] }} / {{ data['deceasedmonth'] }} / {{ data['deceasedyear'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="deceased-details?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        National Insurance number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['deceasedinsurancenumber'] }}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="deceased-details?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Died because of an accident at work or illness caused by work
+                      </dt>
+                  {% if data['deceaseddeath'] == 'Yes' %}
+                      <dd class="govuk-summary-list__value">
+                        Yes <!-- {{ data['deceaseddeathcountry'] }} -->
+                      </dd>
+                  {% endif %}
+                  {% if data['deceaseddeath'] != 'Yes' %}
+                      <dd class="govuk-summary-list__value">
+                        {{ data['deceaseddeath'] }}
+                      </dd>
+                  {% endif %}
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="deceased-death?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+            
+            
+            
+            
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Lived or worked outside the UK
+                      </dt>
+                  {% if data['deceasedwork'] == 'Yes' %}
+                      <dd class="govuk-summary-list__value">
+                        {{ data['deceasedworkyes'] }}
+                      </dd>
+                  {% endif %}
+                  {% if data['deceasedwork'] != 'Yes' %}
+                      <dd class="govuk-summary-list__value">
+                        {{ data['deceasedwork'] }}
+                      </dd>
+                  {% endif %}
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="deceased-work?checkanswer=true">
+                          Change
+                        </a>
+                      </dd> 
+                    </div>
+            
+            
+                    </dl>
+            
+            
+            
+            
+                    <h2 class="govuk-heading-m">
+                      Payment details</h2>
+                    
+              
+                    <dl class="govuk-summary-list">
+              
+            
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                          Name on account
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['name-on-the-account'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="bank-details?checkanswer=true">
+                            Change
+                          </a>
+                        </dd> 
+                      </div>
+            
+            
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                          Sort code
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['sort-code'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="bank-details?checkanswer=true">
+                            Change
+                          </a>
+                        </dd> 
+                      </div>
+            
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                          Account number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['account-number'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="bank-details?checkanswer=true">
+                            Change
+                          </a>
+                        </dd> 
+                      </div>
+                  {% if data['roll-number'] != '' %}
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                          Roll number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['roll-number'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="bank-details?checkanswer=true">
+                            Change
+                          </a>
+                        </dd> 
+                      </div>
+                  {% endif %}
+                      </dl>
+            
+            
+                     
+                      
+                      <h2 class="govuk-heading-m">
+                        Contact details </h2>
+                      
+                
+                      <dl class="govuk-summary-list">
+                
+              
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                            Telephone number
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            {{ data['telephonenumber'] }}
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="contact-details?checkanswer=true">
+                              Change
+                            </a>
+                          </dd> 
+                        </div>
+              
+              <!--
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                            Receive confirmation email
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            {{ data['emailaddress'] }}
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="contact-details?checkanswer=true">
+                              Change
+                            </a>
+                          </dd> 
+                        </div>
+              
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                            How you want to receive your decision
+                          </dt>
+                    
+                    <dd class="govuk-summary-list__value">
+                    {% if data['contactemail'] %}
+                    {{ data['contactemail'] }} <br>
+                     {% endif %}
+                     {% if data['letter'] %}
+                    {{ data['letter'] }} <br>
+                    {% endif %}
+                    </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="contact-decision?checkanswer=true">
+                              Change
+                            </a>
+                          </dd> 
+                        </div>
+              -->
+
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                            Use a different format to contact you
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            {% for feature in data['commsNeedsOptions'] %}
+                        {{ feature }}
+                        {% else %}
+                        No
+                        {% endfor %}
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="comms-needs?checkanswer=true">
+                              Change
+                            </a>
+                          </dd> 
+                        </div>
+              
+                        </dl>
+                        <!--
+            
+                       {% if data['twooption'] === 'Payslip' or data['twooption'] === 'P60' %} 
+            
+                        <h2 class="govuk-heading-m">Prove your identify</h2>
+                    
+              
+                        <dl class="govuk-summary-list">
+                  
+            
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              Used to prove identify
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['twooptions'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="identify-choose-2-items?checkanswer=true">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              Passport number
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['passportdetails']==='false' %}
+                                I don't have that information
+                              {% else %} 
+                                {{ data['passport'] }}
+                              {% endif %} 
+                             </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="your-passport-details?checkanswer=true">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                
+                
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              Surname on passport
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['passportdetails']==='false' %}
+                                I don't have that information
+                              {% else %} 
+                                {{ data['surname'] }}
+                              {% endif %}               
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="your-passport-details?checkanswer=true">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              Given names on passport
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['passportdetails']==='false' %}
+                                I don't have that information
+                              {% else %} 
+                                {{ data['givenNames'] }}
+                              {% endif %}              
+                             </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="your-passport-details?checkanswer=true">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                      
+                
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              Passport expiry date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['passportdetails']==='false' %}
+                               I don't have that information
+                              {% else %} 
+                                {{ data['ppExpiryDateDay'] }} / {{ data['ppExpiryDateMonth'] }} / {{ data['ppExpiryDateYear'] }}
+                              {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="your-passport-details?checkanswer=true">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                
+                          {% if data['twooptions'] != undefined and data['twooptions'].includes('Payslip') %}
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              National Insurance amount on payslip
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['payslipquestion1']==='false' %}
+                                I don't have that information
+                              {% else %} 
+                                {{ data['benefit-amount'] }}
+                              {% endif %}              
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="payslip-question-1">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                
+                
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              Tax deducted on payslip
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['payslipquestion2']==='false' %}
+                                I don't have that information
+                              {% else %} 
+                                {{ data['benefit-amount2'] }}
+                              {% endif %}  
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="payslip-question-2">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                          {% elif data['twooptions'] != undefined and data['twooptions'].includes('P60') %}
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              Total pay on P60
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['p60question1']==='false' %}
+                                I don't have that information
+                              {% else %} 
+                                {{ data['p60-amount'] }}
+                              {% endif %}  
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="p60-question-1">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                
+                
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                              National Insurance paid in last year
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {% if data['p60question2']==='false' %}
+                                I don't have that information
+                              {% else %} 
+                                {{ data['p60-amount2'] }}
+                              {% endif %}               
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                              <a class="govuk-link" href="p60-question-2">
+                                Change
+                              </a>
+                            </dd> 
+                          </div>
+                          {% endif %}
+
+                          </dl>
+            
+                          {% endif %}
+                        -->
+
+
+
+
+
+               
+          </article>     
+      </form>
+    </div>
+</div>
+
+{% endblock %}
