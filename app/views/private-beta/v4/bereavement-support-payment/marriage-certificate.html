@@ -38,7 +38,7 @@
 
             <div class="govuk-form-group">
 
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
                     Do you have a marriage certificate?
                   </h1>
@@ -46,9 +46,9 @@
                          
                 <fieldset class="govuk-fieldset">
 
-                  <p>
-                      We may ask to see your certificate as proof you were legally married.
-                    </p>
+                  <div id="changedName-hint" class="govuk-hint">
+                    We may ask to see your certificate as proof you were legally married.
+                  </div>
 
                   <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                     <div class="govuk-radios__item">
@@ -65,6 +65,7 @@
                       </label>
                     </div>
 
+                    <div class="govuk-radios__divider">or</div>
 
                     <div class="govuk-radios__item">              
                       <input name="marriage-certificate" class="govuk-radios__input" id="marriage-certificate-Idontknow" type="radio" value="I don't know" data-aria-controls="conditional-marriage-certificate-Idontknow">              
