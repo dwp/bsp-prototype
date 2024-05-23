@@ -1,0 +1,74 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<nav class="govuk-body govuk-width-container dwp-language-toggle" aria-label="Language toggle">
+  <ul class="dwp-language-toggle-list">
+    <li class="dwp-language-toggle-list-item">
+        English
+    </li>
+    <li lang="cy" class="dwp-language-toggle-list-item">
+        <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+        <a href="start-welsh" class="govuk-link">Cymraeg</a>
+    </li>
+  </ul>
+</nav> 
+<div class="govuk-width-container">
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
+  <main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <form action="" method="POST" class="form">
+
+          <article>
+
+              <h1 class="govuk-heading-xl">Apply for Bereavement Support Payment</h1>
+        
+              <p class="govuk-body-m">This application has 4 sections of about 5 questions each.<br><br>
+                You cannot save your application and come back later. 
+                If you do not enter anything for more than 30 minutes, your application will time out and you'll need to start again. 
+  
+              </p>
+            
+              <h2 class="govuk-heading-m">Do you have everything you need to apply?</h2>
+
+              <p class="govuk-body">You need:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>your National Insurance number</li>
+                <li>your partner's National Insurance number</li>
+                <li>the date your partner died</li>
+                <li>your bank or building society account details</li>
+              </ul>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input name="next-page" class="govuk-radios__input" id="SPA-Apply-Yes" type="radio"  value="spa" date-value="Yes" {{ checked("SPA-Apply", "Yes") }}>              
+                  <label class="govuk-label govuk-radios__label" for="SPA-Apply-Yes">
+                    Yes              
+                  </label>
+                </div>
+                <div class="govuk-radios__item">              
+                  <input name="next-page" class="govuk-radios__input" id="SPA-Apply-No" type="radio" value="apply-no-information" {{ checked("SPA-Apply", "No") }}>              
+                  <label class="govuk-label govuk-radios__label" for="SPA-Apply-No">
+                    No              
+                  </label>
+                </div>   
+              </div>  
+          <div class="govuk-!-padding-bottom-6"></div>  
+          <button class="govuk-button" data-module="govuk-button">Start now</button>
+          
+       
+          </form>
+
+  </div>
+</div>
+
+
+</main>
+</div>
+{% endblock %}

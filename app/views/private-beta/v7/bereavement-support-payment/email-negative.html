@@ -1,0 +1,86 @@
+{% extends 'layout_email.html' %}
+
+{% block pageTitle %}
+    Email decision
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            {% set emailContentHTML %}
+
+            <p>Dear John Smith</p>
+
+            <h2 class="govuk-heading-m">You are not entitled to Bereavement Support Payment</h2>
+
+            <p>We have looked at your claim for Bereavement Support Payment. Unfortunately we cannot pay you because you do not meet the eligibility criteria.</p>
+
+            <p>We will be sending you a letter with more information about this decision.</p>
+            
+            <h2 class="govuk-heading-m">Other financial support</h2>
+            <p>If you're on a lower income following the death of your partner, you may be entitled to benefits. To find out, use a benefits calculator at <a href="https://www.gov.uk/benefits-calculators" class="govuk-link">https://www.gov.uk/benefits-calculators</a></p>
+
+            <p>To find out about help with funeral costs, go to <a href="https://www.gov.uk/funeral-payments" class="govuk-link">https://www.gov.uk/funeral-payments</a></p>
+
+            <h2 class="govuk-heading-m">Emotional support</h2>
+            <p>You can contact Cruse Bereavement Care, a voluntary organisation, for emotional help and support during a bereavement.</p>
+            <p>Telephone: 0808 808 1677 <br> Website: <a href="www.cruse.org.uk" class="govuk-link">www.cruse.org.uk</a></p>
+
+            <p>The Bereavement Support Payment team</p>
+
+            <p class="govuk-body govuk-!-margin-bottom-8"></p>
+            <hr> 
+            <p class="govuk-body govuk-!-margin-bottom-4"></p>
+
+            <p>You can give feedback to help us improve this service at <a href="https://apply-for-bereavement-support-payment.dwp.gov.uk/feedback" class="govuk-link">https://apply-for-bereavement-support-payment.dwp.gov.uk/feedback</a></p>
+            <p>Do not reply to this email. Replies to this email address will be automatically deleted without being read.</p>
+
+
+            {% endset %}
+
+
+            {{ prototypeEmailPreview({
+                headers: [
+                    {
+                        key: {
+                            text: 'From'
+                        },
+                        value: {
+                            text: '	Bereavement Support Payment'
+                        }
+                    },
+                    {
+                        key: {
+                            text: 'To'
+                        },
+                        value: {
+                            text: 'johnsmith@test.com'
+                        }
+                    },
+                    {
+                        key: {
+                            text: 'Subject'
+                        },
+                        value: {
+                            text: 'Your application for Bereavement Support Payment'
+                        }
+                    }
+                ],
+                content: {
+                    html: emailContentHTML
+
+
+            
+
+                }
+            }) }}
+            
+            <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back to homepage</a>
+        </div>
+
+</div>
+
+{% endblock %}

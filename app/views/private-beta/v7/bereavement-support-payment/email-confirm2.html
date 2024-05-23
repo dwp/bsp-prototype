@@ -1,0 +1,69 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+      <form class="form" action="comms-needs" method="post">
+      
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is your email address?
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Email address
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="emailaddress" value="{{data['emailaddress']}}" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-2">
+              Confirm email address
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="email2" value="" type="text">
+          </div>
+        </fieldset>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+     
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Get help with your application
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Telephone: 0800 731 0469 <br>
+          Welsh language: 0800 731 0453 <br>
+          <br>
+          Textphone: 0800 731 0464 <br>
+          Welsh language: 0800 731 0456 <br>
+          <br>
+          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+          <br>
+          Monday to Friday, 9.30am to 3.30pm <br>
+          Find out about call charges <br>
+        </div>
+      </details>
+
+
+    </form>      
+  </div>            
+  </div>
+
+  </main>
+  </div>
+
+{% endblock %}
