@@ -7799,8 +7799,8 @@ router.post('/email-answer', function(request, response) {
 
   var emailanswer = request.session.data['emailanswer']
   if (emailanswer == "yes"){
-      response.redirect("/private-beta/v6/bereavement-support-payment/email-confirm2")
+      response.redirect("/private-beta/v7/bereavement-support-payment/email-confirm2")
   } else {
-      response.redirect("/private-beta/v6/bereavement-support-payment/comms-needs")
+      response.redirect("/private-beta/v7/bereavement-support-payment/comms-needs")
   }
 })
