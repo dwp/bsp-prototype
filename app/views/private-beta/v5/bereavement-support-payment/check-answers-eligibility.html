@@ -4,9 +4,15 @@
 Check your answers
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 <div class="govuk-width-container">
-  <a href="live-in-uk" class="govuk-back-link">Back</a>
   <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
@@ -14,7 +20,7 @@ Check your answers
       <form action="about-you-cp" method="post" class="form">
       
       
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-l">
         Check your answers
       </h1>
 

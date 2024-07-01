@@ -5,15 +5,21 @@
   Do you want to prove your identity? - Bereavement Suppport Payment - GOV.UK
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-	    <form action="" method="POST" class="form">
+	    
+      <form class="form" action="/identity-answer" method="post">
 
-        <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
-
-        <div class="govuk-!-padding-bottom-5"></div>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -26,48 +32,29 @@
                 </div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="comms-needs" name="next-page" type="radio" value="comms-type">
+                  <input class="govuk-radios__input" id="identitycheck" name="identitycheck" type="radio" value="Yes">
                   <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                    Yes
+                    Yes, prove identity after sending application
                   </label>
                   <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                    Prove identity after submitting application.
+                    Payment can be sent within [3 working days].
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="comms-need-2" name="next-page" type="radio" value="check-answers-contact-no-comm">
+                  <input class="govuk-radios__input" id="identitycheck" name="identitycheck" type="radio" value="No">
                   <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                    No
+                    No, send application without proving identity
                   </label>
                   <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                    Submit application without proving identity.
+                    It may take up to [15 working days] before payment is sent.
                   </div>
                 </div>
-
-
-
               </fieldset>
             </div>
-            <input name="getcountrycb" class="govuk-radios__input" id="get-cb-no1" type="hidden" value="{{ data['getcountrycb'] }}" >
-<!--
-              {% if checkanswer!='true' %}
-              <button class="govuk-button" data-module="govuk-button">Continue
-                </button>
-			{% endif %}
-			{% if checkanswer=='true' %}
-              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-			{% endif %}
-   -->
 
-      {% if checkanswer ==undefined and checkanswercontact==undefined %}
+  
       <button class="govuk-button" data-module="govuk-button">Continue</button>
-      {% endif %}
-	{% if checkanswer=='true' %}
-  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-	{% endif %}
-	{% if checkanswercontact =='true' %}
-  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-	{% endif %}
+     
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">

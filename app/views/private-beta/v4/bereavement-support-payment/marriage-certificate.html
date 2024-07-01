@@ -5,21 +5,16 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 <div class="govuk-width-container">
-  
-  
-
-  {% if data['marriage-location'] == 'No' %}
-
-  <a href="marriage.html" class="govuk-back-link">Back</a>             
-   {% else %}
-   <a href="marriage-register.html" class="govuk-back-link">Back</a>  
-  {% endif %}
-
-
-
-  
+    
   <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">

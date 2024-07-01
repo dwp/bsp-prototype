@@ -1,16 +1,21 @@
-
 {% extends "layout.html" %}
+
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+Check your answers
 {% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
-  
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="infosent" method="post" class="form"> 
-            <a href="check-answers-contact.html" class="govuk-back-link">Back</a>
-          <article>                
+      <form action="complete-dynamic" method="post" class="form">           
             
             <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
               <div class="govuk-notification-banner__header">
@@ -31,12 +36,13 @@
                 <p>By sending the application you agree that the information you've given is complete and correct.
                   If you deliberately give the wrong or incomplete information, or you do not report any changes, you may:
                 </p>
-                
-<ul class="govuk-list govuk-list--bullet">
-  <li>be prosecuted</li>
-  <li>need to pay a financial penalty</li>
-  <li>need to pay back any money you're overpaid if you're asked to</li>
-</ul>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>be prosecuted</li>
+                  <li>need to pay a financial penalty</li>
+                  <li>need to pay back any money you're overpaid if you're asked to</li>
+                </ul>
+                <br>
 
                 <div class="govuk-button-group">
                   <button class="govuk-button" data-module="govuk-button">
