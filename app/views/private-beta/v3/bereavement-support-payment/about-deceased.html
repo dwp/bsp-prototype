@@ -5,11 +5,17 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 
 
-<div class="govuk-width-container">
-  <a href="check-answers-about-you.html" class="govuk-back-link">Back</a>             
+<div class="govuk-width-container">           
   <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">

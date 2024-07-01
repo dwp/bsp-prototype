@@ -7718,7 +7718,7 @@ router.post('/about-children-answer', function (req, res) {
     res.redirect('/private-beta/v3/bereavement-support-payment/nochildren-not-eligible')
   } else {
     // Send user to next paget
-    res.redirect('/private-beta/v3/bereavement-support-payment/about-cb')
+    res.redirect('/private-beta/v3/bereavement-support-payment/country')
   }
 
 })
@@ -7772,9 +7772,9 @@ router.post('/child-benefit-answer', function(request, response) {
 
   var children = request.session.data['children']
   if (children.includes("I was responsible for a child under 16")){
-      response.redirect("/private-beta/v4/bereavement-support-payment/about-cb")
+      response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
   } else if (children == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
-      response.redirect("/private-beta/v4/bereavement-support-payment/about-cb")
+      response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
   } else {
       response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
   }
@@ -7785,9 +7785,9 @@ router.post('/child-benefit-answer-cp', function(request, response) {
 
   var childrencp = request.session.data['childrencp']
   if (childrencp.includes("I was responsible for a child under 16")){
-      response.redirect("/private-beta/v5/bereavement-support-payment/about-cb")
+      response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
   } else if (childrencp == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
-      response.redirect("/private-beta/v5/bereavement-support-payment/about-cb")
+      response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
   } else {
       response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
   }
@@ -7804,3 +7804,29 @@ router.post('/email-answer', function(request, response) {
       response.redirect("/private-beta/v7/bereavement-support-payment/comms-needs")
   }
 })
+
+
+// IDENTITY ANSWER
+
+router.post('/identity-answer', function(request, response) {
+
+  var identity = request.session.data['identitycheck']
+  if (identity == "Yes"){
+      response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
+  } else {
+      response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
+  }
+})
+
+// COMMS ANSWER V7
+
+router.post('/comms-answer', function(request, response) {
+
+  var comms = request.session.data['commsneeds']
+  if (comms == "yes"){
+      response.redirect("/private-beta/v7/bereavement-support-payment/comms-type")
+  } else {
+      response.redirect("/private-beta/v7/bereavement-support-payment/identity-question")
+  }
+})
+

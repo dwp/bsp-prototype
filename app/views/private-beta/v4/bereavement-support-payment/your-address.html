@@ -5,10 +5,16 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 
-<div class="govuk-width-container">
-  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a> 
+<div class="govuk-width-container"> 
   <main class="govuk-main-wrapper">            
 
 
