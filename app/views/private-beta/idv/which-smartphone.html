@@ -1,0 +1,96 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">        
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="valid-passport" method="post" class="form">
+         
+        
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="smartphone-choice-hint">
+          <legend class="govuk-fieldset__legend govuk-!-margin-bottom-3">    
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0" data-pw="select-smartphone-mobile-heading">Which smartphone are you using?</h1>    
+          </legend>
+          
+          <div id="smartphone-choice-hint" class="govuk-hint govuk-!-margin-top-0 govuk-!-margin-bottom-3">
+            
+          <p class="govuk-hint">You need a smartphone with working front (selfie) and rear cameras for some ways of confirming your identity.</p>
+          <p class="govuk-hint">Let us know which device you’re using right now.</p>
+          
+          </div>
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset" aria-describedby="smartphone-hint">
+            
+            
+            <div id="smartphone-hint" class="govuk-hint">
+            
+            </div>
+            
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="smartphone" name="smartphone" type="radio" value="iPhone">
+                <label class="govuk-label govuk-radios__label" for="smartphone">
+                  iPhone
+                </label>
+                
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="smartphone-2" name="smartphone" type="radio" value="Android">
+                  <label class="govuk-label govuk-radios__label" for="smartphone-2">
+                    Android phone (for example, Samsung, Google Pixel, OPPO)
+                  </label>
+                  
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="smartphone-3" name="smartphone" type="radio" value="Neither of these phones">
+                    <label class="govuk-label govuk-radios__label" for="smartphone-3">
+                      Neither of these phones
+                    </label>
+                    
+                    </div>
+
+                  </div>
+
+                </fieldset>
+                
+                </div>
+                
+                
+                </fieldset>
+                </div>
+                
+                
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+    
+      </form>  
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

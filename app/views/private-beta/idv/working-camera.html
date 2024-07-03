@@ -1,0 +1,95 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">        
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="flashing-colours" method="post" class="form">
+         
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" aria-describedby="working-camera-hint">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            
+              <h1 class="govuk-fieldset__heading">
+                Does your smartphone have a working camera?
+              </h1>
+            
+            </legend>
+            
+          
+            <div id="working-camera-hint" class="govuk-hint">
+              You will be asked to take a photo of your identity document and to scan your face. You will need to use both the front (selfie) and back camera.
+            </div>
+          
+          
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              
+                
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="working-camera" name="working-camera" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="working-camera">
+                  Yes
+                </label>
+                
+              </div>
+              
+            
+              
+                
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="working-camera-2" name="working-camera" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="working-camera-2">
+                  No
+                </label>
+                
+              </div>
+              
+            
+              
+              
+            </div>
+          
+          </fieldset>
+        
+        </div>
+        
+            
+                
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+    
+      </form>  
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}
