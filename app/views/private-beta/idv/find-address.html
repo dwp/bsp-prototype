@@ -1,0 +1,45 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">        
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="choose-address" method="post" class="form">
+
+        <h1 class="govuk-heading-l">Find your address</h1>
+
+    
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label govuk-label--m">
+                Enter your postcode
+              </label>
+              <div class="govuk-hint">Enter the postcode of your current home address. This must be a UK postcode, for example SW1A 2AA.</div>
+              <input class="govuk-input govuk-input--width-10" id="postcode" name="address-postcode-current" type="text" autocomplete="postal-code">
+            </div>
+          
+        
+          <button class="govuk-button" type="submit" data-module="govuk-button">Find address</button>
+
+      </form>  
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}
