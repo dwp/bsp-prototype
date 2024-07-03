@@ -1,0 +1,87 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">        
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="iphone-model" method="post" class="form">
+         
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="select-option-hint" id="biometric-passport">
+              <legend class="govuk-fieldset__legend govuk-!-margin-bottom-2">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-0">Does your passport have this symbol on the cover?</h1>
+              </legend>
+              <div id="select-option-hint" class="govuk-hint govuk-!-margin-top-0">
+                <p class="govuk-hint govuk-!-margin-bottom-2">This symbol means that your passport has a biometric chip.</p>
+                <p class="govuk-hint govuk-!-margin-bottom-2">If your passport has this symbol, you can use it to confirm your identity.</p>
+                <p class="govuk-hint govuk-!-margin-bottom-2">If you're not sure what the biometric chip icon looks like, check the illustration below.</p>
+              </div>
+
+              <picture>
+                <source srcset="https://assets.integration.account.gov.uk/core-front/public/images/passport-icon.svg">
+                <img width="202" height="149" loading="lazy" src="https://assets.integration.account.gov.uk/core-front/public/images/passport-icon-1x.png" srcset="https://assets.integration.account.gov.uk/core-front/public/images/passport-icon-2x.png 2x" alt="The front cover of a passport with the biometric chip symbol. The symbol is rectangular with a circle in the middle.">
+              </picture>
+              
+    
+    <div class="govuk-form-group">
+    
+      <fieldset class="govuk-fieldset">
+        
+      
+        <div class="govuk-radios" data-module="govuk-radios">
+  
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="biometric-passport-symbol" name="biometric-passport-symbol" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="biometric-passport-symbol">
+              Yes
+            </label>
+            
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="biometric-passport-symbol-2" name="biometric-passport-symbol" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="biometric-passport-symbol-2">
+              No
+            </label>
+            
+          </div>
+
+        </div>
+      
+      </fieldset>
+    
+    </div>
+    
+              
+    
+            </fieldset>
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+          
+          
+      </form>  
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

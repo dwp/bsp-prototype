@@ -1,0 +1,92 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">        
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="confirm-details" method="post" class="form">
+
+        <h1 class="govuk-heading-l">Check your address</h1>
+
+        <p>
+          <span class="govuk-!-margin-bottom-1 govuk-!-display-block">Postcode</span>
+          <strong>AB12 3CD</strong>
+          <a href="/private-beta/idv/choose-address" class="govuk-!-margin-left-5 govuk-link--no-visited-state">Change<span class="govuk-visually-hidden">your postcode</span>
+          </a>
+        </p>
+
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Flat number
+            </label>
+            <input class="govuk-input govuk-input--width-4" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-2">
+              House number
+            </label>
+            <input class="govuk-input govuk-input--width-4" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-town">
+              House name
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-county">
+              Street name
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="address-county" name="addressCounty" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
+          </div>
+        </fieldset>
+
+        <div class="govuk-form-group">
+        <h3 class="govuk-heading-s">When did you start living here?
+        <div id="event-name-hint" class="govuk-hint">
+          Enter the year you started living at this address, for example 2017
+        </div>
+      </h3>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Year
+          </label>
+          <input class="govuk-input govuk-input--width-4" id="event-name" name="eventName" type="text">
+        </div>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      </form>  
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

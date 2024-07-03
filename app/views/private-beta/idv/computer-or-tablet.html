@@ -1,0 +1,76 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">        
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/tech-answer" method="post" class="form">
+         
+          <div class="govuk-form-group">
+          
+            <fieldset class="govuk-fieldset" aria-describedby="computer-or-tablet-hint">
+              
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              
+                <h1 class="govuk-fieldset__heading">
+                  Are you on a computer or a tablet right now?
+                </h1>
+              
+              </legend>
+              
+            
+              <div id="computer-or-tablet-hint" class="govuk-hint">
+                Some ways of confirming your identity require a smartphone. Let us know what you’re using right now.
+              </div>
+            
+            
+              <div class="govuk-radios" data-module="govuk-radios">
+                
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="computer-or-tablet" name="computerortablet" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="computer-or-tablet">
+                    Yes, I am on a computer or tablet
+                  </label>
+                </div>
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="computer-or-tablet-2" name="computerortablet" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="computer-or-tablet-2">
+                    No, I am on a smartphone
+                  </label>
+                </div>
+ 
+              </div>
+            
+            </fieldset>
+          
+          </div>
+
+                  <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                  </button>
+          
+      </form>  
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

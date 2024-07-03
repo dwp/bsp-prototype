@@ -1,0 +1,109 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">        
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="use-app" method="post" class="form">
+         
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" aria-describedby="iphone-model-hint">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            
+              <h1 class="govuk-fieldset__heading">
+                Which iPhone model do you have?
+              </h1>
+            
+            </legend>
+            
+          
+            <div id="iphone-model-hint" class="govuk-hint">
+              The iPhone 7 was released in 2016. If you purchased your smartphone after 2016, you likely have an iPhone 7 or newer.
+            </div>
+          
+          
+            <div class="govuk-radios" data-module="govuk-radios">
+              
+              
+                
+            
+              
+              
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="iphone-model" name="iphone-model" type="radio" value="iPhone 7 or newer">
+                <label class="govuk-label govuk-radios__label" for="iphone-model">
+                  iPhone 7 or newer
+                </label> 
+              </div>
+          
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="iphone-model-2" name="iphone-model" type="radio" value="iPhone 6s or older">
+                <label class="govuk-label govuk-radios__label" for="iphone-model-2">
+                  iPhone 6s or older
+                </label>
+                
+              </div>
+   
+            </div>
+          
+          </fieldset>
+        
+        </div>
+        
+            
+        
+                <details class="govuk-details govuk-!-margin-bottom-3" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      How do I know which iPhone I have?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    You can easily find the iPhone model you have by going to Settings &gt; General &gt; About and looking at the ‘Model Name’.
+                  </div>
+                </details>
+        
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      What if I have an iPhone SE?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                <p class="govuk-body govuk-!-margin-bottom-1">If you have an iPhone SE from 2022 (3rd generation) or from 2020 (2nd generation), select ‘iPhone 7 or newer’.</p>
+                <br>
+                <p class="govuk-body govuk-!-margin-bottom-1">If you have an iPhone SE from 2016 (1st generation), select ‘iPhone 6s or older’.</p>
+                  </div>
+                </details>
+                
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+    
+      </form>  
+  </div>            
+  </div>
+        
+</main>
+</div>
+{% endblock %}

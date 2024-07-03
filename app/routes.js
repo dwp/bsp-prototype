@@ -7830,3 +7830,15 @@ router.post('/comms-answer', function(request, response) {
   }
 })
 
+// COMPUTER OR TABLET ANSWER IDV
+
+router.post('/tech-answer', function(request, response) {
+
+  var tech = request.session.data['computerortablet']
+  if (tech == "Yes"){
+      response.redirect("/private-beta/idv/do-you-have-smartphone")
+  } else {
+      response.redirect("/private-beta/idv/which-smartphone")
+  }
+})
+
