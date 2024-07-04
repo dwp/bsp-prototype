@@ -7808,15 +7808,15 @@ router.post('/email-answer', function(request, response) {
 
 // IDENTITY ANSWER
 
-router.post('/identity-answer', function(request, response) {
+// router.post('/identity-answer', function(request, response) {
 
-  var identity = request.session.data['identitycheck']
-  if (identity == "Yes"){
-      response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
-  } else {
-      response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
-  }
-})
+//   var identity = request.session.data['identitycheck']
+//   if (identity == "Yes"){
+//       response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
+//   } else {
+//       response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
+//   }
+// })
 
 // COMMS ANSWER V7
 
@@ -7826,7 +7826,7 @@ router.post('/comms-answer', function(request, response) {
   if (comms == "yes"){
       response.redirect("/private-beta/v7/bereavement-support-payment/comms-type")
   } else {
-      response.redirect("/private-beta/v7/bereavement-support-payment/identity-question")
+      response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
   }
 })
 
@@ -7839,6 +7839,18 @@ router.post('/tech-answer', function(request, response) {
       response.redirect("/private-beta/idv/do-you-have-smartphone")
   } else {
       response.redirect("/private-beta/idv/which-smartphone")
+  }
+})
+
+// VALID PASSPORT ANSWER
+
+router.post('/valid-passport-answer', function(request, response) {
+
+  var passport = request.session.data['valid-passport']
+  if (passport == "Yes"){
+      response.redirect("/private-beta/idv/passport-symbol")
+  } else {
+      response.redirect("/private-beta/idv/biometric")
   }
 })
 
