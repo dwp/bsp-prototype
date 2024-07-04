@@ -21,6 +21,45 @@
   <div class="govuk-grid-row">
       <form action="working-camera" method="post" class="form">
 
+        {% if (data['valid-passport'] == "No") %}
+
+        <div class="govuk-panel govuk-panel--interruption"> 
+          <div aria-hidden="true" class="govuk-!-text-align-left">
+            <img class="govuk-!-text-align-left" id="gov-uk-logo" src="/public/images/crown-logo.png" alt="">
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <h1 class="govuk-heading-l govuk-!-text-align-left govuk-!-margin-top-3 govuk-!-margin-bottom-3 white-text" data-pw="intro-app-heading-passport">
+                Use your UK photocard driving licence and a GOV.UK app to confirm your identity
+              </h1>
+            </div>
+          </div>
+          <p class="govuk-body govuk-!-text-align-left white-text">
+            Based on what you’ve told us, the GOV.UK ID Check app is the best way to confirm your identity.
+          </p>
+          <h2 class="govuk-body govuk-!-text-align-left white-text govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-0">
+            Next, you’ll be guided step by step to:
+          </h2>
+          <div class="govuk-!-margin-left-2">
+            <ul class="govuk-list govuk-list--number govuk-!-text-align-left white-text govuk-!-margin-bottom-4">
+              <li>Download the app.</li>
+              <li>Take a photo of your UK photocard driving licence.</li>
+              <li>Scan your face with your selfie camera.</li>
+            </ul>
+          </div>
+          <br>
+          <div class="app-button--inverted govuk-!-text-align-left .govuk-button">
+            
+              <button class="govuk-button govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-weight-bold" data-module="govuk-button" data-pw="continue" data-nav="navigation" data-link="/dca/oauth2/workingCamera" ga4-trackers="navigation-tracker" ga4-data-navigation="{ &quot;text&quot;: &quot;Continue&quot;, &quot;type&quot;: &quot;generic button&quot;, &quot;external&quot;: &quot;false&quot; }">
+                Contiue
+              </button>
+          </div>
+        </div>
+
+        {% endif %}
+
+        {% if (data['valid-passport'] == "Yes") %}
+
         <div class="govuk-panel govuk-panel--interruption"> 
           <div aria-hidden="true" class="govuk-!-text-align-left">
             <img class="govuk-!-text-align-left" id="gov-uk-logo" src="/public/images/crown-logo.png" alt="">
@@ -52,9 +91,10 @@
               <button class="govuk-button govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-weight-bold" data-module="govuk-button" data-pw="continue" data-nav="navigation" data-link="/dca/oauth2/workingCamera" ga4-trackers="navigation-tracker" ga4-data-navigation="{ &quot;text&quot;: &quot;Continue&quot;, &quot;type&quot;: &quot;generic button&quot;, &quot;external&quot;: &quot;false&quot; }">
                 Contiue
               </button>
-            
           </div>
         </div>
+
+        {% endif %}
           
           <details class="govuk-details govuk-body govuk-!-margin-top-2 govuk-body govuk-!-margin-bottom-4" data-module="govuk-details">
             <summary class="govuk-details__summary">
