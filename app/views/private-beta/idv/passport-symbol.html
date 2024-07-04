@@ -20,7 +20,18 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      {% if (data['smartphone'] == "Android" or data['have-a-smartphone'] == "android") %}
+
+      <form action="use-app" method="post" class="form">
+
+      {% endif %}
+
+      {% if (data['smartphone'] == "iPhone" or data['have-a-smartphone'] == "iPhone") %}
+
       <form action="iphone-model" method="post" class="form">
+
+        {% endif %}
          
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="select-option-hint" id="biometric-passport">
