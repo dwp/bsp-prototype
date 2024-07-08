@@ -20,13 +20,13 @@
     
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="/child-benefit-answer-cp" method="post">
+        <form class="form" action="check-answers-about-you" method="post">
       
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
   
           {{ govukCheckboxes({
-            name: "childrencp",
-            values: data["childrencp"],
+            name: "children",
+            values: data["children"],
             fieldset: {
               legend: {
                 text: "When your partner died, did any of these apply to you?",
@@ -43,8 +43,8 @@
                 text: "I was responsible for a child under 16"
               },
               {
-                value: "I was responsible for a child aged 16 to 19 and in full-time education or training",
-                text: "I was responsible for a child aged 16 to 19 and in full-time education or training"
+                value: "I was responsible for a child aged 16 to 19 in full-time education or training",
+                text: "I was responsible for a child aged 16 to 19 in full-time education or training"
               },
               {
                 value: "I was pregnant",

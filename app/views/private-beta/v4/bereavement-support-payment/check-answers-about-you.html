@@ -20,9 +20,7 @@ Check your answers
       <h2 class="govuk-heading-m">
         About you
       </h2>
-             
-
-       
+                    
       <dl class="govuk-summary-list">
 
         <div class="govuk-summary-list__row">
@@ -68,7 +66,6 @@ Check your answers
           </dd>
         </div>
       
-	   {% if data['getcb'] === 'Married' %}
 	   <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Date of marriage
@@ -103,8 +100,6 @@ Check your answers
           </dd>
         </div>
 
-      
-
 		<div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Have a marriage certificate
@@ -119,7 +114,6 @@ Check your answers
           </dd>
         </div>
 		
-    {% endif %}
 
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -134,20 +128,6 @@ Check your answers
         </a>
       </dd>
     </div>
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-third">
-        Child Benefit
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['childb'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="country?checkanswereligibility=true">
-          Change
-        </a>
-      </dd> 
-    </div>   
 
   </dl>
 

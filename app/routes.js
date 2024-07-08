@@ -7710,10 +7710,10 @@ router.get('/version-2/bereavement-support-payment/infosent', function (req, res
 router.post('/about-children-answer', function (req, res) {
 
   // Make a variable and give it the value from 'howmanychildren'
-  var howmanychildren = req.session.data['nochildren']
+  var howmanychildren = req.session.data['children']
 
   // Check whether the variable matches a condition
-  if (howmanychildren == "no-children"){
+  if (howmanychildren == "None of these apply"){
     // Send user to ineligibility page
     res.redirect('/private-beta/v3/bereavement-support-payment/nochildren-not-eligible')
   } else {
@@ -7721,7 +7721,7 @@ router.post('/about-children-answer', function (req, res) {
     res.redirect('/private-beta/v3/bereavement-support-payment/country')
   }
 
-})
+}) 
 
 // Run this code when a form is submitted to 'email-notifications-answer'
 router.post('/email-notifications-answer', function (req, res) {
@@ -7767,31 +7767,31 @@ router.post('/relationship-answer', function(request, response) {
   }
 })
 
-// ROUTE FOR MARRIED to SKIP CB QUESTION 
-router.post('/child-benefit-answer', function(request, response) {
+// // ROUTE FOR MARRIED to SKIP CB QUESTION 
+// router.post('/child-benefit-answer', function(request, response) {
 
-  var children = request.session.data['children']
-  if (children.includes("I was responsible for a child under 16")){
-      response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
-  } else if (children == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
-      response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
-  } else {
-      response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
-  }
-})
+//   var children = request.session.data['children']
+//   if (children.includes("I was responsible for a child under 16")){
+//       response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
+//   } else if (children == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
+//       response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
+//   } else {
+//       response.redirect("/private-beta/v4/bereavement-support-payment/check-answers-about-you-no-cb")
+//   }
+// })
 
-// ROUTE FOR CIVIL PARTNERSHIP TO SKIP CB QUESTION 
-router.post('/child-benefit-answer-cp', function(request, response) {
+// // ROUTE FOR CIVIL PARTNERSHIP TO SKIP CB QUESTION 
+// router.post('/child-benefit-answer-cp', function(request, response) {
 
-  var childrencp = request.session.data['childrencp']
-  if (childrencp.includes("I was responsible for a child under 16")){
-      response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
-  } else if (childrencp == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
-      response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
-  } else {
-      response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
-  }
-})
+//   var childrencp = request.session.data['childrencp']
+//   if (childrencp.includes("I was responsible for a child under 16")){
+//       response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
+//   } else if (childrencp == "I was responsible for a child aged 16 to 19 and in full-time education or training"){
+//       response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
+//   } else {
+//       response.redirect("/private-beta/v5/bereavement-support-payment/check-answers-about-you-no-cb")
+//   }
+// })
 
 // EMAIL CONFIRMATION QUESTION
 
