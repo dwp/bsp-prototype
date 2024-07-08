@@ -4,9 +4,15 @@
 Check your answers
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 <div class="govuk-width-container">
-  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
   <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
@@ -20,9 +26,7 @@ Check your answers
       <h2 class="govuk-heading-m">
         About you
       </h2>
-             
-
-       
+                    
       <dl class="govuk-summary-list">
 
         <div class="govuk-summary-list__row">
@@ -68,62 +72,7 @@ Check your answers
           </dd>
         </div>
       
-	   {% if data['getcb'] === 'Married' %}
-	   <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of marriage
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['claimantdaymd'] }} / {{ data['claimantmonthmd'] }} / {{ data['claimantyearmd'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="marriage-date?checkansweraboutyou=true">
-              Change
-            </a>
-          </dd>
-        </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Marriage in UK
-          </dt>
-          <dd class="govuk-summary-list__value">
-           
-            {{ data['marriage-location'] }}, {{ data['marriage-location-country'] }}
-<!--
-            {% for feature in data['marriage-location'] %}
-            {{ feature }}
-            {% else %}
-            No, {{ data['marriage-location-country'] }}
-            {% endfor %} -->
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="marriage?checkansweraboutyou=true">
-              Change
-            </a>
-          </dd>
-        </div>
-
-      
-
-		<div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Have a marriage certificate
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['marriage-certificate'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="marriage-certificate?checkansweraboutyou=true">
-              Change
-            </a>
-          </dd>
-        </div>
-		
-    {% endif %}
-
-
-    {% if data['getcb'] === 'Civil partnership' %}
-		<div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Date of civil partnership
           </dt>
@@ -167,14 +116,14 @@ Check your answers
             </a>
           </dd>
         </div>
-		{% endif %}
+	
 
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Children and pregnancy
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data['childrencp'] }}
+        {{ data['children'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="about-child?checkansweraboutyou=true">
@@ -183,19 +132,6 @@ Check your answers
       </dd>
     </div>
 
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-third">
-        Child Benefit
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['childb'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="country?checkanswereligibility=true">
-          Change
-        </a>
-      </dd> 
-    </div>   
   </dl>
 
   <br>

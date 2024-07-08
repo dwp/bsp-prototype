@@ -21,42 +21,49 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" class="form" action="/about-children-answer">
-      
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-2">When your partner died, did any of these apply to you?</h1>
-                  <div id="waste-hint" class="govuk-hint">
-                    Select all that apply.
-                  </div>
-                  <div class="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste" name="nochildren" type="checkbox" value="I had a child under 16 years old">
-                      
-                      <label class="govuk-label govuk-checkboxes__label" for="waste">
-                        I was responsible for a child under 16 years old
-                      </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste-2" name="nochildren" type="checkbox" value="I had a child aged 16 to 19 and in full-time education or training">
-                      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                        I was responsible for a child aged 16 to 19 and in full-time education or training
-                      </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="waste-3" name="nochildren" type="checkbox" value="I was pregnant">
-                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                        I was pregnant
-                      </label>
-                    </div>
-                  <p>Or</p>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="waste-4" name="nochildren" type="checkbox" value="no-children" data-item="nochildren">
-                    <label class="govuk-label govuk-checkboxes__label" for="waste-4">
-                      None of these apply
-                    </label>
-                  </div>
-                </div>
-                <p class="govuk-body govuk-!-margin-bottom-6"></p>
-                <button class="govuk-button" data-module="govuk-button">Continue</button>
-              </form>    
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          name: "children",
+          values: data["children"],
+          fieldset: {
+            legend: {
+              text: "When your partner died, did any of these apply to you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "I was responsible for a child under 16",
+              text: "I was responsible for a child under 16"
+            },
+            {
+              value: "I was responsible for a child aged 16 to 19 in full-time education or training",
+              text: "I was responsible for a child aged 16 to 19 in full-time education or training"
+            },
+            {
+              value: "I was pregnant",
+              text: "I was pregnant"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "None of these apply",
+              text: "None of these apply",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}        
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
