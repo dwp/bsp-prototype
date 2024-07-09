@@ -1,15 +1,13 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-router.use('/', (req, res, next) => {
-  req.feature = req.originalUrl.split('/')[1]
-  req.sprint = req.originalUrl.split('/')[2]
-  res.locals.feature = req.feature
-  res.locals.sprint = req.sprint
-  next()
-})
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
 
-// Add your routes here - above the module.exports line
+// Add your routes here
+
 router.get('/', function (req, res) {
   res.locals.includeServiceName = 'true'
   res.render('index')
@@ -7750,7 +7748,6 @@ router.post('*', function (req, res, next) {
   }
 });
 
-module.exports = router
 
 // TEST ROUTE 
 router.post('/relationship-answer', function(request, response) {
