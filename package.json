@@ -6,6 +6,7 @@
   },
   "name": "govuk-prototype-kit",
   "dependencies": {
+    "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
     "date-fns": "^3.6.0",
     "govuk-frontend": "5.4.0",

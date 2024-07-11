@@ -5,9 +5,9 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
-
-$(document).ready(function () {
-})
+window.GOVUKPrototypeKit.documentReady(() => {
+  window.GOVUKFrontend.initAll()
+  })
 
 function nextPageBasedOnSelection($radioObject) {
   if (nextPageRoutes) {
