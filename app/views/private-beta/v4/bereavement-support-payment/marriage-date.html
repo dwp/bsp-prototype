@@ -1,11 +1,17 @@
-
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Marriage date – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -14,141 +20,88 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-
-
-
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-	{% if checkanswer ==undefined and checkansweraboutyou==undefined %}
-	    <form action="marriage-uk" method="post" class="form">  
-	{% endif %}
-	{% if checkanswer=='true' %}
-	    <form action="declaration" method="post" class="form">
-	{% endif %}
-	{% if checkansweraboutyou =='true' %}
-	    <form action="check-answers-about-you" method="post" class="form">
-	{% endif %}
-               
-            <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              
-              
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Do you know the date of your marriage?
-                </h1>
-              </legend>
-             
-               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input name="MarriageDate" class="govuk-radios__input" id="MarriageDate-Yes" aria-expanded="false" data-aria-controls="conditional-MarriageDate-Yes" type="radio" value="{{ data['claimantdaymd'] / data['claimantmonthmd'] / data['claimantyearmd'] }}">
-                  <label class="govuk-label govuk-radios__label" for="MarriageDate-Yes">              
-                    Yes
-                  </label>              
-                </div>                     
-        
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-MarriageDate-Yes">  
-                      <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" role="group" aria-describedby="MarriageDate-hint">
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                            Enter the date of your marriage
-                          </legend>
-                          <div id="passport-issued-hint" class="govuk-hint">
-                            For example, 31 3 1980
-                          </div>
-                          <div class="govuk-date-input" id="MarriageDate">
-                            <div class="govuk-date-input__item">              
-                              <div class="govuk-form-group">              
-                                <label class="govuk-label govuk-date-input__label" for="ClaimantMD-Day">              
-                                Day              
-                              </label>
-                              <input name="claimantdaymd" class="govuk-input govuk-date-input__input govuk-input--width-2 &#10;          &#10;        " id="ClaimantMD-dd" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['claimantdaymd'] }}">
-                              </div>
-                            </div>
 
-                            <div class="govuk-date-input__item">
-                              <div class="govuk-form-group">             
-                                <label class="govuk-label govuk-date-input__label" for="ClaimantMD-Month">              
-                                Month              
-                                </label>
-                                <input name="claimantmonthmd" class="govuk-input govuk-date-input__input govuk-input--width-2 &#10;          &#10;        " id="ClaimantMD-mm" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['claimantmonthmd'] }}">
-                              </div>
-                            </div>
-                    
-                            <div class="govuk-date-input__item">              
-                              <div class="govuk-form-group">              
-                                <label class="govuk-label govuk-date-input__label" for="ClaimantMD-Year">              
-                                Year              
-                                </label>
-                              <input name="claimantyearmd" class="govuk-input govuk-date-input__input govuk-input--width-4 &#10;          &#10;        " id="ClaimantMD-yyyy" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['claimantyearmd'] }}">              
-                            </div>
-                            </div>              
-                          </div>
-                      </fieldset>
-                      </div>
-                     </div>
+      <form class="form" action="marriage-uk" method="post">
 
-                     <div class="govuk-radios__item">
-                      <input name="MarriageDate" class="govuk-radios__input" id="MarriageDate-No" aria-expanded="false" data-aria-controls="conditional-MarriageDate-No" type="radio" value="No">
-                      <label class="govuk-label govuk-radios__label" for="MarriageDate-No">
-                         No
-                      </label>
-                      <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                        We'll contact you if we need the date.
-                      </div>
-                    </div> 
-                    
-              </div>
-              </fieldset>
-             
-            </div>
-              
- <!--
-				{% if checkanswer!='true' %}
-              <button class="govuk-button" data-module="govuk-button">Continue</button>
-			{% endif %}
-			{% if checkanswer=='true' %}
-              <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-			{% endif %}
-     -->
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {% if checkanswer ==undefined and checkansweraboutyou==undefined %}
-      <button class="govuk-button" data-module="govuk-button">Continue</button>  
-	{% endif %}
-	{% if checkanswer=='true' %}
-  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-	{% endif %}
-	{% if checkansweraboutyou =='true' %}
-  <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-	{% endif %}
+{% set dateHtml %}
+{{ govukDateInput({
+  id: "mdate",
+  namePrefix: "mdate",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  }
+}) }}
+{% endset -%}
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Get help with your application
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Telephone: 0800 731 0469 <br>
-          Welsh language: 0800 731 0453 <br>
-          <br>
-          Textphone: 0800 731 0464 <br>
-          Welsh language: 0800 731 0456 <br>
-          <br>
-          If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
-          <br>
-          Monday to Friday, 9.30am to 3.30pm <br>
-          Find out about call charges <br>
-        </div>
-      </details>
 
-    </form>
+{{ govukRadios({
+  name: "mdate",
+  fieldset: {
+    legend: {
+      text: "Do you know the date of your marriage?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: dateHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No",
+      hint: {
+        text: "We'll contact you if we need the date."
+      }
+    }
+  ]
+}) }}
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Get help with your application
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Telephone: 0800 731 0469 <br>
+            Welsh language: 0800 731 0453 <br>
+            <br>
+            Textphone: 0800 731 0464 <br>
+            Welsh language: 0800 731 0456 <br>
+            <br>
+            If you cannot hear or speak on the phone use Relay UK: 18001 then 0800  731 0469 <br>
+            <br>
+            Monday to Friday, 9.30am to 3.30pm <br>
+            Find out about call charges <br>
+          </div>
+        </details>
+
+      </form>
+
+    </div>
   </div>
-</div>
 
-
-</main>
-</div>
 {% endblock %}
