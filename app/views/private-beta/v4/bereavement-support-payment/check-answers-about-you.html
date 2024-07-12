@@ -71,7 +71,7 @@ Check your answers
             Date of marriage
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['claimantdaymd'] }} / {{ data['claimantmonthmd'] }} / {{ data['claimantyearmd'] }}
+            {{ data['mdate'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="marriage-date?checkansweraboutyou=true">
@@ -85,13 +85,8 @@ Check your answers
           </dt>
           <dd class="govuk-summary-list__value">
            
-            {{ data['marriage-location'] }} {{ data['marriage-location-country'] }}
-<!--
-            {% for feature in data['marriage-location'] %}
-            {{ feature }}
-            {% else %}
-            No, {{ data['marriage-location-country'] }}
-            {% endfor %} -->
+            {{ data['marriedinuk'] }}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="marriage?checkansweraboutyou=true">
