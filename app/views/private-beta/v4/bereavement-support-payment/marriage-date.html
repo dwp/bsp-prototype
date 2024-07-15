@@ -29,9 +29,12 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% set dateHtml %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
 {{ govukDateInput({
-  id: "mdate",
-  namePrefix: "mdate",
+  id: "dom",
+  namePrefix: "dom",
+  value: data['dom'],
   fieldset: {
     legend: {
       text: "",
@@ -41,13 +44,27 @@
   },
   hint: {
     text: "For example, 31 3 1980"
-  }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4"
+    }
+  ]
 }) }}
 {% endset -%}
 
 
 {{ govukRadios({
-  name: "mdate",
+  name: "dom",
   fieldset: {
     legend: {
       text: "Do you know the date of your marriage?",

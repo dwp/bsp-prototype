@@ -72,12 +72,13 @@ Check your answers
           </dd>
         </div>
       
+        {% if data['doc']=='Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Date of civil partnership
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['civildate'] }}
+            {{ data['doc-day'] }} / {{ data['doc-month'] }} / {{ data['doc-year'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="cp-date?checkansweraboutyou=true">
@@ -85,7 +86,25 @@ Check your answers
             </a>
           </dd>
         </div>
+        {% endif %}
 
+        {% if data['doc']=='No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of civil partnership
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Not known
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp-date?checkansweraboutyou=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        {% if data['cpinuk']=='Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
            Civil partnership registered in UK
@@ -99,6 +118,24 @@ Check your answers
             </a>
           </dd>
         </div>
+        {% endif %}
+
+        {% if data['cpinuk']=='No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Civil partnership registered in UK
+          </dt>
+          <dd class="govuk-summary-list__value">
+          No, {{ data['cpcountry'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp?checkansweraboutyou=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
 
 		<div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
