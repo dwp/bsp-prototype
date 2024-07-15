@@ -4,9 +4,15 @@
 Check your answers
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 <div class="govuk-width-container">
-  <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back</a>
 
 
   <div class="govuk-grid-row">
@@ -66,12 +72,13 @@ Check your answers
           </dd>
         </div>
       
+        {% if data['dom']=='Yes' %}
 	   <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Date of marriage
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['mdate'] }}
+            {{ data['dom-day'] }} / {{ data['dom-month'] }} / {{ data['dom-year'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="marriage-date?checkansweraboutyou=true">
@@ -79,14 +86,31 @@ Check your answers
             </a>
           </dd>
         </div>
+        {% endif %}
+
+        {% if data['dom']=='No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of marriage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Not known
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp-date?checkansweraboutyou=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        {% if data['marriedinuk']=='Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Marriage in UK
           </dt>
           <dd class="govuk-summary-list__value">
-           
             {{ data['marriedinuk'] }}
-
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="marriage?checkansweraboutyou=true">
@@ -94,6 +118,24 @@ Check your answers
             </a>
           </dd>
         </div>
+        {% endif %}
+
+        {% if data['marriedinuk']=='No' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Marriage in UK
+          </dt>
+          <dd class="govuk-summary-list__value">
+           No, {{ data['countrymarried'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage?checkansweraboutyou=true">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+  
 
 		<div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
