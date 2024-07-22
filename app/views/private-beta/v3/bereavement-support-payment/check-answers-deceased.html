@@ -97,29 +97,37 @@ Check your answers
         </div>
 
 
-
-
-
+        {% if (data['workedabroad'] == 'No' or data['workedabroad'] == "I don't know") %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-third">
             Lived or worked outside the UK
           </dt>
-		  {% if data['deceasedwork'] == 'Yes' %}
           <dd class="govuk-summary-list__value">
-            {{ data['deceasedworkyes'] }}
+            {{ data['workedabroad'] }}
           </dd>
-		  {% endif %}
-		  {% if data['deceasedwork'] != 'Yes' %}
-          <dd class="govuk-summary-list__value">
-            {{ data['deceasedwork'] }}
-          </dd>
-		  {% endif %}
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="deceased-work?checkanswerdeceased=true">
               Change
             </a>
           </dd> 
         </div>
+        {% endif %}
+
+        {% if data['workedabroad'] == "Yes" %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Lived or worked outside the UK
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes, {{ data['countryworked'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="deceased-work?checkanswerdeceased=true">
+              Change
+            </a>
+          </dd> 
+        </div>
+        {% endif %}
 
 
         </dl>
