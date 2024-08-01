@@ -10,37 +10,38 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">
-          You'll get Bereavement Support Payment
+          You’ll get Bereavement Support Payment
         </h1>
       </div>
 
-      <p class="govuk-body">You've proved your identity and your application for Bereavement Support Payment has been successful.</p>
-        
-      <p class="govuk-body">We will send you a letter in the post with more details.</p> 
+      <p class="govuk-body">You’ve proved your identity and your application for Bereavement Support Payment has been successful.</p>
 
-      <h2 class="govuk-heading-m">What you'll get</h2>
+      <h2 class="govuk-heading-m">What you’ll get</h2>
 
       {% if (data['children'] == "I was pregnant" or data['children'] == "I was responsible for a child aged 16 to 19 in full-time education or training" or data['children'] == "I was responsible for a child under 16" ) %}
 
-      <p class="govuk-body">You'll get the higher rate. We will pay you:</p>
+      <p class="govuk-body">You’ll get the higher rate. We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>£3,500 by Tuesday 30 July 2024</li>
         <li>£350 every month starting Friday 2 August 2024</li>
-      </ul> 
+      </ul>
 
       {% endif %}
 
       {% if (data['children'] == "None of these apply") %}
 
-      <p class="govuk-body">We will pay you:</p>
+      <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>£2,500 by Tuesday 30 July 2024</li>
         <li>£100 every month starting Friday 2 August 2024</li>
-      </ul> 
+      </ul>
 
       {% endif %}
 
       <p class="govuk-body">Your final payment will be on Monday 2 February 2026.</p>
+
+      <p class="govuk-body">We’ll send you a letter with this information for your records.</p>
+      <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information.</p> -->
 
       <h3 class="govuk-heading-m">If your circumstances change</h3>
       <p>Contact us if you change your bank details, address or name.</p>
