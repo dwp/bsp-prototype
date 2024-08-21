@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Declaration - read to caller
+      </h1>
+
+      <form class="form" action="checking-details" method="post">
+
+        <p>You agree the information you have given is correct and complete as far as you know. 
+        </p>
+
+        <p>You understand that if you knowingly give wrong infomation or do not report changes straight away that could affect your claim, you may be prosecuted or need to pay a financial penalty.</p>
+
+        <p>You understand that your Bereavement Support Payment may be reducedor stopped, and that you must pay back overpaid money when told to do so.</p>
+
+        <p>You can report changes in your circumstances by calling 0800 151 2012.</p>
+
+        {{ govukButton({
+          text: "Agree and send"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
