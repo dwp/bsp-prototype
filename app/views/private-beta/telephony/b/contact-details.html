@@ -1,0 +1,144 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Contact details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Capture Information About a Death
+{% endset%}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-answers" method="post">
+
+      <h1 class="govuk-heading-l">
+        Contact details
+      </h1>
+
+      <p class="govuk-body"><b>Phone number</b></p>
+      <p class="govuk-body">07123456789</p>
+      <br>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend"><b>
+            If we need to contact you, can we use the phone number you have already given?</b>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="phonenumber" name="phonenumber" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="phonenumber">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="phonenumber-2" name="phonenumber" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="phonenumber-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend"><b>
+            Can we contact you by text about your claim?</b>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="text" name="text" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="text-2" name="text" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="text-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+          <b>Would you like us to send an email to confirm you application?</b>
+        </label>
+        <div id="email-hint" class="govuk-hint">
+          Email (optional)
+        </div>
+        <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend"><b>
+            Do you have any communication needs, for example, braille or textphone?</b>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communication" name="communication" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="communication-2" name="communication" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="communication-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend"><b>
+            Do you want written communication in Welsh?</b>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="welsh" name="welsh" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="welsh">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="welsh-2" name="welsh" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="welsh-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <br>
+     
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
