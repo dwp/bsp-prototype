@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Bank details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set serviceName %}
+  Capture Information About a Death
+{% endset%}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="contact-details" method="post">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<h1 class="govuk-heading-l">Bank or building society account details</h1>
+
+{{ govukInput({
+  label: {
+    text: "Name on the account"
+  },
+  id: "name-on-the-account",
+  name: "nameOnTheAccount",
+  autocomplete: "name",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Sort code"
+  },
+  classes: "govuk-input--width-5 govuk-input--extra-letter-spacing",
+  hint: {
+    text: "Must be 6 digits long"
+  },
+  id: "sort-code",
+  name: "sortCode",
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Account number"
+  },
+  classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+  hint: {
+    text: "Must be between 6 and 8 digits long"
+  },
+  id: "account-number",
+  name: "accountNumber",
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Building society roll number (if you have one)"
+  },
+  classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+  hint: {
+    text: "You can find it on your card, statement or passbook"
+  },
+  id: "roll-number",
+  name: "rollNumber",
+  spellcheck: false
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
