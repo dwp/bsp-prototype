@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  Capture Information About a Death
+{% endset%}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">
+          Application successful
+        </h1>
+      </div>
+
+      <p class="govuk-body">Your details have been checked and your application for Bereavement Support Payment has been successful.</p>
+
+      <h3 class="govuk-heading-m">What you’ll get</h3>
+      <!-- <p class="govuk-body">You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
+
+      <p class="govuk-body">However, because you applied more than 12 months after your partner died you will get monthly payments only. You’ll not get the initial lump-sum payment.</p> -->
+      <p class="govuk-body">We’ll pay you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>backdated monthly payments of £1,050 by {{ "today" | duration(3, "days") | govukDate }}</li>
+        <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
+      </ul>
+      <p class="govuk-body">Your final payment will be on {{ "today" | duration(4, "months") | govukDate }}.</p>
+      <p class="govuk-body">We’ll send you a letter with a copy of your payment schedule.</p>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How your payment is calculated
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
+          <p class="govuk-body">You will not get a one-off payment because it’s been over a year since your partner died. We can only backdate payments for the last 3 months.</p>
+          <p class="govuk-body">We’ll send you a letter that explains more about how your payments were calculated.</p>
+        </div>
+      </details>
+      <!-- <p class="govuk-body">We’ll send you a letter with a copy of your payment schedule.</p> -->
+      <h3 class="govuk-heading-m">If you need to contact us</h3>
+      <p class="govuk-body">If you have any questions or your circumstances change, call
+        the Bereavement Support Payment team on 0800 151 2012.</p>
+      <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information.</p> -->
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <!-- <h3 class="govuk-heading-m">Help and support</h3> -->
+      <h3 class="govuk-heading-m">Other help and support</h3>
+      <p>You can use the step by step guide on GOV.UK to check what you need to do after a death. Go to <a href="https://www.gov.uk/when-someone-dies" class="govuk-body">www.gov.uk/when-someone-dies</a>.</p>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Financial and emotional support
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">Financial help</h3>
+          <p class="govuk-body">To check if you can get financial help:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>use a benefits calculator to check what you can claim at <a href="https://www.gov.uk/benefits-calculators" class="govuk-body">www.gov.uk/benefits-calculators</a></li>
+            <li>visit your local jobcentre for advice on benefits you could be entitled to</li>
+            <li>ask your local coucil if you are eligible for hlep to pay your Council Tax</li>
+          </ul>
+          <h3 class="govuk-heading-s">Emotional support</h3>
+          <p class="govuk-body">Cruise Bereavement Care is a voluntary organistaion you can contact for emotional help and support during a bereavement.</p>
+          <p class="govuk-body">Telephone: <b>0808 808 1677</b></p>
+          <p class="govuk-body">Website: <b>www.cruise.org.uk</b></p>
+        </div>
+      </details>
+
+
+</div>
+
+
+
+{% endblock %}
