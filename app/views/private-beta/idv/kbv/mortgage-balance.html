@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  
+{% endset%}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+How much did you borrow when you first took out your mortgage? - GOV.UK One Login
+{% endblock %}
+
+{% block content %}  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="mortgage-payments" method="post">
+
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "mortgage-balance",
+          fieldset: {
+            legend: {
+              text: "How much did you borrow when you first took out your mortgage?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "You can find this amount on your offer letter or mortgage agreement."
+          },
+          items: [
+            {
+              value: "UP TO £160,000",
+              text: "UP TO £160,000"
+            },
+            {
+              value: "OVER £160,000 UP TO £185,000",
+              text: "OVER £160,000 UP TO £185,000"
+            },
+            {
+              value: "OVER £185,000 UP TO £210,000",
+              text: "OVER £185,000 UP TO £210,000"
+            },
+            {
+              value: "OVER £210,000 UP TO £235,000",
+              text: "OVER £210,000 UP TO £235,000"
+            },
+            { 
+              value: "NONE OF THE ABOVE / DOES NOT APPLY",
+              text: "NONE OF THE ABOVE / DOES NOT APPLY"
+            }
+          ]
+        }) }}
+
+      
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+      <p><a class="govuk-link govuk-link--no-visited-state" href="/page-index/ipv-core/kbv-abandon">I cannot answer this question</a></p>
+
+    </div>
+  </div>
+
+
+{% endblock %}
+
