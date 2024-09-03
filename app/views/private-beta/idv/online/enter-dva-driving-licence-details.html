@@ -1,0 +1,248 @@
+{% extends "layouts/main.html" %}
+
+{% set serviceName %}
+  
+{% endset%}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+}) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+Enter your details exactly as they appear on your UK driving licence
+{% endblock %}
+
+{% block content %}    
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/private-beta/idv/online/find-address" method="post">
+          
+<h1 id="header" data-page="details" class="govuk-heading-l">
+Enter your details exactly as they appear on your UK driving licence
+</h1>
+
+<p>We’ll check your details with DVA to make sure your driving licence has not been cancelled or reported as lost or stolen.</p>
+
+<div class="govuk-inset-text">
+If you do not have a UK driving licence or you cannot remember your details, you can <a href="/page-index/app-cri/ineligible" class="govuk-link govuk-link--no-visited-state">prove your identity another way</a> instead.
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" id="surname-label" for="surname">
+Last name
+</label>
+<input class="govuk-input govuk-input" id="surname" name="surname" type="text" maxlength="43">
+</div>
+
+<div class="govuk-form-group ">
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-!-margin-0">
+Given names
+</legend>
+
+  <div class="govuk-inset-text govuk-!-margin-top-2 govuk-!-padding-top-1">
+    
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" id="firstName-label" for="firstName">
+First name
+</label>
+<div id="firstName-hint" class="govuk-hint">
+This is in section 2 of your licence. You do not need to include your title.
+</div>
+<input class="govuk-input govuk-input" id="firstName" name="firstName" type="text" aria-describedby="firstName-hint" maxlength="38">
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" id="middleNames-label" for="middleNames">
+Middle names
+</label>
+<div id="middleNames-hint" class="govuk-hint">
+Leave this blank if you do not have any middle names
+</div>
+<input class="govuk-input govuk-input" id="middleNames" name="middleNames" type="text" aria-describedby="middleNames-hint" aria-required="false" maxlength="38">
+</div>
+  </div>
+</fieldset>
+</div>
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="dvaDateOfBirth-hint" id="dvaDateOfBirth-fieldset">
+<legend class="govuk-fieldset__legend govuk-label">
+Date of birth
+</legend>
+<div id="dvaDateOfBirth-hint" class="govuk-hint">
+For example, 5 9 1973
+</div>
+
+<div class="govuk-date-input" id="dvaDateOfBirth">
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="dvaDateOfBirth-day">
+    Day
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dvaDateOfBirth-day" name="dvaDateOfBirth-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2">
+</div>
+</div>
+
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="dvaDateOfBirth-month">
+    Month
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dvaDateOfBirth-month" name="dvaDateOfBirth-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2">
+</div>
+</div>
+
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="dvaDateOfBirth-year">
+    Year
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dvaDateOfBirth-year" name="dvaDateOfBirth-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4">
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+
+<div class="govuk-form-group">
+<input class="govuk-input govuk-!-width-one-half" id="issuerDependent" name="issuerDependent" type="hidden" value="DVA" aria-required="false">
+</div>
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="dateOfIssue-hint" id="dateOfIssue-fieldset">
+<legend class="govuk-fieldset__legend govuk-label">
+Issue date
+</legend>
+<div id="dateOfIssue-hint" class="govuk-hint">
+This is the date in section 4a of your licence, for example 27 5 2019
+</div>
+
+<div class="govuk-date-input" id="dateOfIssue">
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="dateOfIssue-day">
+    Day
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dateOfIssue-day" name="dateOfIssue-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2">
+</div>
+</div>
+
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="dateOfIssue-month">
+    Month
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dateOfIssue-month" name="dateOfIssue-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2">
+</div>
+</div>
+
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="dateOfIssue-year">
+    Year
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dateOfIssue-year" name="dateOfIssue-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4">
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="expiryDate-hint" id="expiryDate-fieldset">
+<legend class="govuk-fieldset__legend govuk-label">
+Valid to
+</legend>
+<div id="expiryDate-hint" class="govuk-hint">
+This is the date in section 4b of your licence, for example 27 5 2019
+</div>
+<div class="govuk-date-input" id="expiryDate">
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="expiryDate-day">
+    Day
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiryDate-day" name="expiryDate-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2">
+</div>
+</div>
+
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="expiryDate-month">
+    Month
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiryDate-month" name="expiryDate-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2">
+</div>
+</div>
+
+<div class="govuk-date-input__item">
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label" for="expiryDate-year">
+    Year
+  </label>
+<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiryDate-year" name="expiryDate-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4">
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" id="dvaLicenceNumber-label" for="dvaLicenceNumber">
+Licence number
+</label>
+<div id="dvaLicenceNumber-hint" class="govuk-hint">
+This is the long number in section 5 on your licence
+</div>
+<input class="govuk-input govuk-input--width-10" id="dvaLicenceNumber" name="dvaLicenceNumber" type="text" aria-describedby="dvaLicenceNumber-hint" maxlength="8">
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label govuk-label" id="postcode-label" for="postcode">
+Postcode
+</label>
+<div id="postcode-hint" class="govuk-hint">
+Enter the postcode in the address in section 8 of your licence
+</div>
+<input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" aria-describedby="postcode-hint" maxlength="8">
+</div>
+
+<h2 class="govuk-heading-m">Allow DVA to check your driving licence details</h2>
+
+<div class="govuk-form-group">
+
+<div id="consentDVACheckbox-hint" class="govuk-hint govuk-label">
+<p>DVA needs your consent to check your driving licence details before you can continue. They will make sure your licence has not been cancelled or reported as lost or stolen.</p> <p>To find out more about how your driving licence details will be used, you can read:</p> <ul class="govuk-list govuk-list--bullet"> <li class="govuk-body govuk-!-margin-left-2"><a href="#" class="govuk-link govuk-link--no-visited-state" rel="noopener">the GOV.UK One Login privacy notice (opens in a new tab)</a></li> <li class="govuk-body govuk-!-margin-left-2"><a href="#" class="govuk-link govuk-link--no-visited-state" rel="noopener">the DVA privacy notice (opens in a new tab)</a></li> </ul>
+</div>
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="consentDVACheckbox" name="consentDVACheckbox" type="checkbox" value="true" aria-describedby="consentDVACheckbox-hint">
+      <label class="govuk-label govuk-checkboxes__label" id="consentDVACheckbox-label" for="consentDVACheckbox">
+  Give DVA your consent to check your driving licence details
+</label>
+    </div>
+</div>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+</form>
+      </div>
+  </div>
+{% endblock %}

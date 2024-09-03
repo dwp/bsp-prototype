@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+Tell us if you have one of the following types of photo ID
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +20,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="computer-or-tablet" method="post" class="form">
+      <form action="/id-type-answer" method="post" class="form">
          
         <h1 class="govuk-heading-l">Tell us if you have one of the following types of photo ID</h1>
 
@@ -66,12 +66,6 @@
 </li>
 </ul>
 
-
-
-
-
-
-
 <div class="govuk-form-group">
 
   <fieldset class="govuk-fieldset">
@@ -84,13 +78,7 @@
     
   
     <div class="govuk-radios" data-module="govuk-radios">
-      
-      
-        
-    
-      
-      
-      
+
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="have-photo-id" name="have-photo-id" type="radio" value="Yes">
         <label class="govuk-label govuk-radios__label" for="have-photo-id">
@@ -98,12 +86,6 @@
         </label>
         
       </div>
-      
-    
-      
-        
-    
-      
       
       
       <div class="govuk-radios__item">
@@ -113,9 +95,6 @@
         </label>
         
       </div>
-      
-    
-      
       
     </div>
   
