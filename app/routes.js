@@ -7851,3 +7851,140 @@ router.post('/valid-passport-answer', function(request, response) {
   }
 })
 
+// ID-TYPE ANSWER
+
+router.post('/id-type-answer', function(request, response) {
+
+  var idtype = request.session.data['have-photo-id']
+  if (idtype == "Yes"){
+      response.redirect("/private-beta/idv/computer-or-tablet")
+  } else {
+      response.redirect("/private-beta/idv/id-at-post-office")
+  }
+})
+
+// Routes for Driving licence CRI
+
+router.get('/who-issued-licence/answer', (req, res) => {
+  // Check if there was an error
+  const showErrorSummary = req.query.error === 'true';
+
+  // Render the template with the error condition
+  res.render('/page-index/driving-licence-cri/who-issued-licence.html', { showErrorSummary });
+});
+
+// Handle form submission
+router.post('/who-issued-licence/answer', (req, res) => {
+  // Check if a radio button is selected
+  const selectedOption = req.body['issuerName'];
+
+  if (selectedOption) {
+    // If radio option is selected:
+    if (selectedOption === "dvla") {
+      // Send user to set up auth app
+      res.redirect('/private-beta/idv/online/enter-dvla-driving-licence-details');
+    } else if (selectedOption === "dva") {
+      // Send user to enter passport details
+      res.redirect('/private-beta/idv/online/enter-dva-driving-licence-details');
+    } else if (selectedOption === "no-uk-licence") {
+      // Send user to prove identity at the post office
+      res.redirect('/private-beta/idv/online/manual-identity');
+    }
+  } else {
+    // If no radio button is selected, redirect to /ineligible-next-steps/answer with error
+    res.redirect('/who-issued-licence/answer?error=true');
+  }
+});
+
+router.get('/ineligible-next-steps/answer', (req, res) => {
+  // Check if there was an error
+  const showErrorSummary = req.query.error === 'true';
+
+  // Render the template with the error condition
+  res.render('/page-index/app-cri/ineligible.html', { showErrorSummary });
+});
+
+// Handle form submission
+router.post('/ineligible-next-steps/answer', (req, res) => {
+  // Check if a radio button is selected
+  const selectedOption = req.body['ineligible-next-steps'];
+
+  if (selectedOption) {
+    // If radio option is selected:
+    if (selectedOption === "security-questions-driving-licence") {
+  // Send user to...
+      res.redirect('/private-beta/idv/online/who-issued-licence');
+    } else if (selectedOption === "security-questions-passport") {
+      // Send user to enter passport details
+      res.redirect('/private-beta/idv/online/enter-passport-details');
+    } else if (selectedOption === "another-way") {
+      // Send user to prove identity at the post office
+      res.redirect('/private-beta/idv/online/prove-identity-at-post-office');
+    }
+  } else {
+    // If no radio button is selected, redirect to /ineligible-next-steps/answer with error
+    res.redirect('/ineligible-next-steps/answer?error=true');
+  }
+});
+
+
+// SMARTPHONE ANSWER
+
+router.post('/smartphone-answer', function(request, response) {
+
+  var smartphone = request.session.data['have-a-smartphone']
+  if (smartphone == "I don't have either of these"){
+      response.redirect("/private-beta/idv/online/manual-identity")
+  } else {
+      response.redirect("/private-beta/idv/valid-passport")
+  }
+})
+
+// WHICH SMARTPHONE ANSWER
+
+router.post('/which-smartphone-answer', function(request, response) {
+
+  var whichsmartphone = request.session.data['smartphone']
+  if (whichsmartphone == "Neither of these phones"){
+      response.redirect("/private-beta/idv/online/manual-identity")
+  } else {
+      response.redirect("/private-beta/idv/valid-passport")
+  }
+})
+
+// WORKING CAMERA ANSWER
+
+router.post('/working-camera-answer', function(request, response) {
+
+  var workingcamera = request.session.data['working-camera']
+  if (workingcamera == "No"){
+      response.redirect("/private-beta/idv/online/manual-identity")
+  } else {
+      response.redirect("/private-beta/idv/flashing-colours")
+  }
+})
+
+// FLASHING COLOURS ANSWER
+
+router.post('/flashing-colours-answer', function(request, response) {
+
+  var flashingcolours = request.session.data['flashing-colours']
+  if (flashingcolours == "No"){
+      response.redirect("/private-beta/idv/online/manual-identity")
+  } else {
+      response.redirect("/private-beta/idv/app-version-dynamic")
+  }
+})
+
+// DRIVING LICENCE ANSWER
+
+router.post('/driving-licence-answer', function(request, response) {
+
+  var drivinglicence = request.session.data['driving-licence']
+  if (drivinglicence == "No"){
+      response.redirect("/private-beta/idv/online/manual-identity")
+  } else {
+      response.redirect("/private-beta/idv/use-app")
+  }
+})
+
