@@ -22,7 +22,7 @@
 
                 <h2 class="govuk-heading-s">If you did not prove your identity</h2>
 
-                <p>We will check your details based on the information we already have. You should get a decision by 2 September 2024.</p>
+                <p>We will check your details based on the information we already have. You should get a decision by {{ "today" | duration(3, "weeks") | govukDate }}.</p>
                 <p>If your claim is successful, we will make a payment into your account as soon as possible.</p>
 
                 <h2 class="govuk-heading-s">Get help with your application</h2>
