@@ -20,7 +20,7 @@
       <p></p>
 
       <h2 class="govuk-heading-m">What happens next</h2>
-      <p>You should get a decision by Tuesday 6 August. We'll contact you if we need more information.</p>
+      <p>You should get a decision by {{ "today" | duration(3, "weeks") | govukDate }}. We'll contact you if we need more information.</p>
 
       <p>If your application is successful, we’ll make a payment into your account as soon as possible.</p>
 

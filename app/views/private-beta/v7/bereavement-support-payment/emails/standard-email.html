@@ -14,7 +14,7 @@
 
                 <h2 class="govuk-heading-m">How long it will take to process your application</h2>
 
-                <p>You should get a decision by 2 August 2024. We will contact you if we need more information.</p>
+                <p>You should get a decision by {{ "today" | duration(3, "weeks") | govukDate }}. We will contact you if we need more information.</p>
 
                 <p>If your claim is successful, we will make a payment into your account as soon as possible.</p>
 
