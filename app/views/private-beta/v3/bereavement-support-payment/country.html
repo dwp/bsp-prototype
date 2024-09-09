@@ -1,11 +1,18 @@
 
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
+}) }}
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -18,18 +25,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if checkanswer ==undefined and checkanswereligibility==undefined %}
-	     <form action="live-in-uk" method="post" class="form">
-	{% endif %}
-	{% if checkanswer=='true' %}
-	    <form action="declaration" method="post" class="form">
-	{% endif %}
-	{% if checkanswereligibility =='true' %}
-	    <form action="check-answers-eligibility" method="post" class="form">
-	{% endif %} 
       
-
-
+	     <form action="live-in-uk" method="post" class="form">
+ 
             <div class="govuk-form-group">
 
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -71,7 +69,7 @@
                       </label>
                     </div>
 
-                    <p>Or</p>
+                    <div class="govuk-radios__divider">or</div>
                    
                     <div class="govuk-radios__item">              
                       <input name="getcountrycb" class="govuk-radios__input" id="get-cb-Idonotknow" type="radio" value="Outside the UK" {{ checked("getcountrycb", "Outside the UK") }}>              

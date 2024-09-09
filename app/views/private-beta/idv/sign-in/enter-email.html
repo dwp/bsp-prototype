@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Create your GOV.UK One Login or sign in
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="create-password" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "Enter your email address to sign in to your GOV.UK One Login",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        id: "sign-in-email",
+        name: "sign-in-email",
+        type: "email",
+        autocomplete: "email",
+        spellcheck: false
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
