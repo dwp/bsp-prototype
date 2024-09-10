@@ -107,14 +107,7 @@
             </h2>
             <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
 
-              <p class="govuk-body">Testing new pages in the form that may need to be introduced once we can straight through process certain claims.<br><br>New pages being tested:</p>
-
-              <ul class="govuk-list govuk-list--bullet">
-                <li>a hold page (while checks take place)</li>
-                <li>decision page</li>
-              </ul>
-
-
+              <p class="govuk-body">Testing new pages in the form that may need to be introduced once we can straight through process certain claims.</p>
 
             <button onclick="javascript:location.href='/private-beta/telephony/a/bank-details-question'" class="govuk-button" data-module="govuk-button">
               Version A
@@ -126,17 +119,38 @@
             </div>
           </div>
 
-          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">       
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">      
+            
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Summary of what's being tested
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>Two new pages at the end of the telephony form:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>a hold page (while checks take place)</li>
+                <li>decision page</li>
+              </ul>
+              </div>
+            </details>
 
-            <p class="govuk-body"><B>Quick links
-            </b></p>
-              <ol class="govuk-list govuk-list--number">
-                <li><a href="/private-beta/telephony/decision-a">/decision-a</a></li>
-                <li><a href="/private-beta/telephony/decision-b">/decision-b</a></li>
-                <!-- <li><a href="/private-beta/telephony/decision-not-testing">/decision-not-testing</a></li> -->
-                <li><a href="/private-beta/telephony/application-sent">/as-is-application-sent</a></li>
-              </ol>
-          </div>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Quick links
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ol class="govuk-list govuk-list--number">
+                  <li><a href="/private-beta/telephony/decision-a">/decision-a</a></li>
+                  <li><a href="/private-beta/telephony/decision-b">/decision-b</a></li>
+                  <!-- <li><a href="/private-beta/telephony/decision-not-testing">/decision-not-testing</a></li> -->
+                  <li><a href="/private-beta/telephony/application-sent">/as-is-application-sent</a></li>
+                </ol>
+              </div>
+            </details>
 
         </div>
 
@@ -149,48 +163,58 @@
             </h2>
             <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
               <p class="govuk-body govuk-!-font-size-19">This research is a second round of end to end testing with further iterations for service improvement.</p>
-              <p class="govuk-body govuk-!-font-size-19">New iterations to the form include:</p>
-              <li>updated GOV.UK guidance</li>
-              <li>an objective way to tell users how long the form will take</li>
-              <li>changed H1 for relationship question</li>
-              <li>a component to toggle to Welsh</li>
-              <li>a child benefit question included in the flow</li>
-              <li>DWP's find an address pattern</li>
-              <li>a new pattern to capture email for confirmation</li>
-              <li>mock decision emails</li>
+              <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+                Start now
+              </button>
+              <br><a href="/private-beta/v6/bereavement-support-payment/email-positive">(a) Email decision</a>
+              <br><a href="/private-beta/v6/bereavement-support-payment/email-negative">(b) Email decision</a>
+              <br><a href="/private-beta/v6/bereavement-support-payment/start1">New component test</a><br>
             </div>
           </div>
           <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
-            <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
-              Start now
-            </button>
-            <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/email-positive'" class="govuk-button" data-module="govuk-button">
-              Email decision (a)
-            </button>
-            <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/email-negative'" class="govuk-button" data-module="govuk-button">
-              Email decision (b)
-            </button>
-            <button onclick="javascript:location.href='/private-beta/v6/bereavement-support-payment/start1'" class="govuk-button" data-module="govuk-button">
-              Language toggle
-            </button>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What's being tested
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body govuk-!-font-size-19">New iterations include:</p>
+                <li>updated GOV.UK guidance</li>
+                <li>an objective way to tell users how long the form will take</li>
+                <li>changed H1 for relationship question</li>
+                <li>a component to toggle to Welsh</li>
+                <li>a child benefit question included in the flow</li>
+                <li>DWP's find an address pattern</li>
+                <li>a new pattern to capture email for confirmation</li>
+                <li>mock decision emails</li>
+              </div>
+            </details>
 
-            <p class="govuk-body"><B>Pages being tested
-            </b></p>
-              <ol class="govuk-list govuk-list--number">
-                <li><a href="/private-beta/v6/bereavement-support-payment/govuk-overview">/govuk-how-it-works</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/govuk-eligibility">/govuk-eligibility</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/govuk-whatyoullget">/govuk-what-you'll-get</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/govuk-howtoclaim">/govuk-how-to-claim</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/start">/start-page</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/relationship">/relationship-question</a></li>
-                <li><a href="/private-beta/v4/bereavement-support-payment/about-cb">/child-benefit</a></li>
-                <li><a href="/private-beta/v4/bereavement-support-payment/your-postcode">/what-is-your-address</a></li>
-                <li><a href="/private-beta/v4/bereavement-support-payment/your-address">/select-your-home-address</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/email-details2">/confirmation-email-question</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/email-confirm2">/email-input</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/email-positive">/decision-email-positive</a></li>
-                <li><a href="/private-beta/v6/bereavement-support-payment/email-negative">/decision-email-negative</a></li>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Quick links
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ol class="govuk-list govuk-list--number">
+                  <li><a href="/private-beta/v6/bereavement-support-payment/govuk-overview">/govuk-how-it-works</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/govuk-eligibility">/govuk-eligibility</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/govuk-whatyoullget">/govuk-what-you'll-get</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/govuk-howtoclaim">/govuk-how-to-claim</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/start">/start-page</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/relationship">/relationship-question</a></li>
+                  <li><a href="/private-beta/v4/bereavement-support-payment/about-cb">/child-benefit</a></li>
+                  <li><a href="/private-beta/v4/bereavement-support-payment/your-postcode">/what-is-your-address</a></li>
+                  <li><a href="/private-beta/v4/bereavement-support-payment/your-address">/select-your-home-address</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/email-details2">/confirmation-email-question</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/email-confirm2">/email-input</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/email-positive">/decision-email-positive</a></li>
+                  <li><a href="/private-beta/v6/bereavement-support-payment/email-negative">/decision-email-negative</a></li>
+              </div>
+            </details>
           </div>
         </div>
 
@@ -203,34 +227,47 @@
             </h2>
             <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
               <p class="govuk-body govuk-!-font-size-19">This aim of this research is to test the online form end to end with users with added iterations for service improvement.</p>
-              <p class="govuk-body govuk-!-font-size-19">New iterations to the form include:</p>
-              <li>update to accident at work question</li>
-              <li>new email input</li>
-              <li>additional question to ask users if they would like a decision by email</li>
-              <li>content on end page signposting to apply for Child Benefit</li>
-              <li>splitting out alternative communication question over 2 pages</li>
-              <li>testing understanding of question about Child Benefit</li>
-              <li>pulling out conditional reveal content behind radios</li>
+              <button onclick="javascript:location.href='/private-beta/v4/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+                Married
+              </button>
+              <button onclick="javascript:location.href='/private-beta/v5/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+                Civil Partnership
+              </button>
+              <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+                Living together
+              </button>
+              <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/about-children-before-cb'" class="govuk-button" data-module="govuk-button">
+                Child Benefit
+              </button>
             </div>
           </div>
           <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
-            <button onclick="javascript:location.href='/private-beta/v4/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
-              Married
-            </button>
-            <button onclick="javascript:location.href='/private-beta/v5/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
-              Civil Partnership
-            </button>
-            <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
-              Living together
-            </button>
-            <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/about-children-before-cb'" class="govuk-button" data-module="govuk-button">
-              Child Benefit
-            </button>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What's being tested
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body govuk-!-font-size-19">New iterations to the form include:</p>
+                <li>update to accident at work question</li>
+                <li>new email input</li>
+                <li>additional question to ask users if they would like a decision by email</li>
+                <li>content on end page signposting to apply for Child Benefit</li>
+                <li>splitting out alternative communication question over 2 pages</li>
+                <li>testing understanding of question about Child Benefit</li>
+                <li>pulling out conditional reveal content behind radios</li>
+              </div>
+            </details>
 
-            <p class="govuk-body"><B>Pages being tested
-            </b></p>
-              <ol class="govuk-list govuk-list--number">
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Quick links
+                </span>
+              </summary>
+              <div class="govuk-details__text">
                 <li><a href="/private-beta/v3/bereavement-support-payment/deceased-death">/accident-at-work</a></li>
                 <li><a href="/private-beta/v3/bereavement-support-payment/email-notifications">/email-notifications</a></li>
                 <li><a href="/private-beta/v3/bereavement-support-payment/email-details">/email-input</a></li>
@@ -239,6 +276,8 @@
                 <li><a href="/private-beta/v3/bereavement-support-payment/comms-needs">/comms-needs</a></li>
                 <li><a href="/private-beta/v3/bereavement-support-payment/marriage-date">/marriage-date</a></li>
                 <li><a href="/private-beta/v3/bereavement-support-payment/marriage-certificate">/marriage-certificate</a></li>
+              </div>
+            </details>                
           </div>
         </div>
 
@@ -892,7 +931,7 @@
               <li>
                 <button onclick="javascript:location.href='/version-2/bereavement-support-payment.html'" class="govuk-button" data-module="govuk-button">
                   Tasklist Journey
-                </button>              </li>
+                </button></li>
             </ul>
           </div>
         </div>
@@ -901,7 +940,9 @@
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
-                Citizen feeback
+                Citizen feeback <strong class="govuk-tag govuk-tag--yellow">
+                  Alpha
+                </strong>
               </span>
             </h2>
             <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
