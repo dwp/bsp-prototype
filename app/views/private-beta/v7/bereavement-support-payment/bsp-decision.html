@@ -36,20 +36,20 @@
 
       <h2 class="govuk-heading-m">What you’ll get</h2>
 
-      {% if (data['children'] == "I was pregnant" or data['children'] == "I was responsible for a child aged 16 to 19 in full-time education or training" or data['children'] == "I was responsible for a child under 16" ) %}
-
-      <p class="govuk-body">You’ll get the higher rate. We’ll pay you:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>£3,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
-        <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
-      </ul>
-
-      {% else %}
+      {% if (data['children'] == "None of these apply") %}
 
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>£2,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
         <li>£100 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
+      </ul>
+
+      {% else %}
+
+      <p class="govuk-body">You’ll get the higher rate. We’ll pay you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>£3,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
+        <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
       {% endif %}
