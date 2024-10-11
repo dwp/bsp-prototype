@@ -21,17 +21,28 @@
       <p class="govuk-body">Your details have been checked and your application for Bereavement Support Payment has been successful.</p>
 
       <h3 class="govuk-heading-m">What you’ll get</h3>
-      <p class="govuk-body">You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
-      <p class="govuk-body">However, because you applied more than 12 months after your partner died you will get monthly payments only. You will not get a one-off payment.</p>
+      <!-- <p class="govuk-body">You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
+
+      <p class="govuk-body">However, because you applied more than 12 months after your partner died you will get monthly payments only. You’ll not get the initial lump-sum payment.</p> -->
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>£1,050 for backdated payments by {{ "today" | duration(3, "days") | govukDate }} - we can only backdate payments by up to 3 months before the date we received your claim.</li>
+        <li>£3,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
         <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
-
       <p class="govuk-body">Your final payment will be on {{ "today" | duration(4, "months") | govukDate }}.</p>
-
       <p class="govuk-body">We’ll send you a letter with a copy of your payment schedule.</p>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How your payment is calculated
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
+          <p class="govuk-body">Your letter also explains how your payments were calculated.</p>
+        </div>
+      </details>
+      <!-- <p class="govuk-body">We’ll send you a letter with a copy of your payment schedule.</p> -->
       <h3 class="govuk-heading-m">If you need to contact us</h3>
       <p class="govuk-body">If you have any questions or your circumstances change, call
         the Bereavement Support Payment team on 0800 151 2012.</p>
