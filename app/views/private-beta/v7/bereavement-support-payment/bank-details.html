@@ -30,12 +30,12 @@
 	{% endif %}
 	{% if checkanswerbank =='true' %}
 	    <form action="check-answers-bank" method="post" class="form">
-	{% endif %} 
-      
-                         
-               
+	{% endif %}
+
+
+
       <h1 class="govuk-heading-l">Bank or building society account details</h1>
-      
+
       <!--
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -47,8 +47,11 @@
       -->
       <div class="govuk-form-group">
   <label class="govuk-label" for="name-on-the-account">
-    Name on the account
+    Name of account holder
   </label>
+  <div id="sort-code-hint" class="govuk-hint">
+    As it appears on your bank card or statement
+  </div>
   <input class="govuk-input" id="name-on-the-account" name="name-on-the-account" value="{{data['name-on-the-account']}}" type="text" spellcheck="false"></div>
 
 <div class="govuk-form-group">
@@ -66,7 +69,7 @@
     Account number
   </label>
   <div id="account-number-hint" class="govuk-hint">
-    Must be between 8 digits long
+    Must be 8 digits long
   </div>
   <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" value="{{data['account-number']}}" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
 </div>
@@ -86,7 +89,7 @@
 			{% endif %}
 			{% if checkanswer=='true' %}
               <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-			{% endif %}  
+			{% endif %}
 -->
 
       {% if checkanswer ==undefined and checkanswerbank==undefined %}
@@ -97,7 +100,7 @@
 	{% endif %}
 	{% if checkanswerbank =='true' %}
   <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-	{% endif %} 
+	{% endif %}
 
 
       <details class="govuk-details" data-module="govuk-details">
@@ -121,11 +124,11 @@
       </details>
 
 
-    </form>      
-  </div>            
+    </form>
+  </div>
   </div>
 
-  
+
 </main>
 </div>
 
