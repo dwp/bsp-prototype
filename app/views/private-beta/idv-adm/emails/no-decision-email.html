@@ -12,22 +12,15 @@
 
             {% set emailContentHTML %}
 
-                <h2 class="govuk-heading-m">You will get Bereavement Support Payment</h2>
+                <h2 class="govuk-heading-m">How long it will take to get a decision</h2>
 
-                <p>Your application for Bereavement Support Payment has been successful.</p>
+                <p>You should get a decision by {{ "today" | duration(3, "weeks") | govukDate }}. We will contact you if we need more information.</p>
 
-                <p>We will make the first payment into your account as soon as possible.</p>
+                <p>If your claim is successful, we will make a payment into your account as soon as possible.</p>
 
-                <p>We will send you a letter that explains:</p>
+                <h2 class="govuk-heading-m">Get help with your application</h2>
 
-                <ul class="govuk-list govuk-list--bullet">
-                   <li>what you will get</li>
-                   <li>when we will pay you</li>
-                 </ul>
-
-                <h2 class="govuk-heading-m">If you change your bank details, address or name</h2>
-
-                <p>Contact us if you change your bank details, address or name.</p>
+                <p>If you have any questions about your claim you can contact the Bereavement Support Payment team.</p>
 
                 <p>When you call we will ask for your National Insurance number.</p>
 
@@ -35,7 +28,7 @@
                   Welsh language: 0800 731 0453</p>
 
                 <p>Textphone: 0800 731 0464<br>
-                  Welsh language: 0800 731 0456</p>
+                    Welsh language: 0800 731 0456</p>
 
                 <p>If you cannot hear or speak on the phone use Relay UK: 18001 then 0800 151 2012</p>
 
@@ -78,7 +71,7 @@
                             text: 'Subject'
                         },
                         value: {
-                            text: 'Application for Bereavement Support Payment has been successful'
+                            text: 'Processing your application for Bereavement Support Payment'
                         }
                     }
                 ],
