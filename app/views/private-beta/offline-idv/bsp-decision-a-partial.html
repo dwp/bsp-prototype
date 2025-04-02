@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  You'll get Bereavement Support Payment – {{ serviceName }} – GOV.UK Prototype Kit
+  Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set serviceName %}
@@ -28,44 +28,24 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">
-          You’ll get Bereavement Support Payment
+          Application complete
         </h1>
       </div>
 
-      <p class="govuk-body">You’ve proved your identity and your application for Bereavement Support Payment has been successful.</p>
+      <p class="govuk-body">You’ve proved your identity and we can process your application for Bereavement Support Payment.</p>
 
-      <h2 class="govuk-heading-m">What you’ll get</h2>
+      <h2 class="govuk-heading-m">What happens next</h2>
 
-      {% if (data['children'] == "None of these apply") %}
+ 
 
-      <p class="govuk-body">We’ll pay you:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>£2,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
-        <li>£100 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
-      </ul>
+      <p>We’ll send you a letter with a decision. You should get this by {{ "today" | duration(5, "days") | govukDate }}.</p>
 
-      {% else %}
+      <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information, this may take longer.</p> -->
 
-      <p class="govuk-body">We’ll pay you:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>a one-off payment of £3,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
-        <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
-      </ul>
+      <p>If your application is successful, we’ll make a payment into your account as soon as possible.</p>
 
-      {% endif %}
 
-      <p class="govuk-body">Your final payment will be on {{ "today" | duration(19, "months") | govukDate }}.</p>
-      <h3 class="govuk-heading-s">How your payment was calculated</h3>
-      <p>You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
-      <p class="govuk-body">We’ll send you a letter that has:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>your payment schedule</li>
-        <li>more information about how your payment was calculated</li>
-        <li>what you can do if you think your calculation is wrong</li>
-      </ul>
-      <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information.</p> -->
-
-      <h2 class="govuk-heading-m">If your circumstances change</h2>
+      <h2 class="govuk-heading-m">If you change your bank details, address or name</h2>
       <p>Contact us if you change your bank details, address or name.</p>
       <p>
         Telephone: 0800 151 2012 <br>
