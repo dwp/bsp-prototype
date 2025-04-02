@@ -34,39 +34,23 @@
 
       <p class="govuk-body">You’ve proved your identity and your application for Bereavement Support Payment has been successful.</p>
 
-      <h2 class="govuk-heading-m">What you’ll get</h2>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <!-- same content as award email -->
+      <p>We’ll make the first payment into your account as soon as possible.</p>
 
-      {% if (data['children'] == "None of these apply") %}
-
-      <p class="govuk-body">We’ll pay you:</p>
+      <p>We’ll send you a letter that explains:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>£2,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
-        <li>£100 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
+        <li>what you’ll get</li>
+        <li>when we’ll pay you</li>
       </ul>
 
-      {% else %}
+      <p>This means your payment may arrive before your letter.</p>
 
-      <p class="govuk-body">We’ll pay you:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>a one-off payment of £3,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
-        <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
-      </ul>
-
-      {% endif %}
-
-      <p class="govuk-body">Your final payment will be on {{ "today" | duration(19, "months") | govukDate }}.</p>
-      <h3 class="govuk-heading-s">How your payment was calculated</h3>
-      <p>You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
-      <p class="govuk-body">We’ll send you a letter that has:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>your payment schedule</li>
-        <li>more information about how your payment was calculated</li>
-        <li>what you can do if you think your calculation is wrong</li>
-      </ul>
       <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information.</p> -->
 
-      <h2 class="govuk-heading-m">If your circumstances change</h2>
+      <h2 class="govuk-heading-m">If you change your bank details, address or name</h2>
       <p>Contact us if you change your bank details, address or name.</p>
+      <p>When you call we will ask for your National Insurance number.</p>
       <p>
         Telephone: 0800 151 2012 <br>
         Welsh language: 0800 731 0453 <br>
