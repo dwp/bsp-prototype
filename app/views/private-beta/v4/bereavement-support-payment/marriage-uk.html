@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+What country did you get married in? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,7 +25,67 @@
 
       <form class="form" action="marriage-certificate" method="post">
 
+
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        
+        {% set outside %}
+        {{ govukInput({
+          label: {
+            text: "What country did you get married in?",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "eventName"
+        }) }}
+        {% endset -%}
+        
+        {{ govukRadios({
+          name: "countrymarried",
+          value: data['countrymarried'],
+          fieldset: {
+            legend: {
+              text: "Where did you get married?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "England",
+              text: "England"
+            },
+            {
+              value: "Scotland",
+              text: "Scotland"
+            },
+            {
+              value: "Wales",
+              text: "Wales"
+            },
+            {
+              value: "Northern Ireland",
+              text: "Northern Ireland"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Outside the UK",
+              text: "Outside the UK",
+              conditional: {
+                html: outside
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <!-- {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% set textHtml %}
@@ -67,7 +127,7 @@
 
         {{ govukButton({
           text: "Continue"
-        }) }}
+        }) }} -->
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">

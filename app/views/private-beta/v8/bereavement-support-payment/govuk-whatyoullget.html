@@ -1,0 +1,209 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Bereavement Support Payment - What you'll get
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Benefits",
+        href: "#"
+      },
+      {
+        text: "Benefits and financial support when someone dies",
+        href: "#"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+     Bereavement Support Payment
+    </h1>
+
+    <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+      <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+        <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+          Contents
+        </h2>
+        <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+          <a href="govuk-overview.html">
+            How it works
+          </a>
+        </li>
+        <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+          <a href="govuk-eligibility.html">
+           Eligibility
+          </a>
+        </li>
+        <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+          <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+           What you'll get
+          </li>
+          <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+           <a href="govuk-howtoclaim.html">
+             How to claim
+           </a>
+         </li>
+        </ol>
+      </nav>
+    </aside>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+    
+    <h1 class="govuk-heading-l">
+      What you'll get
+    </h1>
+    
+    <p>The amount of Bereavement Support Payment you can get will depend on:</p>
+         <ul class="govuk-list govuk-list--bullet">
+          <li>your relationship to the person who died</li>
+          <li>when you make your claim</li>
+          <li>when you reach State Pension age</li>
+        </ul>
+
+        <p>Your payments will be paid into your <a href="/how-to-have-your-benefits-paid">bank, building society or credit union account</a>.</p>
+
+
+         <h2 class="govuk-heading-m">Your relationship to the person who died</h2>
+         <h3 class="govuk-heading-s">If you were married or in a registered civil partnership</h3>
+
+         <p class="govuk-body">You’ll get the higher rate if one of the following applied when your partner died:</p>
+            <ul class="govuk-list govuk-list--bullet">
+               <li>you were getting <a class="gov-link" href="">Child Benefit</a> for a child that lived with you</li>
+               <li>you were told by the Child Benefit Office that you were entitled to Child Benefit for a child that lived with you</li>
+               <li>you were pregnant</li>
+             </ul>
+
+             <p class="govuk-body">The most you can get is:</p>
+             <ul class="govuk-list govuk-list--bullet">
+                <li>a one-off payment of £3,500</li>
+                <li>18 monthly payments of £350</li>
+              </ul>
+
+              <p class="govuk-body">If you’re not eligible for the higher rate, you’ll get the lower rate instead.</p>
+
+              <p class="govuk-body">The most you can get is:</p>
+             <ul class="govuk-list govuk-list--bullet">
+                <li>a one-off payment of £2,500</li>
+                <li>18 monthly payments of £100</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">If you were living together as if you were married</h3>
+
+              <p class="govuk-body">The most you can get is:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                 <li>a one-off payment of £3,500</li>
+                 <li>18 monthly payments of £350</li>
+               </ul>
+
+
+            <div class="govuk-!-padding-bottom-3"></div>
+
+            <h2 class="govuk-heading-m">When you make your claim</h2>
+
+            <p class="govuk-body">You must claim within 3 months of your partner’s death to get the one-off payment and all 18 monthly payments.</p>
+            <p class="govuk-body">If it’s been over 3 months but fewer than 12 months since your partner’s death, you can get the one-off payment but only some of the monthly payments.</p>
+            <p class="govuk-body">If it’s been over 12 months but fewer than 21 months since your partner’s death, you cannot get the one-off payment but you can still get some monthly payments.</p>
+            <p class="govuk-body">If it’s been over 21 months since your partner’s death, you usually cannot get any payments.</p>
+
+            <h2 class="govuk-heading-m">When you reach State Pension age</h2>
+            <p class="govuk-body">If you reach <a class="govuk-link" href="">State Pension age </a>within 18 months of your partner’s death, you may get fewer monthly payments.</p>
+
+
+             <h2 class="govuk-heading-m">If you get benefits</h2>
+             <p class="govuk-body">Bereavement Support Payment will not affect your benefits for a year after your first payment. After a year, money you have left from your first payment could affect the amount you get if you renew or make a claim for another benefit.</p>
+             <p class="govuk-body">You must tell your benefits office (for example, <a rel="external" href="https://find-your-nearest-jobcentre.dwp.gov.uk/search.php">your local Jobcentre Plus</a>) when you start getting Bereavement Support Payment.</p>
+
+
+    <nav class="govuk-prototype-kit-common-templates-pagination" role="navigation" aria-label="Pagination">
+
+      {{ govukPagination({
+        previous: {
+          labelText: "Eligibility",
+          href: "govuk-eligibility.html"
+        },
+        next: {
+          labelText: "How to claim",
+          href: "govuk-howtoclaim.html"
+        }
+      }) }}
+
+    <p>
+      <a href="#">
+        View a printable version of the whole guide
+      </a>
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="#">
+              Get help with funeral costs (Funeral Expenses Payment)
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Your benefits, tax and pension after the death of a partner
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              What to do after someone dies
+            </a>
+          </li>
+          <li>
+           <a href="#">
+              What to do when someone dies: step by step
+           </a>
+         </li>
+         <li>
+           <a href="#">
+              Applying for probate
+           </a>
+         </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
+</main>
+</div>
+</div>
+  
+   
+</div>
+
+{% endblock %}
