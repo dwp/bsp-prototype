@@ -19,20 +19,16 @@
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
-               Online BSP application with STP &nbsp;  <strong class="govuk-tag govuk-tag--red">Public beta </strong>
+               BSP form with straight through processing &nbsp;  <strong class="govuk-tag govuk-tag--red">Public beta </strong>
               </span>
             </h2>
             <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
 
-              <p class="govuk-body">This will be the 3rd round of citizen facing research testing instant automated decisions.</p><p>This round includes content about the new offline identity process & how communicate awards that are not the full amount to citizens.</p>
+              <p class="govuk-body">This will be the 3rd round of citizen facing research testing instant automated decisions on the online form.</p><p>This round includes content about the new offline identity process & how communicate awards that are not the full amount to citizens.</p>
 
-              <a href="/private-beta/offline-idv/bau-application-complete">BAU application complete page</a><br>
-              <a href="/private-beta/offline-idv/idv-failed-application-complete">Failed IDV - application complete</a><br>
-              <a href="/private-beta/offline-idv/bsp-decision-a-partial">Decision - partial award (a)</a><br>
-              <a href="/private-beta/offline-idv/bsp-decision-b-partial">Decision - partial award (b)</a><br>
-              <a href="/private-beta/offline-idv/bsp-decision-full">Decision - full award</a><br>
-              <a href="/private-beta/offline-idv/complete-do-idv-full">Received application prove identity - full</a><br>
-              <a href="/private-beta/offline-idv/complete-do-idv-partial">Received application prove identity - partial</a><br>
+              <button onclick="javascript:location.href='/private-beta/v8/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+                Start now
+              </button>
             
           </div>
          </div>
@@ -40,7 +36,30 @@
 
           <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
-            <p class="govuk-body">[placeholder links]</p>
+            <p>Pages we are testing:</p>
+            
+            <p class="govuk-body"><a href="/private-beta/offline-idv/complete-do-idv-partial">Received application prove identity - partial</a></p>
+            <p class="govuk-body"><a href="/private-beta/offline-idv/bsp-decision-a-partial">Partial decision - screen (a)</a></p>
+            <p class="govuk-body"><a href="/private-beta/offline-idv/bsp-decision-partial-amount">Decision - partial award amount</a></p><br>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                 Other designs
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body"><a href="/private-beta/offline-idv/bau-application-complete">BAU application complete page</a></p>
+            <p class="govuk-body"><a href="/private-beta/offline-idv/idv-failed-application-complete">Failed IDV - application complete</a></p>
+            <p class="govuk-body"><a href="/private-beta/offline-idv/bsp-decision-b-partial">Partial decision - screen (b)</a></p>
+            <p class="govuk-body"><a href="/private-beta/offline-idv/bsp-decision-full">Decision - full award amount</a></p>
+            <p class="govuk-body"><a href="/private-beta/offline-idv/complete-do-idv-full">Received application prove identity - full</a></p>
+              </div>
+            </details>
+
+  
+            
+            
 
           </div>
 
@@ -57,38 +76,39 @@
             <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
 
               <p class="govuk-body">Space to iterate content on new screens required for STP for online and telephony.</p>
-              <p class="govuk-body"><B>Online citizen journey</b></p>
-            <a href="/private-beta/idv-adm/complete-do-idv">Received application prove identity</a>
-            <br><a href="/private-beta/idv-adm/bsp-decision">Application complete - Passed IDV</a>
-            <br><a href="/private-beta/idv-adm/idv-failed-application-complete">Application complete - Failed IDV</a><br>
-            <br>
-            <p class="govuk-body"><B>Telephony journey</b></p>
-              <a href="/private-beta/telephony/v2/eligible-full-amount">Application complete - Passed STP and will receive all payments</a>
-              <br><a href="/private-beta/telephony/v2/eligible-not-full-amount">Application complete - Passed STP but will not receive all payments</a>
-              <br><a href="/private-beta/telephony/v2/stp-failed">Application complete - Failed STP</a><br>
-              <br>
+              
           </div>
           </div>
 
 
           <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Emails
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li><a href="/private-beta/idv-adm/emails/generic-email">/generic-email</a></li>
-                    <!-- <li><a href="/private-beta/idv-adm/emails/one-login">/one-login</a></li> -->
-                    <li><a href="/private-beta/idv-adm/emails/award-email">/award-email</a></li>
-                    <li><a href="/private-beta/idv-adm/emails/standard-email">/standard-email</a></li>
-                    <li><a href="/private-beta/idv-adm/emails/no-decision-email">/no-decision-email</a></li>
-                  </ul>
-              </div>
-            </details>
+            <p class="govuk-body"><B>Online citizen journey</b></p>
+              <p class="govuk-body"><a href="/private-beta/idv-adm/complete-do-idv">Received application prove identity</a>
+              <p class="govuk-body"><a href="/private-beta/idv-adm/bsp-decision">Application complete - Passed IDV</a>
+              <p class="govuk-body"><a href="/private-beta/idv-adm/idv-failed-application-complete">Application complete - Failed IDV</a><br></p>
+            
+              <p class="govuk-body"><B>Telephony journey</b></p>
+                <p class="govuk-body"><a href="/private-beta/telephony/v2/eligible-full-amount">Application complete - Passed STP and will receive all payments</a>
+                <p class="govuk-body"><a href="/private-beta/telephony/v2/eligible-not-full-amount">Application complete - Passed STP but will not receive all payments</a>
+                <p class="govuk-body"><a href="/private-beta/telephony/v2/stp-failed">Application complete - Failed STP</a><br></p>
+
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Emails
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li><a href="/private-beta/idv-adm/emails/generic-email">/generic-email</a></li>
+                        <!-- <li><a href="/private-beta/idv-adm/emails/one-login">/one-login</a></li> -->
+                        <li><a href="/private-beta/idv-adm/emails/award-email">/award-email</a></li>
+                        <li><a href="/private-beta/idv-adm/emails/standard-email">/standard-email</a></li>
+                        <li><a href="/private-beta/idv-adm/emails/no-decision-email">/no-decision-email</a></li>
+                      </ul>
+                  </div>
+                </details>   
 
           </div>
 
@@ -113,12 +133,13 @@
               Journey B
             </button>
             <br>
-            <a href="/private-beta/telephony/alt-designs/decision-a-oversp">Example C</a><br>
-            <a href="/private-beta/telephony/alt-designs/decision-a-late-claim">Example D</a>
             </div>
           </div>
 
           <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
+
+            <p class="govuk-body"><a href="/private-beta/telephony/alt-designs/decision-a-oversp">Example C (Over SPa)</a><br><br>
+            <a href="/private-beta/telephony/alt-designs/decision-a-late-claim">Example D (Late claim)</a></p><br>
 
             <details class="govuk-details">
               <summary class="govuk-details__summary">
@@ -308,21 +329,23 @@
             </h2>
             <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
               <p class="govuk-body govuk-!-font-size-19">This aim of this research is to test the online form end to end with users with added iterations for service improvement.</p>
-              <button onclick="javascript:location.href='/private-beta/v4/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
-                Married
-              </button>
-              <button onclick="javascript:location.href='/private-beta/v5/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
-                Civil Partnership
-              </button>
-              <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
-                Living together
-              </button>
-              <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/about-children-before-cb'" class="govuk-button" data-module="govuk-button">
-                Child Benefit
-              </button>
+             
             </div>
           </div>
           <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
+
+            <button onclick="javascript:location.href='/private-beta/v4/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+              Married
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v5/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+              Civil Partnership
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/govuk-overview'" class="govuk-button" data-module="govuk-button">
+              Living together
+            </button>
+            <button onclick="javascript:location.href='/private-beta/v3/bereavement-support-payment/about-children-before-cb'" class="govuk-button" data-module="govuk-button">
+              Child Benefit
+            </button>
 
             <details class="govuk-details">
               <summary class="govuk-details__summary">

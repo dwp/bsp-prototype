@@ -7796,9 +7796,9 @@ router.post('/email-answer', function(request, response) {
 
   var emailanswer = request.session.data['emailanswer']
   if (emailanswer == "yes"){
-      response.redirect("/private-beta/v7/bereavement-support-payment/email-confirm2")
+      response.redirect("/private-beta/v8/bereavement-support-payment/email-confirm2")
   } else {
-      response.redirect("/private-beta/v7/bereavement-support-payment/comms-needs")
+      response.redirect("/private-beta/v8/bereavement-support-payment/comms-needs")
   }
 })
 
@@ -7821,9 +7821,9 @@ router.post('/comms-answer', function(request, response) {
 
   var comms = request.session.data['commsneeds']
   if (comms == "yes"){
-      response.redirect("/private-beta/v7/bereavement-support-payment/comms-type")
+      response.redirect("/private-beta/v8/bereavement-support-payment/comms-type")
   } else {
-      response.redirect("/private-beta/v7/bereavement-support-payment/check-answers-contact")
+      response.redirect("/private-beta/v8/bereavement-support-payment/check-answers-contact")
   }
 })
 
