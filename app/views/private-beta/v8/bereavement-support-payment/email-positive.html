@@ -1,0 +1,78 @@
+{% extends 'layout_email.html' %}
+
+{% block pageTitle %}
+    Email decision
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            {% set emailContentHTML %}
+
+                <p>Dear John Smith</p>
+
+                <h2 class="govuk-heading-m">You will get Bereavement Support Payment</h2>
+
+                <p>We have looked at your application for Bereavement Support Payment and we can pay you.</p>
+
+                <p>We will make the first payment into your account as soon as possible. You do not need to do anything.</p>
+                
+                <p>We will also send you this decision by letter. That letter will contain more information about your payment schedule.</p>
+
+                <p>The Bereavement Support Payment team</p>
+
+                <p class="govuk-body govuk-!-margin-bottom-8"></p>
+                <hr> 
+                <p class="govuk-body govuk-!-margin-bottom-4"></p>
+
+                <p>You can give feedback to help us improve this service at <a href="https://apply-for-bereavement-support-payment.dwp.gov.uk/feedback" class="govuk-link">https://apply-for-bereavement-support-payment.dwp.gov.uk/feedback</a></p>
+                <p>Do not reply to this email. Replies to this email address will be automatically deleted without being read.</p>
+
+            {% endset %}
+
+
+            {{ prototypeEmailPreview({
+                headers: [
+                    {
+                        key: {
+                            text: 'From'
+                        },
+                        value: {
+                            text: '	Bereavement Support Payment'
+                        }
+                    },
+                    {
+                        key: {
+                            text: 'To'
+                        },
+                        value: {
+                            text: 'johnsmith@test.com'
+                        }
+                    },
+                    {
+                        key: {
+                            text: 'Subject'
+                        },
+                        value: {
+                            text: 'Your application for Bereavement Support Payment'
+                        }
+                    }
+                ],
+                content: {
+                    html: emailContentHTML
+
+
+            
+
+                }
+            }) }}
+            
+            <a class="govuk-back-link docs-creator" href="javascript:history.go(-1)">Back to homepage</a>
+        </div>
+
+</div>
+
+{% endblock %}

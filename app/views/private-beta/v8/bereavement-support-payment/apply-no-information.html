@@ -1,0 +1,48 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="" method="post" class="form">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You must have all the information you need to apply online
+                </h1>
+           <br>
+                <div class="govuk-form-group">
+                  <p class="govuk-body govuk-!-font-size-19">If you cannot find this information you may be able to apply by phone.
+                  </p>
+                  <p class="govuk-body govuk-!-font-size-19"><a href="https://www.gov.uk/bereavement-support-payment/how-to-claim">Call the Bereavement Service helpline</a> to apply by phone.
+                  </p>
+                  <div class="govuk-inset-text">
+                    If you live in Northern Ireland,  there’s a <a rel="external" href="https://www.nidirect.gov.uk/contacts/bereavement-service">different way to apply</a> by phone.
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <h2 class="govuk-heading-m">How to find a National Insurance number</h2>
+                      <p class="govuk-body govuk-!-font-size-19"> A National Insurance number will be shown on a payslip, P60, benefit letter or National Insurance card.</p>
+                    </fieldset>
+                  </div>
+                </div>
+    </form>
+  </div>
+  </div>
+</main>
+</div>
+
+{% endblock %}

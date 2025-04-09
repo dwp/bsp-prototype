@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Application complete – {{ serviceName }} – GOV.UK Prototype Kit
+  You'll get Bereavement Support Payment – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set serviceName %}
@@ -16,10 +16,10 @@
   },
   html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
 }) }}
-  <!-- {{ govukBackLink({
+  {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
-}) }} -->
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -28,24 +28,38 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">
-          Application complete
+          You’ll get Bereavement Support Payment
         </h1>
       </div>
 
-      <p class="govuk-body">You’ve proved your identity and we can process your application for Bereavement Support Payment.</p>
+      <p class="govuk-body">You’ve proved your identity and your application for Bereavement Support Payment has been successful.</p>
 
-      <h2 class="govuk-heading-m">What happens next</h2>
+      <h2 class="govuk-heading-m">What you’ll get</h2>
 
- 
+      {% if (data['children'] == "None of these apply") %}
 
-      <p>We’ll send you a letter with a decision. You should get this by {{ "today" | duration(5, "days") | govukDate }}.</p>
+      <p class="govuk-body">We’ll pay you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>£2,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
+        <li>£100 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
+      </ul>
 
-      <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information, this may take longer.</p> -->
+      {% else %}
 
-      <p>If your application is successful, we’ll make a payment into your account as soon as possible.</p>
+      <p class="govuk-body">You’ll get the higher rate. We’ll pay you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>£3,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
+        <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
+      </ul>
 
+      {% endif %}
 
-      <h2 class="govuk-heading-m">If you change your bank details, address or name</h2>
+      <p class="govuk-body">Your final payment will be on {{ "today" | duration(19, "months") | govukDate }}.</p>
+
+      <p class="govuk-body">We’ll send you a letter with a copy of your payment schedule.</p>
+      <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information.</p> -->
+
+      <h3 class="govuk-heading-m">If your circumstances change</h3>
       <p>Contact us if you change your bank details, address or name.</p>
       <p>
         Telephone: 0800 151 2012 <br>
@@ -72,7 +86,7 @@
         <a href="/private-beta/v7/bereavement-support-payment/emails/award-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Email inbox (1)</a>
       </p>     -->
 
-      <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
             Prototype options
@@ -84,11 +98,12 @@
             <a href="/private-beta/v7/bereavement-support-payment/emails/award-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">View new email (opens in new tab)</a>
           </p>
         </div>
-      </div> -->
+      </div>
+
+
 
       <p class="govuk-body">
-        Jump to <a href="/private-beta/offline-idv/bsp-decision-partial-amount" class="govuk-link">other example
-        </a>.
+        Jump to <a href="/private-beta/v7/bereavement-support-payment/idv-failed-application-complete" class="govuk-link">other example</a>.
       </p>
 
 </div>
