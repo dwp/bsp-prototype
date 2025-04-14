@@ -16,10 +16,7 @@
   },
   html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
 }) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+
 {% endblock %}
 
 {% block content %}
@@ -37,7 +34,7 @@
 
       <p></p>
 
-      <h2 class="govuk-heading-m">What happens next</h2>
+      <h2 class="govuk-heading-m">[Update content]</h2>
       <p>You should get a decision by {{ "today" | duration(3, "weeks") | govukDate }}. We'll contact you if we need more information.</p>
 
       <p>If your application is successful, we’ll make a payment into your account as soon as possible.</p>
@@ -76,7 +73,7 @@
         <a href="/private-beta/v7/bereavement-support-payment/emails/standard-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Email inbox (1)</a>
       </p>  -->
 
-      <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
             Prototype options
@@ -88,7 +85,7 @@
             <a href="/private-beta/v7/bereavement-support-payment/emails/standard-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">View new email (opens in new tab)</a>
           </p>
         </div>
-      </div>
+      </div> -->
 
 </div>
 </div>

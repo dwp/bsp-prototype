@@ -16,10 +16,6 @@
   },
   html: 'This is a new service - your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us improve it.'
 }) }}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
 {% endblock %}
 
 {% block content %}
@@ -40,7 +36,7 @@
 
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>£2,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
+        <li>£2,500 by {{ "today" | duration(3, "days") |  govukDate(showWeekday=true) }}</li>
         <li>£100 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
@@ -48,24 +44,32 @@
 
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>a one-off payment of £3,500 by {{ "today" | duration(3, "days") | govukDate }}</li>
+        <li>a one-off payment of £3,500 by {{ "today" | duration(3, "days") |  govukDate(showWeekday=true) }}</li>
         <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
       {% endif %}
 
       <p class="govuk-body">Your final payment will be on {{ "today" | duration(19, "months") | govukDate }}.</p>
-      <h3 class="govuk-heading-s">How your payment was calculated</h3>
+      
+      <h3 class="govuk-heading-s">How we made our decision</h3>
+
       <p>You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
+      <p class="govuk-body">The decision was made solely by an automated system using the information we were provided.</p>
+
+      <!-- New adm content below -->
+      
       <p class="govuk-body">We’ll send you a letter that has:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>your payment schedule</li>
-        <li>more information about how your payment was calculated</li>
-        <li>what you can do if you think your calculation is wrong</li>
+        <li>how your payment was calculated</li>
+        <li>what to do if you disagree with this decision</li>
       </ul>
+
+
       <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information.</p> -->
 
-      <h2 class="govuk-heading-m">If your circumstances change</h2>
+      <h2 class="govuk-heading-m">If you change your bank details, address or name</h2>
       <p>Contact us if you change your bank details, address or name.</p>
       <p>
         Telephone: 0800 151 2012 <br>
@@ -88,11 +92,12 @@
   <p><a target="_blank" href="/beta/r2/bereavement-support-payment/feedback" class="govuk-body govuk-!-font-size-19">What did you think of this service? (opens in new tab)</a></p>
 
   <br>
+
       <!-- <p class="govuk-body">
         <a href="/private-beta/v7/bereavement-support-payment/emails/award-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">Email inbox (1)</a>
       </p>     -->
 
-      <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
             Prototype options
@@ -109,8 +114,8 @@
 
 
       <p class="govuk-body">
-        Jump to <a href="/private-beta/v7/bereavement-support-payment/idv-failed-application-complete" class="govuk-link">other example</a>.
-      </p>
+        Jump to <a href="/private-beta/offline-idv/idv-failed-application-complete" class="govuk-link">other example</a>.
+      </p> -->
 
 </div>
 
