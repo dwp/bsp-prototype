@@ -113,7 +113,21 @@
         </div>
         {% endif %}
 
-        {% if data['cpinuk']=='Yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Country of civil partnership
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['countrycp'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp?checkansweraboutyou=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+
+        <!-- {% if data['cpinuk']=='Yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
            Civil partnership registered in UK
@@ -143,7 +157,7 @@
             </a>
           </dd>
         </div>
-        {% endif %}
+        {% endif %} -->
 
 
 		<div class="govuk-summary-list__row">
