@@ -7802,7 +7802,7 @@ router.post('/relationship-answer', function(request, response) {
 //   }
 // })
 
-// LINK TO ALT PLUGIN
+// NEW ROUTE DUE TO ALT FORMAT PLUGIN 
 
 router.post('/email-answer', function(request, response) {
 
@@ -7810,7 +7810,7 @@ router.post('/email-answer', function(request, response) {
   if (emailanswer == "yes"){
       response.redirect("/private-beta/v8/bereavement-support-payment/email-confirm2")
   } else {
-      response.redirect("/dwp-alternative-formats-plugin/start?alternative_formats_exit_url=/private-beta/v8/bereavement-support-payment/check-answers-contact")
+      response.redirect("/dwp-alternative-formats-plugin/start?alternative_formats_exit_url=/private-beta/v8/bereavement-support-payment/declaration")
   }
 })
 
@@ -8001,6 +8001,10 @@ router.post('/driving-licence-answer', function(request, response) {
 })
 
 // ALT FORMATS PLUGIN
+
+router.get("/dwp-alternative-formats-plugin/v2/journey-1/check-answers", (req, res) => {
+  res.render("/private-beta/v8/bereavement-support-payment/check-answers-alt-format");
+})
 
 const alternativeFormatsPlugin = require("alternative-formats-plugin");
 
