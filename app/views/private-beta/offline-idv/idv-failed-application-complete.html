@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Application complete – {{ serviceName }} – GOV.UK Prototype Kit
+  Application received – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% set serviceName %}
@@ -25,19 +25,21 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">
-          Application complete
+          Application received
         </h1>
       </div>
 
-      <p>We could not prove your identity using your GOV.UK  One Login.</p>
-      <p>We will process your application using the information you have already told us about. You do not need to do anything.</p>
+      <p>We have received your application but could not prove your identity using your GOV.UK One Login.</p>
 
-      <p></p>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>You’ll need to prove your identity a different way before we can make a decision about your application.</p>
+      <p>We’ll call you in the next few days to do this.</p>
+      <!-- IF ALT PREF FOR SPEAKING REPLACE SENTENCE ABOVE WITH
+       <p>We’ll contact you in the next few days to do this.</p>
+       <p>We’ll use [ALT FORMAT TO SPEAK] when contacting you.</p>
+        -->
 
-      <h2 class="govuk-heading-m">[Update content]</h2>
-      <p>You should get a decision by {{ "today" | duration(3, "weeks") | govukDate }}. We'll contact you if we need more information.</p>
-
-      <p>If your application is successful, we’ll make a payment into your account as soon as possible.</p>
+      <p>If you prove your identity and your application is successful, we’ll make a payment into your account as soon as possible.</p>
 
 
       <!-- <h2 class="govuk-heading-m">Getting the higher rate of payment</h2>
@@ -46,8 +48,8 @@
 
       <h3 class="govuk-heading-m">Get help with your application</h3>
 
-      <p>If you have any questions about your claim you can contact the Bereavement Support Payment team.</p>
-      <p>When you call we will ask for your National Insurance number.</p>
+      <p>If you have any questions about your application you can contact the Bereavement Support Payment team.</p>
+      <p>When you call we’ll ask for your National Insurance number.</p>
       <p>
         Telephone: 0800 731 0469 <br>
         Welsh language: 0800 731 0453 <br>
