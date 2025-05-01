@@ -36,7 +36,7 @@
 
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>£2,500 by {{ "today" | duration(3, "days") |  govukDate(showWeekday=true) }}</li>
+        <li>£2,500 by {{ "today" | duration(3, "days") |  govukDate(showWeekday=true) | replace(",", "")}}</li>
         <li>£100 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
@@ -44,7 +44,7 @@
 
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>a one-off payment of £3,500 by {{ "today" | duration(3, "days") |  govukDate(showWeekday=true) }}</li>
+        <li>a one-off payment of £3,500 by {{ "today" | duration(3, "days") |  govukDate(showWeekday=true) | replace(",", "")}}</li>
         <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
