@@ -37,7 +37,7 @@
 
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>£450 for backdated payments by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) }}</li>
+        <li>£450 for backdated payments by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) | replace(",", "")}}</li>
         <li>£150 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
@@ -57,7 +57,7 @@
 
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>£1,050 for backdated payments by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) }}</li>
+        <li>£1,050 for backdated payments by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) | replace(",", "")}}</li>
         <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
@@ -80,14 +80,14 @@
       <p class="govuk-body">The decision was made solely by an automated system using the information we were provided.</p>
       
       <p class="govuk-body">We’ll send you a letter that has:</p>
-      <!-- IF ALT PREF FOR WRITING REPLACE SENTENCE ABOVE WITH
-       <p>We’ll contact you using [ALT FORMAT TO WRITE] that has:</p>
-        -->
       <ul class="govuk-list govuk-list--bullet">
         <li>your payment schedule</li>
         <li>how your payment was calculated</li>
         <li>what to do if you disagree with this decision</li>
       </ul>
+
+      <!-- IF USER HAD ALT FORMAT <p class="govuk-body">We’ll contact you in your preferred format with this information.</p> -->
+
     
       <h2 class="govuk-heading-m">If you change your bank details, address or name</h2>
       <p>Contact us if you change your bank details, address or name.</p>
