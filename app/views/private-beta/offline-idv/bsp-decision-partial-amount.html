@@ -37,13 +37,11 @@
 
       <p class="govuk-body">We’ll pay you:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>£450 for backdated payments by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) | replace(",", "")}}</li>
-        <li>£150 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
+        <li>£300 for backdated payments by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) | replace(",", "")}}</li>
+        <li>£100 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
-      <p class="govuk-body">Your final payment will be on {{ "today" | duration(2, "months") | govukDate }}.</p>
-
-      <!-- <h3 class="govuk-heading-s">How your payment was calculated</h3> -->
+      <p class="govuk-body">Your final payment will be on {{ "today" | duration(6, "months") | govukDate }}.</p>
 
       <h3 class="govuk-heading-s">How we made our decision</h3>
 
@@ -61,9 +59,7 @@
         <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
       </ul>
 
-      <p class="govuk-body">Your final payment will be on {{ "today" | duration(2, "months") | govukDate }}.</p>
-
-      <!-- <h3 class="govuk-heading-s">How your payment was calculated</h3> -->
+      <p class="govuk-body">Your final payment will be on {{ "today" | duration(6, "months") | govukDate }}.</p>
 
       <h3 class="govuk-heading-s">How we made our decision</h3>
 
@@ -75,9 +71,46 @@
 
       {% endif %}
 
+      <!-- USE THIS CODE INSTEAD FOR THURSDAY UR SESSION, BASED ON DOD OF OCT 24
+      {% if (data['children'] == "None of these apply") %}
+
+      <p class="govuk-body">We’ll pay you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a one-off payment of £2,500 by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) | replace(",", "")}}</li>
+        <li>£300 for backdated payments by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) | replace(",", "")}}</li>
+        <li>£100 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
+      </ul>
+
+      <p class="govuk-body">Your final payment will be on {{ "today" | duration(12, "months") | govukDate }}.</p>
+
+      <h3 class="govuk-heading-s">How we made our decision</h3>
+
+      <p>You’ll get the standard rate because you were not entitled to Child Benefit when your partner died.</p>
+
+      <p>We can only backdate payments up to the last 3 months from today.</p>
+
+      {% else %}
+
+      <p class="govuk-body">We’ll pay you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a one-off payment of £3,500 by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) | replace(",", "")}}</li>
+        <li>£1,050 for backdated payments by {{ "today" | duration(3, "days") | govukDate(showWeekday=true) | replace(",", "")}}</li>
+        <li>£350 every month starting {{ "today" | duration(1, "months") | govukDate }}</li>
+      </ul>
+
+      <p class="govuk-body">Your final payment will be on {{ "today" | duration(12, "months") | govukDate }}.</p>
+
+      <h3 class="govuk-heading-s">How we made our decision</h3>
+
+      <p>You’ll get the higher rate because you were entitled to Child Benefit when your partner died.</p>
+
+      <p>We can only backdate payments up to the last 3 months from today.</p>
+
+      {% endif %} -->
+
       <!-- New update ADM content below -->
 
-      <p class="govuk-body">The decision was made solely by an automated system using the information we were provided.</p>
+      <p class="govuk-body">The decision was made solely by an automated system using the information we were provided. If you have new information, or want a decision without using automation, you can <a href="https://www.gov.uk/mandatory-reconsideration" class="govuk-link" rel="noreferrer noopener" target="_blank">challenge a benefit decision (opens in new tab)</a>.</p>
       
       <p class="govuk-body">We’ll send you a letter that has:</p>
       <ul class="govuk-list govuk-list--bullet">
