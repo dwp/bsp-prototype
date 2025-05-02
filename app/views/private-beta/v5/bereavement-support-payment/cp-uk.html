@@ -28,15 +28,15 @@ Where did you register your civil partnership? – {{ serviceName }} – GOV.UK 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
         
-        {% set outside %}
+        {% set cpcountry %}
         {{ govukInput({
           label: {
             text: "  What country did you register your civil partnership in?",
             classes: "govuk-label--s",
             isPageHeading: true
           },
-          id: "event-name",
-          name: "eventName"
+          id: "cpcountry",
+          name: "cpcountry"
         }) }}
         {% endset -%}
         
@@ -74,7 +74,7 @@ Where did you register your civil partnership? – {{ serviceName }} – GOV.UK 
               value: "Outside the UK",
               text: "Outside the UK",
               conditional: {
-                html: outside
+                html: cpcountry
               }
             }
           ]
