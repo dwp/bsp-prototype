@@ -112,6 +112,24 @@
         </div>
         {% endif %}
 
+        {% if data['countrymarried']=='Outside the UK' %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of marriage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['marriedcountry'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="marriage?checkansweraboutyou=true">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        {% else %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Country of marriage
@@ -125,6 +143,8 @@
             </a>
           </dd>
         </div>
+        
+        {% endif %}
 
         <!-- {% if data['marriedinuk']=='Yes' %}
         <div class="govuk-summary-list__row">
