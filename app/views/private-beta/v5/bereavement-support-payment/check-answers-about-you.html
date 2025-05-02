@@ -113,6 +113,24 @@
         </div>
         {% endif %}
 
+        {% if data['countrycp']=='Outside the UK' %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Country of civil partnership
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['cpcountry'] }} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="cp?checkansweraboutyou=true">
+              Change 
+            </a>
+          </dd>
+        </div>
+
+        {% else %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
            Country of civil partnership
@@ -126,6 +144,8 @@
             </a>
           </dd>
         </div>
+
+        {% endif %}
 
         <!-- {% if data['cpinuk']=='Yes' %}
         <div class="govuk-summary-list__row">
