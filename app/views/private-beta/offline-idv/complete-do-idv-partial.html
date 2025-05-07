@@ -68,7 +68,9 @@ Application received, prove identity – {{ serviceName }} – GOV.UK Prototype 
       <p>We’ve sent you a confirmation email.</p>
       <h2 class="govuk-heading-m">If you do not prove your identity now</h2>
       <p>You’ll need to prove your identity a different way before we can make a decision about your application.</p>
-      <p>We’ll call you to do this by {{ "today" | duration(7, "days") | govukDate(showWeekday=true) | replace(",", "") | replace(" 2025", "") }}.</p>
+      <p>We’ll call you in the next 7 days to do this.</p>
+      <!-- <p>We’ll call you to do this by {{ "today" | duration(7, "days") | govukDate(showWeekday=true) | replace(",", "") | replace(" 2025", "") }}.</p> -->
+
       <!-- IF ALT PREF FOR SPEAKING REPLACE SENTENCE ABOVE WITH
        <p>We’ll contact you by {{ "today" | duration(7, "days") | govukDate(showWeekday=true) | replace("day,", "day") | replace("2025", "") }} to do this.</p>
        <p>We’ll use [ALT FORMAT TO SPEAK] when contacting you.</p>
