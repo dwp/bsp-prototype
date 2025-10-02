@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: prototype.interface.bereavement-support-payment-prototype
-  title: bereavement-support-payment-prototype
+  title: Bereavement-Support-Payment-Prototype
   description: |
     TODO: add description for bereavement-support-payment-prototype.
 
