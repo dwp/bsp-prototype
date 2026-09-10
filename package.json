@@ -4,20 +4,13 @@
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },
-  "name": "govuk-prototype-kit",
   "dependencies": {
-    "20": "^3.1.9",
+    "@dwp/dwp-frontend": "3.4.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@govuk-prototype-kit/step-by-step": "2.2.3",
-    "@x-govuk/govuk-prototype-filters": "1.5.0",
-    "alternative-formats-plugin": "github:dwp/alternative-formats-plugin",
-    "date-fns": "^3.6.0",
-    "govuk-frontend": "5.4.0",
-    "govuk-prototype-kit": "13.16.2",
-    "jquery": "3.7.1",
-    "notifications-node-client": "8.2.0"
-  },
-  "devDependencies": {
-    "@types/date-fns": "^2.6.0"
+    "@govuk-prototype-kit/step-by-step": "2.2.4",
+    "govuk-frontend": "5.14.0",
+    "govuk-prototype-kit": "13.20.4",
+    "govuk-one-login-service-header": "github:govuk-one-login/service-header"
   }
 }
+

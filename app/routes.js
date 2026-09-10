@@ -16,11 +16,13 @@ router.get('/', function (req, res) {
 router.post('*', function (req, res, next) {
   console.log(req.body);
  
-  if (req.body['next-page']) {
-    res.redirect(req.body['next-page']);
-  } else {
-    next();
-  }
+   if (isAllowed) {
+        // If the URL is allowed, proceed with the redirect
+        res.redirect(url);
+    } else {
+        res.status(400).send('Invalid redirect URL');
+    }
+
 });
 
 router.get('/beta/r9/bereavement-support-payment/about-you1', function (req, res) {
