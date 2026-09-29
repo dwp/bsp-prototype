@@ -16,6 +16,7 @@
     "@ministryofjustice/frontend": "9.0.0",
     "@scottish-government/design-system": "4.1.1",
     "@x-govuk/govuk-prototype-filters": "2.2.0",
+    "date-fns": "^4.4.0",
     "express": "4.22.3",
     "govuk-frontend": "6.5.1",
     "govuk-prototype-kit": "13.20.2",
@@ -32,5 +33,4 @@
     "ws": "8.21.0",
     "uuid": "11.1.1"
   }
-  
 }

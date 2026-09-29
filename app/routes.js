@@ -8008,7 +8008,7 @@ router.get("/dwp-alternative-formats-plugin/v2/journey-1/check-answers", (req, r
   res.render("/private-beta/v8/bereavement-support-payment/check-answers-alt-format");
 })
 
-const alternativeFormatsPlugin = require("alternative-formats-plugin");
+// const alternativeFormatsPlugin = require("alternative-formats-plugin");
 
-alternativeFormatsPlugin(router);
+// alternativeFormatsPlugin(router);
 
