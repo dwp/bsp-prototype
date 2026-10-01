@@ -20,6 +20,7 @@
 {% from "govuk/components/inset-text/macro.njk"          import govukInsetText %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 {% from "govuk/components/panel/macro.njk"               import govukPanel %}
+{% from "govuk/components/pagination/macro.njk"          import govukPagination %}
 {% from "govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
 {% from "govuk/components/radios/macro.njk"              import govukRadios %}
 {% from "govuk/components/select/macro.njk"              import govukSelect %}
@@ -58,7 +59,7 @@
   {% endif %}
   
   <div class="govuk-phase-banner govuk-header__container govuk-width-container">
-  <p class="govuk-phase-banner__content">
+  <!-- <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
       Beta
     </strong>
@@ -66,7 +67,7 @@
       This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
     </span>
   </p>
-</div>
+</div> -->
   
   
 {% endblock %}
